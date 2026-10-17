@@ -2,7 +2,7 @@
 
 Status: Draft · Version: 1.0 · Prepared: 17 October 2026
 
-Audience: engineers implementing and verifying the project. Product scope and release order are defined in the [PRD index](README.md). This document specifies the technical contracts shared by those releases; it is not an additional release or a user-story backlog. The repository currently contains requirements, not an implemented application.
+Audience: engineers implementing and verifying the project. Product scope and release order are defined in the [PRD index](README.md). This document specifies the technical contracts shared by those releases; it is not an additional release or a user-story backlog. The repository includes a development scaffold; the PRD features remain implementation deliverables. See the [development guide](../development.md) for readiness and completion criteria.
 
 [ADR-0001](../adr/0001-local-modular-architecture.md) explains the proposed architectural choices and alternatives. See the [ADR index](../adr/README.md) for decision status and history.
 
@@ -20,7 +20,7 @@ Public hosting, authentication/accounts, multiple independent agents, vector dat
 
 | Area | Required baseline / responsibility |
 | --- | --- |
-| Python | Choose and document one baseline from Python 3.11 or 3.12; test other versions only if claiming support |
+| Python | Python 3.12, initially pinned to 3.12.15; see [ADR-0002](../adr/0002-python-and-development-tooling.md). Test other versions only if claiming support. |
 | UI | Streamlit forms, catalog/detail views, comparisons, conversation, preferences, and execution reports |
 | Validation | Pydantic schemas at input, import, tool, model-output, and configuration boundaries |
 | Storage | SQLite through a repository layer; parameterized queries, transactions, explicit migrations |
@@ -29,7 +29,7 @@ Public hosting, authentication/accounts, multiple independent agents, vector dat
 | Retrieval | HTTPX for approved sources; BeautifulSoup only for an explicitly permitted HTML integration |
 | Verification | Pytest for deterministic behavior and integration fixtures; separate live-source/local-model smoke checks |
 
-**TR-03 — Reproducible dependencies.** Pin and record compatible package versions when implementation starts, including adapters and transitive dependencies needed to reproduce each release. Validate official integration contracts before locking versions. Do not interpret this document as a claim that unspecified current package versions are compatible. Qwen3 4B remains a model candidate, not a required download.
+**TR-03 — Reproducible dependencies.** Use `pyproject.toml` and `uv.lock` as the canonical dependency definition/resolution, with generated hashed `requirements*.txt` compatibility exports. Record adapters and transitive dependencies needed to reproduce each release. Validate official integration contracts before locking versions. Qwen3 4B remains a model candidate, not a required download.
 
 ## 3. Architecture and component boundaries
 

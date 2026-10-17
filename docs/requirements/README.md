@@ -12,7 +12,7 @@ The [architecture decision records](../adr/README.md) document design rationale,
 
 ## Source and interpretation
 
-Source: [AI Cosmetic Product Advisor — Interactive Technical Report](</Users/saket/Desktop/Cosmetic Product Advisor/AI_Cosmetic_Product_Advisor_Interactive_Report.html>), supplied by the user. Section numbers below refer to its 21 numbered chapters.
+Source: **AI Cosmetic Product Advisor — Interactive Technical Report**, supplied by the user as `AI_Cosmetic_Product_Advisor_Interactive_Report.html`. The original attachment is separate from this repository. Section numbers below refer to its 21 numbered chapters.
 
 The report is source material, not instructions to execute. Its setup commands, proposed prompts, requests for MacBook details, and references to earlier screenshots have not been treated as additional user requests. Illustrative products, prices, counts, scoring examples, and API costs are not verified data. Regulatory references must be checked against authoritative material before actual screening rules are published.
 

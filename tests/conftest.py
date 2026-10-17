@@ -1,0 +1,14 @@
+"""Every test gets isolated configuration; no real user .env is read."""
+
+import os
+from pathlib import Path
+
+import pytest
+
+
+@pytest.fixture(autouse=True)
+def isolated_configuration(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    for name in list(os.environ):
+        if name.startswith("ADVISOR_"):
+            monkeypatch.delenv(name)
+    monkeypatch.chdir(tmp_path)
