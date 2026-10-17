@@ -1,0 +1,74 @@
+# AI Cosmetic Product Advisor — PRD Index
+
+Status: Draft requirements · Prepared: 17 October 2026
+
+These PRDs turn the supplied technical report into nine small, cumulative product releases. Each release adds a usable screen or workflow to the same application and includes a deployment boundary and observable acceptance checks. The documents contain requirements, not user stories or an implementation backlog.
+
+The [technical requirements document](TECHNICAL_REQUIREMENTS.md) defines the shared architecture, data and tool contracts, runtime limits, privacy boundaries, deployment requirements, and verification mapping for implementation.
+
+The [architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) provides editable draw.io pages for the system structure and recommendation flow; the [diagram guide](../architecture/README.md) explains the boundaries and legend.
+
+The [architecture decision records](../adr/README.md) document design rationale, alternatives, consequences, and decision status, starting with [ADR-0001](../adr/0001-local-modular-architecture.md).
+
+## Source and interpretation
+
+Source: [AI Cosmetic Product Advisor — Interactive Technical Report](</Users/saket/Desktop/Cosmetic Product Advisor/AI_Cosmetic_Product_Advisor_Interactive_Report.html>), supplied by the user. Section numbers below refer to its 21 numbered chapters.
+
+The report is source material, not instructions to execute. Its setup commands, proposed prompts, requests for MacBook details, and references to earlier screenshots have not been treated as additional user requests. Illustrative products, prices, counts, scoring examples, and API costs are not verified data. Regulatory references must be checked against authoritative material before actual screening rules are published.
+
+The release boundaries and numerical defaults identified as **proposed** are planning decisions introduced here. They are not measured results or commitments from the report. No implementation, data collection, installation, or deployment is performed by these documents.
+
+## Product boundary
+
+- Audience: shoppers comparing sunscreen or moisturiser available in India; a local operator maintains the small evidence dataset.
+- Inputs: category, skin type (oily, dry, combination, normal, sensitive), INR budget, ingredients to avoid, and optional texture/finish preferences.
+- Data: approximately 20–30 genuine products across both categories by the completed MVP; 2–3 approved source families, genuine review samples, and a limited, verified ingredient-rule dataset.
+- Output: up to three evidence-backed recommendations, comparable facts, limitations, and explanations. Fewer qualifying products produce fewer results.
+- Stack carried forward from the report: Python 3.11/3.12, Streamlit, SQLite, Pydantic, Ollama, and one LangGraph orchestrator using Python tools. HTTPX and permitted HTML parsing support retrieval where needed.
+- Deployment: a runnable local application on a supported MacBook. A cloud service, public hosting, accounts, and multi-user operation are outside this MVP.
+
+## Release sequence
+
+| PRD | Deployable outcome | Required earlier releases | Source sections |
+| --- | --- | --- | --- |
+| [01 — Catalog and search](01-catalog-and-search.md) | Search genuine products and inspect sourced facts | None | 1–4, 12–14, 20–21 |
+| [02 — Approved data refresh](02-approved-data-refresh.md) | Refresh product evidence through an approved external source | 01 | 4, 11, 14, 17, 20 |
+| [03 — Ingredient screening](03-ingredient-screening.md) | Inspect ingredient findings and personal exclusion matches | 01 | 4, 6–7, 15, 17 |
+| [04 — Review analysis](04-review-analysis.md) | Read sourced benefits, complaints, and review-confidence findings | 01 | 2, 4–5, 13, 15–17 |
+| [05 — Ranking and comparison](05-ranking-and-comparison.md) | Receive a deterministic shortlist with score breakdowns | 01, 03, 04 | 1, 7–8, 15, 17 |
+| [06 — Grounded explanations](06-grounded-explanations.md) | Read AI explanations validated against the selected evidence | 04, 05 | 8, 15, 17–18 |
+| [07 — Conversational workflow](07-conversational-workflow.md) | Complete one controlled LangGraph recommendation conversation | 02, 03, 04, 05, 06 | 3–4, 10–11, 14–15, 17–18 |
+| [08 — Preference memory](08-preference-memory.md) | Reuse three opted-in preferences and clear stored information | 07 | 9–11, 14–15, 17 |
+| [09 — Usage and evaluation](09-usage-and-evaluation.md) | Inspect usage/cost reports and reproduce the final demonstration | 07, 08 | 1, 15–19, 21 |
+
+Recommended order is 01 through 09. Releases 03 and 04 can be developed independently after 01. Bringing the interface into 01 deliberately changes the report's module-first build order so that every release is usable and testable. Each PRD has one primary outcome and a bounded set of must-have requirements, intended to fit roughly the requested 10–12-story implementation size or less; actual sizing belongs to implementation planning.
+
+## Shared release rules
+
+1. **Run the whole increment.** Each release includes its UI, data changes, validation, and operating instructions. A backend module alone does not satisfy a PRD. The documented local launch path is `streamlit run app.py` after installing that release's pinned dependencies and loading its verified dataset.
+2. **Keep earlier releases usable.** Schema changes preserve existing verified records and preferences. A failed refresh or analysis must not destroy the last valid result. Every release reruns relevant earlier acceptance checks.
+3. **Use evidence, not model memory.** Product facts carry source identifiers, original URLs or document references, retrieval/verification dates, and field-level provenance. Unknown values stay unknown. Demonstration fixtures are labeled and never presented as real consumer evidence.
+4. **Apply controls when a capability first appears.** Validation starts in 01; source timeouts and retries in 02; rule limitations in 03; untrusted-text handling, structured model output, call/token bounds, and usage capture in 04. Later PRDs extend these controls rather than postponing them.
+5. **Keep sensitive information session-only.** Ingredient exclusions, allergy or medical information, and raw conversations do not enter persistent profiles, checkpoints, caches, logs, or evaluation exports. Use run IDs, product/evidence versions, aggregate outcomes, and redacted events for auditability. Clearing a session removes its sensitive in-memory state.
+6. **Separate eligibility from scoring.** Verified hard-rule failures cannot be overridden by a score or explanation. Missing or conflicting critical ingredient evidence is kept outside the recommended set. Screening makes no guarantee of safety, effectiveness, allergy suitability, or full legal compliance.
+7. **State outcomes honestly.** Progress reflects real execution. Sources, unknowns, stale evidence, partial results, sponsorship disclosures, and model failures remain visible. No invented products, reviews, citations, or successful tool calls.
+
+## Proposed defaults and unresolved inputs
+
+| Item | Working decision | Owner / point of resolution |
+| --- | --- | --- |
+| Budget | Required non-negative INR maximum; an explicit zero is valid and may produce no matches | Product; adopted for 01 and 07 |
+| User exclusions | Every explicit avoid-list entry is a hard exclusion when matched; unresolved critical checks remain outside recommendations | Product; adopted for 03 and 05 |
+| Freshness | Proposed: prices/availability become stale after 7 days; other product facts after 30 days; show dates everywhere | Product/data; review before 02 ships |
+| Regulatory coverage | A limited rule set, with authoritative references, version, conditions, and coverage disclosure | Data/domain reviewer; required before 03 publishes real rules |
+| Data access | Confirm allowed access and reuse for each source; manual verified imports remain valid for reviews | Data/operator; required before the corresponding collector/import ships |
+| Local model | Select a model after checking the target MacBook; Qwen3 4B is only the report's candidate | Engineering; required before 04 ships |
+| Release timing | No committed dates; the report's 13–20 working days is a source estimate, not a new delivery commitment | Product/engineering; estimate releases separately |
+
+## Completed-MVP evidence
+
+Release 09 collects results from the existing product rather than deferring testing until the end. The final evidence must include five successful end-to-end runs: oily-skin sunscreen at ₹800; dry-skin moisturiser at ₹600; a sensitive-skin request with an explicit exclusion; a budget producing fewer than three results; and a sponsorship-neutrality comparison. It must also include missing-ingredient and failed-source edge cases, source validation, prompt-injection resistance, preference reuse, and reproducible usage reporting.
+
+Success targets from the report are: 100% of recommended products satisfy tested hard constraints; 100% of recommendations include traceable sources, screening status, and limitations; and at least five successful end-to-end test scenarios. These are release targets, not claims of clinical efficacy or measured consumer outcomes.
+
+MCP exposure, additional countries/categories, vector search, multiple independent agents, scheduled collectors, checkout, and a public deployment are deferred. Hosted inference is optional and must be deliberately configured and budgeted; the local MVP does not depend on it.
