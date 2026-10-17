@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-17",
+  "skills": [
+    {
+      "name": "developing-with-streamlit",
+      "source": {
+        "kind": "github",
+        "repository": "streamlit/streamlit",
+        "commit": "269e552f276f5757b2903174da18e083defb325b",
+        "path": "lib/streamlit/.agents/meta-skill/developing-with-streamlit"
+      },
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSE",
+        "NOTICES"
+      ],
+      "modified_files": [
+        "SKILL.md"
+      ],
+      "upstream_sha256": {
+        "SKILL.md": "e4db5baf3eab471482e0f76f20b78f1e7994e405df6181c90f8c3efb1537bdc8",
+        "scripts/discover.py": "63f5c1079f3540dd636536244058726d76f6528bbc6e3dfd3cdb18fd1fe56d3d"
+      },
+      "sha256": {
+        "LICENSE": "c95bae1d1ce0235ecccd3560b772ec1efb97f348a79f0fbe0a634f0c2ccefe2c",
+        "NOTICES": "01249c3fa050d1a2450513b610d2520c7b91739b370d50fcd2567019b9afdc15",
+        "SKILL.md": "fc01cb0886583e79ddfb787f88bcdd5ef6c58bf6484b7d16baed2250b0c8f05d",
+        "scripts/discover.py": "63f5c1079f3540dd636536244058726d76f6528bbc6e3dfd3cdb18fd1fe56d3d"
+      }
+    },
+    {
+      "name": "langgraph-fundamentals",
+      "source": {
+        "kind": "github",
+        "repository": "langchain-ai/langchain-skills",
+        "commit": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "path": "config/skills/langgraph-fundamentals"
+      },
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "modified_files": [
+        "SKILL.md"
+      ],
+      "upstream_sha256": {
+        "SKILL.md": "193bea142c9df04abc44917fb96c0be53ec9b5c77f56670004d3c03c117fb990",
+        "references/python.md": "3d30871a6463f955452fdebe607248c39b6806cf07c0fe655e3783b48acc6d91",
+        "references/typescript.md": "8cf8577265a75a1e46a5e1dfc7599c63efb60059591593dbb92dbd51acd5d22a"
+      },
+      "sha256": {
+        "LICENSE": "4ec67e4ca6e6721dba849b2ca82261597c86a61ee214bbf21416006b7b2d0478",
+        "SKILL.md": "a01d8588baf68e5ac9cda4612410de94823ae23460b1c8c31349ddd88b26a7aa",
+        "references/python.md": "3d30871a6463f955452fdebe607248c39b6806cf07c0fe655e3783b48acc6d91",
+        "references/typescript.md": "8cf8577265a75a1e46a5e1dfc7599c63efb60059591593dbb92dbd51acd5d22a"
+      }
+    },
+    {
+      "name": "gh-fix-ci",
+      "source": {
+        "kind": "github",
+        "repository": "openai/skills",
+        "commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "path": "skills/.curated/gh-fix-ci"
+      },
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSE.txt"
+      ],
+      "modified_files": [
+        "SKILL.md"
+      ],
+      "upstream_sha256": {
+        "LICENSE.txt": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+        "SKILL.md": "7b326b4a2f0f5f85122144628ec02077e48841e0e0e82efce88b3415bcfb7c26",
+        "agents/openai.yaml": "36f73b9450504983d1647c960689596f59bf9147c14b1b43162912ed7ada9af6",
+        "assets/github-small.svg": "ee05e92d373d4d84f4612af3c1090ef67698d421bbe30896a4ed5a00cb86a069",
+        "assets/github.png": "d55a9baa41798d8b5108e3058df3a5bda09914ea9fd73b49929cc38a8832424f",
+        "scripts/inspect_pr_checks.py": "9459e5b03f86785d184a83e5cd8d621b832e918ec04158a2962d867785812c6c"
+      },
+      "sha256": {
+        "LICENSE.txt": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+        "SKILL.md": "a200d3ac74d94d95f2297eda2eb93641d0c92e39fa0eccc7c0ae797746472225",
+        "agents/openai.yaml": "36f73b9450504983d1647c960689596f59bf9147c14b1b43162912ed7ada9af6",
+        "assets/github-small.svg": "ee05e92d373d4d84f4612af3c1090ef67698d421bbe30896a4ed5a00cb86a069",
+        "assets/github.png": "d55a9baa41798d8b5108e3058df3a5bda09914ea9fd73b49929cc38a8832424f",
+        "scripts/inspect_pr_checks.py": "9459e5b03f86785d184a83e5cd8d621b832e918ec04158a2962d867785812c6c"
+      }
+    },
+    {
+      "name": "gh-address-comments",
+      "source": {
+        "kind": "github",
+        "repository": "openai/skills",
+        "commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "path": "skills/.curated/gh-address-comments"
+      },
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSE.txt"
+      ],
+      "modified_files": [
+        "SKILL.md"
+      ],
+      "upstream_sha256": {
+        "LICENSE.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "SKILL.md": "77389eefd3fb6584210668ca8e43f4b8de87e7722ddd953474bc9e24cdfaaedd",
+        "agents/openai.yaml": "12cf845a78254dde85e60eefb45a60e6ce2129d321f3e1d691d4ebca9a140861",
+        "assets/github-small.svg": "ee05e92d373d4d84f4612af3c1090ef67698d421bbe30896a4ed5a00cb86a069",
+        "assets/github.png": "d55a9baa41798d8b5108e3058df3a5bda09914ea9fd73b49929cc38a8832424f",
+        "scripts/fetch_comments.py": "d7bc64f6b26f7482f9ca9dd7c923a5b8b20e1ef13491ae2d9052cd208a7c1ad1"
+      },
+      "sha256": {
+        "LICENSE.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "SKILL.md": "45819e97164bebe5841490f9260e8f3245f5f34956e265d0cfd2b62b86d27472",
+        "agents/openai.yaml": "12cf845a78254dde85e60eefb45a60e6ce2129d321f3e1d691d4ebca9a140861",
+        "assets/github-small.svg": "ee05e92d373d4d84f4612af3c1090ef67698d421bbe30896a4ed5a00cb86a069",
+        "assets/github.png": "d55a9baa41798d8b5108e3058df3a5bda09914ea9fd73b49929cc38a8832424f",
+        "scripts/fetch_comments.py": "d7bc64f6b26f7482f9ca9dd7c923a5b8b20e1ef13491ae2d9052cd208a7c1ad1"
+      }
+    },
+    {
+      "name": "security-threat-model",
+      "source": {
+        "kind": "github",
+        "repository": "openai/skills",
+        "commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "path": "skills/.curated/security-threat-model"
+      },
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSE.txt"
+      ],
+      "modified_files": [
+        "SKILL.md"
+      ],
+      "upstream_sha256": {
+        "LICENSE.txt": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+        "SKILL.md": "1283c0dd62a8104d9edda4583569b5d8510b4ddaa45120687c999250fd96bad2",
+        "agents/openai.yaml": "3319b59736312abceca614e341c0e59cae47263e3b58a22b2b5ddf1e5fc8c227",
+        "references/prompt-template.md": "81a59aa3fb3ac3a739d6a26ab38e4015965f215581ee54becef21a2b121ec29b",
+        "references/security-controls-and-assets.md": "d536cfa9acad2523dc39134bcf33b9566c29dd9a57b407cbc9901637230c6b98"
+      },
+      "sha256": {
+        "LICENSE.txt": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+        "SKILL.md": "40bc94d645046ee4356a411f7ecf277eef61e81326b0b2b59c2766d0ea92a9ee",
+        "agents/openai.yaml": "3319b59736312abceca614e341c0e59cae47263e3b58a22b2b5ddf1e5fc8c227",
+        "references/prompt-template.md": "81a59aa3fb3ac3a739d6a26ab38e4015965f215581ee54becef21a2b121ec29b",
+        "references/security-controls-and-assets.md": "d536cfa9acad2523dc39134bcf33b9566c29dd9a57b407cbc9901637230c6b98"
+      }
+    },
+    {
+      "name": "cosmetics-data-integrity",
+      "source": {
+        "kind": "project"
+      },
+      "sha256": {
+        "SKILL.md": "bddb7ae18c54dca561c0e97e74b78f75094a2a51b17669ea0218ee1f698fd4c6"
+      }
+    },
+    {
+      "name": "cosmetics-model-evaluation",
+      "source": {
+        "kind": "project"
+      },
+      "sha256": {
+        "SKILL.md": "4dcb00da16a5bfff509b4491d1214dc957a7b2b154991c0a45dfdc40b944de3d"
+      }
+    }
+  ]
+}

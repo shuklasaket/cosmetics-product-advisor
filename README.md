@@ -35,6 +35,7 @@ The preview does not create a database, load product data, save preferences, or 
 | `make format` | Apply formatting and safe automatic lint fixes |
 | `make test` | Run isolated tests with outbound network sockets disabled; allow local Unix sockets for Streamlit's event loop |
 | `make docs` | Check repository links and editable diagram structure |
+| `make skills` | Verify project skill provenance, file integrity, and helper syntax offline |
 | `make exports` | Regenerate pip compatibility files from `uv.lock` |
 
 `pyproject.toml` defines dependencies and tools; `uv.lock` records exact resolutions. The two `requirements*.txt` files are generated compatibility exports, not separately maintained dependency lists. See [CONTRIBUTING.md](CONTRIBUTING.md) for upgrades and optional local Git hooks.
@@ -51,6 +52,7 @@ For a pip-only runtime installation, create a Python 3.12 virtual environment, a
 - [Architecture decision records](docs/adr/README.md)
 - [Development readiness and completion criteria](docs/development.md)
 - [Development foundation completion report](docs/reports/development-foundation-report.md)
+- [Project skills, selection rationale, and usage](docs/skills.md)
 - [Data intake, provenance, and fixture policy](data/README.md)
 
 The supported MVP is single-user and local. Each PRD must add a usable increment with its own acceptance evidence. The preview is not a completed PRD 01 release.

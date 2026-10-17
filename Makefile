@@ -1,4 +1,4 @@
-.PHONY: setup run check lock lint format typecheck test docs exports check-exports
+.PHONY: setup run check lock lint format typecheck test docs skills exports check-exports
 
 UV ?= uv
 
@@ -8,7 +8,7 @@ setup:
 run:
 	$(UV) run --frozen streamlit run app.py
 
-check: lock lint typecheck test docs check-exports
+check: lock lint typecheck test docs skills check-exports
 
 lock:
 	$(UV) lock --check --offline
@@ -30,6 +30,9 @@ test:
 
 docs:
 	$(UV) run --frozen python -m scripts.check_docs
+
+skills:
+	$(UV) run --frozen python -m scripts.check_skills
 
 exports:
 	$(UV) export --quiet --frozen --no-header --no-dev --no-emit-project --output-file requirements.txt
