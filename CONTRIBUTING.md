@@ -8,26 +8,26 @@ Start with a clean working tree and the latest remote base:
 
 ```sh
 git fetch origin
-git switch --no-track -c feat/catalog-search origin/main
+git switch --no-track -c feat/prd-01-us-001-search-by-name origin/main
 make setup
 ```
 
-Replace the example name with `feat/`, `fix/`, `docs/`, `chore/`, or `refactor/` followed by a short kebab-case description. Tie the change to a PRD requirement or technical requirement. Use Python 3.12.15 and uv 0.13.1 from the [root setup guide](README.md).
+The example requires an actual tracked `US-001` story; it does not assign that number. Follow the mandatory [branch naming and PR standards](docs/git-workflow.md) for numbered stories and repository maintenance. Use Python 3.12.15 and uv 0.13.1 from the [root setup guide](README.md).
 
-Use descriptive commit and PR titles with `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, or `test:` prefixes. For example, `feat: add catalog budget filtering`. Inspect and stage the intended files, then run the shared checks before pushing:
+Use a descriptive commit title. PR titles must match `<type>(US-001): <outcome>` for story work or `<type>(repo): <outcome>` for maintenance, with a type matching the branch. Inspect and stage the intended files, then run the shared checks before pushing:
 
 ```sh
 make check
 git diff --check
 git add path/to/changed-file
 git diff --cached
-git commit -m "feat: add catalog budget filtering"
+git commit -m "feat(US-001): add catalog name search"
 git push --set-upstream origin HEAD
 gh pr create --base main --template .github/PULL_REQUEST_TEMPLATE.md
 gh pr checks --watch --fail-fast
 ```
 
-Replace the staging path and commit message with the actual change. The PR command prompts for a title and description using the repository template. Describe the final behavior, affected requirements, validation, and material limitations. For scripted PR creation, write the exact description to a temporary file and use `--body-file`.
+Replace the staging path and commit message with the actual change. The PR command prompts for a title and description using the repository template. Every human PR must fill its six sections, required fields, and author checklist; the required CI job validates them. For scripted PR creation, prepare a temporary body file, run the [local PR validator](docs/git-workflow.md#enforcement-and-review), and publish that same file with `--body-file`. Title/body edits rerun CI. Genuine Dependabot PRs retain their generated metadata and still run the quality checks.
 
 Review the diff and wait for **Python quality and offline verification** from GitHub Actions to pass on the latest PR revision. Failed, pending, cancelled, or outdated checks do not satisfy this workflow. `main` must be up to date before merging; use GitHub's update-branch action or merge `origin/main` into the working branch, then push and wait for CI again. Resolve review conversations. Changes requested in review must be addressed before merging.
 

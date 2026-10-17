@@ -1,19 +1,46 @@
-## Change
+<!-- Follow docs/git-workflow.md. Keep every heading and field; fill with actual
+evidence or N/A — reason. Use a draft until ready. Do not claim CI has passed
+before it runs; GitHub tracks the required result separately. -->
 
-Describe the resulting behavior and link the relevant PRD requirements or ADR.
+## Summary
+
+<!-- Explain the problem, resulting behavior, and why this approach fits. -->
+
+## Traceability
+
+<!-- Story branch: link [PRD-01] and [US-001] to actual repository Markdown
+records, matching the branch/title. Use full GitHub file URLs to the PR
+branch/commit so newly added records are accessible to reviewers.
+Repository maintenance: use N/A — reason for both fields. -->
+PRD:
+User story:
+Related issue: N/A
+
+## Scope
+
+Included:
+Excluded:
 
 ## Validation
 
-List automated checks and the runnable/manual verification performed. Include an application screenshot when UI behavior changes. Identify fixtures versus genuine source evidence.
+<!-- Record commands AND results; identify fixtures versus genuine evidence.
+Link acceptance criteria and results. Include screenshots for UI changes,
+or explain why UI evidence is not applicable. Disclose checks not run. -->
+Checks:
+Acceptance criteria:
+UI evidence:
 
-## Data and operation
+## Risk and rollout
 
-Describe any configuration, dependency, source-access, schema/migration, or recovery changes. Link updated operating instructions where needed.
+<!-- Cover relevant privacy, source rights, dependencies, configuration, and
+schema/migration impacts. Give practical rollout and recovery instructions. -->
+Impact:
+Rollout:
+Rollback:
 
-- [ ] Applicable acceptance criteria and earlier affected behavior checked
-- [ ] Change uses a dedicated branch and targets `main`
-- [ ] `make check` passes
-- [ ] Required GitHub CI passes on the latest PR revision before merge
-- [ ] Diff reviewed and review conversations resolved
-- [ ] No credentials, personal session inputs, or generated runtime data included
-- [ ] Documentation and data attribution updated where affected
+## Review checklist
+
+- [ ] I reviewed the diff and kept the PR focused on its stated scope.
+- [ ] I ran the local checks and recorded actual results and limitations above.
+- [ ] I updated affected documentation and contracts, or explained why no updates apply.
+- [ ] I checked for secrets, personal data, generated files, and source-permission impacts.

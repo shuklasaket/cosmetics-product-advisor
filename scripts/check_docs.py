@@ -8,10 +8,21 @@ from xml.etree import ElementTree
 LINK = re.compile(r"\]\((<[^>]+>|[^)\s]+)(?:\s+\"[^\"]*\")?\)")
 
 
+def strip_html_comments(content: str) -> str:
+    """Ignore template guidance while preserving line numbers in diagnostics."""
+    return re.sub(
+        r"<!--.*?-->",
+        lambda match: "\n" * match.group(0).count("\n"),
+        content,
+        flags=re.DOTALL,
+    )
+
+
 def check_markdown(path: Path, root: Path) -> list[str]:
     errors: list[str] = []
     in_fence = False
-    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+    content = strip_html_comments(path.read_text(encoding="utf-8"))
+    for number, line in enumerate(content.splitlines(), 1):
         if line.lstrip().startswith("```"):
             in_fence = not in_fence
             continue
@@ -66,6 +77,7 @@ def check_documentation(root: Path) -> list[str]:
         root / "README.md",
         root / "AGENTS.md",
         root / "CONTRIBUTING.md",
+        root / ".github" / "PULL_REQUEST_TEMPLATE.md",
         root / "data" / "README.md",
     ]
     documents.extend(sorted((root / "docs").rglob("*.md")))
