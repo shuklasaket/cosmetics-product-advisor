@@ -5,6 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+    types: [opened, synchronize, reopened, edited, ready_for_review]
   workflow_dispatch:
 
 permissions:
@@ -36,6 +37,9 @@ jobs:
         with:
           version: "0.13.1"
           enable-cache: true
+      - name: Validate branch and pull request standards
+        if: github.event_name == 'pull_request'
+        run: python -m scripts.check_pr --event "$GITHUB_EVENT_PATH"
       - name: Verify locked dependencies
         run: uv lock --check
       - name: Install development environment

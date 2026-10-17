@@ -28,6 +28,21 @@ def test_code_examples_and_web_links_do_not_require_network(tmp_path: Path) -> N
     assert check_markdown(document, tmp_path) == []
 
 
+def test_template_comments_are_ignored_and_diagnostic_line_numbers_are_preserved(
+    tmp_path: Path,
+) -> None:
+    document = tmp_path / "template.md"
+    document.write_text(
+        "<!--\n[placeholder](not-a-real-file.md)\n-->\n[broken](missing.md)\n",
+        encoding="utf-8",
+    )
+
+    errors = check_markdown(document, tmp_path)
+
+    assert len(errors) == 1
+    assert "template.md:4:" in errors[0]
+
+
 def test_dangling_diagram_connector_is_reported(tmp_path: Path) -> None:
     diagram = tmp_path / "broken.drawio"
     diagram.write_text(
