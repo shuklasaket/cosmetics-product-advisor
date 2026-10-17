@@ -2,9 +2,58 @@
 
 ## Local workflow
 
-Use Python 3.12.15 and uv 0.13.1 from the [root setup guide](README.md). Run `make setup`, make a focused change tied to a PRD requirement or technical requirement, then run `make check`. Use a short branch and a descriptive commit, such as `feat: add catalog budget filtering` or `docs: clarify ingredient evidence requirements`.
+Every change, including documentation and dependency updates, goes through a dedicated branch and a pull request to `main`. Direct commits/pushes to `main` are prohibited. Keep follow-up changes for an open PR on that PR's branch; start a new branch after it is merged.
+
+Start with a clean working tree and the latest remote base:
+
+```sh
+git fetch origin
+git switch --no-track -c feat/catalog-search origin/main
+make setup
+```
+
+Replace the example name with `feat/`, `fix/`, `docs/`, `chore/`, or `refactor/` followed by a short kebab-case description. Tie the change to a PRD requirement or technical requirement. Use Python 3.12.15 and uv 0.13.1 from the [root setup guide](README.md).
+
+Use descriptive commit and PR titles with `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, or `test:` prefixes. For example, `feat: add catalog budget filtering`. Inspect and stage the intended files, then run the shared checks before pushing:
+
+```sh
+make check
+git diff --check
+git add path/to/changed-file
+git diff --cached
+git commit -m "feat: add catalog budget filtering"
+git push --set-upstream origin HEAD
+gh pr create --base main --template .github/PULL_REQUEST_TEMPLATE.md
+gh pr checks --watch --fail-fast
+```
+
+Replace the staging path and commit message with the actual change. The PR command prompts for a title and description using the repository template. Describe the final behavior, affected requirements, validation, and material limitations. For scripted PR creation, write the exact description to a temporary file and use `--body-file`.
+
+Review the diff and wait for **Python quality and offline verification** from GitHub Actions to pass on the latest PR revision. Failed, pending, cancelled, or outdated checks do not satisfy this workflow. `main` must be up to date before merging; use GitHub's update-branch action or merge `origin/main` into the working branch, then push and wait for CI again. Resolve review conversations. Changes requested in review must be addressed before merging.
+
+Squash merge the reviewed PR through GitHub, or with `gh pr merge --squash --delete-branch`. Never use `--admin` to bypass requirements. GitHub deletes the remote working branch after merge. To return to a current local base:
+
+```sh
+git switch main
+git pull --ff-only origin main
+git fetch --prune origin
+```
+
+The next task starts with another dedicated branch. Avoid force-pushing shared branches; merge the base into a working branch when it needs an update.
 
 CI runs the same checks on Ubuntu. The application targets macOS; record a local Mac startup check when runtime behavior changes. A CI configuration file does not prove a remote run has passed.
+
+## GitHub enforcement
+
+The managed configuration is recorded in [main-branch-protection.json](.github/main-branch-protection.json) and [repository-settings.json](.github/repository-settings.json):
+
+- Require a PR, the named CI check from GitHub Actions, and an up-to-date base before merging into `main`.
+- Apply protection to administrators, block force pushes/deletion of `main`, and require resolved review conversations.
+- Allow squash merges only and delete merged working branches automatically.
+
+The current single-maintainer setup requires zero independent approvals so the author can merge a reviewed PR after CI. A separate approving reviewer is not enforced; raise this requirement when another maintainer joins. PR and CI requirements still apply.
+
+These JSON files document the managed settings; committing them does not configure GitHub. Maintainers can inspect actual enforcement with `gh api repos/shuklasaket/cosmetics-product-advisor/branches/main/protection` and repository merge settings with `gh api repos/shuklasaket/cosmetics-product-advisor`. When changing protection, preserve any additional restrictions that have since been introduced. The required check name is a contract: update branch protection along with any CI job rename.
 
 ## Code boundaries
 
@@ -18,7 +67,9 @@ CI runs the same checks on Ubuntu. The application targets macOS; record a local
 
 Add dependencies with `uv add PACKAGE` or `uv add --dev PACKAGE`. For a targeted upgrade, use `uv lock --upgrade-package PACKAGE`, then `uv sync --locked`, `make exports`, and `make check`. Review lockfile/export changes together. Runtime exports contain hashes; do not edit them by hand.
 
-Ruff handles formatting and linting; mypy checks application/contracts/scripts. `pyproject.toml` is their shared configuration. `make format` may modify Python files; inspect its diff before committing.
+Ruff handles formatting and linting; mypy checks application/contracts/scripts. [pyproject.toml](pyproject.toml) is their shared configuration. `make format` applies Ruff lint fixes before formatting; inspect its diff before committing. `make check` verifies formatting and linting without modifying files, including in CI.
+
+Python style follows Ruff's Black-compatible formatter and selected PEP 8/pycodestyle `E` checks, with four-space indentation, double quotes, LF endings, and a **100-character** line limit. The `I` rules check import order; `F`, `UP`, `B`, and `SIM` cover correctness and other code-quality policies. PEP 8 normally specifies 79-character code lines and 72-character prose lines, so this is a documented project style rather than strict enforcement of every PEP 8 recommendation. Naming and prose quality remain part of code review; no separate Black or autopep8 formatter is needed. See [PEP 8](https://peps.python.org/pep-0008/) and the [Ruff formatter documentation](https://docs.astral.sh/ruff/formatter/).
 
 An optional [.pre-commit-config.yaml](.pre-commit-config.yaml) supplies local lint, format, and documentation hooks. Install it explicitly with `uv run --frozen pre-commit install` if wanted. Hooks have not been installed automatically; CI remains the shared verification path.
 

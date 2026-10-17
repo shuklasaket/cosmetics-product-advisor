@@ -39,6 +39,8 @@ The preview does not create a database, load product data, save preferences, or 
 
 `pyproject.toml` defines dependencies and tools; `uv.lock` records exact resolutions. The two `requirements*.txt` files are generated compatibility exports, not separately maintained dependency lists. See [CONTRIBUTING.md](CONTRIBUTING.md) for upgrades and optional local Git hooks.
 
+Every change uses a dedicated branch and a pull request to `main`. Required GitHub CI must pass before a squash merge. See the [Git workflow and enforcement policy](CONTRIBUTING.md#local-workflow).
+
 For a pip-only runtime installation, create a Python 3.12 virtual environment, activate it, and run `python -m pip install --require-hashes -r requirements.txt`, then `streamlit run app.py`. `requirements-dev.txt` includes runtime plus development dependencies. The standard contributor/CI workflow uses uv.
 
 ## Documentation

@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -15,6 +16,7 @@ concurrency:
 
 jobs:
   quality:
+    # Required by main branch protection; coordinate any name change with that setting.
     name: Python quality and offline verification
     runs-on: ubuntu-latest
     timeout-minutes: 15

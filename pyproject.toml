@@ -26,7 +26,14 @@ cache-dir = ".cache/uv"
 
 [tool.ruff]
 target-version = "py312"
+# Project convention; PEP 8's default code-line limit is 79.
 line-length = 100
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
