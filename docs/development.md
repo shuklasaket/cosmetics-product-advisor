@@ -13,7 +13,7 @@ This guide governs implementation of the [nine PRDs](requirements/README.md). Th
 
 - The release runs from a clean environment using pinned dependencies and documented data preparation.
 - Its visible workflow and acceptance criteria pass, including applicable invalid, empty, failure, and boundary cases.
-- Affected earlier behavior remains usable; `make check` passes and the CI result is recorded when available.
+- Affected earlier behavior remains usable; `make check` and the required GitHub CI check pass on the latest PR revision before merge.
 - Data changes include provenance, attribution, permissions, versions, and necessary migration/recovery instructions.
 - Persistent stores, logs, and exports satisfy the technical requirements' privacy boundaries.
 - Documentation reflects actual behavior. Record which checks used genuine sources, recorded responses, or synthetic fixtures.
@@ -37,4 +37,4 @@ The genuine catalog, external collectors, regulatory rules, model installation, 
 
 `make check` verifies code quality, types, startup/configuration behavior, repository links, draw.io structure, and generated dependency exports. It does not verify product suitability, regulatory correctness, real API availability, or final model quality. Those checks enter with the relevant PRD.
 
-Git hooks are optional and require explicit installation. CI is configured but runs remotely only after the workflow is pushed to GitHub. Branch protection and repository settings are not changed by local configuration files.
+All changes use a dedicated branch and a PR to `main`; follow the [contributor workflow](../CONTRIBUTING.md). GitHub branch protection requires the named CI check and an up-to-date base before merge, including for administrators. Git hooks remain optional; local hook installation is separate from GitHub enforcement. The checked-in settings files document managed configuration, while GitHub's actual settings determine enforcement.

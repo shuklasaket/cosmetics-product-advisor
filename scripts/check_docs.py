@@ -62,7 +62,12 @@ def check_drawio(path: Path) -> list[str]:
 
 
 def check_documentation(root: Path) -> list[str]:
-    documents = [root / "README.md", root / "CONTRIBUTING.md", root / "data" / "README.md"]
+    documents = [
+        root / "README.md",
+        root / "AGENTS.md",
+        root / "CONTRIBUTING.md",
+        root / "data" / "README.md",
+    ]
     documents.extend(sorted((root / "docs").rglob("*.md")))
     errors: list[str] = []
     for path in documents:

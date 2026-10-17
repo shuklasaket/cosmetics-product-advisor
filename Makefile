@@ -18,8 +18,8 @@ lint:
 	$(UV) run --frozen ruff check .
 
 format:
-	$(UV) run --frozen ruff format .
 	$(UV) run --frozen ruff check --fix .
+	$(UV) run --frozen ruff format .
 
 typecheck:
 	$(UV) run --frozen mypy
