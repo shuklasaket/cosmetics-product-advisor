@@ -1,248 +1,367 @@
-<?xml version='1.0' encoding='utf-8'?>
-<mxfile host="app.diagrams.net" agent="drawio" version="1.0" type="device">
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device" version="24.7.17">
   <diagram id="system-architecture" name="01 System architecture">
-    <mxGraphModel dx="1680" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1680" pageHeight="1120" math="0" shadow="0" adaptiveColors="auto">
+    <mxGraphModel dx="1400" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="1120" background="#FFFFFF" adaptiveColors="auto">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" value="&lt;b&gt;AI Cosmetic Product Advisor&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=28;fontColor=#183047;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="20" width="1100" height="42" as="geometry" />
+        <mxCell id="number" value="&lt;b&gt;01&lt;/b&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#172B4D;strokeColor=#172B4D;strokeWidth=1.5;fontColor=#FFFFFF;fontFamily=Helvetica;fontSize=20;spacing=12;align=center;verticalAlign=middle;shape=ellipse;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="34" width="52" height="52" />
         </mxCell>
-        <mxCell id="subtitle" value="System architecture · documented target MVP · India / sunscreen + moisturiser" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=14;fontColor=#52677B;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="70" width="1250" height="28" as="geometry" />
+        <mxCell id="title" value="A local app with clear boundaries" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=30;fontColor=#172B4D;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="110" y="26" width="1040" height="44" />
         </mxCell>
-        <mxCell id="local" value="&lt;b&gt;LOCAL MACBOOK · SINGLE USER · LOOPBACK ACCESS&lt;/b&gt;" style="swimlane;startSize=28;horizontal=1;rounded=1;arcSize=5;html=1;fillColor=#FFFFFF;swimlaneFillColor=#FAFCFE;strokeColor=#AABAC8;strokeWidth=1.5;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=left;spacingLeft=16;" vertex="1" parent="1">
-          <mxGeometry x="220" y="160" width="1120" height="780" as="geometry" />
+        <mxCell id="subtitle" value="One Python application · shared services for form and conversation · local inference" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=16;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="110" y="75" width="1180" height="28" />
         </mxCell>
-        <mxCell id="shopper" value="&lt;b&gt;Shopper / operator&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Browser on this device&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;search + data upkeep&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F4F7;strokeColor=#9BAAB8;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="40" y="320" width="140" height="60" as="geometry" />
+        <mxCell id="status" value="TARGET MVP  ·  PLANNED" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1110" y="28" width="280" height="32" />
         </mxCell>
-        <mxCell id="ui" value="&lt;b&gt;Streamlit UI&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Forms, cards, chat&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;progress + preferences&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="40" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="local" value="LOCAL MACBOOK  /  SINGLE USER" style="swimlane;startSize=34;horizontal=1;rounded=1;arcSize=8;container=1;collapsible=0;pointerEvents=0;html=1;whiteSpace=wrap;fillColor=#F8FAFD;swimlaneFillColor=#FFFFFF;strokeColor=#D7E0EC;strokeWidth=1.5;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#52657D;align=left;spacingLeft=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="230" y="130" width="1170" height="810" />
         </mxCell>
-        <mxCell id="controller" value="&lt;b&gt;Controller + Pydantic&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Validate request&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;run/version + cancel&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="220" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="app" value="PYTHON + STREAMLIT PROCESS" style="swimlane;startSize=34;horizontal=1;rounded=1;arcSize=8;container=1;collapsible=0;pointerEvents=0;html=1;whiteSpace=wrap;fillColor=#EDF4FF;swimlaneFillColor=#FFFFFF;strokeColor=#D7E0EC;strokeWidth=1.5;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#52657D;align=left;spacingLeft=16;" vertex="1" parent="local">
+          <mxGeometry as="geometry" x="20" y="50" width="1130" height="550" />
         </mxCell>
-        <mxCell id="graph" value="&lt;b&gt;LangGraph&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;One orchestrator&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Conversation: PRD 07&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="400" y="40" width="140" height="60" as="geometry" />
+        <mxCell id="ui" value="&lt;b&gt;Streamlit interface&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Catalog · comparison · conversation&lt;br&gt;Loopback: 127.0.0.1&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="30" y="50" width="260" height="80" />
         </mxCell>
-        <mxCell id="services" value="&lt;b&gt;Domain services&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Search, reviews, screen&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;rank, explain, validate&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="580" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="controller" value="&lt;b&gt;Request controller&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Pydantic input validation&lt;br&gt;Run ID · request version · cancel&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="430" y="50" width="290" height="80" />
         </mxCell>
-        <mxCell id="http" value="&lt;b&gt;Approved HTTPX tools&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Source / variant checks&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Retry + freshness&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF6EF;strokeColor=#7FA58E;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="760" y="40" width="140" height="60" as="geometry" />
+        <mxCell id="session" value="&lt;b&gt;Session state&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Budget · exclusions · raw chat&lt;br&gt;In memory; clear on reset&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF5DF;strokeColor=#C89A40;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="840" y="50" width="260" height="80" />
         </mxCell>
-        <mxCell id="model" value="&lt;b&gt;Model adapter&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Bounds + JSON schemas&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Usage + cache keys&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F3EDFB;strokeColor=#9D82BE;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="760" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="graph" value="&lt;b&gt;LangGraph workflow&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;One orchestrator · PRD 07&lt;br&gt;Allowlisted Python tools&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="840" y="190" width="260" height="80" />
         </mxCell>
-        <mxCell id="ollama" value="&lt;b&gt;Local Ollama&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Interpretation, reviews&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Evidence phrasing&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F3EDFB;strokeColor=#9D82BE;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="940" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="services" value="&lt;b&gt;Shared application services&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Catalog &amp;amp; research  /  Review analysis  /  Ingredient checks  /  Ranking  /  Grounded explanations&lt;br&gt;&lt;b&gt;Python owns eligibility, arithmetic, evidence checks and final output.&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="30" y="310" width="1070" height="90" />
         </mxCell>
-        <mxCell id="import" value="&lt;b&gt;Import validation&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Permitted source data&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Pydantic + variant IDs&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF6EF;strokeColor=#7FA58E;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="940" y="280" width="140" height="60" as="geometry" />
+        <mxCell id="source" value="&lt;b&gt;Source adapter&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Approved HTTPX access&lt;br&gt;Source + variant validation&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="30" y="450" width="260" height="75" />
         </mxCell>
-        <mxCell id="session" value="&lt;b&gt;Session memory&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Raw chat + avoid list&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Clear on session reset&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF4DE;strokeColor=#C5A56A;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="220" y="400" width="140" height="60" as="geometry" />
+        <mxCell id="repositories" value="&lt;b&gt;SQLite repositories&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Transactions + versions&lt;br&gt;Allowlisted persistence&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="430" y="450" width="290" height="75" />
         </mxCell>
-        <mxCell id="preferences" value="&lt;b&gt;Preference tools&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Reviewed save action&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;3 allowlisted fields&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="400" y="400" width="140" height="60" as="geometry" />
+        <mxCell id="model" value="&lt;b&gt;Model adapter&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Schemas · timeouts · call caps&lt;br&gt;Cache + usage capture&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F2EDFC;strokeColor=#9270BE;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="840" y="450" width="260" height="75" />
         </mxCell>
-        <mxCell id="repository" value="&lt;b&gt;Repositories&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Transactions + versions&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Evidence / preference IO&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F4F7;strokeColor=#9BAAB8;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="580" y="400" width="140" height="60" as="geometry" />
+        <mxCell id="db" value="&lt;b&gt;SQLite&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Catalog · artifacts · audit events&lt;br&gt;Three opted-in preferences&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=cylinder3;size=14;boundedLbl=1;backgroundOutline=1;" vertex="1" parent="local">
+          <mxGeometry as="geometry" x="450" y="665" width="290" height="105" />
         </mxCell>
-        <mxCell id="sqlite" value="&lt;b&gt;SQLite&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Catalog + provenance&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Artifacts, prefs, events&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F4F7;strokeColor=#9BAAB8;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=12;" vertex="1" parent="local">
-          <mxGeometry x="760" y="400" width="140" height="80" as="geometry" />
+        <mxCell id="ollama" value="&lt;b&gt;Ollama runtime&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Separate local process&lt;br&gt;Model selected by benchmark&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F2EDFC;strokeColor=#9270BE;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="local">
+          <mxGeometry as="geometry" x="860" y="675" width="260" height="85" />
         </mxCell>
-        <mxCell id="controls" value="&lt;b&gt;Cross-cutting controls and observability&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Allowlisted tools · deadlines / call caps · prompt-injection boundaries · schema / citation validation&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Redacted events + token/cost accounting → SQLite · sanitized Markdown / JSON exports (PRD 09)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Sensitive session inputs and raw prompts never enter persistent stores or exports&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F4F7;strokeColor=#9BAAB8;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="local">
-          <mxGeometry x="40" y="640" width="980" height="90" as="geometry" />
+        <mxCell id="actor" value="" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F3F6FA;strokeColor=#A4B3C5;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="85" y="210" width="45" height="70" />
         </mxCell>
-        <mxCell id="obf" value="&lt;b&gt;Open Beauty Facts&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Approved external API&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Attributed product facts&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF6EF;strokeColor=#7FA58E;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="1480" y="200" width="140" height="60" as="geometry" />
+        <mxCell id="actor-label" value="Shopper / operator" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=15;fontColor=#172B4D;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="35" y="300" width="150" height="30" />
         </mxCell>
-        <mxCell id="evidence" value="&lt;b&gt;Permitted evidence&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Brand / retailer / reviews&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Verified India rule set&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF6EF;strokeColor=#7FA58E;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="1480" y="440" width="140" height="60" as="geometry" />
+        <mxCell id="external" value="&lt;b&gt;Open Beauty Facts&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Approved external API&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=16;spacing=12;align=center;verticalAlign=middle;shape=cloud;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="30" y="630" width="170" height="90" />
         </mxCell>
-        <mxCell id="e-user-ui" value="local browser" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="shopper" target="ui" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="imports" value="Permitted manual imports&lt;br&gt;Brand · retailer · reviews · rules&lt;br&gt;&lt;b&gt;Intake detail → page 03&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=14;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="790" width="160" height="92" />
         </mxCell>
-        <mxCell id="e-ui-control" value="request / result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="ui" target="controller" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="user-ui" value="browser" edge="1" parent="1" source="actor" target="ui" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-control-graph" value="chat route" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="controller" target="graph" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ui-controller" value="request / result" edge="1" parent="app" source="ui" target="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;startArrow=blockThin;startFill=1;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-control-services" value="form route" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="controller" target="services" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="controller-session" value="session" edge="1" parent="app" source="controller" target="session" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;startArrow=blockThin;startFill=1;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-graph-services" value="typed tools" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="graph" target="services" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="controller-graph" value="conversation" edge="1" parent="app" source="controller" target="graph" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;exitX=1;exitY=1;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-services-http" value="research" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="services" target="http" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="controller-services" value="form" edge="1" parent="app" source="controller" target="services" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;exitX=0.5;exitY=1;entryX=0.51;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-http-obf" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="http" target="obf" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="graph-services" value="typed tools" edge="1" parent="app" source="graph" target="services" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;exitX=0.5;exitY=1;entryX=0.88;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-evidence-import" value="manual import" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="evidence" target="import" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="services-source" value="" edge="1" parent="app" source="services" target="source" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;exitX=0.12;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-import-repository" value="validated facts" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="import" target="repository" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="services-repositories" value="" edge="1" parent="app" source="services" target="repositories" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;exitX=0.51;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-services-model" value="bounded calls" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="services" target="model" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="services-model" value="" edge="1" parent="app" source="services" target="model" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;exitX=0.88;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-model-ollama" value="local inference" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="model" target="ollama" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="source-api" value="HTTPS" edge="1" parent="1" source="source" target="external" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#4C967D;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;startArrow=blockThin;startFill=1;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-controller-session" value="session only" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="controller" target="session" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="repository-db" value="read / write" edge="1" parent="local" source="repositories" target="db" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;startArrow=blockThin;startFill=1;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-controller-prefs" value="opt-in" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="controller" target="preferences" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="model-ollama" value="local calls" edge="1" parent="local" source="model" target="ollama" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#9270BE;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;startArrow=blockThin;startFill=1;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="e-prefs-repo" value="allowlist" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="preferences" target="repository" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="local-note" value="&lt;b&gt;Persisted data and reviewed preference saves → page 03&lt;/b&gt;&lt;br&gt;Ollama and SQLite remain on this device; neither is a hosted dependency." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=14;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="local">
+          <mxGeometry as="geometry" x="40" y="670" width="350" height="90" />
         </mxCell>
-        <mxCell id="e-services-repo" value="structured data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="services" target="repository" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="controls" value="&lt;b&gt;Controls apply across every run&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Typed boundaries · source allowlists · shared deadlines and call budgets · redacted events · stale-result suppression&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F3F6FA;strokeColor=#A4B3C5;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="965" width="1360" height="65" />
         </mxCell>
-        <mxCell id="e-repo-db" value="read / write" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;startArrow=block;startFill=1;" edge="1" source="repository" target="sqlite" parent="local">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="extension" value="OPTIONAL EXTENSION  /  Hosted inference is off by default; explicit task policy, sanitized payloads and budget preflight are required." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1045" width="1360" height="24" />
         </mxCell>
-        <mxCell id="local-note" value="&lt;b&gt;Trust boundary:&lt;/b&gt; external text and model responses are untrusted data; Python validates before use." style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#52677B;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="260" y="900" width="980" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="optional-note" value="&lt;b&gt;Optional:&lt;/b&gt; hosted inference via the model adapter only; disabled by default, sanitized payloads and budget preflight required." style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#52677B;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="980" width="1440" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;  Blue: application / rules · Purple: language-model path · Green: source evidence · Amber: volatile personal data · Arrows: calls / data exchange" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#52677B;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="1030" width="1440" height="35" as="geometry" />
-        </mxCell>
-        <mxCell id="source" value="Source: docs/requirements/TECHNICAL_REQUIREMENTS.md and PRDs 01–09 · Planned architecture, not deployed code" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=#52677B;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="1080" width="1440" height="22" as="geometry" />
+        <mxCell id="source-note" value="TR-01–05, 09–11, 17–23, 28  /  PRDs 01–09  /  Target design; the runnable app is currently a development preview." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#52657D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1080" width="1360" height="22" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="recommendation-flow" name="02 Recommendation flow">
-    <mxGraphModel dx="1340" dy="1080" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1340" pageHeight="1080" math="0" shadow="0" adaptiveColors="auto">
+    <mxGraphModel dx="1400" dy="1160" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="1160" background="#FFFFFF" adaptiveColors="auto">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="f-title" value="&lt;b&gt;Recommendation execution&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=28;fontColor=#183047;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="20" width="1100" height="42" as="geometry" />
+        <mxCell id="number" value="&lt;b&gt;02&lt;/b&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#172B4D;strokeColor=#172B4D;strokeWidth=1.5;fontColor=#FFFFFF;fontFamily=Helvetica;fontSize=20;spacing=12;align=center;verticalAlign=middle;shape=ellipse;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="34" width="52" height="52" />
         </mxCell>
-        <mxCell id="f-subtitle" value="One LangGraph workflow · deterministic eligibility and ranking · bounded language-model assistance" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=14;fontColor=#52677B;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="70" width="1250" height="28" as="geometry" />
+        <mxCell id="title" value="Evidence first. Decisions in Python." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=30;fontColor=#172B4D;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="110" y="26" width="1040" height="44" />
         </mxCell>
-        <mxCell id="request" value="&lt;b&gt;Request + defaults&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Form or conversation&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Session-only inputs&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="40" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="subtitle" value="A shared recommendation pipeline · conversation adds interpretation and clarification from PRD 07" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=16;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="110" y="75" width="1180" height="28" />
         </mxCell>
-        <mxCell id="interpret" value="&lt;b&gt;Interpret request&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Local LLM for chat&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Form uses typed input&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F3EDFB;strokeColor=#9D82BE;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="220" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="status" value="TARGET MVP  ·  PLANNED" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1110" y="28" width="280" height="32" />
         </mxCell>
-        <mxCell id="validate" value="&lt;b&gt;Valid input?&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Required fields&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Pydantic&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;shape=rhombus;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="400" y="160" width="140" height="80" as="geometry" />
+        <mxCell id="collect" value="01  COLLECT &amp; VALIDATE" style="swimlane;startSize=34;horizontal=1;rounded=1;arcSize=8;container=1;collapsible=0;pointerEvents=0;html=1;whiteSpace=wrap;fillColor=#F8FAFD;swimlaneFillColor=#FFFFFF;strokeColor=#D7E0EC;strokeWidth=1.5;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#52657D;align=left;spacingLeft=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="140" width="1360" height="180" />
         </mxCell>
-        <mxCell id="followup" value="&lt;b&gt;Ask for clarification&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Missing / ambiguous data&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Preserve explicit edits&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF4DE;strokeColor=#C5A56A;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="400" y="280" width="140" height="60" as="geometry" />
+        <mxCell id="context" value="&lt;b&gt;Start request&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Create run ID + shared limits&lt;br&gt;Form / conversation input&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="collect">
+          <mxGeometry as="geometry" x="25" y="65" width="260" height="80" />
         </mxCell>
-        <mxCell id="search" value="&lt;b&gt;Search + details&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Verified local catalog&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Approved refresh tools&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF6EF;strokeColor=#7FA58E;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="580" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="input" value="&lt;b&gt;Interpret &amp;amp; validate&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Local chat model; typed form input&lt;br&gt;Same UserRequirements schema&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="collect">
+          <mxGeometry as="geometry" x="370" y="65" width="260" height="80" />
         </mxCell>
-        <mxCell id="reviews" value="&lt;b&gt;Review analysis&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Dedup / batch / cache&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Validate review IDs&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F3EDFB;strokeColor=#9D82BE;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="760" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="valid" value="&lt;b&gt;Valid &amp;amp; complete?&lt;/b&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF5DF;strokeColor=#C89A40;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=16;spacing=12;align=center;verticalAlign=middle;shape=rhombus;" vertex="1" parent="collect">
+          <mxGeometry as="geometry" x="710" y="55" width="260" height="100" />
         </mxCell>
-        <mxCell id="ingredients" value="&lt;b&gt;Ingredient screening&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Rules + curated aliases&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Personal avoid matches&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="940" y="160" width="140" height="60" as="geometry" />
+        <mxCell id="clarify" value="&lt;b&gt;Ask for clarification&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Await input; preserve corrections&lt;br&gt;Revalidate before continuing&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF5DF;strokeColor=#C89A40;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="collect">
+          <mxGeometry as="geometry" x="1060" y="65" width="270" height="80" />
         </mxCell>
-        <mxCell id="gate" value="&lt;b&gt;Hard checks?&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Eligibility rules&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Unknown = hold&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;shape=rhombus;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="940" y="280" width="140" height="80" as="geometry" />
+        <mxCell id="context-input" value="" edge="1" parent="collect" source="context" target="input" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="withhold" value="&lt;b&gt;Withhold candidate&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Excluded / unverified&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Session-only reasons&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF4DE;strokeColor=#C5A56A;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="280" width="140" height="80" as="geometry" />
+        <mxCell id="input-valid" value="" edge="1" parent="collect" source="input" target="valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="rank" value="&lt;b&gt;Rank eligible set&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;0.35S + 0.30R&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;+ 0.20I + 0.15P&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="940" y="400" width="140" height="60" as="geometry" />
+        <mxCell id="valid-clarify" value="No" edge="1" parent="collect" source="valid" target="clarify" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#C89A40;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="manifest" value="&lt;b&gt;Validate evidence&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Freeze IDs / scores&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Build source manifest&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="760" y="400" width="140" height="60" as="geometry" />
+        <mxCell id="clarify-note" value="User reply resumes input validation" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#52657D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1100" y="294" width="280" height="22" />
         </mxCell>
-        <mxCell id="explain" value="&lt;b&gt;Generate explanation&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Bounded local LLM&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Selected evidence only&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F3EDFB;strokeColor=#9D82BE;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="580" y="400" width="140" height="60" as="geometry" />
+        <mxCell id="research" value="02  BUILD CANDIDATE EVIDENCE" style="swimlane;startSize=34;horizontal=1;rounded=1;arcSize=8;container=1;collapsible=0;pointerEvents=0;html=1;whiteSpace=wrap;fillColor=#EAF7F2;swimlaneFillColor=#FFFFFF;strokeColor=#D7E0EC;strokeWidth=1.5;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#52657D;align=left;spacingLeft=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="370" width="1360" height="180" />
         </mxCell>
-        <mxCell id="claims" value="&lt;b&gt;Validate claims&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Evidence ID + support&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;No altered facts / rank&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="400" y="400" width="140" height="60" as="geometry" />
+        <mxCell id="catalog" value="&lt;b&gt;Search &amp;amp; details&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Local catalog + approved refresh&lt;br&gt;Keep source dates and conflicts&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="research">
+          <mxGeometry as="geometry" x="25" y="65" width="260" height="80" />
         </mxCell>
-        <mxCell id="display" value="&lt;b&gt;Display 0–3 products&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Comparison + sources&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Scores + limitations&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF2FD;strokeColor=#7398C5;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="220" y="400" width="140" height="60" as="geometry" />
+        <mxCell id="reviews" value="&lt;b&gt;Analyze reviews&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Cache first · deduplicate · batch&lt;br&gt;Validate supporting review IDs&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F2EDFC;strokeColor=#9270BE;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="research">
+          <mxGeometry as="geometry" x="370" y="65" width="260" height="80" />
         </mxCell>
-        <mxCell id="fallback" value="&lt;b&gt;Factual fallback&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Generation unavailable&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Validated facts remain&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F4F7;strokeColor=#9BAAB8;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="400" y="520" width="140" height="60" as="geometry" />
+        <mxCell id="screen" value="&lt;b&gt;Screen ingredients&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Versioned rules + curated aliases&lt;br&gt;Personal matches stay in session&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="research">
+          <mxGeometry as="geometry" x="710" y="65" width="260" height="80" />
         </mxCell>
-        <mxCell id="audit" value="&lt;b&gt;Redacted audit + export&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Versioned facts + usage&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;No sensitive request&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F4F7;strokeColor=#9BAAB8;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="220" y="640" width="140" height="60" as="geometry" />
+        <mxCell id="eligible" value="&lt;b&gt;Apply hard filters&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Category · availability · INR budget&lt;br&gt;Exclusions + critical evidence&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="research">
+          <mxGeometry as="geometry" x="1060" y="65" width="270" height="80" />
         </mxCell>
-        <mxCell id="f-01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="request" target="interpret" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="valid-catalog" value="Yes" edge="1" parent="1" source="valid" target="catalog" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;exitX=0.5;exitY=1;entryX=0.95;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="interpret" target="validate" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="catalog-reviews" value="candidates" edge="1" parent="research" source="catalog" target="reviews" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-03" value="valid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="validate" target="search" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="reviews-screen" value="findings" edge="1" parent="research" source="reviews" target="screen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-04" value="missing / invalid" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="validate" target="followup" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="screen-eligible" value="checks" edge="1" parent="research" source="screen" target="eligible" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-05" value="reply" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="followup" target="request" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="decide" value="03  SELECT &amp; EXPLAIN" style="swimlane;startSize=34;horizontal=1;rounded=1;arcSize=8;container=1;collapsible=0;pointerEvents=0;html=1;whiteSpace=wrap;fillColor=#F8FAFD;swimlaneFillColor=#FFFFFF;strokeColor=#D7E0EC;strokeWidth=1.5;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#52657D;align=left;spacingLeft=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="600" width="1360" height="310" />
         </mxCell>
-        <mxCell id="f-06" value="candidates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="search" target="reviews" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="any" value="&lt;b&gt;Eligible set empty?&lt;/b&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF5DF;strokeColor=#C89A40;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=16;spacing=12;align=center;verticalAlign=middle;shape=rhombus;" vertex="1" parent="decide">
+          <mxGeometry as="geometry" x="1060" y="50" width="270" height="100" />
         </mxCell>
-        <mxCell id="f-07" value="validated findings" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="reviews" target="ingredients" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="rank" value="&lt;b&gt;Rank eligible products&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;0.35S + 0.30R + 0.20I + 0.15P&lt;br&gt;Decimal scores · stable ID ties&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="decide">
+          <mxGeometry as="geometry" x="710" y="60" width="260" height="80" />
         </mxCell>
-        <mxCell id="f-08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="ingredients" target="gate" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="manifest" value="&lt;b&gt;Freeze selected evidence&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;At most 3 IDs · scores · findings&lt;br&gt;Validate the evidence manifest&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="decide">
+          <mxGeometry as="geometry" x="370" y="60" width="260" height="80" />
         </mxCell>
-        <mxCell id="f-09" value="no / unresolved" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="gate" target="withhold" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="explain" value="&lt;b&gt;Generate explanation&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Selected evidence only&lt;br&gt;At most 2 calls incl. repair*&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F2EDFC;strokeColor=#9270BE;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="decide">
+          <mxGeometry as="geometry" x="25" y="60" width="260" height="80" />
         </mxCell>
-        <mxCell id="f-10" value="yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="gate" target="rank" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="empty" value="&lt;b&gt;Show zero-result state&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Explain actual limiting checks&lt;br&gt;Never relax constraints silently&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF5DF;strokeColor=#C89A40;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="decide">
+          <mxGeometry as="geometry" x="1060" y="190" width="270" height="75" />
         </mxCell>
-        <mxCell id="f-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="rank" target="manifest" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="claims" value="&lt;b&gt;Claims supported?&lt;/b&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF5DF;strokeColor=#C89A40;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=16;spacing=12;align=center;verticalAlign=middle;shape=rhombus;" vertex="1" parent="decide">
+          <mxGeometry as="geometry" x="25" y="180" width="260" height="90" />
         </mxCell>
-        <mxCell id="f-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="manifest" target="explain" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="fallback" value="&lt;b&gt;Factual fallback&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Invalid / unavailable generation&lt;br&gt;Use validated facts&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="decide">
+          <mxGeometry as="geometry" x="370" y="190" width="260" height="75" />
         </mxCell>
-        <mxCell id="f-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="explain" target="claims" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="display" value="&lt;b&gt;Show sourced comparison&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;1–3 products · dates · limitations&lt;br&gt;Immutable rank, price and status&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="decide">
+          <mxGeometry as="geometry" x="710" y="190" width="260" height="75" />
         </mxCell>
-        <mxCell id="f-14" value="supported" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="claims" target="display" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="eligible-any" value="" edge="1" parent="1" source="eligible" target="any" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-15" value="invalid / failed" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="claims" target="fallback" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="any-rank" value="No" edge="1" parent="decide" source="any" target="rank" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="fallback" target="display" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="any-empty" value="Yes" edge="1" parent="decide" source="any" target="empty" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#C89A40;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-17" value="sanitized events" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#62788D;strokeWidth=1.3;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#52677B;labelBackgroundColor=#FFFFFF;" edge="1" source="display" target="audit" parent="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="rank-manifest" value="" edge="1" parent="decide" source="rank" target="manifest" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-rules" value="&lt;b&gt;Eligibility is a hard gate&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Category + India availability + inclusive INR budget + confirmed exclusions / regulatory checks.&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Missing or conflicting critical ingredient evidence stays outside recommendations; stale critical facts cannot qualify.&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Sponsorship never changes eligibility, score or order. Scores are comparative fit, not safety probabilities.&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F4F7;strokeColor=#9BAAB8;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="40" y="760" width="1220" height="100" as="geometry" />
+        <mxCell id="manifest-explain" value="" edge="1" parent="decide" source="manifest" target="explain" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-bounds" value="&lt;b&gt;Proposed execution bounds and truthful failure paths&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;30 tool invocations · 20 model calls · 5-minute deadline · at most 5 freshly analyzed products per run.&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Use cached review findings first; disclose unprocessed / missing evidence. Every model repair counts against limits.&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;No candidates → empty-state explanation. Source/model failure → validated partial result or explicit failure.&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Cancel / supersede → stop new calls and prevent late results from overwriting current UI state.&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F4F7;strokeColor=#9BAAB8;strokeWidth=1.2;fontColor=#183047;fontSize=12;fontFamily=Helvetica;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
-          <mxGeometry x="40" y="890" width="1220" height="120" as="geometry" />
+        <mxCell id="explain-claims" value="" edge="1" parent="decide" source="explain" target="claims" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
         </mxCell>
-        <mxCell id="f-source" value="Source: TR-05, TR-09–17, TR-19, TR-22–27 · Detailed policies and component meanings remain in the PRDs" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=#52677B;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="1030" width="1250" height="25" as="geometry" />
+        <mxCell id="claims-fallback" value="No" edge="1" parent="decide" source="claims" target="fallback" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#C89A40;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="fallback-display" value="" edge="1" parent="decide" source="fallback" target="display" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="claims-display" value="Yes" edge="1" parent="decide" source="claims" target="display" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;exitX=0.5;exitY=1;entryX=0.5;entryY=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="limits" value="&lt;b&gt;Bounded execution&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Proposed: 30 tool calls · 20 model calls · 5 min&lt;br&gt;At most 5 products freshly review-analyzed*&lt;br&gt;Every retry and repair shares these limits&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F3F6FA;strokeColor=#A4B3C5;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="930" width="430" height="95" />
+        </mxCell>
+        <mxCell id="recovery" value="&lt;b&gt;Failures &amp;amp; cancellation&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Source/model failure → validated partial or failed&lt;br&gt;Cancel/supersede → stop calls; reject late results&lt;br&gt;Missing review analysis uses its stated score policy&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FDEFF0;strokeColor=#C66B74;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="505" y="930" width="430" height="95" />
+        </mxCell>
+        <mxCell id="audit" value="&lt;b&gt;Redacted execution report&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Capture actual outcomes, coverage and usage&lt;br&gt;Empty valid shortlist = completed&lt;br&gt;No raw prompts or personal exclusion details&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="970" y="930" width="430" height="95" />
+        </mxCell>
+        <mxCell id="weights" value="S · supported fit   R · review evidence   I · ingredient evidence   P · affordability  |  Sponsorship never changes eligibility, score or order." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1045" width="1360" height="24" />
+        </mxCell>
+        <mxCell id="notes" value="* Proposed limits require target-Mac validation. Screening reports limited rule coverage; it does not establish safety or full compliance." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1075" width="1360" height="24" />
+        </mxCell>
+        <mxCell id="source-note" value="TR-05, 09, 12–17, 19, 22–27  /  PRDs 03–07, 09  /  Arrows show stage order; lower panels apply throughout execution." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#52657D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1110" width="1360" height="24" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="data-and-privacy" name="03 Data and privacy">
+    <mxGraphModel dx="1400" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="1120" background="#FFFFFF" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="number" value="&lt;b&gt;03&lt;/b&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#172B4D;strokeColor=#172B4D;strokeWidth=1.5;fontColor=#FFFFFF;fontFamily=Helvetica;fontSize=20;spacing=12;align=center;verticalAlign=middle;shape=ellipse;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="34" width="52" height="52" />
+        </mxCell>
+        <mxCell id="title" value="Keep evidence. Keep personal inputs in session." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=30;fontColor=#172B4D;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="110" y="26" width="1040" height="44" />
+        </mxCell>
+        <mxCell id="subtitle" value="SQLite stores validated public records and three reviewed preferences · personal requests stay volatile" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=16;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="110" y="75" width="1180" height="28" />
+        </mxCell>
+        <mxCell id="status" value="TARGET MVP  ·  PLANNED" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1110" y="28" width="280" height="32" />
+        </mxCell>
+        <mxCell id="public" value="01  PUBLIC EVIDENCE  /  VALIDATE BEFORE COMMIT" style="swimlane;startSize=34;horizontal=1;rounded=1;arcSize=8;container=1;collapsible=0;pointerEvents=0;html=1;whiteSpace=wrap;fillColor=#EAF7F2;swimlaneFillColor=#FFFFFF;strokeColor=#D7E0EC;strokeWidth=1.5;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#52657D;align=left;spacingLeft=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="145" width="1360" height="235" />
+        </mxCell>
+        <mxCell id="facts" value="&lt;b&gt;Permitted evidence&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;API + manual imports&lt;br&gt;Products · reviews · verified rules&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=document;size=0.12;spacingBottom=18;" vertex="1" parent="public">
+          <mxGeometry as="geometry" x="25" y="65" width="260" height="90" />
+        </mxCell>
+        <mxCell id="intake" value="&lt;b&gt;Validate intake&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Source registry · Pydantic&lt;br&gt;Stable product + variant IDs&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="public">
+          <mxGeometry as="geometry" x="370" y="65" width="260" height="90" />
+        </mxCell>
+        <mxCell id="repository" value="&lt;b&gt;Repository boundary&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Transactions · migrations&lt;br&gt;Evidence history + conflict status&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="public">
+          <mxGeometry as="geometry" x="710" y="65" width="260" height="90" />
+        </mxCell>
+        <mxCell id="evidence" value="&lt;b&gt;Public evidence store&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Facts · rules · provenance&lt;br&gt;Validated public extractions&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=cylinder3;size=14;boundedLbl=1;backgroundOutline=1;" vertex="1" parent="public">
+          <mxGeometry as="geometry" x="1060" y="55" width="270" height="110" />
+        </mxCell>
+        <mxCell id="public-note" value="Preserve last-valid facts on failure. Cache keys include evidence hashes and model / prompt / schema versions. Rules need exact references and domain review." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="public">
+          <mxGeometry as="geometry" x="25" y="185" width="1310" height="28" />
+        </mxCell>
+        <mxCell id="facts-intake" value="source data" edge="1" parent="public" source="facts" target="intake" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="intake-repo" value="validated" edge="1" parent="public" source="intake" target="repository" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="repo-evidence" value="commit" edge="1" parent="public" source="repository" target="evidence" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="preferences" value="02  PREFERENCE MEMORY  /  EXPLICIT OPT-IN + REVIEWED SAVE" style="swimlane;startSize=34;horizontal=1;rounded=1;arcSize=8;container=1;collapsible=0;pointerEvents=0;html=1;whiteSpace=wrap;fillColor=#F8FAFD;swimlaneFillColor=#FFFFFF;strokeColor=#D7E0EC;strokeWidth=1.5;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#52657D;align=left;spacingLeft=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="425" width="1360" height="235" />
+        </mxCell>
+        <mxCell id="save" value="&lt;b&gt;Review preferences&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;User opts in, reviews and saves&lt;br&gt;Enabling memory alone is insufficient&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="preferences">
+          <mxGeometry as="geometry" x="25" y="65" width="260" height="90" />
+        </mxCell>
+        <mxCell id="confirmation" value="&lt;b&gt;Confirm save action&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Controller-issued confirmation&lt;br&gt;Model claims of consent rejected&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="preferences">
+          <mxGeometry as="geometry" x="370" y="65" width="260" height="90" />
+        </mxCell>
+        <mxCell id="allowlist" value="&lt;b&gt;Enforce field allowlist&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Repository validates keys + values&lt;br&gt;Failed write keeps previous values&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=process;size=0.04;" vertex="1" parent="preferences">
+          <mxGeometry as="geometry" x="710" y="65" width="260" height="90" />
+        </mxCell>
+        <mxCell id="prefs" value="&lt;b&gt;Saved preferences&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Currency · country · product finish&lt;br&gt;INR / India only in this MVP&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=cylinder3;size=14;boundedLbl=1;backgroundOutline=1;" vertex="1" parent="preferences">
+          <mxGeometry as="geometry" x="1060" y="55" width="270" height="110" />
+        </mxCell>
+        <mxCell id="preferences-note" value="Reuse as visible defaults; current requests take precedence. Delete / disable memory removes saved values and prevents restoration from caches or logs." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="preferences">
+          <mxGeometry as="geometry" x="25" y="185" width="1310" height="28" />
+        </mxCell>
+        <mxCell id="save-confirmation" value="user action" edge="1" parent="preferences" source="save" target="confirmation" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="confirmation-allowlist" value="confirmed" edge="1" parent="preferences" source="confirmation" target="allowlist" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="allowlist-prefs" value="save" edge="1" parent="preferences" source="allowlist" target="prefs" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="volatile" value="03  SESSION STATE  /  NO SENSITIVE PERSISTENCE" style="swimlane;startSize=34;horizontal=1;rounded=1;arcSize=8;container=1;collapsible=0;pointerEvents=0;html=1;whiteSpace=wrap;fillColor=#FFF5DF;swimlaneFillColor=#FFFFFF;strokeColor=#D7E0EC;strokeWidth=1.5;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#52657D;align=left;spacingLeft=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="705" width="1360" height="165" />
+        </mxCell>
+        <mxCell id="sensitive" value="&lt;b&gt;Personal request + results&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Budget · skin type · exclusions · raw conversation&lt;br&gt;Personal ingredient matches + explanations&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF5DF;strokeColor=#C89A40;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="volatile">
+          <mxGeometry as="geometry" x="25" y="60" width="440" height="75" />
+        </mxCell>
+        <mxCell id="run" value="&lt;b&gt;Controller + run context&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Typed state · cancellation · request version&lt;br&gt;Raw durable checkpoints disabled&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5E83BA;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="volatile">
+          <mxGeometry as="geometry" x="580" y="60" width="350" height="75" />
+        </mxCell>
+        <mxCell id="reset" value="&lt;b&gt;Clear current session&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Remove sensitive inputs&lt;br&gt;and active result state&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF5DF;strokeColor=#C89A40;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="volatile">
+          <mxGeometry as="geometry" x="1040" y="60" width="290" height="75" />
+        </mxCell>
+        <mxCell id="sensitive-run" value="in memory" edge="1" parent="volatile" source="sensitive" target="run" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#657A95;strokeWidth=1.7;fontFamily=Helvetica;fontSize=13;fontColor=#52657D;labelBackgroundColor=#FFFFFF;defaultLabelBackgroundColor=gap;jettySize=auto;startArrow=blockThin;startFill=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="trust" value="&lt;b&gt;Untrusted content&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Source text and model output cannot grant tools,&lt;br&gt;change destinations or override rules / ranking.&lt;br&gt;No database, shell or arbitrary HTTP for models.&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F2EDFC;strokeColor=#9270BE;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="910" width="420" height="110" />
+        </mxCell>
+        <mxCell id="events" value="&lt;b&gt;Redacted events + usage&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Allowlisted fields: versions, status, tokens, timing.&lt;br&gt;Unknown usage stays unknown.&lt;br&gt;No raw prompts, budgets or personal findings.&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="510" y="910" width="420" height="110" />
+        </mxCell>
+        <mxCell id="export" value="&lt;b&gt;Evaluation reports&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px;color:#52657D&quot;&gt;Markdown / JSON exports · PRD 09&lt;br&gt;Replay: public evidence + synthetic profiles.&lt;br&gt;Real sensitive conversations are never replay data.&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EAF7F2;strokeColor=#4C967D;strokeWidth=1.5;fontColor=#172B4D;fontFamily=Helvetica;fontSize=17;spacing=12;align=center;verticalAlign=middle;shape=document;size=0.12;spacingBottom=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="980" y="910" width="420" height="110" />
+        </mxCell>
+        <mxCell id="logical" value="Storage symbols describe logical record groups within one local SQLite database. Public artifacts and redacted events also pass repository validation." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=13;fontColor=#172B4D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1040" width="1360" height="24" />
+        </mxCell>
+        <mxCell id="source-note" value="TR-06–08, 10, 17–21, 25–27  /  PRDs 01–04, 08–09  /  Target design; the runnable app is currently a development preview." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#52657D;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1080" width="1360" height="24" />
         </mxCell>
       </root>
     </mxGraphModel>
