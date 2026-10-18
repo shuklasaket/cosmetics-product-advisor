@@ -1,0 +1,77 @@
+name: User story
+description: Plan one independently reviewable outcome from an existing PRD.
+title: "[Story] "
+labels: ["type:story", "status:backlog"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Follow [the story workflow](https://github.com/shuklasaket/cosmetics-product-advisor/blob/main/docs/story-workflow.md).
+        GitHub assigns the number after creation: issue #42 becomes US-042.
+        Add exactly one prd:NN label and link this story as a sub-issue of its PRD tracking issue.
+        Keep unresolved questions visible; backlog stories do not need to be ready yet.
+  - type: input
+    id: prd
+    attributes:
+      label: PRD
+      description: Link the parent document using its PRD-NN label.
+      placeholder: "[PRD-01](https://github.com/shuklasaket/cosmetics-product-advisor/blob/main/docs/requirements/01-catalog-and-search.md)"
+    validations:
+      required: true
+  - type: input
+    id: parent
+    attributes:
+      label: PRD tracking issue
+      description: Existing parent issue URL; also set the native parent relationship after creation.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: User outcome
+      description: Who benefits, what they can do, and why it matters. Include priority and rough size.
+      placeholder: "As a ..., I want ..., so that ..."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Included behavior, explicit exclusions, and PRD requirement IDs covered.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Number observable criteria AC-1, AC-2, etc.; include relevant failure/boundary cases.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and parallel work
+      description: Blocking issue URLs (or None), shared contracts/files and their owners, and stories safe to run together. Set native blocking relationships too.
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions and decisions
+      description: Unresolved material questions, decision owner, and recorded answers/assumptions; use None when resolved.
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifact impact
+      description: Assess code/tests, config/.env.example, dependencies/lock/exports, schemas/migrations, data instructions, diagrams, ADRs, and Markdown. Identify expected updates or explain why they do not apply.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification and evidence
+      description: Map criteria to planned tests/checks, required fixtures or genuine evidence, and rollout/recovery needs. Add actual results and the PR link at completion.
+    validations:
+      required: true

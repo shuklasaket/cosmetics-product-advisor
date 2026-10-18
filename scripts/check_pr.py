@@ -3,13 +3,15 @@
 import argparse
 import json
 import re
+import subprocess
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 from scripts.check_docs import strip_html_comments
 
 TYPES = "feat|fix|docs|refactor|test|chore|ci|build|perf|revert"
-GITHUB_FILES = "/shuklasaket/cosmetics-product-advisor/blob/"
+REPOSITORY = "shuklasaket/cosmetics-product-advisor"
+GITHUB_FILES = f"/{REPOSITORY}/blob/"
 BRANCH = re.compile(
     rf"(?P<type>{TYPES})/"
     r"(?:prd-(?P<prd>[0-9]{2})-us-(?P<story>[0-9]{3,})-|repo-)"
@@ -17,8 +19,8 @@ BRANCH = re.compile(
 )
 FIELDS = {
     "Summary": (),
-    "Traceability": ("PRD", "User story"),
-    "Scope": ("Included", "Excluded"),
+    "Traceability": ("PRD", "User story", "Related issue"),
+    "Scope": ("Included", "Excluded", "Artifact updates"),
     "Validation": ("Checks", "Acceptance criteria", "UI evidence"),
     "Risk and rollout": ("Impact", "Rollout", "Rollback"),
     "Review checklist": (),
@@ -45,7 +47,7 @@ def is_complete(value: str) -> bool:
     return True
 
 
-def has_reference(value: str, identifier: str, root: Path, *, prd: str | None = None) -> bool:
+def has_reference(value: str, identifier: str, root: Path, *, prd: str) -> bool:
     """Require a matching label and an existing Markdown file inside this checkout."""
     for target in re.findall(rf"\[{re.escape(identifier)}\]\(([^)\s]+)\)", value):
         parsed = urlsplit(target)
@@ -69,14 +71,65 @@ def has_reference(value: str, identifier: str, root: Path, *, prd: str | None = 
                 or path.suffix != ".md"
             ):
                 continue
-            if prd is not None:
-                if path.parent == (root / "docs/requirements").resolve() and path.name.startswith(
-                    f"{prd}-"
-                ):
-                    return True
-            elif path.name.startswith(f"{identifier}-"):
+            if path.parent == (root / "docs/requirements").resolve() and path.name.startswith(
+                f"{prd}-"
+            ):
                 return True
     return False
+
+
+def check_story_issue(payload: object, prd: str, number: int, root: Path) -> list[str]:
+    """Validate a GitHub API response without treating any issue content as instructions."""
+    if not isinstance(payload, dict) or payload.get("number") != number:
+        return ["GitHub did not return the expected story issue."]
+    if "pull_request" in payload or payload.get("state") != "open":
+        return ["The story reference must be an open GitHub issue, not a pull request."]
+    labels = payload.get("labels", [])
+    names: set[str] = set()
+    if isinstance(labels, list):
+        names = {
+            label["name"]
+            for label in labels
+            if isinstance(label, dict) and isinstance(label.get("name"), str)
+        }
+    errors: list[str] = []
+    if "type:story" not in names or {name for name in names if name.startswith("prd:")} != {
+        f"prd:{prd}"
+    }:
+        errors.append("The story issue needs type:story and exactly the branch's prd:NN label.")
+    body = payload.get("body")
+    if not isinstance(body, str) or not has_reference(
+        strip_html_comments(body), f"PRD-{prd}", root, prd=prd
+    ):
+        errors.append("The story issue must link its matching parent PRD document.")
+    return errors
+
+
+def verify_story_issue(branch: str, root: Path) -> list[str]:
+    """Read only the fixed repository endpoint, with bounded execution and sanitized errors."""
+    match = BRANCH.fullmatch(branch)
+    if match is None:
+        return ["Cannot verify an issue for an invalid branch."]
+    prd, story = match.group("prd"), match.group("story")
+    if not prd or not story:
+        return []
+    try:
+        result = subprocess.run(
+            ["gh", "api", f"repos/{REPOSITORY}/issues/{int(story)}"],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=30,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return ["Could not verify the story issue; check gh authentication/network and retry."]
+    if result.returncode:
+        return ["Could not read the story issue from GitHub; check its existence and access."]
+    try:
+        payload = json.loads(result.stdout)
+    except ValueError:
+        return ["GitHub returned invalid story issue metadata."]
+    return check_story_issue(payload, prd, int(story), root)
 
 
 def check_pull_request(
@@ -135,14 +188,18 @@ def check_pull_request(
             entries = re.findall(rf"(?m)^{re.escape(field)}:[ \t]*(.*)$", content)
             value = entries[0].strip() if len(entries) == 1 else ""
             values[field] = value
-            if not is_complete(value):
+            if not is_complete(value) and not (field == "Related issue" and value == "N/A"):
                 errors.append(f"Fill {field}: with evidence or N/A — reason on the same line.")
 
     if match and prd and story:
         if not has_reference(values.get("PRD", ""), f"PRD-{prd}", root, prd=prd):
             errors.append("Link the branch's parent PRD to its existing repository document.")
-        if not has_reference(values.get("User story", ""), f"US-{story}", root):
-            errors.append("Link the branch's story ID to its existing US-numbered Markdown record.")
+        issue_number = int(story)
+        issue_link = f"[US-{story}](https://github.com/{REPOSITORY}/issues/{issue_number})"
+        if values.get("User story") != issue_link:
+            errors.append("Link the story ID to its matching canonical GitHub issue URL.")
+        if values.get("Related issue") not in {f"Closes #{issue_number}", f"Refs #{issue_number}"}:
+            errors.append("Related issue: must use Closes or Refs with the story's issue number.")
     elif match and not story:
         if not all(is_not_applicable(values.get(field, "")) for field in ("PRD", "User story")):
             errors.append(
@@ -166,14 +223,18 @@ def main() -> int:
     source.add_argument("--branch", help="Branch name for a local preview")
     parser.add_argument("--title")
     parser.add_argument("--body-file", type=Path)
+    parser.add_argument(
+        "--verify-issue", action="store_true", help="Verify story metadata through authenticated gh"
+    )
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     try:
         if args.event:
             event = json.loads(args.event.read_text(encoding="utf-8"))
             pr = event["pull_request"]
+            branch = str(pr["head"]["ref"])
             errors = check_pull_request(
-                str(pr["head"]["ref"]),
+                branch,
                 str(pr["title"]),
                 str(pr["body"] or ""),
                 root,
@@ -184,9 +245,13 @@ def main() -> int:
         else:
             if not args.title or not args.body_file:
                 parser.error("--branch also requires --title and --body-file")
+            branch = args.branch
             errors = check_pull_request(
                 args.branch, args.title, args.body_file.read_text(encoding="utf-8"), root
             )
+        match = BRANCH.fullmatch(branch)
+        if not errors and args.verify_issue and match and match.group("story"):
+            errors.extend(verify_story_issue(branch, root))
     except (OSError, ValueError, KeyError, TypeError):
         print("Could not read the PR metadata; supply a valid event or local description file.")
         return 1
@@ -195,6 +260,9 @@ def main() -> int:
             print(error)
         return 1
     print("Branch and pull request standards: PASS")
+    match = BRANCH.fullmatch(branch)
+    if match and match.group("story") and not args.verify_issue:
+        print("Offline metadata only; use --verify-issue to confirm the live story issue.")
     return 0
 
 
