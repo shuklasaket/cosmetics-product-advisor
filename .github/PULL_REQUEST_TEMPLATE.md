@@ -27,6 +27,10 @@ schemas/migrations, data instructions, diagrams, ADRs, and Markdown guides.
 Name affected artifacts and updates; explain categories that do not apply.
 Follow CONTRIBUTING.md#changelog: include a CHANGELOG.md entry for notable
 changes, or state Changelog: N/A — specific reason in Artifact updates. -->
+<!-- Story PRs: include issue/Project links and read-back status:* label + Project
+Status here, or the specific synchronization blocker and intended Status.
+Maintenance PRs without a story: explain tracking N/A. Follow docs/story-workflow.md.
+At review handoff, keep the story In review for the user's review/merge; do not mark Done from CI. -->
 Artifact updates:
 
 ## Validation

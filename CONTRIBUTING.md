@@ -4,6 +4,8 @@
 
 Follow the [PRD and GitHub story workflow](docs/story-workflow.md) for decomposition, dependency/parallel-work planning, readiness, clarification, ownership, artifact updates, and completion. GitHub issues hold stories; PRDs and durable technical/operating documentation stay in the repository. Issue #42 maps to `US-042`; use the actual issue number, not a separate sequence. Use the issue forms and label-based backlog views, and keep tracking status current through merge. Parallel implementations require separate branches and working directories/worktrees plus shared-file coordination.
 
+Developer agents must follow the [story lifecycle and transition procedure](docs/story-workflow.md#developer-agent-lifecycle). The [Kanban project](https://github.com/users/shuklasaket/projects/2) and issue `status:*` labels must be updated and read back together at readiness, pickup, review, rework and verified completion. `blocked` stays separate; no label-to-Project synchronization is automated. Record and report any unavailable board update rather than claiming synchronization.
+
 ## Review and merge ownership
 
 The user (repository maintainer) performs final PR review and every merge. Agents

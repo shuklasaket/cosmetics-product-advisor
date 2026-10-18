@@ -8,6 +8,8 @@ body:
       value: |
         Keep the PRD document in the repository and the execution backlog in issues.
         Add its prd:NN label. Attach stories as native sub-issues; do not copy their full descriptions here.
+        Link the shared [Kanban project](https://github.com/users/shuklasaket/projects/2) in the execution plan.
+        Child issue labels and Project Status follow the developer agent lifecycle; child closure alone is not release acceptance.
   - type: input
     id: prd
     attributes:

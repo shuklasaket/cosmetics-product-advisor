@@ -11,6 +11,9 @@ body:
         Add exactly one prd:NN label and link this story as a sub-issue of its PRD tracking issue.
         Describe the user goal with As a / I want / so that, and acceptance with numbered Given/When/Then scenarios.
         Keep unresolved questions visible; backlog stories do not need to be ready yet.
+        Add the issue to the shared [Kanban project](https://github.com/users/shuklasaket/projects/2) in Backlog.
+        Developer agents update both status labels and Project Status through the lifecycle; blocked is a separate flag.
+        Leave stories In review until the user's merge and story acceptance are verified.
   - type: input
     id: prd
     attributes:
