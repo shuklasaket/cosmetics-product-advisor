@@ -10,6 +10,7 @@ Project skills live in [`.agents/skills/`](.agents/skills/). Use the [skill cata
 - Derive `US-NNN` from the actual same-repository GitHub issue number, padded to at least three digits. Plan stories with requirement coverage and explicit dependencies; coordinate shared contracts/files before parallel work. Use separate branches and worktrees for simultaneous implementations.
 - Pick up a ready, unblocked story, confirm ownership/dependencies, and ask only material unresolved questions. Record decisions and maintain issue status through completion.
 - Implement with the TDD guide and review affected code/tests, configuration, dependencies, schemas/migrations, data instructions, diagrams, ADRs, and Markdown. Update affected artifacts in the same PR and explain non-applicability in its Artifact updates field.
+- Follow the [changelog policy](CONTRIBUTING.md#changelog): update `CHANGELOG.md` for notable changes in the same PR, or record a specific changelog N/A reason in Artifact updates. Preserve verified history and actual release status.
 
 ## Git workflow
 

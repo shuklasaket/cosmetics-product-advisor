@@ -75,6 +75,7 @@ def check_drawio(path: Path) -> list[str]:
 def check_documentation(root: Path) -> list[str]:
     documents = [
         root / "README.md",
+        root / "CHANGELOG.md",
         root / "AGENTS.md",
         root / "CONTRIBUTING.md",
         root / ".github" / "PULL_REQUEST_TEMPLATE.md",

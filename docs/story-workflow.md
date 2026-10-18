@@ -62,13 +62,14 @@ Use the [TDD guide](testing.md) and relevant [project skills](skills.md). Implem
 | Persistent data | Schemas/migrations, provenance, permitted fixtures/data instructions, and backup/recovery |
 | Architecture | Editable draw.io pages, their guide, technical contracts, and relevant ADRs when the design changes |
 | Documentation | README, affected PRD requirements if agreed scope changes, setup/run/recovery guides, and linked references |
+| Changelog | A concise `CHANGELOG.md` entry for notable changes, or a specific N/A reason in Artifact updates under the [maintenance policy](../CONTRIBUTING.md#changelog) |
 | Tracking | Issue decisions, acceptance/verification mapping, parent requirement coverage, and dependencies |
 
 Do not mark target architecture as implemented or a Proposed ADR as Accepted merely because a story touches a related module. Documentation-only workflow changes need not alter the product architecture diagram; explain why it is unaffected.
 
 ## PR, review, and completion
 
-1. Run `make check` and inspect the diff. Prepare every field in the [PR template](../.github/PULL_REQUEST_TEMPLATE.md): problem/result, PRD/issue traceability, scope, artifact updates, observed TDD/check results, acceptance coverage, UI evidence where relevant, impacts, rollout, and rollback.
+1. Run `make check` and inspect the diff, including the [changelog update or justified omission](../CONTRIBUTING.md#changelog). Prepare every field in the [PR template](../.github/PULL_REQUEST_TEMPLATE.md): problem/result, PRD/issue traceability, scope, artifact updates, observed TDD/check results, acceptance coverage, UI evidence where relevant, impacts, rollout, and rollback.
 2. Validate the prepared body with `scripts.check_pr`; for story work include `--verify-issue` with authenticated `gh`. Publish that same body, link the implementation PR, and replace the issue's current status with `status:in-review`. Keep a draft while work remains. A partial PR uses `Refs #N` and leaves the story open; use `Closes #N` only when the story's full criteria will be met by merge.
 3. Review the behavior, evidence, current issue criteria, artifact completeness, and recovery plan. Wait for required CI on the latest PR revision, address feedback, update the base as needed, and recheck CI. Issue edits alone do not rerun PR CI; rerun the PR's checks after material issue changes. Mechanical checks do not prove readiness or acceptance coverage.
 4. Squash merge through the [contributor workflow](../CONTRIBUTING.md). A `Closes #N` link closes the issue when merged into `main`; it does not update custom status labels. After confirming the merged behavior and evidence, replace the current status with `status:done`, remove `blocked`, and record the final PR/result in the issue. These tracking updates are manual.
