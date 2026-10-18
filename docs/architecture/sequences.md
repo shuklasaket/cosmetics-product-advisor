@@ -20,9 +20,7 @@ conflict, the prior facts remain available with their actual dates and a warning
 The diagram covers the live Open Beauty Facts path; permitted manual imports use the
 same validation and repository rules.
 
-![Catalog refresh sequence with successful update and last-valid-data fallback](catalog-refresh.svg)
-
-[PlantUML source](catalog-refresh.puml)
+[Open PlantUML diagram](catalog-refresh.puml)
 
 ## 02 — Review analysis
 
@@ -32,9 +30,7 @@ bounded local model batches. Validated review IDs and coverage counts determine 
 can be cached or shown. Each actual model attempt contributes a redacted usage event;
 a cache hit does not invent a new call.
 
-![Review analysis sequence with validated cache hit and bounded local model path](review-analysis.svg)
-
-[PlantUML source](review-analysis.puml)
+[Open PlantUML diagram](review-analysis.puml)
 
 ## 03 — Conversational recommendation
 
@@ -46,9 +42,7 @@ and claim support. An empty eligible set skips generation and returns the actual
 limiting reasons. The structured form calls the same services directly and must
 produce the same eligibility and numeric scores.
 
-![Conversational recommendation sequence with clarification, eligible result, and empty-result paths](recommendation-run.svg)
-
-[PlantUML source](recommendation-run.puml)
+[Open PlantUML diagram](recommendation-run.puml)
 
 ## 04 — Cancellation and supersession
 
@@ -57,9 +51,7 @@ A cancel action stops new calls for the old run. A corrected request also increa
 finish, but its old result cannot replace current UI state. Only a redacted terminal
 event persists; raw graph checkpoints remain disabled.
 
-![Cancellation sequence showing an in-flight response discarded after cancel or correction](cancellation.svg)
-
-[PlantUML source](cancellation.puml)
+[Open PlantUML diagram](cancellation.puml)
 
 ## 05 — Preference memory
 
@@ -69,9 +61,7 @@ fields and model-claimed consent. A later session reads validated defaults. Dele
 or disabling memory removes stored values. Clearing the current session is a
 separate action that removes volatile personal input.
 
-![Preference sequence with reviewed save, cross-session reuse, and deletion](preference-memory.svg)
-
-[PlantUML source](preference-memory.puml)
+[Open PlantUML diagram](preference-memory.puml)
 
 ## Traceability and editing
 
@@ -83,10 +73,8 @@ separate action that removes volatile personal input.
 | Cancellation | TR-05, 19, 22–24; PRD 07 AGT-04–08 |
 | Preference memory | TR-10, 18–19; PRD 08 MEM-01–07 |
 
-Edit the relevant `.puml` source and regenerate its matching `.svg` preview with a
-PlantUML renderer, for example `plantuml -tsvg docs/architecture/catalog-refresh.puml`
-from the repository root. The five SVGs in this guide were rendered offline with a
-local PlantUML-compatible renderer. Review the actual image for clipped text and
+Edit the relevant `.puml` source and preview it with a PlantUML-capable editor
+extension or a local PlantUML renderer. Review each diagram for clipped text and
 truthful `alt`/`opt` conditions before running `make docs` and `make check`. The
 numeric limits shown in source documents remain proposed until the corresponding
 release validates them.

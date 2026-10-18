@@ -1,6 +1,6 @@
 # Architecture
 
-The [editable draw.io architecture diagram](cosmetic-advisor-architecture.drawio) describes the planned MVP from the [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md) and [nine PRDs](../requirements/README.md). The [PlantUML sequence diagrams](sequences.md) show the order of important interactions, with text sources and previews for each path. All diagrams represent target design, not an already deployed application.
+The [editable draw.io architecture diagram](cosmetic-advisor-architecture.drawio) describes the planned MVP from the [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md) and [nine PRDs](../requirements/README.md). The [PlantUML sequence diagrams](sequences.md) show the order of important interactions, with an editable text source for each path. All diagrams represent target design, not an already deployed application.
 
 [ADR-0001](../adr/0001-local-modular-architecture.md) records the proposed architecture decision, alternatives, trade-offs, and revisit triggers. The [ADR index](../adr/README.md) tracks its status and future decisions.
 
@@ -52,7 +52,7 @@ events also pass repository validation; the overview omits their individual call
 
 ## Interaction sequences
 
-The [PlantUML sequence-diagram guide](sequences.md) contains five sources and previews: catalog
+The [PlantUML sequence-diagram guide](sequences.md) links five source files: catalog
 refresh, review analysis, conversational recommendation, cancellation/supersession,
 and preference save/reuse/deletion. The sequence pages complement the three overview
 pages above; they do not add new runtime components or change product requirements.
@@ -82,8 +82,8 @@ The `.drawio` file is the source of truth for the overview pages. The three
 After editing, regenerate affected previews with a white background, a 24 px border,
 and embedded diagram data. These previews were rendered locally with draw.io.
 
-The interaction sequences use `.puml` text files as their sources of truth. Edit and
-regenerate those previews using the [sequence-diagram guide](sequences.md#traceability-and-editing).
+The interaction sequences use `.puml` text files as their sources of truth. Open and
+preview them using the [sequence-diagram guide](sequences.md#traceability-and-editing).
 
 Check all pages visually for clipped text and connector collisions, then run
 `make docs` (local links and editable diagram structure) and `make check` before
