@@ -10,6 +10,8 @@ The [technical requirements document](TECHNICAL_REQUIREMENTS.md) defines the sha
 
 The [architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) provides editable draw.io pages for system structure, recommendation flow, and data/privacy boundaries; the [diagram guide](../architecture/README.md) includes previews and explains the legend.
 
+The [sequence diagrams](../architecture/cosmetic-advisor-sequences.drawio) detail refresh, review analysis, conversational recommendation, cancellation, and preference memory; the [sequence guide](../architecture/sequences.md) maps these planned interactions back to the requirements.
+
 The [architecture decision records](../adr/README.md) document design rationale, alternatives, consequences, and decision status, starting with [ADR-0001](../adr/0001-local-modular-architecture.md).
 
 ## Source and interpretation

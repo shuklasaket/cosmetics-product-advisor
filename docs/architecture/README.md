@@ -1,6 +1,6 @@
 # Architecture
 
-The [editable draw.io architecture diagram](cosmetic-advisor-architecture.drawio) describes the planned MVP from the [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md) and [nine PRDs](../requirements/README.md). It represents the target design, not an already deployed application.
+The [editable draw.io architecture diagram](cosmetic-advisor-architecture.drawio) describes the planned MVP from the [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md) and [nine PRDs](../requirements/README.md). The [editable sequence diagrams](cosmetic-advisor-sequences.drawio) show the order of important interactions; their [guide and previews](sequences.md) explain each path. All diagrams represent target design, not an already deployed application.
 
 [ADR-0001](../adr/0001-local-modular-architecture.md) records the proposed architecture decision, alternatives, trade-offs, and revisit triggers. The [ADR index](../adr/README.md) tracks its status and future decisions.
 
@@ -50,6 +50,13 @@ events also pass repository validation; the overview omits their individual call
 - A candidate with a confirmed exclusion, failed applicable rule, or unresolved critical evidence is withheld before ranking. Missing review analysis follows the documented missing-review policy; it does not count as favorable evidence. Claim validation checks actual support as well as citation identity.
 - Hosted inference is an optional, disabled extension through the model adapter. Public hosting, a vector database, independent agents, and MCP serving are outside this diagram's MVP.
 
+## Interaction sequences
+
+The [sequence-diagram guide](sequences.md) contains five readable previews: catalog
+refresh, review analysis, conversational recommendation, cancellation/supersession,
+and preference save/reuse/deletion. The sequence pages complement the three overview
+pages above; they do not add new runtime components or change product requirements.
+
 ## Requirements alignment
 
 | View | Primary requirements | Architectural emphasis |
@@ -65,15 +72,16 @@ proposed status; these diagrams are not implementation or benchmark evidence.
 
 ## Editing
 
-Open `cosmetic-advisor-architecture.drawio` with a draw.io-compatible editor, including
+Open `cosmetic-advisor-architecture.drawio` or `cosmetic-advisor-sequences.drawio`
+with a draw.io-compatible editor, including
 the Draw.io Integration extension in VS Code or draw.io Desktop. The web editor at
 [draw.io](https://app.diagrams.net/) also supports **File → Open from → Device**.
-All three pages contain native editable shapes, labels, containers, and connectors.
+All pages contain native editable shapes, labels, containers, and connectors.
 
-The `.drawio` file is the source of truth. The three `.drawio.svg` files are readable
-page previews with that page's editable XML embedded. After editing, regenerate each
-affected preview with a white background, a 24 px border, and embedded diagram data;
-keep the source file. Export the matching page rather than all pages into one image.
+Each `.drawio` file is the source of truth for its pages. The `.drawio.svg` files are
+readable page previews with that page's editable XML embedded. After editing,
+regenerate each affected preview with a white background, a 24 px border, and embedded
+diagram data; keep the source file. Export the matching page rather than all pages into one image.
 These previews were rendered locally with draw.io; no model-generated artwork is used.
 
 Check all pages visually for clipped text and connector collisions, then run
