@@ -25,6 +25,8 @@ Use a concise outcome title; including `US-NNN` in an issue title after creation
 
 ## Decompose a PRD
 
+For a reusable chat entry point, use the repository's [prd-to-stories skill](../.agents/skills/prd-to-stories/SKILL.md). See [chat examples](skills.md#plan-stories-in-chat) for drafting a plan, creating issues, or updating an existing backlog. This workflow remains the authority for the skill's output.
+
 1. Read the PRD, shared technical contracts, release prerequisites, and relevant ADRs. Resolve material scope questions with the user; record the resulting decisions and remaining blockers.
 2. Create one parent issue with the [PRD tracking form](../.github/ISSUE_TEMPLATE/prd-tracking.yml), link the existing PRD document, and add `type:prd`, its `prd:NN`, and `status:backlog`. Search for an existing parent before creating another.
 3. Create focused stories with the [user story form](../.github/ISSUE_TEMPLATE/user-story.yml). Each needs PRD/parent/requirement-ID traceability, an **As a / I want / so that** user outcome with priority and rough size, included/excluded scope, [numbered Given/When/Then acceptance scenarios](#story-structure-and-acceptance-criteria), dependencies, questions/decisions, artifact impact, and a verification plan. Split outcomes too large for one independently reviewable PR. Technical prerequisites can be stories when they explain the user or operator outcome they enable.

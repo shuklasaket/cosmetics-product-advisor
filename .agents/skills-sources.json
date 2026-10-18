@@ -167,6 +167,16 @@
       "sha256": {
         "SKILL.md": "4dcb00da16a5bfff509b4491d1214dc957a7b2b154991c0a45dfdc40b944de3d"
       }
+    },
+    {
+      "name": "prd-to-stories",
+      "source": {
+        "kind": "project"
+      },
+      "sha256": {
+        "SKILL.md": "404d80d3c2987cf55c8c97799426d2e55f67be03be75c55e2c7f813f4c9389f5",
+        "agents/openai.yaml": "c9c27bccca416605816a5281aca72ee303ccb11efe144205ae7e582d9cec7582"
+      }
     }
   ]
 }

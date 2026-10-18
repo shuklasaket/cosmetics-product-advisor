@@ -1,0 +1,4 @@
+interface:
+  display_name: "PRD to Stories"
+  short_description: "Plan PRD stories with coverage and dependencies"
+  default_prompt: "Use $prd-to-stories to draft stories for PRD 01, checking existing issues and mapping requirement coverage and dependencies."

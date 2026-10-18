@@ -1,11 +1,12 @@
 # Project skills
 
-The repository includes seven coding-agent skills under [`.agents/skills/`](../.agents/skills/). They support development; they are not runtime product agents, application dependencies, or an implemented PRD. Codex discovers repository skills from this location. See the [official OpenAI documentation](https://learn.chatgpt.com/docs/build-skills).
+The repository includes eight coding-agent skills under [`.agents/skills/`](../.agents/skills/). They support development; they are not runtime product agents, application dependencies, or an implemented PRD. Codex discovers repository skills from this location. See the [official OpenAI documentation](https://learn.chatgpt.com/docs/build-skills).
 
 ## Selected capabilities
 
 | Skill | Use in this project | Origin |
 | --- | --- | --- |
+| [prd-to-stories](../.agents/skills/prd-to-stories/SKILL.md) | Draft PRD story plans or create/update GitHub stories when requested, with coverage, acceptance scenarios, verification, and dependencies | Project-authored entry point for the existing story workflow |
 | [developing-with-streamlit](../.agents/skills/developing-with-streamlit/SKILL.md) | UI, forms, session state, native layout, performance, and AppTest throughout the releases | [Streamlit](https://github.com/streamlit/streamlit/tree/269e552f276f5757b2903174da18e083defb325b/lib/streamlit/.agents/meta-skill/developing-with-streamlit), matched to installed Streamlit 1.66.0 |
 | [langgraph-fundamentals](../.agents/skills/langgraph-fundamentals/SKILL.md) | Typed Python graph state, reducers, routing, streaming, and failure handling from PRD 07 | [LangChain maintainers](https://github.com/langchain-ai/langchain-skills/tree/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langgraph-fundamentals) |
 | [gh-fix-ci](../.agents/skills/gh-fix-ci/SKILL.md) | Diagnose failing GitHub Actions checks and implement authorized fixes on the task branch | [OpenAI](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/gh-fix-ci) |
@@ -29,7 +30,7 @@ Use a skill only when its description fits the requested work. Read the relevant
 - GitHub helpers read PR/check information through the existing `gh` authentication. Addressing code feedback does not itself authorize posting replies, resolving review threads, changing credentials, or bypassing branch protection.
 - Security threat modeling applies when explicitly requested; it does not trigger a full security audit during ordinary implementation. Separate observed controls from proposed requirements.
 
-The five imported entry points contain prominent adaptation notes. Their supporting scripts/references retain upstream content and licenses. Adaptations narrow triggers, use project-local commands, respect existing authorization, and reuse known project context. The two project-authored skills connect the product-specific evidence and evaluation requirements to implementation decisions without replacing the source documents.
+The five imported entry points contain prominent adaptation notes. Their supporting scripts/references retain upstream content and licenses. Adaptations narrow triggers, use project-local commands, respect existing authorization, and reuse known project context. The three project-authored skills support story planning, data integrity, and model evaluation without replacing the source documents.
 
 ## Coverage and deliberate exclusions
 
@@ -55,9 +56,41 @@ Then read the returned `SKILL.md` and the relevant referenced topic. The other s
 
 Vendored skill examples/helpers retain upstream formatting and are excluded from the application's Ruff checks, including explicit pre-commit file arguments. Three upstream files with existing whitespace irregularities have narrow Git whitespace exceptions so license/notice text and reference content remain unchanged; their hashes are still verified. Maintained application code and first-party verification scripts retain the existing formatting, lint, and type checks.
 
+### Plan stories in chat
+
+Open a Codex chat for this repository and name `$prd-to-stories` in your message. These are chat prompts, not terminal commands. Substitute another PRD number or its repository path as needed.
+
+To review a plan in chat:
+
+```text
+Use $prd-to-stories to draft user stories for PRD 01. Check existing GitHub
+issues, include acceptance criteria and verification, and show requirement
+coverage and dependencies. Keep the result in chat.
+```
+
+To create the backlog in GitHub:
+
+```text
+Use $prd-to-stories to create the PRD 01 tracking issue and user stories in
+GitHub. Reuse existing issues where appropriate, map requirement coverage,
+and set sub-issue and blocking relationships.
+```
+
+To reconcile an existing backlog after requirements change:
+
+```text
+Use $prd-to-stories to review PRD 01 against its existing GitHub stories and
+update the backlog for missing coverage or changed requirements. Preserve
+existing decisions and acceptance-criterion IDs.
+```
+
+The skill follows the [story workflow](story-workflow.md); it does not start implementation. A request that only says to generate stories produces a chat draft. Explicit GitHub creation/update requests authorize that work without a second confirmation. GitHub reads and writes need the existing authenticated `gh` access; if unavailable, a draft can still be produced with backlog checks marked unverified. New issues begin in backlog until readiness is reviewed. Story IDs come from actual issue numbers after creation.
+
+New skills should be available on the next turn. If discovery has not refreshed, reopen the repository chat or explicitly ask Codex to read [`.agents/skills/prd-to-stories/SKILL.md`](../.agents/skills/prd-to-stories/SKILL.md) and follow it.
+
 ## Sources and updates
 
-[`.agents/skills-sources.json`](../.agents/skills-sources.json) records immutable Git revisions, upstream paths, license files, original hashes, and installed hashes. Streamlit and OpenAI imports preserve Apache-2.0 licensing; LangGraph preserves its MIT license. Streamlit's root notices are included with the skill. The two project-authored skills are tracked as project work rather than third-party imports.
+[`.agents/skills-sources.json`](../.agents/skills-sources.json) records immutable Git revisions, upstream paths, license files, original hashes, and installed hashes. Streamlit and OpenAI imports preserve Apache-2.0 licensing; LangGraph preserves its MIT license. Streamlit's root notices are included with the skill. The three project-authored skills are tracked as project work rather than third-party imports.
 
 Updates are deliberate PR changes. Compare the pinned source with the proposed revision, read changed instructions and helpers, retain required licenses/notices, record adaptations, and update source metadata and hashes. Upgrade Streamlit's entry point with its locked package version and verify discovery again. Do not blindly rerun an installer over an existing skill directory or follow an upstream instruction to change this project's architecture.
 
