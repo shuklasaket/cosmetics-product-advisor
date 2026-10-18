@@ -77,9 +77,9 @@ GitHub Actions are pinned to full revisions with read-only repository permission
 
 ## Tests and evidence
 
-Routine pytest runs block outbound network sockets, allow local Unix sockets for Streamlit's event loop, isolate `ADVISOR_` settings, and use temporary working directories. Add tests for meaningful policies, data integrity, and failure paths as functionality arrives. Use temporary SQLite databases and fixed timestamps for deterministic import/freshness checks.
+Follow the [testing and TDD guide](docs/testing.md) for behavior changes and bug fixes: work through Red, Green, and Refactor, then record the observed evidence in the PR. The guide defines test boundaries, fixture isolation, live-check separation, coverage priorities, and justified exemptions for changes without executable behavior.
 
-Live source/model checks belong to an explicit `live` marker and separate, deliberately configured execution. Synthetic fixtures must be labeled and kept apart from genuine product evidence. See the [data policy](data/README.md). Do not assert byte-identical generated prose; assert supported claims, valid schemas, and unchanged deterministic decisions.
+Run `make check` before pushing and wait for the required GitHub CI result before merge. Synthetic fixtures must remain distinct from genuine release evidence under the [data policy](data/README.md); passing offline tests alone does not establish catalog validity or model quality.
 
 ## Project skills
 
