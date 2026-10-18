@@ -23,6 +23,7 @@ dist/
 
 # Generated and personal runtime data
 *.db
+*.backups/
 *.db-*
 *.sqlite
 *.sqlite3

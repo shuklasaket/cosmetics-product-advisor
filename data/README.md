@@ -33,3 +33,11 @@ The initial catalog target is at least 10 genuine products, five per category. T
 `data/local/` is ignored for local imports and working copies. Only verified material whose redistribution is allowed belongs in committed seed data. Document source conditions beside any future committed dataset.
 
 Tests use temporary directories/databases and labeled synthetic profiles or recorded responses. Synthetic product/review fixtures must stay in test fixtures and never appear as genuine catalog entries. Raw user conversations, current budgets, avoid lists, and medical details must not enter committed fixtures, databases, logs, or exports.
+
+## Local persistence
+
+The [catalog storage and recovery guide](../docs/catalog-storage.md) documents schema v1,
+complete snapshot writes, immutable evidence history, explicit migrations and backup/restore.
+Only validated public catalog evidence belongs there. The CSV templates still require a future
+importer; storage tests use synthetic temporary databases and do not establish a genuine seed.
+Generated databases, journals and backup directories must remain uncommitted.
