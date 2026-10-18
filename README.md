@@ -23,6 +23,8 @@ If the pinned interpreter is unavailable, `uv python install` installs the versi
 
 Defaults work without a `.env` file. To override local data paths, copy [.env.example](.env.example) to `.env` and edit the documented keys. Environment variables override `.env` values. Invalid or unknown `.env` fields fail validation with values omitted from the UI error.
 
+The [catalog storage API and recovery guide](docs/catalog-storage.md) covers explicit SQLite initialization, evidence persistence, migrations and backup/restore. Import/search/catalog UI and genuine seed remain pending.
+
 The preview does not create a database, load product data, save preferences, or start model/source connections. Hosted inference cannot be enabled in this foundation. Streamlit is configured to listen on loopback only.
 
 ## Development commands

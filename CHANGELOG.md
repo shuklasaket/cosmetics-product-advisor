@@ -12,6 +12,10 @@ has been delivered by this work.
 
 ### Added
 
+- SQLite catalog evidence storage with immutable observation history, explicit resolutions,
+  integrity constraints, atomic schema initialization/upgrades, and validated backup/restore
+  into a new path. Import/search/catalog UI and genuine seed remain pending.
+  ([#14](https://github.com/shuklasaket/cosmetics-product-advisor/issues/14))
 - Pydantic shopper-request and `catalog-v1` evidence contracts with exact integer-paise
   conversion, explicit unknowns, field-level provenance and conflict resolution, variant
   and rating-snapshot checks, and sanitized validation messages. Storage, imports and
