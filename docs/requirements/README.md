@@ -8,7 +8,7 @@ Plan and track implementation through the [GitHub story workflow](../story-workf
 
 The [technical requirements document](TECHNICAL_REQUIREMENTS.md) defines the shared architecture, data and tool contracts, runtime limits, privacy boundaries, deployment requirements, and verification mapping for implementation.
 
-The [architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) provides editable draw.io pages for the system structure and recommendation flow; the [diagram guide](../architecture/README.md) explains the boundaries and legend.
+The [architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) provides editable draw.io pages for system structure, recommendation flow, and data/privacy boundaries; the [diagram guide](../architecture/README.md) includes previews and explains the legend.
 
 The [architecture decision records](../adr/README.md) document design rationale, alternatives, consequences, and decision status, starting with [ADR-0001](../adr/0001-local-modular-architecture.md).
 

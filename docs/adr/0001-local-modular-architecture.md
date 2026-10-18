@@ -112,4 +112,4 @@ Record the replacement rationale and migration impact in a new ADR; keep this re
 - [PRD index and release sequence](../requirements/README.md)
 - [Technical requirements, TR-01–30](../requirements/TECHNICAL_REQUIREMENTS.md)
 - [Architecture diagram guide](../architecture/README.md)
-- [Editable system and execution diagrams](../architecture/cosmetic-advisor-architecture.drawio)
+- [Editable system, execution, and data/privacy diagrams](../architecture/cosmetic-advisor-architecture.drawio)
