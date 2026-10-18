@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Story planning and implementation workflow
+    url: https://github.com/shuklasaket/cosmetics-product-advisor/blob/main/docs/story-workflow.md
+    about: Read readiness, parallel work, artifact updates, and completion rules.

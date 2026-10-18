@@ -8,9 +8,11 @@ before it runs; GitHub tracks the required result separately. -->
 
 ## Traceability
 
-<!-- Story branch: link [PRD-01] and [US-001] to actual repository Markdown
-records, matching the branch/title. Use full GitHub file URLs to the PR
-branch/commit so newly added records are accessible to reviewers.
+<!-- Story branch: link [PRD-01] to its repository document and [US-NNN] to
+https://github.com/shuklasaket/cosmetics-product-advisor/issues/N.
+US-NNN is the issue number padded to at least three digits; use Closes #N
+for a complete story or Refs #N for partial work that leaves it open.
+Use a full GitHub file URL for the PRD document at the intended revision.
 Repository maintenance: use N/A — reason for both fields. -->
 PRD:
 User story:
@@ -20,6 +22,10 @@ Related issue: N/A
 
 Included:
 Excluded:
+<!-- Assess code/tests, configuration and .env.example, dependencies/lock/exports,
+schemas/migrations, data instructions, diagrams, ADRs, and Markdown guides.
+Name affected artifacts and updates; explain categories that do not apply. -->
+Artifact updates:
 
 ## Validation
 

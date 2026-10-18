@@ -1,0 +1,45 @@
+name: PRD tracking
+description: Track story coverage, dependencies, and release verification for one PRD.
+title: "[PRD-NN] "
+labels: ["type:prd", "status:backlog"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep the PRD document in the repository and the execution backlog in issues.
+        Add its prd:NN label. Attach stories as native sub-issues; do not copy their full descriptions here.
+  - type: input
+    id: prd
+    attributes:
+      label: PRD
+      description: Link the existing PRD document with its PRD-NN identifier.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Release outcome and boundary
+      description: Deployable outcome, excluded scope, priority, unresolved release inputs, and owner.
+    validations:
+      required: true
+  - type: textarea
+    id: coverage
+    attributes:
+      label: Requirement coverage
+      description: Map each must-have requirement ID to story issue links. Identify gaps and release-level acceptance checks; refine this as stories are created.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and execution waves
+      description: Earlier release blockers, shared-contract prerequisites, and groups of independent stories that can run together. Record shared-file ownership and integration order; set native blocking relationships.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Release verification
+      description: Genuine data/model prerequisites, full increment checks, regression coverage, and final evidence. Child issue closure alone does not complete the release.
+    validations:
+      required: true

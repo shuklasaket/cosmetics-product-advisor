@@ -1,0 +1,20 @@
+[
+  {"name": "type:prd", "color": "5319e7", "description": "Parent tracking issue for a PRD release"},
+  {"name": "type:story", "color": "1d76db", "description": "One independently reviewable product story"},
+  {"name": "status:backlog", "color": "ededed", "description": "Planned work awaiting readiness review"},
+  {"name": "status:ready", "color": "0e8a16", "description": "Acceptance, inputs, and dependencies permit pickup"},
+  {"name": "status:in-progress", "color": "fbca04", "description": "Assigned implementation is underway"},
+  {"name": "status:in-review", "color": "d4c5f9", "description": "Implementation PR is awaiting CI or review"},
+  {"name": "status:done", "color": "006b75", "description": "Completed with merged implementation and evidence"},
+  {"name": "status:cancelled", "color": "ffffff", "description": "Closed without implementation; reason recorded"},
+  {"name": "blocked", "color": "b60205", "description": "Dependency, input, or material decision prevents progress"},
+  {"name": "prd:01", "color": "c5def5", "description": "PRD 01: catalog and search"},
+  {"name": "prd:02", "color": "c5def5", "description": "PRD 02: approved data refresh"},
+  {"name": "prd:03", "color": "c5def5", "description": "PRD 03: ingredient screening"},
+  {"name": "prd:04", "color": "c5def5", "description": "PRD 04: review analysis"},
+  {"name": "prd:05", "color": "c5def5", "description": "PRD 05: ranking and comparison"},
+  {"name": "prd:06", "color": "c5def5", "description": "PRD 06: grounded explanations"},
+  {"name": "prd:07", "color": "c5def5", "description": "PRD 07: conversational workflow"},
+  {"name": "prd:08", "color": "c5def5", "description": "PRD 08: preference memory"},
+  {"name": "prd:09", "color": "c5def5", "description": "PRD 09: usage and evaluation"}
+]

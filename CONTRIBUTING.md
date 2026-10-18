@@ -1,5 +1,9 @@
 # Contributing
 
+## Product planning and story pickup
+
+Follow the [PRD and GitHub story workflow](docs/story-workflow.md) for decomposition, dependency/parallel-work planning, readiness, clarification, ownership, artifact updates, and completion. GitHub issues hold stories; PRDs and durable technical/operating documentation stay in the repository. Issue #42 maps to `US-042`; use the actual issue number, not a separate sequence. Use the issue forms and label-based backlog views, and keep tracking status current through merge. Parallel implementations require separate branches and working directories/worktrees plus shared-file coordination.
+
 ## Local workflow
 
 Every change, including documentation and dependency updates, goes through a dedicated branch and a pull request to `main`. Direct commits/pushes to `main` are prohibited. Keep follow-up changes for an open PR on that PR's branch; start a new branch after it is merged.
@@ -8,20 +12,20 @@ Start with a clean working tree and the latest remote base:
 
 ```sh
 git fetch origin
-git switch --no-track -c feat/prd-01-us-001-search-by-name origin/main
+git switch --no-track -c feat/prd-01-us-042-search-by-name origin/main
 make setup
 ```
 
-The example requires an actual tracked `US-001` story; it does not assign that number. Follow the mandatory [branch naming and PR standards](docs/git-workflow.md) for numbered stories and repository maintenance. Use Python 3.12.15 and uv 0.13.1 from the [root setup guide](README.md).
+The example requires actual GitHub issue #42 to be a ready story mapped to `US-042`; it does not assign that number. Substitute the selected story's actual ID, or use a `repo-` branch for maintenance. Follow the mandatory [branch naming and PR standards](docs/git-workflow.md). Use Python 3.12.15 and uv 0.13.1 from the [root setup guide](README.md).
 
-Use a descriptive commit title. PR titles must match `<type>(US-001): <outcome>` for story work or `<type>(repo): <outcome>` for maintenance, with a type matching the branch. Inspect and stage the intended files, then run the shared checks before pushing:
+Use a descriptive commit title. PR titles must match `<type>(US-042): <outcome>` for the illustrated story or `<type>(repo): <outcome>` for maintenance, with a type matching the branch. Inspect and stage the intended files, then run the shared checks before pushing:
 
 ```sh
 make check
 git diff --check
 git add path/to/changed-file
 git diff --cached
-git commit -m "feat(US-001): add catalog name search"
+git commit -m "feat(US-042): add catalog name search"
 git push --set-upstream origin HEAD
 gh pr create --base main --template .github/PULL_REQUEST_TEMPLATE.md
 gh pr checks --watch --fail-fast
@@ -53,7 +57,7 @@ The managed configuration is recorded in [main-branch-protection.json](.github/m
 
 The current single-maintainer setup requires zero independent approvals so the author can merge a reviewed PR after CI. A separate approving reviewer is not enforced; raise this requirement when another maintainer joins. PR and CI requirements still apply.
 
-These JSON files document the managed settings; committing them does not configure GitHub. Maintainers can inspect actual enforcement with `gh api repos/shuklasaket/cosmetics-product-advisor/branches/main/protection` and repository merge settings with `gh api repos/shuklasaket/cosmetics-product-advisor`. When changing protection, preserve any additional restrictions that have since been introduced. The required check name is a contract: update branch protection along with any CI job rename.
+These JSON files document the managed settings; committing them does not configure GitHub. Maintainers can inspect actual enforcement with `gh api repos/shuklasaket/cosmetics-product-advisor/branches/main/protection` and repository merge settings with `gh api repos/shuklasaket/cosmetics-product-advisor`. When changing protection, preserve any additional restrictions that have since been introduced. The required check name is a contract: update branch protection along with any CI job rename. The required job's PR metadata step has read-only issue access for live story verification; application verification remains offline.
 
 ## Code boundaries
 
@@ -87,6 +91,6 @@ Repository-local agent skills live in `.agents/skills/`; see the [catalog, integ
 
 ## Review and completion
 
-Use the [PR template](.github/PULL_REQUEST_TEMPLATE.md) and the [readiness/completion criteria](docs/development.md). Link affected PRD IDs and include runnable verification. Update a relevant ADR for a significant new architectural decision; a tooling change does not automatically accept an existing Proposed ADR.
+Use the [PR template](.github/PULL_REQUEST_TEMPLATE.md) and the [readiness/completion criteria](docs/development.md). Link the affected PRD document and GitHub story issue, record artifact updates/non-applicability, and include runnable verification. Update a relevant ADR for a significant new architectural decision; a tooling change does not automatically accept an existing Proposed ADR. After merge, confirm story completion and update its status/evidence plus parent PRD coverage under the [story workflow](docs/story-workflow.md#pr-review-and-completion).
 
 Never commit `.env`, credentials, real user profiles, raw conversations, generated databases, logs, model files, or exports. Review `git diff` and `git status` before staging. `.git` is maintained by Git; ordinary project setup belongs in the working tree.

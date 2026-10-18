@@ -42,6 +42,8 @@ The preview does not create a database, load product data, save preferences, or 
 
 Every change uses a dedicated branch and a pull request to `main`. Required GitHub CI must pass before a squash merge. Follow the [branch naming and mandatory PR template standards](docs/git-workflow.md) and the [Git workflow](CONTRIBUTING.md#local-workflow).
 
+Product work follows [PRD → GitHub story issues → implementation → PR → completion](docs/story-workflow.md). That guide links the live backlog views and defines readiness, dependencies, parallel work, ownership, and affected artifact updates.
+
 For a pip-only runtime installation, create a Python 3.12 virtual environment, activate it, and run `python -m pip install --require-hashes -r requirements.txt`, then `streamlit run app.py`. `requirements-dev.txt` includes runtime plus development dependencies. The standard contributor/CI workflow uses uv.
 
 ## Documentation
@@ -51,6 +53,7 @@ For a pip-only runtime installation, create a Python 3.12 virtual environment, a
 - [Architecture diagram and guide](docs/architecture/README.md)
 - [Architecture decision records](docs/adr/README.md)
 - [Development readiness and completion criteria](docs/development.md)
+- [GitHub story backlog and implementation workflow](docs/story-workflow.md)
 - [Testing strategy and TDD workflow](docs/testing.md)
 - [Development foundation completion report](docs/reports/development-foundation-report.md)
 - [Project skills, selection rationale, and usage](docs/skills.md)

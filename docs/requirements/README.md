@@ -4,6 +4,8 @@ Status: Draft requirements · Prepared: 17 October 2026
 
 These PRDs turn the supplied technical report into nine small, cumulative product releases. Each release adds a usable screen or workflow to the same application and includes a deployment boundary and observable acceptance checks. The documents contain requirements, not user stories or an implementation backlog.
 
+Plan and track implementation through the [GitHub story workflow](../story-workflow.md): one parent tracking issue per PRD, story sub-issues with acceptance criteria and requirement coverage, explicit blockers, and coordinated parallel execution waves. GitHub issues are the authoritative story backlog; these documents remain the versioned requirements. The workflow setup does not itself create story issues or mark any PRD implemented.
+
 The [technical requirements document](TECHNICAL_REQUIREMENTS.md) defines the shared architecture, data and tool contracts, runtime limits, privacy boundaries, deployment requirements, and verification mapping for implementation.
 
 The [architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) provides editable draw.io pages for the system structure and recommendation flow; the [diagram guide](../architecture/README.md) explains the boundaries and legend.

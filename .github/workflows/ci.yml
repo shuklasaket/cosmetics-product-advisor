@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  issues: read
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
@@ -39,7 +40,9 @@ jobs:
           enable-cache: true
       - name: Validate branch and pull request standards
         if: github.event_name == 'pull_request'
-        run: python -m scripts.check_pr --event "$GITHUB_EVENT_PATH"
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m scripts.check_pr --event "$GITHUB_EVENT_PATH" --verify-issue
       - name: Verify locked dependencies
         run: uv lock --check
       - name: Install development environment
