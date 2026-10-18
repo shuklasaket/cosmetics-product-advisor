@@ -40,6 +40,10 @@ has been delivered by this work.
 
 ### Changed
 
+- Reserved final PR review and merging for the user. Agents hand off open PRs with
+  verification results and must not merge, enable auto-merge, or use merge queues,
+  including for documentation and maintenance work.
+
 - Added five PlantUML sequence diagrams for evidence refresh, bounded
   review analysis, conversational recommendation, cancellation, and opt-in preference
   memory, with requirement traceability in the architecture guide.

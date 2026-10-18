@@ -2,6 +2,16 @@
 
 Every human-authored change uses these rules, the [PR template](../.github/PULL_REQUEST_TEMPLATE.md), and the branch → PR → required CI → squash merge workflow in [CONTRIBUTING.md](../CONTRIBUTING.md). Product work starts with the [GitHub story planning and pickup workflow](story-workflow.md). Keep each PR focused on one independently reviewable outcome. Draft PRs can show unfinished work; all requirements apply before merge.
 
+## Human review and merge handoff
+
+The user (repository maintainer) owns final PR review and merging. Agents prepare
+and self-review changes, run checks, open/update a PR, and report its link and CI
+results, leaving it open for the user. Passing CI and implementation requests do
+not authorize agent merges. Agents must not use CLI/API/browser merge actions,
+auto-merge, or merge queues, including for documentation or maintenance PRs.
+Stories remain in review until the user's merge is verified. See the
+[ownership rule](../CONTRIBUTING.md#review-and-merge-ownership).
+
 ## Branch naming
 
 | Work | Required pattern | Illustrative example |
@@ -80,6 +90,6 @@ Use that same file with `gh pr create --base main --title "..." --body-file /tmp
 
 Story validation with `--verify-issue` requires authenticated `gh` and repository issue-read access. Omitting the flag provides an offline structural preview and explicitly does not verify issue existence/labels; use the flag before publishing a story PR. CI always includes it.
 
-Mechanical validation cannot prove evidence is truthful, scope is appropriate, or tests were written before implementation. Reviewers must assess acceptance coverage, recorded TDD evidence or exemptions, changes requested in review, data/source impacts, and rollback feasibility. GitHub enforces the latest required CI result and resolved conversations. This standard does not add an independent approval requirement to the current single-maintainer setup.
+Mechanical validation cannot prove evidence is truthful, scope is appropriate, or tests were written before implementation. Reviewers must assess acceptance coverage, recorded TDD evidence or exemptions, changes requested in review, data/source impacts, and rollback feasibility. GitHub enforces the latest required CI result and resolved conversations. GitHub does not enforce an independent approval in the current single-maintainer setup; this does not grant agents permission to review on the user’s behalf or merge.
 
 References: [GitHub guidance for reviewable PRs](https://docs.github.com/en/pull-requests/concepts/helping-others-review-your-changes), [GitHub PR templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository).

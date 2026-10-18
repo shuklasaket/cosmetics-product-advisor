@@ -4,6 +4,19 @@
 
 Follow the [PRD and GitHub story workflow](docs/story-workflow.md) for decomposition, dependency/parallel-work planning, readiness, clarification, ownership, artifact updates, and completion. GitHub issues hold stories; PRDs and durable technical/operating documentation stay in the repository. Issue #42 maps to `US-042`; use the actual issue number, not a separate sequence. Use the issue forms and label-based backlog views, and keep tracking status current through merge. Parallel implementations require separate branches and working directories/worktrees plus shared-file coordination.
 
+## Review and merge ownership
+
+The user (repository maintainer) performs final PR review and every merge. Agents
+implement, self-review, verify, push branches, and open/update PRs, then hand off
+the open PR with verification results and remaining concerns. This applies to
+product work, documentation, maintenance, and dependency changes.
+
+Agent self-review, successful CI, a task-completion request, and this workflow do
+not authorize an agent to merge. Agents must not merge through CLI/API/browser,
+enable auto-merge, or enqueue a PR for a later merge. Leave the PR open and its
+story in review until the user merges it. After observing the user's merge,
+completion tracking may be updated; do not claim completion from passing CI alone.
+
 ## Local workflow
 
 Every change, including documentation and dependency updates, goes through a dedicated branch and a pull request to `main`. Direct commits/pushes to `main` are prohibited. Keep follow-up changes for an open PR on that PR's branch; start a new branch after it is merged.
@@ -35,7 +48,7 @@ Replace the staging path and commit message with the actual change. The PR comma
 
 Review the diff and wait for **Python quality and offline verification** from GitHub Actions to pass on the latest PR revision. Failed, pending, cancelled, or outdated checks do not satisfy this workflow. `main` must be up to date before merging; use GitHub's update-branch action or merge `origin/main` into the working branch, then push and wait for CI again. Resolve review conversations. Changes requested in review must be addressed before merging.
 
-Squash merge the reviewed PR through GitHub, or with `gh pr merge --squash --delete-branch`. Never use `--admin` to bypass requirements. GitHub deletes the remote working branch after merge. To return to a current local base:
+The user squash-merges the reviewed PR through GitHub. Agents stop at the open-PR handoff and must not perform or schedule this merge. Never use `--admin` to bypass requirements. GitHub deletes the remote working branch after the user merges. Once that merge is verified, return to a current local base:
 
 ```sh
 git switch main
@@ -55,7 +68,7 @@ The managed configuration is recorded in [main-branch-protection.json](.github/m
 - Apply protection to administrators, block force pushes/deletion of `main`, and require resolved review conversations.
 - Allow squash merges only and delete merged working branches automatically.
 
-The current single-maintainer setup requires zero independent approvals so the author can merge a reviewed PR after CI. A separate approving reviewer is not enforced; raise this requirement when another maintainer joins. PR and CI requirements still apply.
+The current GitHub configuration requires zero independent approvals; it does not technically enforce the user-only review/merge rule above. That rule remains mandatory for agents regardless of what the authenticated account can do. A separate approving reviewer is not enforced; raise this requirement when another maintainer joins. PR and CI requirements still apply.
 
 These JSON files document the managed settings; committing them does not configure GitHub. Maintainers can inspect actual enforcement with `gh api repos/shuklasaket/cosmetics-product-advisor/branches/main/protection` and repository merge settings with `gh api repos/shuklasaket/cosmetics-product-advisor`. When changing protection, preserve any additional restrictions that have since been introduced. The required check name is a contract: update branch protection along with any CI job rename. The required job's PR metadata step has read-only issue access for live story verification; application verification remains offline.
 
