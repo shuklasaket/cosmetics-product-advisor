@@ -42,7 +42,7 @@ The preview does not create a database, load product data, save preferences, or 
 
 Every change uses a dedicated branch and a pull request to `main`. Required GitHub CI must pass before a squash merge. Follow the [branch naming and mandatory PR template standards](docs/git-workflow.md) and the [Git workflow](CONTRIBUTING.md#local-workflow).
 
-Product work follows [PRD → GitHub story issues → implementation → PR → completion](docs/story-workflow.md). That guide links the live backlog views and defines readiness, dependencies, parallel work, ownership, and affected artifact updates.
+Product work follows [PRD → GitHub story issues → implementation → PR → completion](docs/story-workflow.md). Use the [Kanban board](https://github.com/users/shuklasaket/projects/2) to view story progress. The guide defines the mandatory developer agent lifecycle, matching issue/board statuses, readiness, dependencies, ownership, review handoff and completion after the user merges.
 
 In a repository chat, use `$prd-to-stories` to draft a PRD's story plan or create/update its GitHub backlog when requested. See the [copy-paste chat examples](docs/skills.md#plan-stories-in-chat).
 

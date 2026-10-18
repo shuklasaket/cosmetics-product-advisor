@@ -40,6 +40,11 @@ has been delivered by this work.
 
 ### Changed
 
+- Defined the developer agent story lifecycle and linked the shared Kanban project,
+  with required issue-label/Project Status updates and read-back verification,
+  readiness and ownership gates, rework/blocker handling, and completion only after
+  the user's merge and verified acceptance evidence.
+
 - Reserved final PR review and merging for the user. Agents hand off open PRs with
   verification results and must not merge, enable auto-merge, or use merge queues,
   including for documentation and maintenance work.

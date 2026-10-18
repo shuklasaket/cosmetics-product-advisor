@@ -9,7 +9,7 @@ and self-review changes, run checks, open/update a PR, and report its link and C
 results, leaving it open for the user. Passing CI and implementation requests do
 not authorize agent merges. Agents must not use CLI/API/browser merge actions,
 auto-merge, or merge queues, including for documentation or maintenance PRs.
-Stories remain in review until the user's merge is verified. See the
+Story issue labels and Project Status follow the [developer agent lifecycle](story-workflow.md#developer-agent-lifecycle): both stay In review until the user's merge and acceptance evidence are verified. Record their current status or synchronization limitation in the PR's Artifact updates field. See the
 [ownership rule](../CONTRIBUTING.md#review-and-merge-ownership).
 
 ## Branch naming
@@ -75,7 +75,7 @@ Do not paste the diff, repeat every changed filename, leave empty fields or `TOD
 
 The required **Python quality and offline verification** job runs [scripts/check_pr.py](../scripts/check_pr.py) for PR events. It validates branch/title formats, matching issue identifiers, existing local PRD documents, required description fields, and completed author checklist items. Its separate metadata step uses `--verify-issue` and a read-only GitHub token to confirm that each story is an open issue rather than a PR, has `type:story` and exactly the matching `prd:NN` label, and links the parent PRD. Inaccessible/missing issues or lookup failures fail the check. Repository-maintenance and genuine Dependabot PRs skip story lookup. Application tests and `make check` remain offline. An untouched PR template fails.
 
-PR title/body edits rerun CI alongside code updates; issue edits alone do not. Rerun PR checks after material story changes and keep required checks green for the latest revision before merge. No label transition or Projects synchronization runs automatically.
+PR title/body edits rerun CI alongside code updates; issue edits alone do not. Rerun PR checks after material story changes and keep required checks green for the latest revision before merge. No label-to-Project synchronization is automated; developer agents must update/read back both at each transition. Built-in Project item workflows do not establish story acceptance.
 
 Before publishing a PR, validate its prepared description locally:
 

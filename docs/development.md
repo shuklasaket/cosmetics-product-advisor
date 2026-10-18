@@ -13,6 +13,21 @@ This guide governs implementation of the [nine PRDs](requirements/README.md). Th
 
 Before picking up a story, apply the [story readiness and ownership checks](story-workflow.md#readiness-and-pickup). Confirm its user outcome and numbered Given/When/Then scenarios, with each `AC-N` mapped to planned verification. Ask material unanswered questions, establish the required evidence, and claim an unblocked story before implementation. Shared-contract prerequisites must be merged before dependent branches start.
 
+## Story progress and review handoff
+
+Follow the mandatory [developer agent lifecycle](story-workflow.md#developer-agent-lifecycle)
+and keep the issue's `status:*` label and shared Project Status aligned. Readiness
+review precedes Ready; ownership/branch recording and In Progress precede code edits.
+When the implemented increment is ready for user review, its open PR moves the
+story to In review to await the user's review/merge. An early unfinished draft
+remains In Progress. Rework returns to In Progress. `blocked` remains a separate flag;
+report any synchronization failure with the intended board status.
+
+Implementation handoff is not story completion. After verifying the user's actual
+merge and all story acceptance evidence, mark the issue and board Done, update the
+parent and recheck dependents. Cancelled stories are closed as not planned and
+archived, never counted as Done. Release acceptance remains a separate check.
+
 ## Definition of Done
 
 - The release runs from a clean environment using pinned dependencies and documented data preparation.
@@ -25,7 +40,7 @@ Before picking up a story, apply the [story readiness and ownership checks](stor
 - Notable changes have a same-PR [changelog entry](../CHANGELOG.md); justified omissions are recorded in Artifact updates under the [changelog policy](../CONTRIBUTING.md#changelog). Release headings use actual versions and dates.
 - The PR records updates or justified non-applicability for affected code/tests, config, dependencies, schemas/migrations, data instructions, diagrams, ADRs, and Markdown under [artifact review](story-workflow.md#implementation-and-affected-artifacts).
 - The user performs final PR review and merging; agents hand off an open PR after self-review and verification, without merging or scheduling a merge. The review checks the resulting behavior and evidence before merging. Record material limitations rather than implying an unperformed check passed.
-- After verifying the user’s merge, confirm story acceptance, update the issue's evidence/status and parent requirement coverage, and complete release-level checks before closing the parent PRD issue. Issue closure does not itself establish release acceptance.
+- After verifying the user’s merge, confirm story acceptance, update the issue's evidence/status, Project Status and parent requirement coverage, and complete release-level checks before closing the parent PRD issue. Issue closure does not itself establish release acceptance.
 
 ## Readiness by release
 
