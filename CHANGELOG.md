@@ -31,7 +31,7 @@ has been delivered by this work.
 
 ### Changed
 
-- Added five editable sequence diagrams and previews for evidence refresh, bounded
+- Added five PlantUML sequence diagrams and previews for evidence refresh, bounded
   review analysis, conversational recommendation, cancellation, and opt-in preference
   memory, with requirement traceability in the architecture guide.
 - Redesigned the architecture documentation into three editable views with inline

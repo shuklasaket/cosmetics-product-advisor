@@ -1,0 +1,63 @@
+@startuml
+title 05  |  Opt-in preference memory
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam sequence {
+  ArrowColor #37678C
+  LifeLineBorderColor #A9BAC8
+  ParticipantBorderColor #476782
+  ParticipantBackgroundColor #EAF3FA
+  ActorBorderColor #476782
+  ActorBackgroundColor #EAF3FA
+  GroupBorderColor #91AAC0
+  GroupBackgroundColor #F5F9FC
+  NoteBorderColor #D7B766
+  NoteBackgroundColor #FFF8E7
+}
+
+actor Shopper
+boundary "Streamlit UI" as UI
+control "Trusted controller" as Controller
+control "Preference tool" as Preferences
+database "SQLite repository" as Store
+
+Shopper -> UI: Review currency, country, and finish
+Shopper -> UI: Confirm Save preferences
+UI -> Controller: Record actual user-save action
+Controller -> Preferences: Save allowlisted values\nwith controller confirmation
+Preferences -> Preferences: Validate keys, values, and confirmation
+alt Allowed fields and actual user-save action
+  Preferences -> Store: Transactional validated upsert
+  Store --> Preferences: Saved or write failure
+  Preferences --> Controller: Actual storage outcome
+else Unknown field or model-claimed consent
+  Preferences --> Controller: Reject without a write
+end
+Controller --> UI: Show saved values or failure
+UI --> Shopper: Visible storage status
+
+== Later session or restart ==
+Shopper -> UI: Open new session
+UI -> Controller: Request visible defaults
+Controller -> Preferences: Get preferences
+Preferences -> Store: Read allowlisted values
+Store --> Preferences: Stored values or unavailable
+Preferences --> Controller: Validated defaults or none
+Controller --> UI: Label origin and storage status
+UI --> Shopper: Display defaults
+
+== Delete or disable memory ==
+Shopper -> UI: Delete saved preferences / turn memory off
+UI -> Controller: Confirmed delete action
+Controller -> Preferences: Remove stored values
+Preferences -> Store: Delete local preference row
+Store --> Preferences: Deleted or unavailable
+Preferences --> Controller: Actual deletion status
+Controller --> UI: Show memory status
+
+note over Controller, Store
+  Clearing the current session separately removes
+  conversation, budget, exclusions, and active result.
+end note
+@enduml

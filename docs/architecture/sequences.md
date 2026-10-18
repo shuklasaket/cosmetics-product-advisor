@@ -1,7 +1,7 @@
 # Interaction sequences
 
-These [five editable draw.io pages](cosmetic-advisor-sequences.drawio) show the
-planned interaction order from the [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md)
+These five editable PlantUML sources show the planned interaction order from the
+[technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md)
 and [PRDs 01–09](../requirements/README.md). They complement the
 [system, recommendation, and data/privacy overviews](README.md). The current runnable
 app remains a development preview; these pages do not claim implemented behavior.
@@ -20,7 +20,9 @@ conflict, the prior facts remain available with their actual dates and a warning
 The diagram covers the live Open Beauty Facts path; permitted manual imports use the
 same validation and repository rules.
 
-![Catalog refresh sequence with successful update and last-valid-data fallback](catalog-refresh.drawio.svg)
+![Catalog refresh sequence with successful update and last-valid-data fallback](catalog-refresh.svg)
+
+[PlantUML source](catalog-refresh.puml)
 
 ## 02 — Review analysis
 
@@ -30,7 +32,9 @@ bounded local model batches. Validated review IDs and coverage counts determine 
 can be cached or shown. Each actual model attempt contributes a redacted usage event;
 a cache hit does not invent a new call.
 
-![Review analysis sequence with validated cache hit and bounded local model path](review-analysis.drawio.svg)
+![Review analysis sequence with validated cache hit and bounded local model path](review-analysis.svg)
+
+[PlantUML source](review-analysis.puml)
 
 ## 03 — Conversational recommendation
 
@@ -42,7 +46,9 @@ and claim support. An empty eligible set skips generation and returns the actual
 limiting reasons. The structured form calls the same services directly and must
 produce the same eligibility and numeric scores.
 
-![Conversational recommendation sequence with clarification, eligible result, and empty-result paths](recommendation-run.drawio.svg)
+![Conversational recommendation sequence with clarification, eligible result, and empty-result paths](recommendation-run.svg)
+
+[PlantUML source](recommendation-run.puml)
 
 ## 04 — Cancellation and supersession
 
@@ -51,7 +57,9 @@ A cancel action stops new calls for the old run. A corrected request also increa
 finish, but its old result cannot replace current UI state. Only a redacted terminal
 event persists; raw graph checkpoints remain disabled.
 
-![Cancellation sequence showing an in-flight response discarded after cancel or correction](cancellation.drawio.svg)
+![Cancellation sequence showing an in-flight response discarded after cancel or correction](cancellation.svg)
+
+[PlantUML source](cancellation.puml)
 
 ## 05 — Preference memory
 
@@ -61,7 +69,9 @@ fields and model-claimed consent. A later session reads validated defaults. Dele
 or disabling memory removes stored values. Clearing the current session is a
 separate action that removes volatile personal input.
 
-![Preference sequence with reviewed save, cross-session reuse, and deletion](preference-memory.drawio.svg)
+![Preference sequence with reviewed save, cross-session reuse, and deletion](preference-memory.svg)
+
+[PlantUML source](preference-memory.puml)
 
 ## Traceability and editing
 
@@ -73,8 +83,10 @@ separate action that removes volatile personal input.
 | Cancellation | TR-05, 19, 22–24; PRD 07 AGT-04–08 |
 | Preference memory | TR-10, 18–19; PRD 08 MEM-01–07 |
 
-Edit the native `.drawio` file and regenerate only affected `.drawio.svg` previews,
-following the [architecture editing guide](README.md#editing). Check every page for
-clipped text, connector collisions, and truthful `alt`/`opt` conditions before
-running `make docs` and `make check`. The numeric limits shown in source documents
-remain proposed until the corresponding release validates them.
+Edit the relevant `.puml` source and regenerate its matching `.svg` preview with a
+PlantUML renderer, for example `plantuml -tsvg docs/architecture/catalog-refresh.puml`
+from the repository root. The five SVGs in this guide were rendered offline with a
+local PlantUML-compatible renderer. Review the actual image for clipped text and
+truthful `alt`/`opt` conditions before running `make docs` and `make check`. The
+numeric limits shown in source documents remain proposed until the corresponding
+release validates them.

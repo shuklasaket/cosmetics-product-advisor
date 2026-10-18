@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1454" height="1198" viewBox="0 0 1454 1198" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah-classic-37678C-z120" markerWidth="13.2" markerHeight="12" refX="10.799999999999999" refY="4.8" orient="auto" markerUnits="userSpaceOnUse"><g transform="scale(1.2)"><path d="M0,0 L10,4 L0,8 L4,4 z" fill="#37678C"/></g></marker></defs>
+<line x1="38.9897" y1="103" x2="38.9897" y2="1134" stroke="#A9BAC8" stroke-width="0.5" stroke-dasharray="5 5"/>
+<ellipse cx="38.9897" cy="52.8" rx="4.800000000000001" ry="4.800000000000001" fill="#EAF3FA" stroke="#476782" stroke-width="1"/><path d="M38.9897,57.599999999999994 L38.9897,72.6 M30.5897,60.599999999999994 L47.3897,60.599999999999994 M38.9897,72.6 L33.7097,82 M38.9897,72.6 L44.2697,82" fill="none" stroke="#476782" stroke-width="1"/>
+<text x="38.9897" y="100" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Shopper</text>
+<ellipse cx="38.9897" cy="1159.8" rx="4.800000000000001" ry="4.800000000000001" fill="#EAF3FA" stroke="#476782" stroke-width="1"/><path d="M38.9897,1164.6 L38.9897,1179.6 M30.5897,1167.6 L47.3897,1167.6 M38.9897,1179.6 L33.7097,1189 M38.9897,1179.6 L44.2697,1189" fill="none" stroke="#476782" stroke-width="1"/>
+<text x="38.9897" y="1146.38" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Shopper</text>
+<line x1="271.3548357142857" y1="103" x2="271.3548357142857" y2="1134" stroke="#A9BAC8" stroke-width="0.5" stroke-dasharray="5 5"/>
+<g stroke="#181818" fill="none"><circle cx="276.3548357142857" cy="70" r="14" fill="#E2E2F0"/><line x1="252.35483571428568" y1="60.2" x2="252.35483571428568" y2="79.8"/><line x1="252.35483571428568" y1="70" x2="262.3548357142857" y2="70"/></g>
+<text x="271.3548357142857" y="100" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Streamlit UI</text>
+<g stroke="#181818" fill="none"><circle cx="276.3548357142857" cy="1167" r="14" fill="#E2E2F0"/><line x1="252.35483571428568" y1="1157.2" x2="252.35483571428568" y2="1176.8"/><line x1="252.35483571428568" y1="1167" x2="262.3548357142857" y2="1167"/></g>
+<text x="271.3548357142857" y="1146.38" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Streamlit UI</text>
+<line x1="543.5704499999999" y1="103" x2="543.5704499999999" y2="1134" stroke="#A9BAC8" stroke-width="0.5" stroke-dasharray="5 5"/>
+<g stroke="#181818" fill="none"><circle cx="543.5704499999999" cy="70" r="12" fill="#E2E2F0"/><path d="M549.5704499999999,54 L543.5704499999999,58 L549.5704499999999,62"/></g>
+<text x="543.5704499999999" y="100" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Run controller</text>
+<g stroke="#181818" fill="none"><circle cx="543.5704499999999" cy="1167" r="12" fill="#E2E2F0"/><path d="M549.5704499999999,1151 L543.5704499999999,1155 L549.5704499999999,1159"/></g>
+<text x="543.5704499999999" y="1146.38" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Run controller</text>
+<line x1="823.0108071428571" y1="103" x2="823.0108071428571" y2="1134" stroke="#A9BAC8" stroke-width="0.5" stroke-dasharray="5 5"/>
+<g stroke="#181818" fill="none"><circle cx="823.0108071428571" cy="70" r="12" fill="#E2E2F0"/><path d="M829.0108071428571,54 L823.0108071428571,58 L829.0108071428571,62"/></g>
+<text x="823.0108071428571" y="100" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Single LangGraph</text>
+<g stroke="#181818" fill="none"><circle cx="823.0108071428571" cy="1167" r="12" fill="#E2E2F0"/><path d="M829.0108071428571,1151 L823.0108071428571,1155 L829.0108071428571,1159"/></g>
+<text x="823.0108071428571" y="1146.38" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Single LangGraph</text>
+<line x1="1090.8212785714286" y1="103" x2="1090.8212785714286" y2="1134" stroke="#A9BAC8" stroke-width="0.5" stroke-dasharray="5 5"/>
+<g stroke="#181818" fill="none"><circle cx="1090.8212785714286" cy="70" r="12" fill="#E2E2F0"/><path d="M1096.8212785714286,54 L1090.8212785714286,58 L1096.8212785714286,62"/></g>
+<text x="1090.8212785714286" y="100" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Shared services</text>
+<g stroke="#181818" fill="none"><circle cx="1090.8212785714286" cy="1167" r="12" fill="#E2E2F0"/><path d="M1096.8212785714286,1151 L1090.8212785714286,1155 L1096.8212785714286,1159"/></g>
+<text x="1090.8212785714286" y="1146.38" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Shared services</text>
+<line x1="1271.1483428571428" y1="103" x2="1271.1483428571428" y2="1134" stroke="#A9BAC8" stroke-width="0.5" stroke-dasharray="5 5"/>
+<g><path d="M1253.1483428571428,56 L1253.1483428571428,78 A18,6 0 0 0 1289.1483428571428,78 L1289.1483428571428,56 A18,6 0 0 0 1253.1483428571428,56 Z" fill="#E2E2F0" stroke="#181818"/><path d="M1253.1483428571428,56 A18,6 0 0 0 1289.1483428571428,56" fill="none" stroke="#181818"/></g>
+<text x="1271.1483428571428" y="100" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">SQLite repository</text>
+<g><path d="M1253.1483428571428,1159 L1253.1483428571428,1181 A18,6 0 0 0 1289.1483428571428,1181 L1289.1483428571428,1159 A18,6 0 0 0 1253.1483428571428,1159 Z" fill="#E2E2F0" stroke="#181818"/><path d="M1253.1483428571428,1159 A18,6 0 0 0 1289.1483428571428,1159" fill="none" stroke="#181818"/></g>
+<text x="1271.1483428571428" y="1146.38" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">SQLite repository</text>
+<line x1="1388.1442428571427" y1="103" x2="1388.1442428571427" y2="1134" stroke="#A9BAC8" stroke-width="0.5" stroke-dasharray="5 5"/>
+<g stroke="#181818" fill="none"><circle cx="1388.1442428571427" cy="70" r="12" fill="#E2E2F0"/><path d="M1394.1442428571427,54 L1388.1442428571427,58 L1394.1442428571427,62"/></g>
+<text x="1388.1442428571427" y="100" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Model adapter</text>
+<g stroke="#181818" fill="none"><circle cx="1388.1442428571427" cy="1167" r="12" fill="#E2E2F0"/><path d="M1394.1442428571427,1151 L1388.1442428571427,1155 L1394.1442428571427,1159"/></g>
+<text x="1388.1442428571427" y="1146.38" font-size="14" fill="#000000" text-anchor="middle" font-family="Arial">Model adapter</text>
+<rect x="7" y="281" width="885.4971071428571" height="211.5" rx="0" ry="0" fill="none" stroke="#91AAC0" stroke-width="1.5"/>
+<rect x="7" y="281" width="67.18505714285715" height="19.7" rx="0" ry="0" fill="#F5F9FC" stroke="#91AAC0" stroke-width="1.5"/>
+<text x="21" y="295.20500000000004" font-size="13" fill="#000000" text-anchor="start" textLength="19.15" lengthAdjust="spacing" font-weight="bold" font-family="Arial">opt</text>
+
+<text x="88.18505714285715" y="295.185" font-size="11" fill="#000000" text-anchor="start" textLength="248.84" lengthAdjust="spacing" font-weight="bold">[Missing required detail or ambiguous exclusion]</text>
+<rect x="485.4180999999999" y="713.5" width="961.5243928571429" height="228.79999999999995" rx="0" ry="0" fill="none" stroke="#91AAC0" stroke-width="1.5"/>
+<rect x="485.4180999999999" y="713.5" width="62.138642857142855" height="19.7" rx="0" ry="0" fill="#F5F9FC" stroke="#91AAC0" stroke-width="1.5"/>
+<text x="499.4180999999999" y="727.705" font-size="13" fill="#000000" text-anchor="start" textLength="14.55" lengthAdjust="spacing" font-weight="bold" font-family="Arial">alt</text>
+
+<text x="561.5567428571428" y="727.685" font-size="11" fill="#000000" text-anchor="start" textLength="92.02" lengthAdjust="spacing" font-weight="bold">[Eligible products]</text>
+<line x1="485.4180999999999" y1="894" x2="1446.9424928571427" y2="894" stroke="#91AAC0" stroke-width="1" stroke-dasharray="2,2"/>
+
+<text x="494.4180999999999" y="907.185" font-size="11" fill="#000000" text-anchor="start" textLength="108.87" lengthAdjust="spacing" font-weight="bold">[No eligible products]</text>
+<line x1="38.9897" y1="138" x2="271.3548357142857" y2="138" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="109.28015355357142" y="134" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Submit chat request</text>
+<line x1="271.3548357142857" y1="170" x2="543.5704499999999" y2="170" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="402.0183305714285" y="166" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Create request version and run context</text>
+<line x1="543.5704499999999" y1="202" x2="823.0108071428571" y2="202" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="655.765753392857" y="198" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Start bounded conversational run</text>
+<line x1="823.0108071428571" y1="234" x2="1388.1442428571427" y2="234" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="908.0633892178571" y="230" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Interpret local chat input</text>
+<line x1="1388.1442428571427" y1="266" x2="823.0108071428571" y2="266" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="947.622729717857" y="262" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Structured candidate or ambiguity</text>
+<line x1="823.0108071428571" y1="324.5" x2="543.5704499999999" y2="324.5" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="624.468433392857" y="320.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Clarification request</text>
+<line x1="543.5704499999999" y1="356.5" x2="271.3548357142857" y2="356.5" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="359.2804791285714" y="352.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Ask for required detail</text>
+<line x1="271.3548357142857" y1="388.5" x2="38.9897" y2="388.5" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="101.96065177857142" y="384.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Show question</text>
+<line x1="38.9897" y1="420.5" x2="271.3548357142857" y2="420.5" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="100.91500866785712" y="416.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Supply correction</text>
+<line x1="271.3548357142857" y1="452.5" x2="543.5704499999999" y2="452.5" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="364.1803601857142" y="448.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Create new request version</text>
+<line x1="543.5704499999999" y1="484.5" x2="823.0108071428571" y2="484.5" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="665.4064457142856" y="480.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Resume with validated requirements</text>
+<line x1="823.0108071428571" y1="523.5" x2="1090.8212785714286" y2="523.5" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="935.2233946714285" y="519.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Search products and fetch details</text>
+<line x1="1090.8212785714286" y1="555.5" x2="1271.1483428571428" y2="555.5" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="1175.4848352535714" y="551.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Read versioned evidence</text>
+<line x1="1271.1483428571428" y1="587.5" x2="1090.8212785714286" y2="587.5" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="1176.1159799785714" y="583.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Facts and provenance</text>
+<line x1="1090.8212785714286" y1="619.5" x2="823.0108071428571" y2="619.5" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="924.3770705785714" y="615.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Candidates and limitations</text>
+<line x1="823.0108071428571" y1="666.5" x2="1090.8212785714286" y2="666.5" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="951.4259281928571" y="646.25" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Analyze reviews; screen ingredients;</text>
+<text x="951.4259281928571" y="662.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">hard-filter, then rank deterministically</text>
+<line x1="1090.8212785714286" y1="698.5" x2="823.0108071428571" y2="698.5" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="945.9358135285713" y="694.5" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Eligible IDs, fixed scores, reasons</text>
+<line x1="823.0108071428571" y1="757" x2="1388.1442428571427" y2="757" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="925.8650924428571" y="753" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Explain selected evidence only</text>
+<line x1="1388.1442428571427" y1="789" x2="823.0108071428571" y2="789" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="924.7348255714285" y="785" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Candidate claims or failure</text>
+<line x1="823.0108071428571" y1="821" x2="1090.8212785714286" y2="821" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="947.2748658857142" y="817" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Validate citation identity and support</text>
+<line x1="1090.8212785714286" y1="853" x2="823.0108071428571" y2="853" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="945.6680030571429" y="849" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Supported text or factual fallback</text>
+<line x1="823.0108071428571" y1="885" x2="543.5704499999999" y2="885" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="628.9394791071428" y="881" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Validated comparison</text>
+<line x1="823.0108071428571" y1="934.3" x2="543.5704499999999" y2="934.3" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="687.4822339285713" y="930.3" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Empty result and actual limiting reasons</text>
+<path d="M543.5704499999999,973.3 L581.5704499999999,973.3 L581.5704499999999,993.3 L546.5704499999999,993.3" fill="none" stroke="#37678C" stroke-width="1" marker-end="url(#ah-classic-37678C-z120)"/>
+
+<text x="554.5704499999999" y="966.655" font-size="13" fill="#000000" text-anchor="start" textLength="203.75" lengthAdjust="spacing">Accept only current request version</text>
+<line x1="543.5704499999999" y1="1025.3" x2="271.3548357142857" y2="1025.3" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="384.05210002857143" y="1021.3" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Publish validated current state</text>
+<line x1="271.3548357142857" y1="1057.3" x2="38.9897" y2="1057.3" stroke="#37678C" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#ah-classic-37678C-z120)"/>
+<text x="159.70338800357143" y="1053.3" font-size="13" fill="#000000" text-anchor="middle" font-family="Arial">Show result, limits, and progress</text>
+<path d="M523.5704499999999,1070.3 L1101.8812785714285,1070.3 L1110.8212785714286,1079.24 L1110.8212785714286,1115 L523.5704499999999,1115 Z" fill="#FEFFDD" stroke="#181818" stroke-width="1"/><g fill="none" stroke="#181818" stroke-width="1"><path d="M1101.8812785714285,1070.3 L1101.8812785714285,1079.24 L1110.8212785714286,1079.24"/></g>
+<text x="531.5704499999999" y="1088.36" font-size="13" fill="#000000" text-anchor="start" textLength="278.13" lengthAdjust="spacing" font-family="Arial">The structured form calls these services directly;</text>
+<text x="531.5704499999999" y="1105.6499999999999" font-size="13" fill="#000000" text-anchor="start" textLength="268.75" lengthAdjust="spacing" font-family="Arial">eligibility and numeric scores must match chat.</text>
+
+<text x="723.9712464285714" y="23.689999999999998" font-size="14" fill="#000000" text-anchor="middle" font-weight="bold" font-family="Arial">03  |  Conversational recommendation run</text>
+</svg>
