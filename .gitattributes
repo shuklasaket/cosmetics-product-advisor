@@ -3,3 +3,8 @@
 *.png binary
 *.jpg binary
 *.pdf binary
+
+# Preserve upstream license/notice and reference text; integrity is checked by SHA-256.
+.agents/skills/developing-with-streamlit/LICENSE -whitespace
+.agents/skills/developing-with-streamlit/NOTICES -whitespace
+.agents/skills/security-threat-model/references/prompt-template.md -whitespace

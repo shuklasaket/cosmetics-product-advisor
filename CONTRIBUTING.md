@@ -81,6 +81,10 @@ Routine pytest runs block outbound network sockets, allow local Unix sockets for
 
 Live source/model checks belong to an explicit `live` marker and separate, deliberately configured execution. Synthetic fixtures must be labeled and kept apart from genuine product evidence. See the [data policy](data/README.md). Do not assert byte-identical generated prose; assert supported claims, valid schemas, and unchanged deterministic decisions.
 
+## Project skills
+
+Repository-local agent skills live in `.agents/skills/`; see the [catalog, integration boundaries, and update procedure](docs/skills.md). Keep source revisions, licenses/notices, and reviewed local adaptations with imports. `make skills` verifies the registry offline and is included in `make check`. Imported helper/example formatting is preserved separately from application Ruff checks. Skills are development guidance rather than runtime product agents or an authorization to perform unrelated actions.
+
 ## Review and completion
 
 Use the [PR template](.github/PULL_REQUEST_TEMPLATE.md) and the [readiness/completion criteria](docs/development.md). Link affected PRD IDs and include runnable verification. Update a relevant ADR for a significant new architectural decision; a tooling change does not automatically accept an existing Proposed ADR.

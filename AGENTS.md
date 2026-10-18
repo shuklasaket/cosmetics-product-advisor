@@ -2,6 +2,8 @@
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) for shared development standards.
 
+Project skills live in [`.agents/skills/`](.agents/skills/). Use the [skill catalog and integration boundaries](docs/skills.md) to select relevant guidance; skills support the existing project requirements and do not expand the user's requested scope.
+
 ## Git workflow
 
 - Create a dedicated branch from the latest `origin/main` before changing files for each task. Continue on the existing task branch for follow-up changes to its open PR.

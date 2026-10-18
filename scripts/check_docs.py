@@ -81,6 +81,7 @@ def check_documentation(root: Path) -> list[str]:
         root / "data" / "README.md",
     ]
     documents.extend(sorted((root / "docs").rglob("*.md")))
+    documents.extend(sorted((root / ".agents" / "skills").rglob("SKILL.md")))
     errors: list[str] = []
     for path in documents:
         if not path.is_file():
