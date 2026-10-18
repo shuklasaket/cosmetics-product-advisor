@@ -1,6 +1,6 @@
 # Architecture
 
-The [editable draw.io architecture diagram](cosmetic-advisor-architecture.drawio) describes the planned MVP from the [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md) and [nine PRDs](../requirements/README.md). It represents the target design, not an already deployed application.
+The [editable draw.io architecture diagram](cosmetic-advisor-architecture.drawio) describes the planned MVP from the [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md) and [nine PRDs](../requirements/README.md). The [PlantUML sequence diagrams](sequences.md) show the order of important interactions, with an editable text source for each path. All diagrams represent target design, not an already deployed application.
 
 [ADR-0001](../adr/0001-local-modular-architecture.md) records the proposed architecture decision, alternatives, trade-offs, and revisit triggers. The [ADR index](../adr/README.md) tracks its status and future decisions.
 
@@ -50,6 +50,13 @@ events also pass repository validation; the overview omits their individual call
 - A candidate with a confirmed exclusion, failed applicable rule, or unresolved critical evidence is withheld before ranking. Missing review analysis follows the documented missing-review policy; it does not count as favorable evidence. Claim validation checks actual support as well as citation identity.
 - Hosted inference is an optional, disabled extension through the model adapter. Public hosting, a vector database, independent agents, and MCP serving are outside this diagram's MVP.
 
+## Interaction sequences
+
+The [PlantUML sequence-diagram guide](sequences.md) links five source files: catalog
+refresh, review analysis, conversational recommendation, cancellation/supersession,
+and preference save/reuse/deletion. The sequence pages complement the three overview
+pages above; they do not add new runtime components or change product requirements.
+
 ## Requirements alignment
 
 | View | Primary requirements | Architectural emphasis |
@@ -68,16 +75,18 @@ proposed status; these diagrams are not implementation or benchmark evidence.
 Open `cosmetic-advisor-architecture.drawio` with a draw.io-compatible editor, including
 the Draw.io Integration extension in VS Code or draw.io Desktop. The web editor at
 [draw.io](https://app.diagrams.net/) also supports **File → Open from → Device**.
-All three pages contain native editable shapes, labels, containers, and connectors.
+Its three pages contain native editable shapes, labels, containers, and connectors.
 
-The `.drawio` file is the source of truth. The three `.drawio.svg` files are readable
-page previews with that page's editable XML embedded. After editing, regenerate each
-affected preview with a white background, a 24 px border, and embedded diagram data;
-keep the source file. Export the matching page rather than all pages into one image.
-These previews were rendered locally with draw.io; no model-generated artwork is used.
+The `.drawio` file is the source of truth for the overview pages. The three
+`.drawio.svg` files are readable page previews with each page's editable XML embedded.
+After editing, regenerate affected previews with a white background, a 24 px border,
+and embedded diagram data. These previews were rendered locally with draw.io.
+
+The interaction sequences use `.puml` text files as their sources of truth. Open and
+preview them using the [sequence-diagram guide](sequences.md#traceability-and-editing).
 
 Check all pages visually for clipped text and connector collisions, then run
 `make docs` (local links and editable diagram structure) and `make check` before
 pushing. Structural validation does not replace the visual review.
 
-Keep diagram changes aligned with the technical requirements and affected PRDs. The existing Mermaid overview in the technical requirements remains a compact text representation; this file provides the fuller component and execution views.
+Keep diagram changes aligned with the technical requirements and affected PRDs. The existing Mermaid overview in the technical requirements remains a compact text representation; the architecture and sequence sources provide fuller component and execution views.

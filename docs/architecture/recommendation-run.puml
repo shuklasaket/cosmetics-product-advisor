@@ -1,0 +1,67 @@
+@startuml
+title 03  |  Conversational recommendation run
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam sequence {
+  ArrowColor #37678C
+  LifeLineBorderColor #A9BAC8
+  ParticipantBorderColor #476782
+  ParticipantBackgroundColor #EAF3FA
+  ActorBorderColor #476782
+  ActorBackgroundColor #EAF3FA
+  GroupBorderColor #91AAC0
+  GroupBackgroundColor #F5F9FC
+  NoteBorderColor #D7B766
+  NoteBackgroundColor #FFF8E7
+}
+
+actor Shopper
+boundary "Streamlit UI" as UI
+control "Run controller" as Controller
+control "Single LangGraph" as Graph
+control "Shared services" as Services
+database "SQLite repository" as Store
+control "Model adapter" as Model
+
+Shopper -> UI: Submit chat request
+UI -> Controller: Create request version and run context
+Controller -> Graph: Start bounded conversational run
+Graph -> Model: Interpret local chat input
+Model --> Graph: Structured candidate or ambiguity
+
+opt Missing required detail or ambiguous exclusion
+  Graph --> Controller: Clarification request
+  Controller --> UI: Ask for required detail
+  UI --> Shopper: Show question
+  Shopper -> UI: Supply correction
+  UI -> Controller: Create new request version
+  Controller -> Graph: Resume with validated requirements
+end
+
+Graph -> Services: Search products and fetch details
+Services -> Store: Read versioned evidence
+Store --> Services: Facts and provenance
+Services --> Graph: Candidates and limitations
+Graph -> Services: Analyze reviews; screen ingredients;\nhard-filter, then rank deterministically
+Services --> Graph: Eligible IDs, fixed scores, reasons
+
+alt Eligible products
+  Graph -> Model: Explain selected evidence only
+  Model --> Graph: Candidate claims or failure
+  Graph -> Services: Validate citation identity and support
+  Services --> Graph: Supported text or factual fallback
+  Graph --> Controller: Validated comparison
+else No eligible products
+  Graph --> Controller: Empty result and actual limiting reasons
+end
+
+Controller -> Controller: Accept only current request version
+Controller --> UI: Publish validated current state
+UI --> Shopper: Show result, limits, and progress
+
+note over Controller, Services
+  The structured form calls these services directly;
+  eligibility and numeric scores must match chat.
+end note
+@enduml

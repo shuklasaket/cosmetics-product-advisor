@@ -1,0 +1,50 @@
+@startuml
+title 04  |  Cancellation and supersession
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam sequence {
+  ArrowColor #37678C
+  LifeLineBorderColor #A9BAC8
+  ParticipantBorderColor #476782
+  ParticipantBackgroundColor #EAF3FA
+  ActorBorderColor #476782
+  ActorBackgroundColor #EAF3FA
+  GroupBorderColor #91AAC0
+  GroupBackgroundColor #F5F9FC
+  NoteBorderColor #D7B766
+  NoteBackgroundColor #FFF8E7
+}
+
+actor Shopper
+boundary "Streamlit UI" as UI
+control "Run controller" as Controller
+control "Single LangGraph" as Graph
+control "Source / model adapter" as Adapter
+database "SQLite repository" as Store
+
+Shopper -> UI: Submit request v1
+UI -> Controller: Create run ID and request_version 1
+Controller -> Graph: Start v1 with limits
+Graph -> Adapter: Start permitted bounded call
+
+Shopper -> UI: Cancel or correct v1
+UI -> Controller: Cancel v1; increment version if corrected
+Controller -> Graph: Set cancellation flag for v1
+opt Corrected request starts v2
+  Controller -> Graph: Dispatch v2 with fresh run context
+end
+
+Adapter --> Graph: Previously started call completes
+Graph --> Controller: Late v1 outcome
+Controller -> Controller: Reject stale/cancelled version;\nstart no further v1 calls
+Controller -> Store: Persist redacted terminal event only
+Store --> Controller: Event status
+Controller --> UI: Keep current UI state or v2 result
+UI --> Shopper: Show current outcome
+
+note over Controller, Store
+  Raw graph checkpoints and personal inputs
+  are not persisted.
+end note
+@enduml

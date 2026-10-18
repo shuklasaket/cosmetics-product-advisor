@@ -31,6 +31,9 @@ has been delivered by this work.
 
 ### Changed
 
+- Added five PlantUML sequence diagrams for evidence refresh, bounded
+  review analysis, conversational recommendation, cancellation, and opt-in preference
+  memory, with requirement traceability in the architecture guide.
 - Redesigned the architecture documentation into three editable views with inline
   previews: local system boundaries, recommendation decisions and fallback paths,
   and evidence/preference/session-data separation. The diagrams retain the planned

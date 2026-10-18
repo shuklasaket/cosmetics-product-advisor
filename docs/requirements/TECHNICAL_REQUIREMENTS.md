@@ -33,7 +33,7 @@ Public hosting, authentication/accounts, multiple independent agents, vector dat
 
 ## 3. Architecture and component boundaries
 
-The [editable draw.io architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) contains system, recommendation-flow, and data/privacy pages. See the [diagram guide](../architecture/README.md) for previews, the legend, and scope.
+The [editable draw.io architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) contains system, recommendation-flow, and data/privacy pages. The [PlantUML sequence diagrams](../architecture/sequences.md) show key interactions and alternate outcomes. See the [architecture guide](../architecture/README.md) and sequence guide for source links, legends, and scope.
 
 ```mermaid
 flowchart TD

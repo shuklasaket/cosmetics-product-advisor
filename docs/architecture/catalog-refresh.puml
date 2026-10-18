@@ -1,0 +1,55 @@
+@startuml
+title 01  |  Catalog evidence refresh
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam sequence {
+  ArrowColor #37678C
+  LifeLineBorderColor #A9BAC8
+  ParticipantBorderColor #476782
+  ParticipantBackgroundColor #EAF3FA
+  ActorBorderColor #476782
+  ActorBackgroundColor #EAF3FA
+  GroupBorderColor #91AAC0
+  GroupBackgroundColor #F5F9FC
+  NoteBorderColor #D7B766
+  NoteBackgroundColor #FFF8E7
+}
+
+actor Operator
+boundary "Streamlit UI" as UI
+control "Refresh controller" as Controller
+control "Catalog service" as Catalog
+entity "Approved source adapter" as Source
+database "SQLite repository" as Store
+
+Operator -> UI: Request known-variant refresh
+UI -> Controller: Validate operator action
+Controller -> Catalog: Refresh variant with run context
+Catalog -> Store: Read approved source registry\nand dated local facts
+Store --> Catalog: Source identity and prior evidence
+Catalog -> Source: Fetch approved external ID
+note right of Source
+  HTTPS and allowlisted destination;
+  validate redirects, bounds, and reuse.
+end note
+Source --> Catalog: Actual payload or source error
+
+alt Valid mapped observations, no critical conflict
+  Catalog -> Store: Validate and commit facts transactionally\nwith field provenance and version
+  Store --> Catalog: Committed facts and refresh status
+  Catalog --> Controller: Fresh facts with actual dates
+else Source failure or unresolved critical conflict
+  Catalog -> Store: Load last-valid local facts
+  Store --> Catalog: Dated prior evidence
+  Catalog --> Controller: Warning and eligibility limits
+end
+
+Controller --> UI: Actual outcome and source status
+UI --> Operator: Show facts, dates, and warning if needed
+
+note over Catalog, Store
+  Manual permitted imports follow the same
+  mapping, validation, and repository rules.
+end note
+@enduml

@@ -1,0 +1,55 @@
+@startuml
+title 02  |  Bounded review analysis
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam sequence {
+  ArrowColor #37678C
+  LifeLineBorderColor #A9BAC8
+  ParticipantBorderColor #476782
+  ParticipantBackgroundColor #EAF3FA
+  GroupBorderColor #91AAC0
+  GroupBackgroundColor #F5F9FC
+  NoteBorderColor #D7B766
+  NoteBackgroundColor #FFF8E7
+}
+
+boundary "Streamlit UI" as UI
+control "Review service" as Review
+database "SQLite repository" as Store
+control "Model adapter" as Adapter
+participant "Local Ollama" as Ollama
+
+UI -> Review: Analyze product variant
+Review -> Store: Load permitted, variant-mapped reviews
+Store --> Review: Review IDs, source refs, allowed text
+Review -> Review: Deduplicate and sample within limits
+Review -> Store: Lookup validated extraction cache\n(evidence + model/prompt/schema versions)
+Store --> Review: Valid hit or miss
+
+alt Valid cache hit
+  Review -> Review: Reuse public extraction
+else Cache miss
+  loop Bounded batches and remaining call budget
+    Review -> Adapter: Extract structured findings from sample
+    Adapter -> Ollama: Bounded local model call
+    Ollama --> Adapter: Output and token status
+    Adapter -> Store: Append redacted actual-call usage event
+    Store --> Adapter: Event status
+    Adapter --> Review: Schema-checked result or failure
+  end
+  Review -> Review: Validate supporting review IDs
+  opt Validated public extraction exists
+    Review -> Store: Cache findings by evidence and versions
+    Store --> Review: Cache write status
+  end
+end
+
+Review -> Review: Aggregate validated findings in Python
+Review --> UI: Findings, coverage, or explicit unavailability
+
+note over Review, Store
+  A cache hit creates no model-call event.
+  User-specific matching remains in session.
+end note
+@enduml
