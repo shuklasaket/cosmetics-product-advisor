@@ -95,6 +95,11 @@ The controller must support an independently signalled cancellation, using a bou
 | `RankingResult` | Ordered selected IDs, component/total scores, policy/evidence versions, session-only withholding reasons, and coverage limitations |
 | `ExplanationResult` | Selected product IDs only; bounded claim types with matching evidence IDs, limitations, validation status, or deterministic fallback |
 
+PRD 01's implemented in-memory request/evidence boundaries and initial
+`catalog-v1` / `explicit-selection-v1` handoff are documented in the
+[catalog contracts](../catalog-contracts.md). This does not implement the remaining
+tool/model/graph contracts, persistence, imports or UI.
+
 **TR-10 — Tool surface.** Provide typed Python functions for `search_products`, `fetch_product_details`, `fetch_reviews`, `analyze_reviews`, `check_ingredients`, `calculate_ranking`, `save_preferences`, and `get_preferences`. All accept validated arguments and the required run context. Preference writes additionally require a controller-issued confirmation tied to an actual reviewed user-save action. This MVP does not require a REST API or an MCP server.
 
 **TR-11 — Retrieval contract.** The first live adapter is Open Beauty Facts; official brand evidence and a permitted retailer/review dataset may be imported manually. Resolve approved external IDs to catalog variants before accepting facts. Validate payloads, source references, and allowed reuse; missing fields remain missing. Enforce approved destinations on initial requests and redirects. Do not follow URLs suggested by retrieved text or a model.
