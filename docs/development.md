@@ -5,6 +5,7 @@ This guide governs implementation of the [nine PRDs](requirements/README.md). Th
 ## Before a PRD starts
 
 - Identify the PRD's deployable outcome, acceptance criteria, dependencies, and excluded scope.
+- Identify observable test cases and the necessary fixtures or release evidence using the [testing and TDD guide](testing.md).
 - Confirm earlier required releases work. Choose the smallest set of contracts and modules needed for this increment.
 - Resolve inputs needed for the release: permitted data/source access, verified evidence, or model capability. Record unresolved assumptions and their effect on scope.
 - Confirm the applicable ADR status. Create a focused ADR when a concrete implementation choice materially changes the architecture.
@@ -13,6 +14,7 @@ This guide governs implementation of the [nine PRDs](requirements/README.md). Th
 
 - The release runs from a clean environment using pinned dependencies and documented data preparation.
 - Its visible workflow and acceptance criteria pass, including applicable invalid, empty, failure, and boundary cases.
+- Behavior changes follow the [TDD cycle and PR evidence requirements](testing.md#pr-evidence-and-completion); bug fixes include regression tests. Record justified exemptions or any test-first gap honestly.
 - Affected earlier behavior remains usable; `make check` and the required GitHub CI check pass on the latest PR revision before merge.
 - Data changes include provenance, attribution, permissions, versions, and necessary migration/recovery instructions.
 - Persistent stores, logs, and exports satisfy the technical requirements' privacy boundaries.

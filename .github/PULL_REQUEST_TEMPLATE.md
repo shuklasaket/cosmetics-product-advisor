@@ -25,7 +25,13 @@ Excluded:
 
 <!-- Record commands AND results; identify fixtures versus genuine evidence.
 Link acceptance criteria and results. Include screenshots for UI changes,
-or explain why UI evidence is not applicable. Disclose checks not run. -->
+or explain why UI evidence is not applicable. Disclose checks not run.
+Follow docs/testing.md: for behavior changes, Checks must record the focused
+test command/node ID, observed Red failure, Green result, and verification after
+refactoring (or why none was needed), plus final repository checks. Group related
+cases when useful. Disclose any test-first gap; never invent a failure result.
+For changes without executable behavior, record TDD: N/A — reason in Checks
+alongside the actual checks run. CI cannot prove test-first chronology. -->
 Checks:
 Acceptance criteria:
 UI evidence:

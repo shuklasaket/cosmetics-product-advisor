@@ -51,6 +51,7 @@ For a pip-only runtime installation, create a Python 3.12 virtual environment, a
 - [Architecture diagram and guide](docs/architecture/README.md)
 - [Architecture decision records](docs/adr/README.md)
 - [Development readiness and completion criteria](docs/development.md)
+- [Testing strategy and TDD workflow](docs/testing.md)
 - [Development foundation completion report](docs/reports/development-foundation-report.md)
 - [Project skills, selection rationale, and usage](docs/skills.md)
 - [Data intake, provenance, and fixture policy](data/README.md)

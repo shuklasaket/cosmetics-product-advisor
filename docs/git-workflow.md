@@ -55,7 +55,7 @@ Use all six headings in the [template](../.github/PULL_REQUEST_TEMPLATE.md); rep
 | Summary | Concrete problem, resulting behavior, and the reason for the change; highlight a meaningful trade-off if needed. |
 | Traceability | Actual PRD and story links matching the branch, or a reasoned repository-maintenance exception; related issues if any. |
 | Scope | What is included and deliberately excluded so a reviewer can assess the boundary. |
-| Validation | Commands and observed results, acceptance/regression evidence, and UI screenshots or a reason they do not apply. Distinguish synthetic fixtures from genuine source evidence; disclose checks not run and why. |
+| Validation | Commands and observed results, acceptance/regression evidence, and UI screenshots or a reason they do not apply. Follow the [TDD evidence requirements](testing.md#pr-evidence-and-completion), including observed Red/Green results or a justified exemption. Distinguish synthetic fixtures from genuine source evidence; disclose checks not run and why. |
 | Risk and rollout | Affected behavior, privacy/source-permission/dependency/configuration/schema impacts, rollout steps, and a practical rollback/recovery approach. For an inapplicable item, use `N/A — <reason>`. |
 | Review checklist | Author self-review, recorded local checks, documentation/contract updates or explained exceptions, and review for sensitive/generated data. Check items only after doing the work. |
 
@@ -76,6 +76,6 @@ uv run --frozen python -m scripts.check_pr \
 
 Use that same file with `gh pr create --base main --title "..." --body-file /tmp/pr-description.md`. If updating an existing PR, use `gh pr edit --title "..." --body-file /tmp/pr-description.md` and wait for its new CI run. The default template becomes available in GitHub's PR form after this change is merged into `main`.
 
-Mechanical validation cannot prove evidence is truthful or scope is appropriate. Reviewers must assess acceptance coverage, changes requested in review, data/source impacts, and rollback feasibility. GitHub enforces the latest required CI result and resolved conversations. This standard does not add an independent approval requirement to the current single-maintainer setup.
+Mechanical validation cannot prove evidence is truthful, scope is appropriate, or tests were written before implementation. Reviewers must assess acceptance coverage, recorded TDD evidence or exemptions, changes requested in review, data/source impacts, and rollback feasibility. GitHub enforces the latest required CI result and resolved conversations. This standard does not add an independent approval requirement to the current single-maintainer setup.
 
 References: [GitHub guidance for reviewable PRs](https://docs.github.com/en/pull-requests/concepts/helping-others-review-your-changes), [GitHub PR templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository).
