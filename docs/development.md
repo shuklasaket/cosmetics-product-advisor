@@ -11,7 +11,7 @@ This guide governs implementation of the [nine PRDs](requirements/README.md). Th
 - Resolve inputs needed for the release: permitted data/source access, verified evidence, or model capability. Record unresolved assumptions and their effect on scope.
 - Confirm the applicable ADR status. Create a focused ADR when a concrete implementation choice materially changes the architecture.
 
-Before picking up a story, apply the [story readiness and ownership checks](story-workflow.md#readiness-and-pickup). Ask material unanswered questions, establish the verification plan and required evidence, and claim an unblocked story before implementation. Shared-contract prerequisites must be merged before dependent branches start.
+Before picking up a story, apply the [story readiness and ownership checks](story-workflow.md#readiness-and-pickup). Confirm its user outcome and numbered Given/When/Then scenarios, with each `AC-N` mapped to planned verification. Ask material unanswered questions, establish the required evidence, and claim an unblocked story before implementation. Shared-contract prerequisites must be merged before dependent branches start.
 
 ## Definition of Done
 

@@ -9,6 +9,7 @@ body:
         Follow [the story workflow](https://github.com/shuklasaket/cosmetics-product-advisor/blob/main/docs/story-workflow.md).
         GitHub assigns the number after creation: issue #42 becomes US-042.
         Add exactly one prd:NN label and link this story as a sub-issue of its PRD tracking issue.
+        Describe the user goal with As a / I want / so that, and acceptance with numbered Given/When/Then scenarios.
         Keep unresolved questions visible; backlog stories do not need to be ready yet.
   - type: input
     id: prd
@@ -26,25 +27,57 @@ body:
     validations:
       required: true
   - type: textarea
+    id: requirements
+    attributes:
+      label: PRD requirement IDs
+      description: List the actual parent PRD requirement IDs this story covers; reference them in the acceptance scenarios.
+      placeholder: "CAT-05, CAT-07"
+    validations:
+      required: true
+  - type: textarea
     id: outcome
     attributes:
       label: User outcome
-      description: Who benefits, what they can do, and why it matters. Include priority and rough size.
-      placeholder: "As a ..., I want ..., so that ..."
+      description: State the user goal with As a / I want / so that. Include priority with its reason and a rough size with assumptions.
+      placeholder: |
+        As a [user or operator],
+        I want [capability],
+        so that [benefit].
+
+        Priority: [priority and reason]
+        Rough size: [estimate and assumptions]
     validations:
       required: true
   - type: textarea
     id: scope
     attributes:
       label: Scope
-      description: Included behavior, explicit exclusions, and PRD requirement IDs covered.
+      description: State the included behavior and explicit exclusions. Keep acceptance focused on this boundary.
+      placeholder: |
+        Included:
+        - [behavior delivered]
+
+        Excluded:
+        - [related behavior outside this story]
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
       label: Acceptance criteria
-      description: Number observable criteria AC-1, AC-2, etc.; include relevant failure/boundary cases.
+      description: Use stable AC-1, AC-2, etc. IDs and Given/When/Then scenarios. Give each scenario one main action and concrete observable outcomes. Cover relevant success, boundary, invalid-input, empty-result, and failure/recovery cases.
+      placeholder: |
+        AC-1 — [behavior] ([PRD requirement ID])
+        Given [initial state and required inputs]
+        And [additional precondition, if needed]
+        When [one user or system action occurs]
+        Then [concrete observable outcome]
+        And [related observable outcome, if needed]
+
+        AC-2 — [another relevant case] ([PRD requirement ID])
+        Given [initial state]
+        When [action occurs]
+        Then [observable outcome]
     validations:
       required: true
   - type: textarea
@@ -72,6 +105,13 @@ body:
     id: verification
     attributes:
       label: Verification and evidence
-      description: Map criteria to planned tests/checks, required fixtures or genuine evidence, and rollout/recovery needs. Add actual results and the PR link at completion.
+      description: Map every AC-N to a planned test/check and its fixtures or genuine evidence. Include rollout/recovery needs. At completion, record actual test references/results, limitations, and the PR link.
+      placeholder: |
+        | Criterion | Planned test/check | Fixtures or evidence | Result / PR |
+        | --- | --- | --- | --- |
+        | AC-1 | [test/check] | [synthetic, recorded, or genuine] | Planned |
+        | AC-2 | [test/check] | [synthetic, recorded, or genuine] | Planned |
+
+        Rollout/recovery: [steps or justified N/A]
     validations:
       required: true
