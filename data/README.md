@@ -14,7 +14,9 @@ The CSV files in [templates/](templates/) contain headers only; they are collect
 
 For each real product, establish category, India availability, INR price/pack identity, claims, ratings/counts where available, ingredient declaration/completeness, sponsorship status, and fact-level provenance. A retailer price and manufacturer ingredient declaration require separate observation rows. Represent unknown values explicitly; do not substitute zero or false.
 
-Use timezone-aware UTC dates. Monetary observations should store integer paise; the UI can format them as INR. `value_json` holds the typed field value, such as a JSON number, string, boolean, list, or null. These conventions must be validated by the PRD 01 importer when it is implemented.
+Use timezone-aware UTC dates. Monetary observations should store integer paise; the UI can format them as INR. `value_json` holds the typed field value, such as a JSON number, string, list, object, or null. The [catalog-v1 contracts](../docs/catalog-contracts.md) now validate these conventions
+in memory. The importer and CSV-to-contract mapping are still pending; loading
+requires explicit field resolutions and the complete permission metadata described there.
 
 ## Collection policy
 

@@ -1,1 +1,1 @@
-"""Validated application contracts, added as each release needs them."""
+"""Settings, session requirements and catalog-v1 evidence boundary contracts."""

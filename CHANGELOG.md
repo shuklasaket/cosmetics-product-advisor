@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- Pydantic shopper-request and `catalog-v1` evidence contracts with exact integer-paise
+  conversion, explicit unknowns, field-level provenance and conflict resolution, variant
+  and rating-snapshot checks, and sanitized validation messages. Storage, imports and
+  the catalog UI remain pending.
+  ([#13](https://github.com/shuklasaket/cosmetics-product-advisor/issues/13))
 - A `prd-to-stories` repository skill for drafting PRD story plans and creating or
   updating GitHub backlogs when requested, with requirement coverage, acceptance
   scenarios, verification, dependencies, and documented chat prompts.
