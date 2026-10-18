@@ -15,6 +15,7 @@ has been delivered by this work.
 - A `prd-to-stories` repository skill for drafting PRD story plans and creating or
   updating GitHub backlogs when requested, with requirement coverage, acceptance
   scenarios, verification, dependencies, and documented chat prompts.
+  ([#11](https://github.com/shuklasaket/cosmetics-product-advisor/pull/11))
 - A curated changelog and same-PR changelog review in the development completion process.
   ([#7](https://github.com/shuklasaket/cosmetics-product-advisor/pull/7))
 - GitHub story and PRD tracking forms, managed labels and backlog views, readiness and
