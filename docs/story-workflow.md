@@ -27,7 +27,7 @@ Use a concise outcome title; including `US-NNN` in an issue title after creation
 
 1. Read the PRD, shared technical contracts, release prerequisites, and relevant ADRs. Resolve material scope questions with the user; record the resulting decisions and remaining blockers.
 2. Create one parent issue with the [PRD tracking form](../.github/ISSUE_TEMPLATE/prd-tracking.yml), link the existing PRD document, and add `type:prd`, its `prd:NN`, and `status:backlog`. Search for an existing parent before creating another.
-3. Create focused stories with the [user story form](../.github/ISSUE_TEMPLATE/user-story.yml). Each needs a user outcome, covered PRD requirement IDs, included/excluded scope, numbered observable acceptance criteria, dependencies, questions/decisions, artifact impact, and a verification plan. Include priority and rough size; split outcomes too large for one independently reviewable PR. Technical prerequisites can be stories when they explain the user outcome they enable.
+3. Create focused stories with the [user story form](../.github/ISSUE_TEMPLATE/user-story.yml). Each needs PRD/parent/requirement-ID traceability, an **As a / I want / so that** user outcome with priority and rough size, included/excluded scope, [numbered Given/When/Then acceptance scenarios](#story-structure-and-acceptance-criteria), dependencies, questions/decisions, artifact impact, and a verification plan. Split outcomes too large for one independently reviewable PR. Technical prerequisites can be stories when they explain the user or operator outcome they enable.
 4. Attach stories as native sub-issues of the parent. Maintain a requirement-ID → story-issue coverage table in the parent so omissions and release-level checks remain visible. Do not force a fixed story count or split tests/documentation away from the behavior they verify.
 5. Mark native **blocked by / blocking** relationships for actual prerequisites, including earlier PRD releases where necessary. Parent-child relationships group work; blocking relationships express execution order. Record non-issue inputs such as permitted data, model availability, or a needed decision in the story and add `blocked`.
 6. Record execution waves in the parent: shared-contract prerequisites first, independent stories next, and integration/release checks when their dependencies are available. Record shared-file owners and integration order. A wave is a planning aid, not a substitute for actual dependency checks.
@@ -36,12 +36,40 @@ Maximize useful parallel work by removing unnecessary coupling. Stories may run 
 
 These rules permit parallel implementation when requested; they do not automatically launch multiple agents or expand product scope.
 
+## Story structure and acceptance criteria
+
+Keep the issue's traceability, user outcome, scope, acceptance criteria, dependencies/parallel work, questions/decisions, artifact impact, and verification as structured fields. The user outcome uses **As a [user], I want [capability], so that [benefit]**. Include priority and its reason plus rough size and assumptions. Copy actual covered requirement IDs from the parent PRD into the form's dedicated field.
+
+Write acceptance criteria as scenarios with stable IDs such as `AC-1`, `AC-2`, and a short behavior title referencing the relevant PRD requirement ID:
+
+- **Given** establishes the initial state, required inputs, and evidence conditions.
+- **When** describes one main user or system action.
+- **Then** states concrete, observable outcomes a test or recorded check can verify. Use **And** for additional preconditions or related outcomes when needed.
+
+Cover the relevant successful, boundary, invalid-input, empty-result, and failure/recovery cases. Choose cases from the story's actual requirements and risks; there is no fixed scenario count. State thresholds, units, and expected errors/results explicitly where applicable. Keep internal implementation choices in technical notes and describe user-visible or contracted behavior in the scenarios. Infrastructure stories can describe an operator or system action and its observable result.
+
+This illustrative criterion is derived from [CAT-05](requirements/01-catalog-and-search.md), uses synthetic evidence, and does not create a story or claim the search is implemented:
+
+```text
+AC-1 — Include a product at the budget ceiling (CAT-05)
+Given the shopper supplies valid sunscreen requirements for India with a ₹800 maximum
+And a synthetic sunscreen is available in India at a known price of ₹800
+When the shopper searches the catalog
+Then that sunscreen appears in the matching results
+```
+
+Map every `AC-N` to a planned test/check and identify synthetic, recorded, or genuine evidence in **Verification and evidence**. At completion, replace planned references with actual tests/checks, observed results, remaining limitations, and the implementation PR. Retain IDs once referenced by tests or PRs; append new IDs instead of renumbering existing criteria. Revisit coverage when criteria change.
+
+Given/When/Then is the issue-writing convention and maps to the existing pytest/AppTest workflow described in [testing.md](testing.md); it does not require a BDD runner or executable `.feature` files. Dependencies, artifact reviews, and the shared Definition of Done remain structured fields/checklists. Reviewers assess scenario quality and coverage; the PR metadata validator does not parse scenario grammar or establish acceptance.
+
+Reference: [Gherkin's Given/When/Then semantics](https://cucumber.io/docs/gherkin/reference/).
+
 ## Readiness and pickup
 
 An issue can move to `status:ready` only after a readiness review establishes:
 
-- Its parent PRD/tracking issue, requirement coverage, bounded outcome, and numbered acceptance criteria are clear.
-- Each criterion has observable planned verification, including applicable invalid, empty, failure, and boundary cases.
+- Its parent PRD/tracking issue, requirement coverage, bounded user outcome, and numbered Given/When/Then acceptance scenarios are clear under the [story format](#story-structure-and-acceptance-criteria).
+- Every `AC-N` maps to observable planned verification, including applicable invalid, empty, failure, and boundary cases.
 - Blocking implementation dependencies are merged, required evidence/access is available, and shared interfaces/files are coordinated.
 - Material questions about behavior, scope, data rights, architecture, or acceptance have recorded answers. Document reversible assumptions; unresolved material decisions keep the story blocked.
 - Artifact impacts and rollout/recovery needs have been assessed. The story is small enough for a focused PR.

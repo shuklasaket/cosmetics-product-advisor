@@ -8,7 +8,7 @@ The current foundation supplies pytest, Streamlit AppTest, isolated configuratio
 
 ## The development cycle
 
-1. **Select a behavior.** Start from the PRD or tracked story's acceptance criteria. Identify the observable result, inputs, and relevant invalid, empty, failure, or boundary cases. Choose the lowest test layer that can verify the behavior.
+1. **Select a behavior.** Start from the PRD or tracked story's acceptance criteria. For a [Given/When/Then story scenario](story-workflow.md#story-structure-and-acceptance-criteria), use its `AC-N` ID to connect Given to fixtures/preconditions, When to the exercised action, and Then to observable assertions. Identify relevant invalid, empty, failure, or boundary cases. Choose the lowest test layer that can verify the behavior.
 2. **Red.** Write one focused test before implementing the behavior. Run it and confirm it fails for the intended missing behavior. Fix collection, dependency, or environment problems before treating a failure as feature evidence. For a bug, reproduce it with a failing regression test first.
 3. **Green.** Implement enough production code to satisfy the test. Assert the required behavior rather than bypassing validation, weakening the test, or hard-coding a fixture-specific answer.
 4. **Refactor.** Improve names, boundaries, and duplication while keeping tests passing. Verify the affected tests after any refactoring; record when no refactoring was needed.
@@ -68,7 +68,7 @@ Implement one case at a time through Red, Green, and Refactor. Use synthetic cat
 
 In the [PR template](../.github/PULL_REQUEST_TEMPLATE.md), use **Checks** to record the focused test command or node ID, the observed initial failure, the passing result after implementation, and verification after refactoring (or why none was needed). Include the final `make check` result. Summarize related cases together when useful; a full terminal transcript is unnecessary. For exempt changes, give a specific `TDD: N/A — <reason>` and the checks actually run.
 
-Use **Acceptance criteria** to map the changed criteria to tests or explicitly recorded release checks. Distinguish synthetic fixtures, recorded responses, and genuine evaluations. Disclose unrun checks and remaining gaps; never reconstruct Red evidence that was not observed. If implementation preceded the test, state that limitation and provide the regression evidence actually available.
+Use **Acceptance criteria** to map each changed story `AC-N` to actual test references or explicitly recorded release checks and their observed results. Preserve the issue's scenario IDs, and identify any unverified criteria rather than implying full completion. Distinguish synthetic fixtures, recorded responses, and genuine evaluations. Disclose unrun checks and remaining gaps; never reconstruct Red evidence that was not observed. If implementation preceded the test, state that limitation and provide the regression evidence actually available.
 
 Reviewers assess behavior coverage and the credibility of that evidence. The metadata validator checks the existing PR structure and required fields; it does not validate TDD chronology or the truth of results. Follow the [Definition of Done](development.md#definition-of-done) and wait for the required GitHub check before merging.
 

@@ -32,7 +32,8 @@ Artifact updates:
 ## Validation
 
 <!-- Record commands AND results; identify fixtures versus genuine evidence.
-Link acceptance criteria and results. Include screenshots for UI changes,
+Map each changed story AC-N to actual test/check references and observed results;
+disclose unverified criteria. Include screenshots for UI changes,
 or explain why UI evidence is not applicable. Disclose checks not run.
 Follow docs/testing.md: for behavior changes, Checks must record the focused
 test command/node ID, observed Red failure, Green result, and verification after
