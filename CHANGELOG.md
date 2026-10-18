@@ -13,6 +13,7 @@ has been delivered by this work.
 ### Added
 
 - A curated changelog and same-PR changelog review in the development completion process.
+  ([#7](https://github.com/shuklasaket/cosmetics-product-advisor/pull/7))
 - GitHub story and PRD tracking forms, managed labels and backlog views, readiness and
   ownership rules, dependency and parallel-work planning, and live story-issue verification
   in PR checks. ([#6](https://github.com/shuklasaket/cosmetics-product-advisor/pull/6))
