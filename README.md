@@ -44,6 +44,8 @@ Every change uses a dedicated branch and a pull request to `main`. Required GitH
 
 Product work follows [PRD → GitHub story issues → implementation → PR → completion](docs/story-workflow.md). That guide links the live backlog views and defines readiness, dependencies, parallel work, ownership, and affected artifact updates.
 
+In a repository chat, use `$prd-to-stories` to draft a PRD's story plan or create/update its GitHub backlog when requested. See the [copy-paste chat examples](docs/skills.md#plan-stories-in-chat).
+
 For a pip-only runtime installation, create a Python 3.12 virtual environment, activate it, and run `python -m pip install --require-hashes -r requirements.txt`, then `streamlit run app.py`. `requirements-dev.txt` includes runtime plus development dependencies. The standard contributor/CI workflow uses uv.
 
 ## Documentation
