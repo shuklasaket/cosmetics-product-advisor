@@ -34,6 +34,7 @@ has been delivered by this work.
 - Standardized user stories on As a / I want / so that outcomes and stable numbered
   Given/When/Then acceptance scenarios, with explicit PRD requirement traceability and
   criterion-to-verification mapping in issue and PR guidance.
+  ([#8](https://github.com/shuklasaket/cosmetics-product-advisor/pull/8))
 - Standardized numbered story branches, PR titles and traceability, and required PR
   evidence/checklist validation.
   ([#3](https://github.com/shuklasaket/cosmetics-product-advisor/pull/3))
