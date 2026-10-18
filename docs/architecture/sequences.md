@@ -74,7 +74,10 @@ separate action that removes volatile personal input.
 | Preference memory | TR-10, 18–19; PRD 08 MEM-01–07 |
 
 Edit the relevant `.puml` source and preview it with a PlantUML-capable editor
-extension or a local PlantUML renderer. Review each diagram for clipped text and
-truthful `alt`/`opt` conditions before running `make docs` and `make check`. The
-numeric limits shown in source documents remain proposed until the corresponding
-release validates them.
+extension or a local PlantUML renderer. The Plan UML VS Code extension requires Java
+on `PATH`; on macOS, install it with `brew install --cask temurin@21`, confirm
+`java -version`, then restart VS Code. Its PlantUML JAR downloads into extension
+storage, not this repository. These sequence diagrams do not require Graphviz.
+Review each diagram for clipped text and truthful `alt`/`opt` conditions before
+running `make docs` and `make check`. The numeric limits shown in source documents
+remain proposed until the corresponding release validates them.
