@@ -54,7 +54,7 @@ Use all six headings in the [template](../.github/PULL_REQUEST_TEMPLATE.md); rep
 | --- | --- |
 | Summary | Concrete problem, resulting behavior, and the reason for the change; highlight a meaningful trade-off if needed. |
 | Traceability | Actual PRD document and GitHub story issue matching the branch, or a reasoned repository-maintenance exception; matching Closes/Refs link for stories. |
-| Scope | Included/excluded behavior and **Artifact updates**: assess code/tests, config, dependencies/lock/exports, schemas/migrations, data instructions, diagrams, ADRs, and Markdown; explain unaffected categories. |
+| Scope | Included/excluded behavior and **Artifact updates**: assess code/tests, config, dependencies/lock/exports, schemas/migrations, data instructions, diagrams, ADRs, and Markdown; explain unaffected categories. Include the changelog update or a specific `Changelog: N/A — <reason>` under the [maintenance policy](../CONTRIBUTING.md#changelog). |
 | Validation | Commands and observed results, acceptance/regression evidence, and UI screenshots or a reason they do not apply. Follow the [TDD evidence requirements](testing.md#pr-evidence-and-completion), including observed Red/Green results or a justified exemption. Distinguish synthetic fixtures from genuine source evidence; disclose checks not run and why. |
 | Risk and rollout | Affected behavior, privacy/source-permission/dependency/configuration/schema impacts, rollout steps, and a practical rollback/recovery approach. For an inapplicable item, use `N/A — <reason>`. |
 | Review checklist | Author self-review, recorded local checks, documentation/contract updates or explained exceptions, and review for sensitive/generated data. Check items only after doing the work. |

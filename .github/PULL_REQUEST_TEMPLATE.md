@@ -24,7 +24,9 @@ Included:
 Excluded:
 <!-- Assess code/tests, configuration and .env.example, dependencies/lock/exports,
 schemas/migrations, data instructions, diagrams, ADRs, and Markdown guides.
-Name affected artifacts and updates; explain categories that do not apply. -->
+Name affected artifacts and updates; explain categories that do not apply.
+Follow CONTRIBUTING.md#changelog: include a CHANGELOG.md entry for notable
+changes, or state Changelog: N/A — specific reason in Artifact updates. -->
 Artifact updates:
 
 ## Validation

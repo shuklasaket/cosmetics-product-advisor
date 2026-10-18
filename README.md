@@ -48,6 +48,7 @@ For a pip-only runtime installation, create a Python 3.12 virtual environment, a
 
 ## Documentation
 
+- [Changelog](CHANGELOG.md)
 - [Product requirements and release order](docs/requirements/README.md)
 - [Technical requirements](docs/requirements/TECHNICAL_REQUIREMENTS.md)
 - [Architecture diagram and guide](docs/architecture/README.md)

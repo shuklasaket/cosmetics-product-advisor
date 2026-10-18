@@ -65,7 +65,7 @@ body:
     id: artifacts
     attributes:
       label: Artifact impact
-      description: Assess code/tests, config/.env.example, dependencies/lock/exports, schemas/migrations, data instructions, diagrams, ADRs, and Markdown. Identify expected updates or explain why they do not apply.
+      description: Assess code/tests, config/.env.example, dependencies/lock/exports, schemas/migrations, data instructions, diagrams, ADRs, Markdown, and CHANGELOG.md. Identify expected updates or explain why they do not apply.
     validations:
       required: true
   - type: textarea
