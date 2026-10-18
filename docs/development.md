@@ -24,8 +24,8 @@ Before picking up a story, apply the [story readiness and ownership checks](stor
 - Documentation reflects actual behavior. Record which checks used genuine sources, recorded responses, or synthetic fixtures.
 - Notable changes have a same-PR [changelog entry](../CHANGELOG.md); justified omissions are recorded in Artifact updates under the [changelog policy](../CONTRIBUTING.md#changelog). Release headings use actual versions and dates.
 - The PR records updates or justified non-applicability for affected code/tests, config, dependencies, schemas/migrations, data instructions, diagrams, ADRs, and Markdown under [artifact review](story-workflow.md#implementation-and-affected-artifacts).
-- A code review checks the resulting behavior and evidence before merging. Record material limitations rather than implying an unperformed check passed.
-- After merge, confirm story acceptance, update the issue's evidence/status and parent requirement coverage, and complete release-level checks before closing the parent PRD issue. Issue closure does not itself establish release acceptance.
+- The user performs final PR review and merging; agents hand off an open PR after self-review and verification, without merging or scheduling a merge. The review checks the resulting behavior and evidence before merging. Record material limitations rather than implying an unperformed check passed.
+- After verifying the user’s merge, confirm story acceptance, update the issue's evidence/status and parent requirement coverage, and complete release-level checks before closing the parent PRD issue. Issue closure does not itself establish release acceptance.
 
 ## Readiness by release
 
