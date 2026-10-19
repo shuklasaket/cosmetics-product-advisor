@@ -1,4 +1,4 @@
-"""SQLite evidence storage; no importer, search policy or sensitive request persistence."""
+"""SQLite evidence storage and read-only queries; no sensitive request persistence."""
 
 import json
 import sqlite3
@@ -9,6 +9,7 @@ from uuid import uuid4
 
 from repositories.migrations import MIGRATIONS
 from schemas.catalog import CatalogEnvelope
+from schemas.search import CatalogFilters
 
 APPLICATION_ID = 0x43504131  # CPA1
 SCHEMA_VERSION = len(MIGRATIONS)
@@ -131,6 +132,66 @@ class CatalogRepository:
             raise CatalogStorageError(
                 "Catalog unavailable or invalid. Check the file or restore a backup."
             ) from None
+
+    def _query(self, sql: str, parameters: tuple[str, ...]) -> CatalogEnvelope:
+        """Validate and query one read snapshot, returning only matching evidence/history."""
+        try:
+            with connection(self.path, readonly=True) as con:
+                con.execute("BEGIN")
+                if _version(con) != SCHEMA_VERSION:
+                    raise CatalogStorageError(
+                        "Catalog upgrade required. Back up and run migrate first."
+                    )
+                snapshot = _read(con)
+                # JSON integer text avoids SQLite's REAL conversion above signed 64-bit range.
+                con.create_function(
+                    "paise_at_most",
+                    2,
+                    lambda price, ceiling: price != "null" and int(price) <= int(ceiling),
+                    deterministic=True,
+                )
+                product_ids = [row[0] for row in con.execute(sql, parameters)]
+                products = {p.product_id: p for p in snapshot.products}
+                selected = set(product_ids)
+                observations = tuple(o for o in snapshot.observations if o.product_id in selected)
+                source_ids = {o.source_id for o in observations}
+                return CatalogEnvelope(
+                    contract_version="catalog-v1",
+                    products=tuple(products[pid] for pid in product_ids),
+                    sources=tuple(s for s in snapshot.sources if s.source_id in source_ids),
+                    observations=observations,
+                    resolutions=tuple(r for r in snapshot.resolutions if r.product_id in selected),
+                )
+        except (sqlite3.Error, OSError, ValueError):
+            raise CatalogStorageError(
+                "Catalog unavailable or invalid. Check the file or restore a backup."
+            ) from None
+
+    def search(self, filters: CatalogFilters) -> CatalogEnvelope:
+        """Exact category, selected India availability and inclusive integer-paise ceiling."""
+        value = CatalogFilters.model_validate(filters.model_dump(warnings=False))
+        return self._query(
+            """SELECT p.product_id FROM products AS p
+            WHERE p.category = ? AND EXISTS (
+                SELECT 1 FROM resolutions AS r
+                JOIN resolution_evidence AS re USING (product_id, field_name)
+                JOIN observations AS o USING (evidence_id, product_id, field_name)
+                JOIN json_each(o.payload, '$.value') AS country
+                WHERE r.product_id = p.product_id AND r.field_name = 'availability'
+                    AND r.status = 'selected' AND country.value = ? COLLATE BINARY
+            ) AND EXISTS (
+                SELECT 1 FROM resolutions AS r
+                JOIN resolution_evidence AS re USING (product_id, field_name)
+                JOIN observations AS o USING (evidence_id, product_id, field_name)
+                WHERE r.product_id = p.product_id AND r.field_name = 'price_paise'
+                    AND r.status = 'selected' AND paise_at_most(o.payload -> '$.value', ?)
+            ) ORDER BY p.name COLLATE BINARY, p.product_id COLLATE BINARY""",
+            (value.category, value.country, str(value.budget_paise)),
+        )
+
+    def detail(self, product_id: str) -> CatalogEnvelope:
+        """A catalog-v1 subset or an empty catalog for an absent exact ID."""
+        return self._query("SELECT product_id FROM products WHERE product_id = ?", (product_id,))
 
     def save(self, envelope: CatalogEnvelope, *, expected: CatalogEnvelope | None = None) -> None:
         try:

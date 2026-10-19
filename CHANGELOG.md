@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- Read-only catalog search and detail services with exact category/India availability
+  and inclusive integer-paise budget filters, stable case-sensitive name/ID ordering,
+  field evidence/history, and distinct empty/unavailable outcomes. Catalog UI and
+  genuine seed remain pending.
+  ([#16](https://github.com/shuklasaket/cosmetics-product-advisor/issues/16))
 - A local `catalog-v1` JSON import command with whole-batch validation, sanitized row
   reports, explicit resolution replacements, repeat-import handling, and atomic writes
   that reject stale snapshots while preserving evidence history.
