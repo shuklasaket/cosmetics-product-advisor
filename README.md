@@ -2,7 +2,9 @@
 
 A local application for comparing sunscreen and moisturiser available in India using sourced product facts, review evidence, ingredient screening, and transparent ranking.
 
-**Current stage:** development foundation. The runnable preview validates configuration and shows project status. Catalog search and genuine seed data are delivered by PRD 01; later PRDs add analysis, recommendations, conversation, and memory.
+**Current stage:** PRD 01 implementation. The local app collects and validates private
+search filters; catalog result display and genuine seed data remain pending. Later
+PRDs add analysis, recommendations, conversation, and memory.
 
 ## Quick start
 
@@ -15,7 +17,10 @@ uv sync --locked
 uv run --frozen streamlit run app.py
 ```
 
-Open `http://127.0.0.1:8501`. Press Ctrl+C in the terminal to stop the application. No source API, Ollama installation, credentials, or catalog is needed for the development preview.
+Open `http://127.0.0.1:8501`. Press Ctrl+C in the terminal to stop the application.
+No source API, Ollama installation, credentials, or catalog is needed to validate a
+search request. Choose a supported category and skin type, enter a non-negative INR
+budget with at most two decimals, and optionally enter one ingredient exclusion per line.
 
 If the pinned interpreter is unavailable, `uv python install` installs the version in [.python-version](.python-version). Existing compatible installations can be reused.
 
@@ -23,9 +28,13 @@ If the pinned interpreter is unavailable, `uv python install` installs the versi
 
 Defaults work without a `.env` file. To override local data paths, copy [.env.example](.env.example) to `.env` and edit the documented keys. Environment variables override `.env` values. Invalid or unknown `.env` fields fail validation with values omitted from the UI error.
 
-The [catalog storage API and recovery guide](docs/catalog-storage.md) covers explicit SQLite initialization, evidence persistence, migrations and backup/restore. The [local JSON import command](docs/catalog-import.md) loads validated batches with atomic writes and sanitized reports. The [catalog search and detail service](docs/catalog-search.md) provides exact filters, stable ordering, and inspectable evidence through Python. Catalog UI and genuine seed remain pending.
+The [catalog storage API and recovery guide](docs/catalog-storage.md) covers explicit SQLite initialization, evidence persistence, migrations and backup/restore. The [local JSON import command](docs/catalog-import.md) loads validated batches with atomic writes and sanitized reports. The [catalog search and detail guide](docs/catalog-search.md) documents the private form plus the exact service filters, stable ordering, and inspectable evidence. Catalog result display and genuine seed remain pending.
 
-The preview does not create a database, load product data, save preferences, or start model/source connections. Hosted inference cannot be enabled in this foundation. Streamlit is configured to listen on loopback only.
+The form keeps its validated request, exclusions, and preferences in the current
+Streamlit session. Clear removes them, and a new session starts empty. The app does
+not create a database, load product data, save preferences, put inputs in the URL,
+or start model/source connections. Hosted inference remains disabled. Streamlit is
+configured to listen on loopback only.
 
 ## Development commands
 
