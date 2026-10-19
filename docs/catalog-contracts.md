@@ -136,6 +136,6 @@ stays in tests; it does not establish genuine product correctness or permission.
 These models are now consumed by the [persistent repository](catalog-storage.md).
 The [import command](catalog-import.md) and [search/detail service](catalog-search.md)
 consume these contracts and storage.
-Catalog UI, genuine seed and release acceptance remain pending. These
-increments do not introduce later model/graph contracts or change the Proposed
+The catalog UI, genuine seed and release acceptance now consume these contracts.
+They do not introduce later model/graph contracts or change the Proposed
 status of the existing ADRs.

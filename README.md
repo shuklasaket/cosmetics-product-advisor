@@ -2,9 +2,10 @@
 
 A local application for comparing sunscreen and moisturiser available in India using sourced product facts, review evidence, ingredient screening, and transparent ranking.
 
-**Current stage:** PRD 01 implementation. The local app validates private search
+**Current stage:** PRD 01 review candidate. The local app validates private search
 filters, queries a loaded SQLite catalog, and displays sourced results and product
-details. A permitted genuine starter catalog and full release evidence remain pending.
+details. It includes a permitted ten-product India starter catalog and offline release
+verification. The maintainer's review and merge remain pending.
 Later PRDs add analysis, recommendations, conversation, and memory.
 
 ## Quick start
@@ -15,13 +16,16 @@ From the repository root:
 
 ```sh
 uv sync --locked
+uv run --frozen python -c 'from repositories.catalog import migrate; from schemas.settings import Settings; migrate(Settings().database_path)'
+uv run --frozen python -m scripts.import_catalog data/seed/catalog-v1.json
+uv run --frozen python -m scripts.verify_catalog_release database/advisor.db
 uv run --frozen streamlit run app.py
 ```
 
 Open `http://127.0.0.1:8501`. Press Ctrl+C in the terminal to stop the application.
-No source API, Ollama installation, or credentials are needed. Follow the
-[storage](docs/catalog-storage.md) and [import](docs/catalog-import.md) guides to load a
-permitted catalog before searching. Without a valid database, the app shows sanitized
+No source API, Ollama installation, or credentials are needed. See the complete
+[offline release runbook](docs/catalog-release.md), [storage](docs/catalog-storage.md),
+and [import](docs/catalog-import.md) guides. Without a valid database, the app shows sanitized
 restoration guidance. Choose a supported category and skin type, enter a non-negative
 INR budget with at most two decimals, and optionally enter one ingredient exclusion per
 line.
@@ -32,7 +36,7 @@ If the pinned interpreter is unavailable, `uv python install` installs the versi
 
 Defaults work without a `.env` file. To override local data paths, copy [.env.example](.env.example) to `.env` and edit the documented keys. Environment variables override `.env` values. Invalid or unknown `.env` fields fail validation with values omitted from the UI error.
 
-The [catalog storage API and recovery guide](docs/catalog-storage.md) covers explicit SQLite initialization, evidence persistence, migrations and backup/restore. The [local JSON import command](docs/catalog-import.md) loads validated batches with atomic writes and sanitized reports. The [catalog search and detail guide](docs/catalog-search.md) documents the private form, exact service filters, stable result ordering, evidence display, and empty/error recovery. A permitted genuine seed remains pending.
+The [catalog storage API and recovery guide](docs/catalog-storage.md) covers explicit SQLite initialization, evidence persistence, migrations and backup/restore. The [local JSON import command](docs/catalog-import.md) loads validated batches with atomic writes and sanitized reports. The [catalog search and detail guide](docs/catalog-search.md) documents the private form, exact service filters, stable result ordering, evidence display, and empty/error recovery. The [release runbook](docs/catalog-release.md) combines them with the reviewed genuine seed and deterministic verifier.
 
 The form keeps its validated request, result, exclusions, preferences, and selected
 detail in the current Streamlit session. Clear removes them, and a new session starts
@@ -75,7 +79,8 @@ For a pip-only runtime installation, create a Python 3.12 virtual environment, a
 - [GitHub story backlog and implementation workflow](docs/story-workflow.md)
 - [Testing strategy and TDD workflow](docs/testing.md)
 - [Development foundation completion report](docs/reports/development-foundation-report.md)
+- [PRD 01 catalog release report](docs/reports/prd-01-catalog-release-report.md)
 - [Project skills, selection rationale, and usage](docs/skills.md)
 - [Data intake, provenance, and fixture policy](data/README.md)
 
-The supported MVP is single-user and local. Each PRD must add a usable increment with its own acceptance evidence. The preview is not a completed PRD 01 release.
+The supported MVP is single-user and local. Each PRD adds a usable increment with its own acceptance evidence. PRD 01 remains a review candidate until the maintainer merges its final story.
