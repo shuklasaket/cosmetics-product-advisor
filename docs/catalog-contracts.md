@@ -107,16 +107,17 @@ product/field resolution keys are errors, even when records look identical. One
 exact identity tuple (brand, name, category, variant) cannot use two
 product IDs. The operator must review ambiguous mappings; no fuzzy identity merge
 is performed. The [storage repository](catalog-storage.md) now enforces immutable
-identities/history across complete snapshots; file-import merging/reporting remains
-a later story.
+identities/history across complete snapshots. The
+[local JSON importer](catalog-import.md) now merges batches and reports rejected/unchanged
+rows.
 
 The initial importer handoff is whole-batch preflight rejection on invalid records,
 with no writes before successful validation. Transactional snapshot writes,
 identical-snapshot replay and recoverable migrations are available in the storage
-repository. Per-row rejection reports and repeat-import idempotency for file batches
-remain part of the importer story. Any future accepted-row import mode must be
-explicit and still preserve
-transactional failure recovery and the last-valid catalog.
+repository. The [local JSON importer](catalog-import.md) adds per-row rejection reports,
+repeat-import idempotency and explicit resolution-update handling for file batches.
+Any future accepted-row import mode must be explicit and still preserve transactional
+failure recovery and the last-valid catalog.
 
 The CSV [intake templates](../data/README.md#intake-templates) remain collection aids,
 not a parser or a separate source of truth. A future loader must explicitly map
@@ -133,6 +134,7 @@ UTC dates and serialization round-trips. All evidence is labeled synthetic and
 stays in tests; it does not establish genuine product correctness or permission.
 
 These models are now consumed by the [persistent repository](catalog-storage.md).
-No importer, search service, UI, genuine seed or release acceptance is delivered by
-these models or the storage increment. They do not introduce later
-model/graph contracts or change the Proposed status of the existing ADRs.
+The [import command](catalog-import.md) consumes these contracts and storage.
+Search, catalog UI, genuine seed and release acceptance remain pending. These
+increments do not introduce later model/graph contracts or change the Proposed
+status of the existing ADRs.

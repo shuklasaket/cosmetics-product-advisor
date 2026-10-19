@@ -12,6 +12,10 @@ has been delivered by this work.
 
 ### Added
 
+- A local `catalog-v1` JSON import command with whole-batch validation, sanitized row
+  reports, explicit resolution replacements, repeat-import handling, and atomic writes
+  that reject stale snapshots while preserving evidence history.
+  ([#15](https://github.com/shuklasaket/cosmetics-product-advisor/issues/15))
 - SQLite catalog evidence storage with immutable observation history, explicit resolutions,
   integrity constraints, atomic schema initialization/upgrades, and validated backup/restore
   into a new path. Import/search/catalog UI and genuine seed remain pending.
