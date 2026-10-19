@@ -44,7 +44,7 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 [tool.mypy]
 python_version = "3.12"
 strict = true
-files = ["app.py", "schemas", "repositories", "scripts"]
+files = ["app.py", "schemas", "repositories", "services", "scripts"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

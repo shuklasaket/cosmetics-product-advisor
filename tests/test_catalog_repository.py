@@ -353,3 +353,28 @@ def test_all_optional_explicit_nulls_remain_unknown(tmp_path: Path) -> None:
     repo = storage.CatalogRepository(path)
     repo.save(value)
     assert repo.read() == value
+
+
+def test_expected_snapshot_rejects_stale_writer(tmp_path: Path) -> None:
+    import pytest
+    from test_catalog_contracts import observation, select
+
+    path = tmp_path / "concurrent.db"
+    storage.migrate(path)
+    repo = storage.CatalogRepository(path)
+    original = CatalogEnvelope.model_validate(catalog())
+    repo.save(original)
+    data = catalog()
+    data["observations"].append(
+        observation("price_paise", 90_000, source="retailer", suffix="-later")
+    )
+    data["resolutions"] = [r for r in data["resolutions"] if r["field_name"] != "price_paise"]
+    data["resolutions"].append(select("price_paise", ["e-price_paise-later"]))
+    later = CatalogEnvelope.model_validate(data)
+    repo.save(later)
+    # Retain all history but attempt to restore a stale price selection.
+    data["resolutions"][-1] = select("price_paise")
+    stale = CatalogEnvelope.model_validate(data)
+    with pytest.raises(storage.CatalogStorageError, match="changed"):
+        repo.save(stale, expected=original)
+    assert repo.read() == later

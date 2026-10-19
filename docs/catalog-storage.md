@@ -2,7 +2,8 @@
 
 [PRD 01](requirements/01-catalog-and-search.md) stores validated public catalog
 records through [`CatalogRepository`](../repositories/catalog.py). This delivers
-storage, not a catalog importer, search service, genuine seed, or catalog UI.
+storage. The [local importer](catalog-import.md) consumes it; search, genuine seed
+and catalog UI remain pending.
 The Streamlit development preview still does not open or create a database.
 Do not store shopper requests, budgets, exclusions, medical details, or conversations.
 
@@ -59,9 +60,12 @@ Unresolved identity cannot contradict a non-null product identity.
 
 Identical snapshot replay makes no duplicate products/observations. The caller
 must retain historical products/sources/observations when assembling a later
-snapshot; partial batches are not accepted as replacement catalogs. The future
-importer (US-015) owns file parsing, batch merging, cross-import idempotency
-reporting and operator-facing rejected-row diagnostics.
+snapshot; partial batches are not accepted as replacement catalogs. The
+[local importer](catalog-import.md) owns file parsing, batch merging,
+cross-import idempotency reporting and operator-facing rejected-row diagnostics.
+It passes `expected=current_snapshot` to `save` so the repository refuses a stale
+writer inside its transaction; callers building snapshots from reads should do the
+same. Omitting `expected` preserves the direct complete-snapshot API.
 
 Tables retain canonical JSON payloads to preserve exact decimal strings, UTC
 provenance and explicit nulls. Generated keys, unique variant identities, composite

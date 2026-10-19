@@ -15,8 +15,9 @@ The CSV files in [templates/](templates/) contain headers only; they are collect
 For each real product, establish category, India availability, INR price/pack identity, claims, ratings/counts where available, ingredient declaration/completeness, sponsorship status, and fact-level provenance. A retailer price and manufacturer ingredient declaration require separate observation rows. Represent unknown values explicitly; do not substitute zero or false.
 
 Use timezone-aware UTC dates. Monetary observations should store integer paise; the UI can format them as INR. `value_json` holds the typed field value, such as a JSON number, string, list, object, or null. The [catalog-v1 contracts](../docs/catalog-contracts.md) now validate these conventions
-in memory. The importer and CSV-to-contract mapping are still pending; loading
-requires explicit field resolutions and the complete permission metadata described there.
+in memory. The [local JSON importer](../docs/catalog-import.md) loads catalog-v1
+envelopes with explicit resolutions and complete permission metadata. CSV-to-contract
+mapping remains manual; this command does not parse the intake templates.
 
 ## Collection policy
 
@@ -38,6 +39,8 @@ Tests use temporary directories/databases and labeled synthetic profiles or reco
 
 The [catalog storage and recovery guide](../docs/catalog-storage.md) documents schema v1,
 complete snapshot writes, immutable evidence history, explicit migrations and backup/restore.
-Only validated public catalog evidence belongs there. The CSV templates still require a future
-importer; storage tests use synthetic temporary databases and do not establish a genuine seed.
+Only validated public catalog evidence belongs there. The
+[JSON importer](../docs/catalog-import.md) validates and merges local batches;
+the CSV templates are collection aids. Storage/import tests use synthetic temporary
+databases and do not establish a genuine seed.
 Generated databases, journals and backup directories must remain uncommitted.

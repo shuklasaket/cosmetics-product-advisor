@@ -132,7 +132,7 @@ class CatalogRepository:
                 "Catalog unavailable or invalid. Check the file or restore a backup."
             ) from None
 
-    def save(self, envelope: CatalogEnvelope) -> None:
+    def save(self, envelope: CatalogEnvelope, *, expected: CatalogEnvelope | None = None) -> None:
         try:
             # Revalidate even deliberately constructed/copied Pydantic instances.
             value = CatalogEnvelope.model_validate_json(envelope.model_dump_json())
@@ -142,7 +142,9 @@ class CatalogRepository:
                     raise CatalogStorageError(
                         "Catalog upgrade required. Back up and run migrate first."
                     )
-                _read(con)
+                current = _read(con)
+                if expected is not None and current != expected:
+                    raise CatalogStorageError("Catalog changed during import. Reload and retry.")
                 for table, identity in (
                     ("products", "product_id"),
                     ("sources", "source_id"),
