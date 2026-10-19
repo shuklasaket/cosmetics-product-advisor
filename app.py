@@ -3,7 +3,10 @@
 import streamlit as st
 from pydantic import ValidationError
 
+from repositories.catalog import CatalogRepository
 from schemas.settings import Settings
+from services.catalog_search import CatalogSearchService
+from ui.catalog_results import execute_search, render_catalog_results
 from ui.search_form import render_search_form
 
 
@@ -21,13 +24,19 @@ def main() -> None:
         )
         st.stop()
 
-    render_search_form()
+    service = CatalogSearchService(CatalogRepository(settings.database_path))
+    request = render_search_form()
+    if request is not None:
+        execute_search(service, request)
+    render_catalog_results(service)
 
     with st.expander("Development status"):
         st.write("Configuration validated. No source or model connections are started.")
         st.write(f"Catalog directory: {settings.data_dir}")
         st.write("Hosted inference: disabled")
-        st.write("Catalog result display arrives in the next PRD 01 story.")
+        st.write(
+            "Catalog search and evidence detail display are enabled when valid data is loaded."
+        )
 
 
 if __name__ == "__main__":

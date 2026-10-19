@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- Sourced Streamlit catalog results and product details with stable ordering,
+  field-level attribution and verification timestamps, explicit unknown/sponsorship
+  states, declared-claim wording, inert external text, and recoverable empty or
+  unavailable-catalog states. Genuine starter data remains pending.
+  ([#18](https://github.com/shuklasaket/cosmetics-product-advisor/issues/18))
 - A private Streamlit search form for supported category and skin-type choices,
   India/INR defaults, exact budget validation, optional exclusions/preferences,
   sanitized recovery errors, and complete session clearing. Catalog result display
