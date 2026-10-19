@@ -2,9 +2,24 @@
 
 [US-016](https://github.com/shuklasaket/cosmetics-product-advisor/issues/16) adds
 read-only, model-free Python queries for CAT-05/06/07 in
-[PRD 01](requirements/01-catalog-and-search.md). The Streamlit preview still has
-no catalog form or results view; those are separate stories. Synthetic test
-catalogs do not establish genuine seed or release acceptance.
+[PRD 01](requirements/01-catalog-and-search.md). [US-017](https://github.com/shuklasaket/cosmetics-product-advisor/issues/17)
+adds the validated Streamlit request form. Catalog result display remains a separate
+story. Synthetic test catalogs do not establish genuine seed or release acceptance.
+
+## Streamlit form
+
+The local app presents the supported sunscreen/moisturiser and skin-type choices,
+fixed India/INR defaults, and a required maximum budget. Zero is valid; blank,
+negative, non-numeric, non-finite, and sub-paise budgets show sanitized guidance
+without dispatching a request. Correcting the value and resubmitting validates the
+new request.
+
+Ingredient exclusions accept one value per line. Texture and finish are optional.
+These personal inputs are collected for later screening and do not affect catalog
+eligibility yet. A successful submit hands an immutable `UserRequirements` instance
+to the session-local result boundary; [US-018](https://github.com/shuklasaket/cosmetics-product-advisor/issues/18)
+will connect it to result rendering. Clear resets the form widgets and deletes the
+request, result, error, and dispatch state. A new browser session starts empty.
 
 ## Consumer handoff
 
@@ -96,11 +111,13 @@ text and a bound text ceiling. It preserves exact paise even beyond SQLite's sig
 or configuration change is needed. Full-snapshot validation is deliberate for the
 small local catalog; it is not a large-catalog performance claim.
 
-Requests, active filters and results remain transient. The service keeps no request
-or result state and adds no logs, persistent/shared caches, URLs, exports or database
-writes. Model representations omit active filters; explicit serialization still
-contains the budget and must remain in session memory. Future UI consumers must
-clear stale results when requirements change or the session is cleared.
+Requests, active filters and results remain transient. The form keeps its validated
+request only in Streamlit session state; the service keeps no request or result state.
+Neither adds logs, persistent/shared caches, URLs, exports or database writes. The
+form does not use query parameters. Model representations omit active filters;
+explicit serialization still contains the budget and must remain in session memory.
+Future UI consumers must clear stale results when requirements change or the session
+is cleared.
 
 ## Verification
 

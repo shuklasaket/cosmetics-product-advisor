@@ -1,15 +1,16 @@
-"""Local development entry point; catalog behavior arrives in PRD 01."""
+"""Local Streamlit entry point for the cosmetic product advisor."""
 
 import streamlit as st
 from pydantic import ValidationError
 
 from schemas.settings import Settings
+from ui.search_form import render_search_form
 
 
 def main() -> None:
     st.set_page_config(page_title="AI Cosmetic Product Advisor", page_icon="🧴")
     st.title("AI Cosmetic Product Advisor")
-    st.caption("Local development preview")
+    st.caption("Private, local catalog search")
 
     try:
         settings = Settings()
@@ -20,14 +21,13 @@ def main() -> None:
         )
         st.stop()
 
-    st.info("Catalog search is planned for PRD 01. No catalog has been loaded by this preview.")
-    st.markdown("**Planned scope:** sunscreen and moisturiser available in India, priced in INR.")
+    render_search_form()
 
     with st.expander("Development status"):
         st.write("Configuration validated. No source or model connections are started.")
         st.write(f"Catalog directory: {settings.data_dir}")
         st.write("Hosted inference: disabled")
-        st.write("Use the repository README for setup and the PRD index for release scope.")
+        st.write("Catalog result display arrives in the next PRD 01 story.")
 
 
 if __name__ == "__main__":

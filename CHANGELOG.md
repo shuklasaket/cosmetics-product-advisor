@@ -12,6 +12,10 @@ has been delivered by this work.
 
 ### Added
 
+- A private Streamlit search form for supported category and skin-type choices,
+  India/INR defaults, exact budget validation, optional exclusions/preferences,
+  sanitized recovery errors, and complete session clearing. Catalog result display
+  remains pending. ([#17](https://github.com/shuklasaket/cosmetics-product-advisor/issues/17))
 - Read-only catalog search and detail services with exact category/India availability
   and inclusive integer-paise budget filters, stable case-sensitive name/ID ordering,
   field evidence/history, and distinct empty/unavailable outcomes. Catalog UI and
