@@ -19,6 +19,11 @@ in memory. The [local JSON importer](../docs/catalog-import.md) loads catalog-v1
 envelopes with explicit resolutions and complete permission metadata. CSV-to-contract
 mapping remains manual; this command does not parse the intake templates.
 
+PRD 02's [approved-source registry](../docs/approved-source-registry.md) is a separate
+authorization boundary for retrieval. A catalog-v1 source observation does not by itself
+authorize network access. No enabled connector registration is committed by US-034;
+operator/data review is required before a later adapter can be enabled.
+
 ## Collection policy
 
 1. Check the source's access/reuse conditions and record the reference, attribution, and check date.

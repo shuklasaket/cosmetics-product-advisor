@@ -190,7 +190,8 @@ def test_failed_and_successful_forward_migrations(tmp_path: Path, monkeypatch) -
     repo.save(original)
     assert storage.migrate(path) is None
     with monkeypatch.context() as patch:
-        patch.setattr(storage, "SCHEMA_VERSION", 2)
+        next_version = storage.SCHEMA_VERSION + 1
+        patch.setattr(storage, "SCHEMA_VERSION", next_version)
         patch.setattr(
             storage,
             "MIGRATIONS",
@@ -200,7 +201,7 @@ def test_failed_and_successful_forward_migrations(tmp_path: Path, monkeypatch) -
             storage.migrate(path)
     assert repo.read() == original
     with storage.connection(path) as con:
-        assert con.execute("PRAGMA user_version").fetchone()[0] == 1
+        assert con.execute("PRAGMA user_version").fetchone()[0] == next_version - 1
         assert not con.execute(
             "SELECT name FROM sqlite_master WHERE name='upgrade_marker'"
         ).fetchall()
@@ -208,7 +209,7 @@ def test_failed_and_successful_forward_migrations(tmp_path: Path, monkeypatch) -
     assert len(backups) == 1
     assert storage.CatalogRepository(backups[0]).read() == original
     with monkeypatch.context() as patch:
-        patch.setattr(storage, "SCHEMA_VERSION", 2)
+        patch.setattr(storage, "SCHEMA_VERSION", next_version)
         patch.setattr(
             storage, "MIGRATIONS", (*storage.MIGRATIONS, ("CREATE TABLE upgrade_marker(x TEXT)",))
         )
@@ -287,7 +288,7 @@ def test_backup_failure_prevents_upgrade(tmp_path: Path, monkeypatch) -> None:
     # A file occupies the backup directory; failure must precede all migration writes.
     (tmp_path / "backup.db.backups").write_text("synthetic obstruction")
     with monkeypatch.context() as patch:
-        patch.setattr(storage, "SCHEMA_VERSION", 2)
+        patch.setattr(storage, "SCHEMA_VERSION", storage.SCHEMA_VERSION + 1)
         patch.setattr(storage, "MIGRATIONS", (*storage.MIGRATIONS, ("CREATE TABLE bad(x)",)))
         with pytest.raises(storage.CatalogStorageError):
             storage.migrate(path)

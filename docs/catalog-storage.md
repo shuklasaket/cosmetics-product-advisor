@@ -31,7 +31,10 @@ existing database (`mode=rw`). Missing, inaccessible, corrupt, unsupported, or
 inconsistent storage raises a fixed `CatalogStorageError`. Display its message
 without logging exception context, SQL, or record payloads.
 
-Schema v1 uses `PRAGMA application_id = 0x43504131` and `PRAGMA user_version = 1`.
+Schema v2 uses `PRAGMA application_id = 0x43504131` and `PRAGMA user_version = 2`.
+Version 1 contains the PRD 01 catalog tables; version 2 adds the PRD 02
+[`approved_sources` registry](approved-source-registry.md) without rewriting catalog
+records.
 Only an empty, unversioned database can be initialized. Nonempty unversioned,
 foreign, or newer databases are refused without schema/data changes. There is no
 implicit downgrade or overwrite. Repeated migration of a valid current schema is
