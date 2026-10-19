@@ -27,11 +27,16 @@ mapping remains manual; this command does not parse the intake templates.
 4. Collect only permitted review text and necessary metadata; remove unnecessary reviewer identifiers.
 5. Regulatory data needs exact authoritative references and domain review before PRD 03 uses it.
 
-The initial catalog target is at least 10 genuine products, five per category. The completed MVP targets approximately 20–30. Data preparation is pending; empty templates do not satisfy these targets.
+The versioned [India genuine starter catalog](seed/README.md) contains 10 reviewed
+products, five per category. The completed MVP still targets approximately 20–30.
+The header-only templates do not add to these counts.
 
 ## Storage and fixtures
 
-`data/local/` is ignored for local imports and working copies. Only verified material whose redistribution is allowed belongs in committed seed data. Document source conditions beside any future committed dataset.
+`data/local/` is ignored for local imports and working copies. Only verified material
+whose redistribution is allowed belongs in committed seed data. The committed starter
+seed records its maintainer-approved non-commercial factual-use boundary and attribution
+beside the dataset.
 
 Tests use temporary directories/databases and labeled synthetic profiles or recorded responses. Synthetic product/review fixtures must stay in test fixtures and never appear as genuine catalog entries. Raw user conversations, current budgets, avoid lists, and medical details must not enter committed fixtures, databases, logs, or exports.
 

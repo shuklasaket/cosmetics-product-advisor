@@ -12,6 +12,10 @@ has been delivered by this work.
 
 ### Added
 
+- A permitted, versioned India-online starter catalog with five genuine sunscreens and
+  five genuine moisturisers, fact-level manufacturer/retailer provenance, documented
+  non-commercial source boundaries, repeatable import and budget-search verification.
+  ([#19](https://github.com/shuklasaket/cosmetics-product-advisor/issues/19))
 - Sourced Streamlit catalog results and product details with stable ordering,
   field-level attribution and verification timestamps, explicit unknown/sponsorship
   states, declared-claim wording, inert external text, and recoverable empty or

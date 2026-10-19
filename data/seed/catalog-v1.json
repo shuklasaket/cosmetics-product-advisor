@@ -1,0 +1,2060 @@
+{
+  "contract_version": "catalog-v1",
+  "products": [
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "brand": "Minimalist",
+      "name": "Light Fluid SPF 50 Sunscreen",
+      "category": "sunscreen",
+      "variant": "SPF 50 PA++++, 50 ml",
+      "pack_size": "50 ml"
+    },
+    {
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "brand": "Mamaearth",
+      "name": "Vitamin C Daily Glow Sunscreen",
+      "category": "sunscreen",
+      "variant": "SPF 50 PA+++, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "brand": "Aqualogica",
+      "name": "Glow+ Dewy Sunscreen",
+      "category": "sunscreen",
+      "variant": "SPF 50+ PA++++, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "foxtale-glow-spf50-50ml",
+      "brand": "Foxtale",
+      "name": "The Glow Sunscreen",
+      "category": "sunscreen",
+      "variant": "SPF 50+ PA++++, 50 ml",
+      "pack_size": "50 ml"
+    },
+    {
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "brand": "Re'equil",
+      "name": "Ultra Matte Dry Touch Sunscreen Gel",
+      "category": "sunscreen",
+      "variant": "SPF 50 PA++++, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "brand": "Minimalist",
+      "name": "Vitamin B5 10% Moisturizer",
+      "category": "moisturiser",
+      "variant": "50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "brand": "Re'equil",
+      "name": "Ceramide & Hyaluronic Acid Moisturiser",
+      "category": "moisturiser",
+      "variant": "100 g",
+      "pack_size": "100 g"
+    },
+    {
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "brand": "Foxtale",
+      "name": "Hydrating Moisturizer with Ceramide",
+      "category": "moisturiser",
+      "variant": "50 ml",
+      "pack_size": "50 ml"
+    },
+    {
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "brand": "Mamaearth",
+      "name": "Beetroot Hydraful Moisturizer",
+      "category": "moisturiser",
+      "variant": "50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "brand": "Mamaearth",
+      "name": "Cocoa Rich Moisturizing Cream",
+      "category": "moisturiser",
+      "variant": "50 g",
+      "pack_size": "50 g"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "maker:minimalist-light-fluid-spf50-50ml",
+      "source_type": "manufacturer",
+      "source_reference": "https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Minimalist at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:minimalist-light-fluid-spf50-50ml",
+      "source_type": "retailer",
+      "source_reference": "https://www.nykaa.com/minimalist-light-fluid-spf-50-face-sunscreen/p/20540004",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to Nykaa.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Mamaearth at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_type": "retailer",
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:aqualogica-glow-dewy-spf50-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Aqualogica at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:aqualogica-glow-dewy-spf50-50g",
+      "source_type": "retailer",
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:foxtale-glow-spf50-50ml",
+      "source_type": "manufacturer",
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Foxtale at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:foxtale-glow-spf50-50ml",
+      "source_type": "retailer",
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:reequil-ultra-matte-spf50-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Re'equil at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:reequil-ultra-matte-spf50-50g",
+      "source_type": "retailer",
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:minimalist-vitamin-b5-moisturizer-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Minimalist at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:minimalist-vitamin-b5-moisturizer-50g",
+      "source_type": "retailer",
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:reequil-ceramide-ha-moisturiser-100g",
+      "source_type": "manufacturer",
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Re'equil at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:reequil-ceramide-ha-moisturiser-100g",
+      "source_type": "retailer",
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_type": "manufacturer",
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Foxtale at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_type": "retailer",
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Mamaearth at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_type": "retailer",
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Mamaearth at the linked official India page.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_type": "retailer",
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was selectable and offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    }
+  ],
+  "observations": [
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:brand",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "maker:minimalist-light-fluid-spf50-50ml",
+      "field_name": "brand",
+      "value": "Minimalist",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:name",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "maker:minimalist-light-fluid-spf50-50ml",
+      "field_name": "name",
+      "value": "Light Fluid SPF 50 Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:category",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "maker:minimalist-light-fluid-spf50-50ml",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:variant",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "maker:minimalist-light-fluid-spf50-50ml",
+      "field_name": "variant",
+      "value": "SPF 50 PA++++, 50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:pack_size",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "maker:minimalist-light-fluid-spf50-50ml",
+      "field_name": "pack_size",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:availability",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "retailer:minimalist-light-fluid-spf50-50ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.nykaa.com/minimalist-light-fluid-spf-50-face-sunscreen/p/20540004",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:price_paise",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "retailer:minimalist-light-fluid-spf50-50ml",
+      "field_name": "price_paise",
+      "value": 49900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://www.nykaa.com/minimalist-light-fluid-spf-50-face-sunscreen/p/20540004",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:ingredient_declaration",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "maker:minimalist-light-fluid-spf50-50ml",
+      "field_name": "ingredient_declaration",
+      "value": "Water/Aqua, Ethylhexyl Methoxycinnamate, Diethylamino Hydroxybenzoyl Hexyl Benzoate, Dimethicone, Ethoxydiglycol, Methylene Bis-Benzotriazolyl Tetramethylbutylphenol, Propylene Glycol Dicaprylate/Dicaprate, Diisopropyl Sebacate, Diisopropyl Adipate, C12-15 Alkyl Benzoate, Butylene Glycol, Phenoxyethanol, VP/Eicosene Copolymer, Isododecane, Pentylene Glycol, Potassium Cetyl Phosphate, Acrylates/Polytrimethylsiloxymethacrylate Copolymer, Decyl Glucoside, Triethanolamine, Carbomer, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Polyacrylate Crosspolymer-6, Ethylhexylglycerin, Trisodium Ethylenediamine Disuccinate, Propylene Glycol, Cyclopentasiloxane, Dimethicone Crosspolymer, Caprylyl Methicone, PEG-12 Dimethicone/PPG-20 Crosspolymer, Polymethylsilsesquioxane, Xanthan Gum",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-light-fluid-spf50-50ml:ingredient_completeness",
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "source_id": "maker:minimalist-light-fluid-spf50-50ml",
+      "field_name": "ingredient_completeness",
+      "value": "complete",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-light-fluid-spf50-50ml",
+      "snapshot_id": "snapshot:minimalist-light-fluid-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-vitamin-c-daily-glow-spf50-50g:brand",
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_id": "maker:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "brand",
+      "value": "Mamaearth",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "snapshot_id": "snapshot:mamaearth-vitamin-c-daily-glow-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-vitamin-c-daily-glow-spf50-50g:name",
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_id": "maker:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "name",
+      "value": "Vitamin C Daily Glow Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "snapshot_id": "snapshot:mamaearth-vitamin-c-daily-glow-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-vitamin-c-daily-glow-spf50-50g:category",
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_id": "maker:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "snapshot_id": "snapshot:mamaearth-vitamin-c-daily-glow-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-vitamin-c-daily-glow-spf50-50g:variant",
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_id": "maker:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "variant",
+      "value": "SPF 50 PA+++, 50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "snapshot_id": "snapshot:mamaearth-vitamin-c-daily-glow-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-vitamin-c-daily-glow-spf50-50g:pack_size",
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_id": "maker:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "snapshot_id": "snapshot:mamaearth-vitamin-c-daily-glow-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-vitamin-c-daily-glow-spf50-50g:availability",
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_id": "retailer:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "snapshot_id": "snapshot:mamaearth-vitamin-c-daily-glow-spf50-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-vitamin-c-daily-glow-spf50-50g:price_paise",
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "source_id": "retailer:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "price_paise",
+      "value": 39900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "snapshot_id": "snapshot:mamaearth-vitamin-c-daily-glow-spf50-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-dewy-spf50-50g:brand",
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-glow-dewy-spf50-50g",
+      "field_name": "brand",
+      "value": "Aqualogica",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:aqualogica-glow-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-dewy-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-dewy-spf50-50g:name",
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-glow-dewy-spf50-50g",
+      "field_name": "name",
+      "value": "Glow+ Dewy Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:aqualogica-glow-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-dewy-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-dewy-spf50-50g:category",
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-glow-dewy-spf50-50g",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:aqualogica-glow-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-dewy-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-dewy-spf50-50g:variant",
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-glow-dewy-spf50-50g",
+      "field_name": "variant",
+      "value": "SPF 50+ PA++++, 50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:aqualogica-glow-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-dewy-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-dewy-spf50-50g:pack_size",
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-glow-dewy-spf50-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:aqualogica-glow-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-dewy-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-dewy-spf50-50g:availability",
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "source_id": "retailer:aqualogica-glow-dewy-spf50-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:aqualogica-glow-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-dewy-spf50-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-dewy-spf50-50g:price_paise",
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "source_id": "retailer:aqualogica-glow-dewy-spf50-50g",
+      "field_name": "price_paise",
+      "value": 49900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://aqualogica.in/products/glow-dewy-sunscreen-50g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:aqualogica-glow-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-dewy-spf50-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-glow-spf50-50ml:brand",
+      "product_id": "foxtale-glow-spf50-50ml",
+      "source_id": "maker:foxtale-glow-spf50-50ml",
+      "field_name": "brand",
+      "value": "Foxtale",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-glow-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-glow-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-glow-spf50-50ml:name",
+      "product_id": "foxtale-glow-spf50-50ml",
+      "source_id": "maker:foxtale-glow-spf50-50ml",
+      "field_name": "name",
+      "value": "The Glow Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-glow-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-glow-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-glow-spf50-50ml:category",
+      "product_id": "foxtale-glow-spf50-50ml",
+      "source_id": "maker:foxtale-glow-spf50-50ml",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-glow-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-glow-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-glow-spf50-50ml:variant",
+      "product_id": "foxtale-glow-spf50-50ml",
+      "source_id": "maker:foxtale-glow-spf50-50ml",
+      "field_name": "variant",
+      "value": "SPF 50+ PA++++, 50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-glow-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-glow-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-glow-spf50-50ml:pack_size",
+      "product_id": "foxtale-glow-spf50-50ml",
+      "source_id": "maker:foxtale-glow-spf50-50ml",
+      "field_name": "pack_size",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-glow-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-glow-spf50-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-glow-spf50-50ml:availability",
+      "product_id": "foxtale-glow-spf50-50ml",
+      "source_id": "retailer:foxtale-glow-spf50-50ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-glow-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-glow-spf50-50ml:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-glow-spf50-50ml:price_paise",
+      "product_id": "foxtale-glow-spf50-50ml",
+      "source_id": "retailer:foxtale-glow-spf50-50ml",
+      "field_name": "price_paise",
+      "value": 37500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://foxtale.in/products/50-glow-sunscreen?variant=51080729526519",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-glow-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-glow-spf50-50ml:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ultra-matte-spf50-50g:brand",
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "source_id": "maker:reequil-ultra-matte-spf50-50g",
+      "field_name": "brand",
+      "value": "Re'equil",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ultra-matte-spf50-50g",
+      "snapshot_id": "snapshot:reequil-ultra-matte-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ultra-matte-spf50-50g:name",
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "source_id": "maker:reequil-ultra-matte-spf50-50g",
+      "field_name": "name",
+      "value": "Ultra Matte Dry Touch Sunscreen Gel",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ultra-matte-spf50-50g",
+      "snapshot_id": "snapshot:reequil-ultra-matte-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ultra-matte-spf50-50g:category",
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "source_id": "maker:reequil-ultra-matte-spf50-50g",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ultra-matte-spf50-50g",
+      "snapshot_id": "snapshot:reequil-ultra-matte-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ultra-matte-spf50-50g:variant",
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "source_id": "maker:reequil-ultra-matte-spf50-50g",
+      "field_name": "variant",
+      "value": "SPF 50 PA++++, 50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ultra-matte-spf50-50g",
+      "snapshot_id": "snapshot:reequil-ultra-matte-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ultra-matte-spf50-50g:pack_size",
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "source_id": "maker:reequil-ultra-matte-spf50-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ultra-matte-spf50-50g",
+      "snapshot_id": "snapshot:reequil-ultra-matte-spf50-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ultra-matte-spf50-50g:availability",
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "source_id": "retailer:reequil-ultra-matte-spf50-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ultra-matte-spf50-50g",
+      "snapshot_id": "snapshot:reequil-ultra-matte-spf50-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ultra-matte-spf50-50g:price_paise",
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "source_id": "retailer:reequil-ultra-matte-spf50-50g",
+      "field_name": "price_paise",
+      "value": 64500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ultra-matte-spf50-50g",
+      "snapshot_id": "snapshot:reequil-ultra-matte-spf50-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-vitamin-b5-moisturizer-50g:brand",
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "source_id": "maker:minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "brand",
+      "value": "Minimalist",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-vitamin-b5-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-vitamin-b5-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-vitamin-b5-moisturizer-50g:name",
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "source_id": "maker:minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "name",
+      "value": "Vitamin B5 10% Moisturizer",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-vitamin-b5-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-vitamin-b5-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-vitamin-b5-moisturizer-50g:category",
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "source_id": "maker:minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-vitamin-b5-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-vitamin-b5-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-vitamin-b5-moisturizer-50g:variant",
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "source_id": "maker:minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "variant",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-vitamin-b5-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-vitamin-b5-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-vitamin-b5-moisturizer-50g:pack_size",
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "source_id": "maker:minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-vitamin-b5-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-vitamin-b5-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-vitamin-b5-moisturizer-50g:availability",
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "source_id": "retailer:minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-vitamin-b5-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-vitamin-b5-moisturizer-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-vitamin-b5-moisturizer-50g:price_paise",
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "source_id": "retailer:minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "price_paise",
+      "value": 34900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:minimalist-vitamin-b5-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-vitamin-b5-moisturizer-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ceramide-ha-moisturiser-100g:brand",
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "source_id": "maker:reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "brand",
+      "value": "Re'equil",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ceramide-ha-moisturiser-100g",
+      "snapshot_id": "snapshot:reequil-ceramide-ha-moisturiser-100g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ceramide-ha-moisturiser-100g:name",
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "source_id": "maker:reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "name",
+      "value": "Ceramide & Hyaluronic Acid Moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ceramide-ha-moisturiser-100g",
+      "snapshot_id": "snapshot:reequil-ceramide-ha-moisturiser-100g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ceramide-ha-moisturiser-100g:category",
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "source_id": "maker:reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ceramide-ha-moisturiser-100g",
+      "snapshot_id": "snapshot:reequil-ceramide-ha-moisturiser-100g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ceramide-ha-moisturiser-100g:variant",
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "source_id": "maker:reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "variant",
+      "value": "100 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ceramide-ha-moisturiser-100g",
+      "snapshot_id": "snapshot:reequil-ceramide-ha-moisturiser-100g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ceramide-ha-moisturiser-100g:pack_size",
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "source_id": "maker:reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "pack_size",
+      "value": "100 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ceramide-ha-moisturiser-100g",
+      "snapshot_id": "snapshot:reequil-ceramide-ha-moisturiser-100g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ceramide-ha-moisturiser-100g:availability",
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "source_id": "retailer:reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ceramide-ha-moisturiser-100g",
+      "snapshot_id": "snapshot:reequil-ceramide-ha-moisturiser-100g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-ceramide-ha-moisturiser-100g:price_paise",
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "source_id": "retailer:reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "price_paise",
+      "value": 29500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:reequil-ceramide-ha-moisturiser-100g",
+      "snapshot_id": "snapshot:reequil-ceramide-ha-moisturiser-100g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-hydrating-ceramide-moisturizer-50ml:brand",
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_id": "maker:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "brand",
+      "value": "Foxtale",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-hydrating-ceramide-moisturizer-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-hydrating-ceramide-moisturizer-50ml:name",
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_id": "maker:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "name",
+      "value": "Hydrating Moisturizer with Ceramide",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-hydrating-ceramide-moisturizer-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-hydrating-ceramide-moisturizer-50ml:category",
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_id": "maker:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-hydrating-ceramide-moisturizer-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-hydrating-ceramide-moisturizer-50ml:variant",
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_id": "maker:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "variant",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-hydrating-ceramide-moisturizer-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-hydrating-ceramide-moisturizer-50ml:pack_size",
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_id": "maker:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "pack_size",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-hydrating-ceramide-moisturizer-50ml:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-hydrating-ceramide-moisturizer-50ml:availability",
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_id": "retailer:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-hydrating-ceramide-moisturizer-50ml:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-hydrating-ceramide-moisturizer-50ml:price_paise",
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "source_id": "retailer:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "price_paise",
+      "value": 33500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:foxtale-hydrating-ceramide-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-hydrating-ceramide-moisturizer-50ml:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-beetroot-hydraful-moisturizer-50g:brand",
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_id": "maker:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "brand",
+      "value": "Mamaearth",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "snapshot_id": "snapshot:mamaearth-beetroot-hydraful-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-beetroot-hydraful-moisturizer-50g:name",
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_id": "maker:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "name",
+      "value": "Beetroot Hydraful Moisturizer",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "snapshot_id": "snapshot:mamaearth-beetroot-hydraful-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-beetroot-hydraful-moisturizer-50g:category",
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_id": "maker:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "snapshot_id": "snapshot:mamaearth-beetroot-hydraful-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-beetroot-hydraful-moisturizer-50g:variant",
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_id": "maker:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "variant",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "snapshot_id": "snapshot:mamaearth-beetroot-hydraful-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-beetroot-hydraful-moisturizer-50g:pack_size",
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_id": "maker:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "snapshot_id": "snapshot:mamaearth-beetroot-hydraful-moisturizer-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-beetroot-hydraful-moisturizer-50g:availability",
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_id": "retailer:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "snapshot_id": "snapshot:mamaearth-beetroot-hydraful-moisturizer-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-beetroot-hydraful-moisturizer-50g:price_paise",
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "source_id": "retailer:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "price_paise",
+      "value": 34900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-beetroot-hydraful-moisturizer-50g",
+      "snapshot_id": "snapshot:mamaearth-beetroot-hydraful-moisturizer-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-cocoa-rich-moisturizing-cream-50g:brand",
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_id": "maker:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "brand",
+      "value": "Mamaearth",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "snapshot_id": "snapshot:mamaearth-cocoa-rich-moisturizing-cream-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-cocoa-rich-moisturizing-cream-50g:name",
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_id": "maker:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "name",
+      "value": "Cocoa Rich Moisturizing Cream",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "snapshot_id": "snapshot:mamaearth-cocoa-rich-moisturizing-cream-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-cocoa-rich-moisturizing-cream-50g:category",
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_id": "maker:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "snapshot_id": "snapshot:mamaearth-cocoa-rich-moisturizing-cream-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-cocoa-rich-moisturizing-cream-50g:variant",
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_id": "maker:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "variant",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "snapshot_id": "snapshot:mamaearth-cocoa-rich-moisturizing-cream-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-cocoa-rich-moisturizing-cream-50g:pack_size",
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_id": "maker:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "snapshot_id": "snapshot:mamaearth-cocoa-rich-moisturizing-cream-50g:maker:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-cocoa-rich-moisturizing-cream-50g:availability",
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_id": "retailer:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "snapshot_id": "snapshot:mamaearth-cocoa-rich-moisturizing-cream-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:mamaearth-cocoa-rich-moisturizing-cream-50g:price_paise",
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "source_id": "retailer:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "price_paise",
+      "value": 14900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g",
+      "retrieved_at": "2026-10-19T14:39:00Z",
+      "verified_at": "2026-10-19T14:39:00Z",
+      "content_version": "manual-page-review:2026-10-19:mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "snapshot_id": "snapshot:mamaearth-cocoa-rich-moisturizing-cream-50g:retailer:2026-10-19",
+      "validation_status": "verified"
+    }
+  ],
+  "resolutions": [
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "ingredient_declaration",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:ingredient_declaration"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-light-fluid-spf50-50ml",
+      "field_name": "ingredient_completeness",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-light-fluid-spf50-50ml:ingredient_completeness"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-vitamin-c-daily-glow-spf50-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-vitamin-c-daily-glow-spf50-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-vitamin-c-daily-glow-spf50-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-vitamin-c-daily-glow-spf50-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-vitamin-c-daily-glow-spf50-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-vitamin-c-daily-glow-spf50-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-vitamin-c-daily-glow-spf50-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-vitamin-c-daily-glow-spf50-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-dewy-spf50-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-dewy-spf50-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-dewy-spf50-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-dewy-spf50-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-dewy-spf50-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-dewy-spf50-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-dewy-spf50-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-dewy-spf50-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-glow-spf50-50ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-glow-spf50-50ml:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-glow-spf50-50ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-glow-spf50-50ml:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-glow-spf50-50ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-glow-spf50-50ml:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-glow-spf50-50ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-glow-spf50-50ml:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-glow-spf50-50ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-glow-spf50-50ml:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-glow-spf50-50ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-glow-spf50-50ml:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-glow-spf50-50ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-glow-spf50-50ml:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ultra-matte-spf50-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ultra-matte-spf50-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ultra-matte-spf50-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ultra-matte-spf50-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ultra-matte-spf50-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ultra-matte-spf50-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ultra-matte-spf50-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ultra-matte-spf50-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-vitamin-b5-moisturizer-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-vitamin-b5-moisturizer-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-vitamin-b5-moisturizer-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-vitamin-b5-moisturizer-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-vitamin-b5-moisturizer-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-vitamin-b5-moisturizer-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-vitamin-b5-moisturizer-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-vitamin-b5-moisturizer-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ceramide-ha-moisturiser-100g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ceramide-ha-moisturiser-100g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ceramide-ha-moisturiser-100g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ceramide-ha-moisturiser-100g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ceramide-ha-moisturiser-100g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ceramide-ha-moisturiser-100g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-ceramide-ha-moisturiser-100g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-ceramide-ha-moisturiser-100g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-hydrating-ceramide-moisturizer-50ml:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-hydrating-ceramide-moisturizer-50ml:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-hydrating-ceramide-moisturizer-50ml:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-hydrating-ceramide-moisturizer-50ml:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-hydrating-ceramide-moisturizer-50ml:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-hydrating-ceramide-moisturizer-50ml:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-hydrating-ceramide-moisturizer-50ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-hydrating-ceramide-moisturizer-50ml:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-beetroot-hydraful-moisturizer-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-beetroot-hydraful-moisturizer-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-beetroot-hydraful-moisturizer-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-beetroot-hydraful-moisturizer-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-beetroot-hydraful-moisturizer-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-beetroot-hydraful-moisturizer-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-beetroot-hydraful-moisturizer-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-beetroot-hydraful-moisturizer-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-cocoa-rich-moisturizing-cream-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-cocoa-rich-moisturizing-cream-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-cocoa-rich-moisturizing-cream-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-cocoa-rich-moisturizing-cream-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-cocoa-rich-moisturizing-cream-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-cocoa-rich-moisturizing-cream-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "mamaearth-cocoa-rich-moisturizing-cream-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:mamaearth-cocoa-rich-moisturizing-cream-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    }
+  ]
+}
+
