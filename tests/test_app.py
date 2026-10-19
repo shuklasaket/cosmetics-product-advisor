@@ -3,11 +3,30 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 from streamlit.testing.v1 import AppTest
+from test_catalog_contracts import catalog
+from test_catalog_search import product
 
+from repositories.catalog import CatalogRepository, migrate
+from schemas.catalog import CatalogEnvelope
 from schemas.requirements import UserRequirements
+from ui.catalog_results import safe_https_reference
 from ui.search_form import build_search_request
 
 APP = Path(__file__).resolve().parents[1] / "app.py"
+
+
+def store_app_catalog(*products: dict) -> None:
+    data = catalog()
+    for table in ("products", "observations", "resolutions"):
+        data[table] = [item for part in products for item in part[table]]
+    path = Path("database/advisor.db")
+    migrate(path)
+    CatalogRepository(path).save(CatalogEnvelope.model_validate(data))
+
+
+def submit_default_search(page: AppTest, *, budget: str = "800") -> AppTest:
+    page.text_input(key="search_budget").set_value(budget)
+    return page.form_submit_button[0].click().run()
 
 
 def test_search_form_shows_supported_choices_and_private_input_disclosure() -> None:
@@ -135,3 +154,106 @@ def test_invalid_settings_show_redacted_error(monkeypatch: pytest.MonkeyPatch) -
     assert "Configuration is invalid" in page.error[0].value
     assert value not in page.error[0].value
     assert not page.info
+
+
+def test_search_renders_ordered_entries_and_inspectable_detail_evidence() -> None:
+    store_app_catalog(
+        product("beta", name="Beta"),
+        product("alpha-z", name="Alpha"),
+        product("alpha-a", name="Alpha"),
+    )
+    page = submit_default_search(AppTest.from_file(str(APP)).run())
+
+    assert not page.exception
+    result_names = [item.value for item in page.text if item.value in {"Alpha", "Beta"}]
+    assert result_names == ["Alpha", "Alpha", "Beta"]
+    assert [
+        page.button(key=key).label for key in ("detail_alpha-a", "detail_alpha-z", "detail_beta")
+    ] == ["View details", "View details", "View details"]
+    assert not any("suitability score" in item.value.lower() for item in page.markdown)
+
+    page.button(key="detail_alpha-a").click().run()
+
+    assert not page.exception
+    assert page.subheader[-1].value == "Product details"
+    detail_text = [item.value for item in page.text]
+    assert "Alpha" in detail_text
+    assert "₹800.00" in detail_text
+    assert "Synthetic A, B" in detail_text
+    assert "2026-10-19T10:00:00Z" in detail_text
+    assert "Synthetic fixture" in detail_text
+    detail_links = [item.url for item in page.link_button]
+    assert "https://example.test/facts" in detail_links
+
+
+def test_detail_labels_unknown_sponsorship_and_declared_claims_honestly() -> None:
+    item = product(
+        "unknowns",
+        skin_type_claims=["oily", "sensitive"],
+        review_count=None,
+        sponsorship="unknown",
+    )
+    item["products"][0]["pack_size"] = None
+    next(o for o in item["observations"] if o["field_name"] == "pack_size")["value"] = None
+    store_app_catalog(item)
+    page = submit_default_search(AppTest.from_file(str(APP)).run())
+    page.button(key="detail_unknowns").click().run()
+
+    assert not page.exception
+    labels = [item.value for item in page.caption]
+    values = [item.value for item in page.text]
+    assert "Pack size" in labels and "Unknown" in values
+    assert "Sponsorship" in labels and "Unknown (evidence-backed)" in values
+    assert "Declared skin-type claims" in labels
+    assert "oily, sensitive" in values
+    assert any("not a safety or suitability finding" in item.value for item in page.info)
+
+
+def test_empty_result_explains_active_filters_and_allows_retry() -> None:
+    store_app_catalog(product("over-budget", price_paise=80_001))
+    page = submit_default_search(AppTest.from_file(str(APP)).run())
+
+    assert not page.exception
+    assert "detail_over-budget" not in {button.key for button in page.button}
+    empty_message = " ".join(item.value for item in page.info)
+    assert "sunscreen" in empty_message
+    assert "India" in empty_message
+    assert "₹800.00" in empty_message
+    assert "Change the filters" in empty_message
+
+    page.text_input(key="search_budget").set_value("800.01")
+    page.form_submit_button[0].click().run()
+
+    assert page.button(key="detail_over-budget").label == "View details"
+    assert not page.error
+
+
+def test_unavailable_catalog_clears_results_and_recovers_after_restore() -> None:
+    page = submit_default_search(AppTest.from_file(str(APP)).run())
+
+    assert not page.exception
+    assert "Catalog unavailable or invalid" in page.error[0].value
+    assert "restore a verified backup" in page.error[0].value
+    assert "database/advisor.db" not in page.error[0].value
+    assert "active_search_result" not in page.session_state
+
+    store_app_catalog(product("restored"))
+    page.form_submit_button[0].click().run()
+
+    assert not page.error
+    assert page.button(key="detail_restored").label == "View details"
+
+
+def test_external_text_is_inert_and_unsafe_references_are_not_links() -> None:
+    script_like = '<script>alert("synthetic")</script>'
+    store_app_catalog(product("hostile", ingredient_declaration=script_like))
+    page = submit_default_search(AppTest.from_file(str(APP)).run())
+    page.button(key="detail_hostile").click().run()
+
+    assert script_like in [item.value for item in page.text]
+    assert not page.html
+    assert script_like not in " ".join(item.value for item in page.markdown)
+    assert safe_https_reference("javascript:alert(1)") is None
+    assert safe_https_reference("data:text/html,unsafe") is None
+    assert safe_https_reference("document:local-evidence") is None
+    assert safe_https_reference("https://example.test/fact") == "https://example.test/fact"

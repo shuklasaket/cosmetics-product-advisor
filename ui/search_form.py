@@ -29,6 +29,8 @@ SEARCH_WIDGET_DEFAULTS: Final = {
 SEARCH_TRANSIENT_KEYS: Final = (
     "active_search_request",
     "active_search_result",
+    "catalog_search_error",
+    "selected_product_id",
     "search_validation_messages",
     "search_dispatch_count",
 )
@@ -82,8 +84,8 @@ def _accept_validated_request(request: UserRequirements) -> None:
     st.session_state["search_dispatch_count"] = st.session_state.get("search_dispatch_count", 0) + 1
 
 
-def render_search_form() -> None:
-    """Render and process the catalog search inputs."""
+def render_search_form() -> UserRequirements | None:
+    """Render the inputs and return a newly validated request for one dispatch."""
     st.subheader("Find products")
     st.caption(
         "Ingredient exclusions and preferences stay only in this browser session. "
@@ -137,6 +139,7 @@ def render_search_form() -> None:
         args=(st.session_state,),
     )
 
+    validated_request = None
     if submitted:
         st.session_state.pop("active_search_request", None)
         st.session_state.pop("active_search_result", None)
@@ -155,8 +158,10 @@ def render_search_form() -> None:
             st.session_state["search_validation_messages"] = messages
         else:
             _accept_validated_request(request)
+            validated_request = request
 
     for message in st.session_state.get("search_validation_messages", ()):
         st.error(message)
     if "active_search_request" in st.session_state:
-        st.success("Search requirements validated. Catalog results are added in the next story.")
+        st.success("Search requirements validated for this browser session.")
+    return validated_request

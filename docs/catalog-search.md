@@ -3,8 +3,9 @@
 [US-016](https://github.com/shuklasaket/cosmetics-product-advisor/issues/16) adds
 read-only, model-free Python queries for CAT-05/06/07 in
 [PRD 01](requirements/01-catalog-and-search.md). [US-017](https://github.com/shuklasaket/cosmetics-product-advisor/issues/17)
-adds the validated Streamlit request form. Catalog result display remains a separate
-story. Synthetic test catalogs do not establish genuine seed or release acceptance.
+adds the validated Streamlit request form, and [US-018](https://github.com/shuklasaket/cosmetics-product-advisor/issues/18)
+wires it to ordered result entries and inspectable evidence details. Synthetic test
+catalogs do not establish genuine seed or release acceptance.
 
 ## Streamlit form
 
@@ -18,8 +19,35 @@ Ingredient exclusions accept one value per line. Texture and finish are optional
 These personal inputs are collected for later screening and do not affect catalog
 eligibility yet. A successful submit hands an immutable `UserRequirements` instance
 to the session-local result boundary; [US-018](https://github.com/shuklasaket/cosmetics-product-advisor/issues/18)
-will connect it to result rendering. Clear resets the form widgets and deletes the
-request, result, error, and dispatch state. A new browser session starts empty.
+connects it to one model-free query. Clear resets the form widgets and deletes the
+request, result, selected detail, error, and dispatch state. A new browser session
+starts empty.
+
+## Result and evidence display
+
+A valid submit searches the configured SQLite database. Matching entries retain the
+service's case-sensitive name-then-ID order and show product name, India price, and pack
+size. **View details** opens the complete selected fact set for that product. The view
+does not add a suitability score, recommendation, ingredient screening, or review
+summary.
+
+Every non-null detail fact includes the attribution and explicit UTC verification
+timestamp from its selected evidence. Verified HTTPS observation references become
+fixed-label link buttons; `document:` references remain inert text. Product/source text
+is rendered with native text elements rather than HTML or executable Markdown. A second
+URL allowlist check prevents an unsafe scheme from becoming a link even if a malformed
+value bypassed an earlier contract boundary.
+
+Missing, selected-null, and unresolved values display as **Unknown**. Evidence-backed
+unknown sponsorship remains visibly unknown; yes/no values retain their source state.
+Skin-type values are labeled **Declared skin-type claims** and the detail view explains
+that they are source statements, not safety or suitability findings.
+
+Zero matches explain the active category, India, and INR ceiling and invite the shopper
+to change the form. Missing, unreadable, incompatible, or invalid databases clear stale
+results and show fixed restoration guidance without paths, SQL, source payloads, or
+invented fallback products. Restoring a valid catalog and resubmitting retries the
+query. The UI never creates, migrates, repairs, or imports the database.
 
 ## Consumer handoff
 
@@ -111,22 +139,23 @@ text and a bound text ceiling. It preserves exact paise even beyond SQLite's sig
 or configuration change is needed. Full-snapshot validation is deliberate for the
 small local catalog; it is not a large-catalog performance claim.
 
-Requests, active filters and results remain transient. The form keeps its validated
-request only in Streamlit session state; the service keeps no request or result state.
-Neither adds logs, persistent/shared caches, URLs, exports or database writes. The
-form does not use query parameters. Model representations omit active filters;
-explicit serialization still contains the budget and must remain in session memory.
-Future UI consumers must clear stale results when requirements change or the session
-is cleared.
+Requests, active filters, results, and the selected detail remain transient. The form
+and result controller keep them only in Streamlit session state; the service keeps no
+request or result state. Neither adds logs, persistent/shared caches, URLs, exports or
+database writes. The form does not use query parameters. Model representations omit
+active filters; explicit serialization still contains the budget and must remain in
+session memory. A new valid submit clears the prior result/detail before querying, and
+unavailability or Clear removes stale results.
 
 ## Verification
 
-Run `uv run --frozen pytest tests/test_catalog_search.py -q` for synthetic temporary
-SQLite checks covering both category ceilings, unknown/unresolved/history handling,
-zero prices, exact large integers, repeated ordering and claim invariance, detail
-provenance, missing/invalid/unreadable databases, validation and sanitized diagnostics,
+Run `uv run --frozen pytest tests/test_app.py tests/test_catalog_search.py -q` for
+synthetic AppTest and temporary-SQLite checks covering the form-to-search workflow,
+ordered entries, evidence details, unknown/sponsorship/claim wording, inert external
+text, empty/retry and unavailable/restore behavior, both category ceilings,
+unknown/unresolved/history handling, exact large integers, sanitized diagnostics,
 read-only privacy, and a concurrent WAL writer. `make check` includes these tests.
-Genuine seed, local UI workflow and full offline release evidence remain separate.
+Genuine seed and full offline release evidence remain separate.
 
 Implementation references: [Python 3.12 SQLite bindings and transactions](https://docs.python.org/3.12/library/sqlite3.html),
 [SQLite JSON operators](https://www.sqlite.org/json1.html), and
