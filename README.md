@@ -23,7 +23,7 @@ If the pinned interpreter is unavailable, `uv python install` installs the versi
 
 Defaults work without a `.env` file. To override local data paths, copy [.env.example](.env.example) to `.env` and edit the documented keys. Environment variables override `.env` values. Invalid or unknown `.env` fields fail validation with values omitted from the UI error.
 
-The [catalog storage API and recovery guide](docs/catalog-storage.md) covers explicit SQLite initialization, evidence persistence, migrations and backup/restore. The [local JSON import command](docs/catalog-import.md) loads validated batches with atomic writes and sanitized reports. Search/catalog UI and genuine seed remain pending.
+The [catalog storage API and recovery guide](docs/catalog-storage.md) covers explicit SQLite initialization, evidence persistence, migrations and backup/restore. The [local JSON import command](docs/catalog-import.md) loads validated batches with atomic writes and sanitized reports. The [catalog search and detail service](docs/catalog-search.md) provides exact filters, stable ordering, and inspectable evidence through Python. Catalog UI and genuine seed remain pending.
 
 The preview does not create a database, load product data, save preferences, or start model/source connections. Hosted inference cannot be enabled in this foundation. Streamlit is configured to listen on loopback only.
 
