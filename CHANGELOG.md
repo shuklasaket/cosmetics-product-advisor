@@ -12,6 +12,10 @@ has been delivered by this work.
 
 ### Added
 
+- Approved-source registry persistence and strict HTTPS destination/redirect authorization,
+  with disabled-by-default registrations, schema-v2 backup migration, external-ID mapping,
+  and typed payload-free refresh outcomes with bounded attempts and sanitized error codes.
+  ([#34](https://github.com/shuklasaket/cosmetics-product-advisor/issues/34))
 - A reproducible offline PRD 01 release runbook and read-only verifier for the genuine
   India catalog, with target-Mac launch/restart evidence, genuine UI provenance checks,
   and validated backup/restore acceptance coverage.

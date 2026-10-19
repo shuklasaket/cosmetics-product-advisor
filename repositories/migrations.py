@@ -109,4 +109,23 @@ SCHEMA_V1 = (
     ),
 )
 
-MIGRATIONS: tuple[tuple[str, ...], ...] = (SCHEMA_V1,)
+SCHEMA_V2 = (
+    """CREATE TABLE approved_sources (
+        payload TEXT NOT NULL CHECK(json_valid(payload)),
+        source_id TEXT GENERATED ALWAYS AS (json_extract(payload, '$.source_id')) STORED NOT NULL,
+        source_type TEXT GENERATED ALWAYS AS (
+            json_extract(payload, '$.source_type')
+        ) STORED NOT NULL,
+        checked_on TEXT GENERATED ALWAYS AS (json_extract(payload, '$.checked_on')) STORED NOT NULL,
+        enabled INTEGER GENERATED ALWAYS AS (json_extract(payload, '$.enabled')) STORED NOT NULL,
+        UNIQUE(source_id),
+        CHECK(source_type IN ('manufacturer','retailer','dataset','document')),
+        CHECK(json_type(payload, '$.enabled') IN ('true','false')),
+        CHECK(json_type(payload, '$.endpoints') = 'array'
+              AND json_array_length(payload, '$.endpoints') > 0),
+        CHECK(json_type(payload, '$.redirect_origins') = 'array'),
+        CHECK(checked_on GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]')
+    )""",
+)
+
+MIGRATIONS: tuple[tuple[str, ...], ...] = (SCHEMA_V1, SCHEMA_V2)

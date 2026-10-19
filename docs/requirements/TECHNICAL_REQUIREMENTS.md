@@ -99,8 +99,10 @@ PRD 01's implemented in-memory request/evidence boundaries and initial
 `catalog-v1` / `explicit-selection-v1` handoff are documented in the
 [catalog contracts](../catalog-contracts.md). The
 [storage](../catalog-storage.md), [import](../catalog-import.md) and
-[search/detail service](../catalog-search.md) consume them. The remaining
-tool/model/graph contracts and catalog UI are still pending.
+[search/detail service](../catalog-search.md) consume them. PRD 02's implemented
+[approved-source and refresh-result contracts](../approved-source-registry.md) constrain
+future adapters; live retrieval and the remaining tool/model/graph contracts are still
+pending.
 
 **TR-10 — Tool surface.** Provide typed Python functions for `search_products`, `fetch_product_details`, `fetch_reviews`, `analyze_reviews`, `check_ingredients`, `calculate_ranking`, `save_preferences`, and `get_preferences`. All accept validated arguments and the required run context. Preference writes additionally require a controller-issued confirmation tied to an actual reviewed user-save action. This MVP does not require a REST API or an MCP server.
 
