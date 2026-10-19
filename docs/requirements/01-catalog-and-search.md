@@ -38,7 +38,10 @@ Repeat with a zero budget, a negative budget, an unsupported country, a duplicat
 
 - 100% hard-filter correctness across the release fixtures.
 - 100% of displayed non-null product facts have traceable provenance.
-- Proposed usability target: at least four of five pilot users find and inspect a matching product within two minutes; collect a baseline rather than claiming prior performance.
+- Current usability proxy: five deterministic automated user journeys must find and inspect
+  matching products without application exceptions. This verifies representative workflow
+  coverage, not human comprehension or completion time. Human research is non-blocking unless
+  explicitly requested for a future release.
 
 ## Dependencies and decisions
 

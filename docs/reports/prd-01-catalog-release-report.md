@@ -53,5 +53,8 @@ stopped and restarted.
 | AC-3 boundaries and validation | `tests/test_app.py`, `tests/test_catalog_search.py`, and `tests/test_requirements.py` cover ceiling, over-budget, unknown availability, zero/invalid/non-finite budget, unsupported country and explanatory empty state. |
 | AC-4 failure recovery | `tests/test_catalog_import.py` and `tests/test_catalog_repository.py` cover duplicates, atomic import/migration failure and validated restore; `tests/test_catalog_release.py` proves the restored genuine catalog remains searchable. |
 
-The five-person usability timing pilot is intentionally outside US-020 and tracked by
-[US-030](https://github.com/shuklasaket/cosmetics-product-advisor/issues/30).
+The maintainer replaced the deferred five-person timing pilot with five deterministic
+automated journeys in [US-030](https://github.com/shuklasaket/cosmetics-product-advisor/issues/30).
+They cover representative sunscreen and moisturiser searches, session-only optional inputs,
+matching-product discovery, detail inspection and visible source evidence. These journeys are an
+automated usability proxy; they do not measure human comprehension or task completion time.
