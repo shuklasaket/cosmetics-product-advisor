@@ -24,8 +24,10 @@ development preview still does not import or display catalog products.
 uv run --frozen python -m scripts.import_catalog data/local/approved-batch.json
 ```
 
-Replace the example path with your actual permitted evidence file; no genuine
-seed is supplied by this story. The default database is `Settings.database_path`
+The repository's reviewed non-commercial demo seed is available at
+`data/seed/catalog-v1.json`; its [source policy and attribution](../data/seed/README.md)
+must travel with it. Replace the example path only when importing another permitted
+evidence file. The default database is `Settings.database_path`
 (`database/advisor.db`, overridable with `ADVISOR_DATABASE_PATH`). To select an
 existing initialized file explicitly:
 
@@ -131,10 +133,11 @@ invalid or unsupported databases, check configuration and follow the
 last-valid database merely to bypass an import error. After a concurrent update,
 reload the latest catalog before rebuilding/retrying the batch.
 
-Synthetic integration tests cover the import command and rollback behavior; they do
-not establish genuine data correctness, redistribution rights, search behavior, or
-PRD 01 release acceptance. Generated databases, backups and local evidence files
-remain uncommitted under the [data policy](../data/README.md).
+Synthetic integration tests cover generic import and rollback behavior. Separate
+US-019 acceptance tests validate the reviewed starter seed's category counts,
+provenance boundary, repeat import and India/INR search behavior. These tests do not
+grant broader rights than the documented source policy. Generated databases, backups
+and local evidence files remain uncommitted under the [data policy](../data/README.md).
 
 API references: [Python JSON decoding](https://docs.python.org/3.12/library/json.html),
 [Pydantic validation errors](https://docs.pydantic.dev/latest/errors/errors/).
