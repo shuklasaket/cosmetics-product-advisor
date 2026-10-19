@@ -12,6 +12,10 @@ has been delivered by this work.
 
 ### Added
 
+- A reproducible offline PRD 01 release runbook and read-only verifier for the genuine
+  India catalog, with target-Mac launch/restart evidence, genuine UI provenance checks,
+  and validated backup/restore acceptance coverage.
+  ([#20](https://github.com/shuklasaket/cosmetics-product-advisor/issues/20))
 - A permitted, versioned India-online starter catalog with five genuine sunscreens and
   five genuine moisturisers, fact-level manufacturer/retailer provenance, documented
   non-commercial source boundaries, repeatable import and budget-search verification.

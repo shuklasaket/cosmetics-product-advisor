@@ -2,10 +2,10 @@
 
 [PRD 01](requirements/01-catalog-and-search.md) stores validated public catalog
 records through [`CatalogRepository`](../repositories/catalog.py). This delivers
-storage. The [local importer](catalog-import.md) and
-[search/detail service](catalog-search.md) consume it; genuine seed and catalog UI
-remain pending.
-The Streamlit development preview still does not open or create a database.
+storage. The [local importer](catalog-import.md),
+[search/detail service](catalog-search.md), genuine seed and Streamlit UI consume it.
+The application deliberately does not open a writable database or create storage at
+startup; follow the [release runbook](catalog-release.md) for explicit setup.
 Do not store shopper requests, budgets, exclusions, medical details, or conversations.
 
 ## Initialize and inspect

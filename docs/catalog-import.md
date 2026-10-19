@@ -3,9 +3,9 @@
 The [PRD 01](requirements/01-catalog-and-search.md) importer reads permitted public
 evidence from a local UTF-8 JSON file and commits it to the
 [SQLite catalog](catalog-storage.md). It performs no source fetching or scraping.
-The [search/detail service](catalog-search.md) reads imported evidence. Genuine
-seed preparation and the catalog UI remain separate stories; the Streamlit
-development preview still does not import or display catalog products.
+The [search/detail service](catalog-search.md) and Streamlit UI read imported evidence.
+The reviewed demo seed is supplied separately and loaded explicitly; application
+startup never imports or fetches products. See the [release runbook](catalog-release.md).
 
 ## Prepare and run
 

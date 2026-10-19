@@ -155,7 +155,9 @@ ordered entries, evidence details, unknown/sponsorship/claim wording, inert exte
 text, empty/retry and unavailable/restore behavior, both category ceilings,
 unknown/unresolved/history handling, exact large integers, sanitized diagnostics,
 read-only privacy, and a concurrent WAL writer. `make check` includes these tests.
-Genuine seed and full offline release evidence remain separate.
+The genuine seed and full offline workflow are verified separately by
+[`test_catalog_release.py`](../tests/test_catalog_release.py) and the
+[release report](reports/prd-01-catalog-release-report.md).
 
 Implementation references: [Python 3.12 SQLite bindings and transactions](https://docs.python.org/3.12/library/sqlite3.html),
 [SQLite JSON operators](https://www.sqlite.org/json1.html), and
