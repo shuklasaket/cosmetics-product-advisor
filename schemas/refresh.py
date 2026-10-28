@@ -13,7 +13,7 @@ from pydantic import (
     model_validator,
 )
 
-from schemas.catalog import Reference, UtcTimestamp
+from schemas.catalog import FactName, FactObservation, Reference, UtcTimestamp
 from schemas.common import Contract, Identifier, Text
 
 SourceType = Literal["manufacturer", "retailer", "dataset", "document"]
@@ -21,6 +21,7 @@ RefreshStatus = Literal[
     "fetched", "cached", "missing", "stale", "partial", "invalid", "unavailable"
 ]
 CacheState = Literal["miss", "fresh", "stale", "bypass"]
+RetrievedFieldStatus = Literal["returned", "missing", "rejected"]
 RefreshErrorCode = Literal[
     "product_not_found",
     "refresh_unavailable",
@@ -167,7 +168,7 @@ class RefreshResult(Contract):
     product_id: Identifier
     evidence_ids: tuple[Identifier, ...]
     cache_state: CacheState
-    attempts: int = Field(strict=True, ge=0, le=2)
+    attempts: int = Field(strict=True, ge=0, le=3)
     started_at: UtcTimestamp
     completed_at: UtcTimestamp
     retrieved_at: UtcTimestamp | None = None
@@ -200,4 +201,36 @@ class RefreshResult(Contract):
         successful = self.status in {"fetched", "cached"}
         if successful != (self.error_code is None):
             raise ValueError("Only successful refresh outcomes omit a sanitized error code.")
+        return self
+
+
+class RetrievedField(Contract):
+    """One allowlisted source-field result, never a raw response member."""
+
+    field_name: FactName
+    status: RetrievedFieldStatus
+    evidence_id: Identifier | None = None
+
+    @model_validator(mode="after")
+    def consistent_status(self) -> Self:
+        if (self.status == "returned") != (self.evidence_id is not None):
+            raise ValueError("Returned fields require evidence; absent or rejected fields cannot.")
+        return self
+
+
+class RefreshLookup(Contract):
+    """Validated candidate evidence and a payload-free refresh outcome."""
+
+    refresh: RefreshResult
+    fields: tuple[RetrievedField, ...]
+    observations: tuple[FactObservation, ...]
+
+    @model_validator(mode="after")
+    def linked_candidates(self) -> Self:
+        evidence = {item.evidence_id for item in self.observations}
+        returned = {item.evidence_id for item in self.fields if item.evidence_id is not None}
+        if evidence != returned or evidence != set(self.refresh.evidence_ids):
+            raise ValueError("Refresh evidence must exactly match returned validated fields.")
+        if any(item.validation_status != "unverified" for item in self.observations):
+            raise ValueError("Retrieved candidates require later review before selection.")
         return self
