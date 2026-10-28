@@ -23,7 +23,7 @@ Streamlit's old `streamlit/agent-skills` repository is deprecated. Its canonical
 
 Use a skill only when its description fits the requested work. Read the relevant entry point and only the supporting references needed. The [PRDs](requirements/README.md), [technical requirements](requirements/TECHNICAL_REQUIREMENTS.md), [data policy](../data/README.md), and [contributor workflow](../CONTRIBUTING.md) remain the project authority; generic examples are not additional product requirements or permission for external actions.
 
-- Keep the local, single-user application and deterministic Python decision authority. LangGraph enters at PRD 07 as one orchestrator; graph examples do not authorize multiple independent agents or durable sensitive checkpoints.
+- Keep the local, single-user application and deterministic Python decision authority. LangGraph enters at PRD 07 as one trusted controller coordinating exactly five fixed roles; graph examples do not authorize autonomous agents, dynamic delegation, agent-to-agent messaging, or durable sensitive checkpoints.
 - Apply the technical privacy contract before using generic cache, query-parameter, tracing, memory, logging, or persistence examples. Sensitive session inputs cannot enter shared/persistent caches, URLs, traces, raw checkpoints, databases, or exports. Show validated progress/events rather than raw hidden model reasoning.
 - Continue the canonical uv workflow. Skill installation does not install Ollama/models, add LangGraph dependencies early, enable hosted inference, create accounts, connect MCP servers, publish a service, or authorize collecting source data.
 - Reuse existing user authorization for scoped work. Ask only when material information or authorization is genuinely missing. A skill's generic confirmation sequence does not require asking again for already-authorized fixes or the established PR workflow.
@@ -38,7 +38,7 @@ Use the Streamlit skill's bundled `references/testing.md` for AppTest; ordinary 
 
 We considered OpenAI's security-best-practices package, but its framework references target Django, Flask, FastAPI, and non-Python web stacks rather than Streamlit. The selected threat-model skill and project-specific boundaries fit this repository more closely. LangChain's evaluation skill targets Harbor Tasks, so it does not replace the PRD 09 evaluation contract.
 
-Cloud-deployment, React/Next.js, vector-store/RAG, Deep Agents, persistent graph memory, swarm, and model-training skills are excluded from the current scope. Browser automation is deferred until a UI acceptance check needs it beyond AppTest; installing a browser toolchain is not required for this setup. Existing diagram and engineering plugins remain available separately and are not copied from a developer's private plugin cache into the repository.
+Cloud-deployment, React/Next.js, vector-store/RAG, Deep Agents, persistent graph memory, swarm, and model-training skills are excluded from the current scope. The bounded five-role graph is not an authorization to add an agent framework, role-specific runtime, or additional model provider. Browser automation is deferred until a UI acceptance check needs it beyond AppTest; installing a browser toolchain is not required for this setup. Existing diagram and engineering plugins remain available separately and are not copied from a developer's private plugin cache into the repository.
 
 ## Use and verification
 

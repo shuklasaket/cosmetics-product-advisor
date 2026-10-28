@@ -19,9 +19,9 @@ minimal implementation path. It preserves the existing catalog and source contra
 
 **TR-01 — Supported deployment.** Build one local, single-user Streamlit application on macOS. Support sunscreen and moisturiser, India, INR, five supported skin types, and approximately 20–30 verified products in the completed MVP. The structured interface must work before the conversational workflow is introduced.
 
-**TR-02 — Execution ownership.** One LangGraph orchestrator coordinates specialized Python functions. Python owns input validation, source selection, ingredient-rule evaluation, eligibility, arithmetic, citation validation, and persistence. Models interpret text, extract review findings, and phrase validated evidence. A model cannot override a deterministic decision.
+**TR-02 — Execution ownership.** One trusted LangGraph controller coordinates exactly five statically wired specialist roles: Intake and Clarification, Catalog Evidence, Review Evidence, Policy and Ranking, and Explanation and Citation. Python owns input validation, source selection, ingredient-rule evaluation, eligibility, arithmetic, citation validation, persistence, role routing, and final publication. Models interpret text, extract review findings, and phrase validated evidence only through their assigned roles. A role/model cannot override a deterministic decision.
 
-Public hosting, authentication/accounts, multiple independent agents, vector databases, checkout, scheduled collectors, and MCP serving are outside this implementation. Optional hosted inference must not become a dependency of the local product.
+Public hosting, authentication/accounts, autonomous/general-purpose agents, vector databases, checkout, scheduled collectors, and MCP serving are outside this implementation. The five roles are not independent processes or a swarm: there is no agent-to-agent communication, dynamic delegation, independent persistence, or model-selected tool dispatch. Optional hosted inference must not become a dependency of the local product.
 
 ## 2. Runtime and dependencies
 
@@ -32,7 +32,7 @@ Public hosting, authentication/accounts, multiple independent agents, vector dat
 | Validation | Pydantic schemas at input, import, tool, model-output, and configuration boundaries |
 | Storage | SQLite through a repository layer; parameterized queries, transactions, explicit migrations |
 | Local inference | Ollama adapter with structured-output validation and bounded calls; exact model selected against available RAM/processor |
-| Orchestration | LangGraph for PRD 07 onward; earlier releases invoke the same application services directly |
+| Orchestration | One controller and five fixed typed roles in LangGraph from PRD 07 onward; earlier releases invoke the same role-backed services directly |
 | Retrieval | HTTPX for approved sources; BeautifulSoup only for an explicitly permitted HTML integration |
 | Verification | Pytest for deterministic behavior and integration fixtures; separate live-source/local-model smoke checks |
 
@@ -48,11 +48,16 @@ for the implementation boundary.
 
 ```mermaid
 flowchart TD
-    UI[Streamlit interface] --> APP[Application controller and validated request]
-    APP --> GRAPH[LangGraph workflow from PRD 07]
-    APP --> SERVICES[Search, reviews, screening, ranking, explanation]
-    GRAPH --> SERVICES
-    SERVICES --> VALIDATE[Evidence and output validation]
+    UI[Streamlit interface] --> APP[Trusted controller and validated request]
+    APP --> GRAPH[Fixed five-role LangGraph from PRD 07]
+    APP --> SERVICES[Shared deterministic services]
+    GRAPH --> INTAKE[Intake and Clarification]
+    INTAKE --> EVIDENCE[Catalog Evidence]
+    EVIDENCE --> REVIEW[Review Evidence]
+    REVIEW --> POLICY[Policy and Ranking]
+    POLICY --> EXPLAIN[Explanation and Citation]
+    EXPLAIN --> VALIDATE[Controller validation and publication]
+    SERVICES --> VALIDATE
     VALIDATE --> UI
     SERVICES --> DB[(SQLite repositories)]
     SERVICES --> HTTP[Approved source adapters]
@@ -63,14 +68,15 @@ flowchart TD
     AUDIT --> DB
 ```
 
-**TR-04 — Separation of concerns.** Keep UI code, graph nodes, application services, source/model adapters, and repositories separate. Graph nodes call the same services as the structured path. Scoring and ingredient evaluation must be testable without Streamlit, a model, or network access. Models receive no database connection, shell capability, arbitrary HTTP client, or preference-write authority.
+**TR-04 — Separation of concerns.** Keep UI code, controller, role nodes, application services, source/model adapters, and repositories separate. Role nodes call the same services as the structured path. Scoring and ingredient evaluation must be testable without Streamlit, a model, or network access. Role handoffs travel only through the controller; a role cannot call another role. Models receive no database connection, shell capability, arbitrary HTTP client, or preference-write authority.
 
 Introduce each boundary when its first consumer ships: the existing catalog services
-and SQLite repository remain the baseline; ingredient and ranking policy can start as
-pure functions; the model adapter first appears with PRD 04; graph nodes first appear
-with PRD 07. Do not create parallel implementations for form and conversation.
+and SQLite repository remain the baseline; Catalog Evidence and Policy and Ranking can
+start as direct typed services; the Review Evidence model adapter first appears with
+PRD 04; Explanation and Citation with PRD 06; controller composition appears with PRD
+07. Do not create parallel implementations for form and conversation.
 
-**TR-05 — Run lifecycle.** Assign each run a unique `run_id` and monotonically increasing session `request_version`. Use typed states: `awaiting_input`, `running`, `completed`, `partial`, `failed`, and `cancelled`; an empty valid shortlist is a completed result. Track the current stage and validated intermediate results. Sensitive graph state remains in memory; durable raw checkpoints are disabled.
+**TR-05 — Run lifecycle.** Assign each run a unique `run_id` and monotonically increasing session `request_version`. Use typed states: `awaiting_input`, `running`, `completed`, `partial`, `failed`, and `cancelled`; an empty valid shortlist is a completed result. The controller tracks the current role/stage and validated intermediate artifacts. Sensitive graph state remains in memory; durable raw checkpoints are disabled.
 
 The controller must support an independently signalled cancellation, using a bounded worker if needed to keep the UI responsive. A worker cannot publish results for a cancelled or superseded request. A running external/model call may finish after cancellation, but no new call starts and its result cannot replace current UI state.
 
@@ -89,7 +95,7 @@ The controller must support an independently signalled cancellation, using a bou
 | Review | Stable review ID, mapped product/variant, source reference, permitted text/excerpt, collection date, optional rating/scale and explicitly supported skin-type metadata, normalized text hash. Strip unnecessary reviewer identifiers. |
 | Ingredient rule | Canonical name, curated aliases, India scope, rule type, applicable category/use, concentration/other conditions and units, exact authoritative reference, version, last checked. Missing applicability information yields an unresolved check. |
 | Analysis artifact | Evidence IDs/hashes, model identity, prompt/schema versions, sampling policy, validated extraction, coverage counts, confidence limitations. Persistent artifacts are independent of personal requests. |
-| Run/call events | Run/call IDs, stage, product/artifact versions, status, times, retry/cache indicators, redacted error code, model identity, nullable token counts and provenance, estimated cost/rate version. No raw arguments, prompts, conversations, or personal exclusion findings. |
+| Run/call events | Run/call IDs, role/protocol version, stage, product/artifact versions, status, times, retry/cache indicators, redacted error code, model identity, nullable token counts and provenance, estimated cost/rate version. No raw arguments, prompts, conversations, role payloads, or personal exclusion findings. |
 | Saved preferences | One local profile containing only preferred currency, purchase country, and product finish, plus necessary schema/save metadata. No budget, skin/allergy/medical history, avoid list, or conversation fields. |
 | Budget ledger | If paid inference is enabled: per-call reservations, reconciled cost, rate version, and project/run totals. Active reservations count against available budget. |
 
@@ -105,6 +111,8 @@ The controller must support an independently signalled cancellation, using a bou
 | --- | --- |
 | `UserRequirements` | Category enum, supported skin type, required non-negative budget, visible India/INR defaults, session-only exclusions, optional supported preferences; reject unsupported country/category and non-finite numeric values |
 | `RunContext` | Run/request IDs, deadline/cancel signal, permitted tools, model/tool counters, and budget access; the trusted controller creates it and tools cannot relax it |
+| `RoleInvocation` | Fixed role identifier/version, minimum-necessary typed input artifact, controller-issued capability token, and remaining limits; no raw shared graph state, tool handle, or persistence authority |
+| `RoleResult[T]` | Role identifier/version, typed payload or unavailable/invalid status, evidence IDs, validation metadata, and sanitized error code; the controller validates it before the next handoff |
 | `ToolResult[T]` | Typed payload, success/partial/unavailable/invalid status, evidence IDs, provenance/cache state, and sanitized error code; validate at every tool boundary |
 | `IngredientResult` | Regulatory findings separate from personal matches; overall `eligible_within_checks`, `excluded`, or `requires_verification`; exact rule/evidence references |
 | `ReviewAnalysis` | Validated aspects/sentiment, supporting review IDs, explicit skin-type evidence, collected/unique/analyzed/failed counts, confidence band and limitations |
@@ -122,10 +130,11 @@ pending.
 
 **TR-10 — Tool surface.** Expose the existing search/detail services and later review,
 screening, ranking, and preference operations as typed Python calls when their PRDs
-need them. The PRD 07 graph uses these same calls through thin nodes, with validated
-arguments, results, and run context. Keep preference saving tied to a controller-issued
-confirmation of an actual reviewed user action. A REST API, MCP server, generic tool
-registry, and dynamic model-selected dispatch are unnecessary.
+need them. The five roles use only their statically allocated calls through thin nodes,
+with validated arguments, results, and controller-owned run context. Keep preference
+saving tied to a controller-issued confirmation of an actual reviewed user action and
+outside every role capability set. A REST API, MCP server, generic tool registry, and
+dynamic model-selected dispatch are unnecessary.
 
 **TR-11 — Retrieval contract.** The first live adapter is Open Beauty Facts; official brand evidence and a permitted retailer/review dataset may be imported manually. Resolve approved external IDs to catalog variants before accepting facts. Validate payloads, source references, and allowed reuse; missing fields remain missing. Enforce approved destinations on initial requests and redirects. Do not follow URLs suggested by retrieved text or a model.
 
@@ -143,7 +152,7 @@ Use bounded retries only for transient failures; do not retry invalid payloads o
 
 **TR-16 — Grounded explanation.** Pass selected IDs, immutable computed facts, validated findings, and an evidence manifest to the model. Validate both citation identity and claim support; a real source ID attached to an unrelated statement fails validation. Prefer constrained claim structures/templates when free-form support cannot be checked reliably. Render rank, price, score, and screening status from application data. Use the factual fallback after bounded generation failure, as specified in [PRD 06](06-grounded-explanations.md).
 
-**TR-17 — Model adapter and caching.** Centralize model dispatch, context/output bounds, timeout, schema repair, usage capture, and redaction. Record a stable model identity or digest when available and disclose when an exact model revision cannot be established. Cache only validated public-evidence extractions using evidence hashes, model, prompt/schema versions, and relevant extraction settings. Changing any key invalidates reuse. Personal matching and request-specific explanations stay in memory.
+**TR-17 — Model adapter and caching.** Centralize controller-authorized model dispatch, context/output bounds, timeout, schema repair, usage capture, and redaction. Only Review Evidence and Explanation and Citation may request their assigned model operation. Record a stable model identity or digest when available and disclose when an exact model revision cannot be established. Cache only validated public-evidence extractions using evidence hashes, model, prompt/schema, role/protocol versions, and relevant extraction settings. Changing any key invalidates reuse. Personal matching and request-specific explanations stay in memory.
 
 Use valid cached review findings first. At most five products receive fresh review-model analysis per run, selected by stable ID from matching candidates as proposed in [PRD 07](07-conversational-workflow.md). Rank other eligible candidates using the documented missing-review policy and display analyzed/unanalyzed counts. This bound must not imply full review coverage.
 
@@ -151,7 +160,7 @@ Use valid cached review findings first. At most five products receive fresh revi
 
 **TR-18 — Persistence allowlist.** Enforce [PRD 08](08-preference-memory.md) at repository boundaries, not only in the UI. Save only the three approved preference values after explicit opt-in and reviewed save. Current requests override saved defaults without silently updating them. Turning memory off/deleting saved preferences removes stored values and prevents replay from caches or logs. Session clear removes sensitive request state and active results.
 
-**TR-19 — Redacted observability.** Exclusions, allergy/medical details, current budgets, raw conversations, sensitive tool arguments, and raw personal prompts must not enter persistent logs, checkpoints, caches, error traces, or exports. Allow only explicitly selected event fields; do not serialize an entire request/state object and redact afterward. Personal exclusion reason details remain in memory; persist only non-sensitive aggregate outcomes and versioned product/score artifacts.
+**TR-19 — Redacted observability.** Exclusions, allergy/medical details, current budgets, raw conversations, sensitive tool arguments, raw personal prompts, and role payloads must not enter persistent logs, checkpoints, caches, error traces, or exports. Allow only explicitly selected event fields, including role/protocol identity; do not serialize an entire request/state object and redact afterward. Personal exclusion reason details remain in memory; persist only non-sensitive aggregate outcomes and versioned product/score artifacts.
 
 **TR-20 — Untrusted content and network access.** Product/review text and model output are data. They cannot change instructions, destinations, tool permissions, budgets, rules, or ranking. Escape external content in the UI and avoid executing source-provided HTML/scripts. Use parameterized SQL, validated local import paths, HTTPS with certificate verification for remote sources, and explicit destination allowlists. Bind the app to loopback; no public listener is part of this release.
 
@@ -159,7 +168,7 @@ Use valid cached review findings first. At most five products receive fresh revi
 
 ## 8. Reliability, limits, and resource targets
 
-**TR-22 — Central enforcement.** Counters and deadlines apply across nested tools, model repairs, retries, and fallback paths. Validate configuration before dispatch. The stricter remaining run, task, and budget limit wins. Persist sanitized terminal outcomes; never report success for an unvalidated result.
+**TR-22 — Central enforcement.** The controller enforces counters and deadlines across every role, nested tool, model repair, retry, and fallback path. Validate configuration and a role capability before dispatch. The stricter remaining run, role, task, and budget limit wins. Persist sanitized terminal outcomes; never report success for an unvalidated result.
 
 | Control | Proposed baseline carried forward from PRDs |
 | --- | --- |
@@ -178,7 +187,7 @@ Every model call also needs an explicit timeout and output allowance within the 
 
 ## 9. Usage accounting and export
 
-**TR-25 — Usage accuracy.** Capture every model attempt from PRD 04 onward, distinguishing measured, estimated, and unknown tokens. Unknown values remain null and make totals explicitly partial; cache hits do not create fictitious model usage. Report local API expenditure as $0 while device/electricity cost remains unmeasured. Aggregate durations with clear wall-clock versus summed-call labels.
+**TR-25 — Usage accuracy.** Capture every model attempt from PRD 04 onward with its role/protocol identity, distinguishing measured, estimated, and unknown tokens. Unknown values remain null and make totals explicitly partial; cache hits do not create fictitious model usage. Report local API expenditure as $0 while device/electricity cost remains unmeasured. Aggregate durations with clear wall-clock versus summed-call labels.
 
 **TR-26 — Paid-call accounting.** When enabled, estimate USD cost using dated input/output rates per million tokens. Atomically reserve worst-case input plus permitted output cost before dispatch; active reservations and settled spend count against both ceilings. Reconcile measured usage afterward. Unknown rates or unbounded input deny dispatch. A cancelled call may still incur charges; retain its reservation until actual usage or a defensible upper bound is settled.
 
@@ -193,7 +202,7 @@ are responsibilities, not a requirement to create empty packages:
 
 ```text
 app.py                         Streamlit entry point
-agents/                        Typed state and graph nodes from PRD 07
+agents/                        Controller plus five typed role nodes from PRD 07
 schemas/                       Request, evidence, tool, model, and configuration contracts
 services/                      Validation, analysis, screening, ranking, usage, explanation
 tools/                         Allowlisted source and preference tool adapters
@@ -213,19 +222,19 @@ Keep generated databases, caches, credentials, local configuration, model files,
 
 ## 11. Verification and release traceability
 
-**TR-30 — Verification strategy.** Use unit tests for deterministic validation, matching, arithmetic, and policy boundaries; integration tests for transactional imports, migrations, tool contracts, cache invalidation, cancellation, and redaction; and full application checks for each deployable increment. Use recorded responses for repeatable failure tests and distinguish them from live-source checks. Do not require byte-identical LLM prose; require valid schemas, supported claims, and unchanged deterministic decisions.
+**TR-30 — Verification strategy.** Use unit tests for deterministic validation, matching, arithmetic, and policy boundaries; integration tests for transactional imports, role capability/handoff contracts, cache invalidation, cancellation, and redaction; and full application checks for each deployable increment. Use recorded responses for repeatable failure tests and distinguish them from live-source checks. Do not require byte-identical LLM prose; require valid schemas, supported claims, unchanged deterministic decisions, and no unauthorized role action.
 
 | Release | Primary technical requirements | Required evidence |
 | --- | --- | --- |
 | [01](01-catalog-and-search.md) | TR-01, 03–04, 06–09, 12, 28–30 | Clean local launch; catalog persists; boundary/invalid/empty searches; field-level provenance |
 | [02](02-approved-data-refresh.md) | TR-07–08, 10–11, 20, 22–23 | Actual lookups for five products; repeatable timeout/conflict/idempotency tests; last-valid facts preserved |
 | [03](03-ingredient-screening.md) | TR-06, 09, 13, 19 | Alias/rule fixtures; unknown concentration/missing declaration; sourced findings; no sensitive persistence |
-| [04](04-review-analysis.md) | TR-03, 09, 14, 17, 19, 22, 25 | Local model smoke check; review-ID support; count reconciliation; injection/invalid output; cache and usage checks |
-| [05](05-ranking-and-comparison.md) | TR-06, 09, 15 | Fixed score vectors; hard exclusions; ties/zero budget; sponsorship neutrality; identical numeric results |
-| [06](06-grounded-explanations.md) | TR-09, 16–17, 20, 23 | Matching claim citations; immutable selected facts; unrelated/fabricated citations rejected; factual fallback |
-| [07](07-conversational-workflow.md) | TR-02, 04–05, 10, 12, 17, 22–24 | Structured/conversational parity; actual tool traces; limits, stale-result suppression, cancellation |
-| [08](08-preference-memory.md) | TR-10, 18–19 | Three allowed values reused across restart; unauthorized writes rejected; deletion and persistent-store inspection |
-| [09](09-usage-and-evaluation.md) | TR-21, 25–27, 29–30 | Usage reconciliation; optional budget preflight; redacted replay export; five successful scenarios, two edge cases, A/B report |
+| [04](04-review-analysis.md) | TR-03, 09, 14, 17, 19, 22, 25 | Local model smoke check; review-role protocol; review-ID support; count reconciliation; injection/invalid output; cache and usage checks |
+| [05](05-ranking-and-comparison.md) | TR-06, 09, 15 | Policy/ranking role vectors; hard exclusions; ties/zero budget; sponsorship neutrality; identical numeric results |
+| [06](06-grounded-explanations.md) | TR-09, 16–17, 20, 23 | Explanation-role protocol; matching claim citations; immutable selected facts; unrelated/fabricated citations rejected; factual fallback |
+| [07](07-conversational-workflow.md) | TR-02, 04–05, 10, 12, 17, 22–24 | Five-role handoffs; structured/conversational parity; capability limits, stale-result suppression, cancellation |
+| [08](08-preference-memory.md) | TR-10, 18–19 | Three allowed values reused across restart; roles cannot write preferences; deletion and persistent-store inspection |
+| [09](09-usage-and-evaluation.md) | TR-21, 25–27, 29–30 | Role-attributed usage reconciliation; optional budget preflight; redacted replay export; five successful scenarios, two edge cases, A/B report |
 
 Controls apply when their capability first ships, even when a later release adds its report/UI. Rerun affected earlier checks after changing shared contracts. The final release must meet 100% tested hard-constraint compliance and evidence traceability, with zero unsupported safety assurances; these are acceptance targets, not measured results.
 

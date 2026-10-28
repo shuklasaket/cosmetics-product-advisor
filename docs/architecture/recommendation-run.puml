@@ -19,16 +19,16 @@ skinparam sequence {
 actor Shopper
 boundary "Streamlit UI" as UI
 control "Run controller" as Controller
-control "Single LangGraph" as Graph
+control "Trusted controller\n(fixed five-role graph)" as Graph
 control "Shared services" as Services
 database "SQLite repository" as Store
-control "Model adapter" as Model
+control "Bounded model adapter" as Model
 
 Shopper -> UI: Submit chat request
 UI -> Controller: Create request version and run context
 Controller -> Graph: Start bounded conversational run
-Graph -> Model: Interpret local chat input
-Model --> Graph: Structured candidate or ambiguity
+Graph -> Model: Intake and Clarification\n(local chat only; no tools)
+Model --> Graph: Candidate requirements or ambiguity
 
 opt Missing required detail or ambiguous exclusion
   Graph --> Controller: Clarification request
@@ -39,15 +39,18 @@ opt Missing required detail or ambiguous exclusion
   Controller -> Graph: Resume with validated requirements
 end
 
-Graph -> Services: Search products and fetch details
+Graph -> Services: Catalog Evidence role:\nsearch products and fetch details
 Services -> Store: Read versioned evidence
 Store --> Services: Facts and provenance
 Services --> Graph: Candidates and limitations
-Graph -> Services: Analyze reviews; screen ingredients;\nhard-filter, then rank deterministically
+Graph -> Graph: Validate typed evidence handoff
+Graph -> Services: Review Evidence role:\nanalyze permitted reviews
+Services --> Graph: Validated review artifact or unavailable
+Graph -> Services: Policy and Ranking role:\nscreen ingredients; hard-filter, then rank
 Services --> Graph: Eligible IDs, fixed scores, reasons
 
 alt Eligible products
-  Graph -> Model: Explain selected evidence only
+  Graph -> Model: Explanation and Citation role:\nselected evidence only
   Model --> Graph: Candidate claims or failure
   Graph -> Services: Validate citation identity and support
   Services --> Graph: Supported text or factual fallback
@@ -61,6 +64,8 @@ Controller --> UI: Publish validated current state
 UI --> Shopper: Show result, limits, and progress
 
 note over Controller, Services
+  Roles return only to the controller. They cannot
+  delegate, select tools, persist, or bypass validation.
   The structured form calls these services directly;
   eligibility and numeric scores must match chat.
 end note

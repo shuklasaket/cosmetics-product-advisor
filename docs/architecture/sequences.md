@@ -35,21 +35,22 @@ a cache hit does not invent a new call.
 ## 03 — Conversational recommendation
 
 The controller creates a request version and run context before interpreting chat.
-Missing input triggers clarification. The single graph calls shared services for
-search, review analysis, ingredient checks, hard filters, and deterministic ranking.
-Only selected evidence reaches explanation generation; Python checks citation identity
-and claim support. An empty eligible set skips generation and returns the actual
-limiting reasons. The structured form calls the same services directly and must
-produce the same eligibility and numeric scores.
+Missing input triggers clarification. The trusted controller invokes five fixed roles:
+Intake and Clarification, Catalog Evidence, Review Evidence, Policy and Ranking, and
+Explanation and Citation. Each receives a typed minimum-necessary artifact and returns
+only to the controller. Only selected evidence reaches explanation generation; Python
+checks citation identity and claim support. An empty eligible set skips generation and
+returns the actual limiting reasons. The structured form calls the same services directly
+and must produce the same eligibility and numeric scores.
 
 [Open PlantUML diagram](recommendation-run.puml)
 
 ## 04 — Cancellation and supersession
 
-A cancel action stops new calls for the old run. A corrected request also increases
-`request_version` and may start a new run. An already started source/model call may
-finish, but its old result cannot replace current UI state. Only a redacted terminal
-event persists; raw graph checkpoints remain disabled.
+A cancel action stops new calls across every role for the old run. A corrected request
+also increases `request_version` and may start a new run. An already started source/model
+call may finish, but its old result cannot replace current UI state. Only a redacted
+terminal event persists; raw graph checkpoints remain disabled.
 
 [Open PlantUML diagram](cancellation.puml)
 
@@ -69,7 +70,7 @@ separate action that removes volatile personal input.
 | --- | --- |
 | Catalog refresh | TR-07–08, 10–11, 20, 22–23; PRD 02 REF-01–08 |
 | Review analysis | TR-14, 17, 19, 22, 25; PRD 04 REV-01–08 |
-| Recommendation | TR-02, 04–05, 09, 12–17, 22–23; PRD 07 AGT-01–07 |
+| Recommendation | TR-02, 04–05, 09, 12–17, 22–23; PRD 07 AGT-01–08 |
 | Cancellation | TR-05, 19, 22–24; PRD 07 AGT-04–08 |
 | Preference memory | TR-10, 18–19; PRD 08 MEM-01–07 |
 

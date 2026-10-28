@@ -1,9 +1,9 @@
 ---
 name: langgraph-fundamentals
-description: "Implement or debug this project's Python LangGraph workflow from PRD 07 onward. Covers StateGraph, typed state, reducers, routing, invocation, streaming, and errors; not earlier direct-service releases or multi-agent frameworks."
+description: "Implement or debug this project's Python LangGraph workflow from PRD 07 onward. Covers StateGraph, typed state, reducers, routing, invocation, streaming, errors, and its bounded five-role controller; not earlier direct-service releases or autonomous multi-agent frameworks."
 ---
 
-> Project adaptation, 17 October 2026: scoped the entry point to PRD 07 and Python. Library examples do not authorize durable sensitive checkpoints, multi-agent architecture, or LangSmith uploads; use the project contracts.
+> Project adaptation, 28 October 2026: scoped the entry point to PRD 07 and Python. The product permits only the fixed five-role controller design in ADR-0004; library examples do not authorize durable sensitive checkpoints, autonomous delegation, role-to-role messaging, dynamic tool dispatch, or LangSmith uploads. Use the project contracts.
 
 Read the [project integration boundaries](../../../docs/skills.md#application-boundaries) before applying general examples.
 

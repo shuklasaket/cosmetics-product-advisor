@@ -20,11 +20,12 @@ verified. Existing implemented contracts must remain stable.
 Extend one local Streamlit application and one SQLite database in PRD order. Each
 release adds its UI, the smallest service or adapter it uses, and its acceptance
 evidence. Keep the structured form as a direct caller of shared Python services.
-Introduce a single local Ollama adapter with review analysis in PRD 04; reuse it for
-constrained explanation in PRD 06. Introduce one fixed LangGraph workflow in PRD 07
-that calls those same services. It may ask for clarification and route known failure
-states, but does not let a model select arbitrary tools or change deterministic
-eligibility, scoring, or evidence rules. Store personal requests in session only.
+Introduce a single local Ollama adapter with Review Evidence in PRD 04; reuse it for
+Explanation and Citation in PRD 06. PRD 07 composes exactly five fixed roles through
+the trusted controller defined in [ADR-0004](0004-bounded-five-role-orchestration.md).
+It may ask for clarification and route known failure states, but does not let a model
+select arbitrary tools or change deterministic eligibility, scoring, or evidence rules.
+Store personal requests in session only.
 
 Use the approved registry and existing import/evidence storage for PRD 02. Keep rule
 and review datasets small, sourced, and versioned. Cache only validated public
@@ -38,14 +39,14 @@ for the local demonstration.
 | Option | Benefit | Cost or risk |
 | --- | --- | --- |
 | Build all future layers and a general tool platform now | Early interfaces appear complete | Duplicates paths before evidence and behavior are known; larger migration and privacy surface |
-| Separate services or independent agents | More deployment isolation | Adds processes, coordination, and failure modes to a single-user local app |
-| Incremental shared services and one later graph | Each PRD stays runnable and testable; preserves current boundaries | Shared contracts need deliberate versioning as later consumers arrive |
+| Separate services or autonomous agents | More deployment isolation | Adds processes, coordination, and failure modes to a single-user local app |
+| Incremental shared services and a later bounded role graph | Each PRD stays runnable and testable; preserves current boundaries | Shared role contracts need deliberate versioning as later consumers arrive |
 
 ## Consequences
 
 - Existing PRD 01 and source-contract behavior is untouched by this decision.
 - PRD 03 and 04 can proceed independently after coordinating evidence IDs and
-  repository changes; ranking waits for their published outcomes.
+  repository changes; Policy and Ranking waits for their published outcomes.
 - The form and conversation must produce identical deterministic eligibility and
   numeric ranking for identical validated requests and evidence versions.
 - A future need for multi-user access, hosted inference, or scheduled collection

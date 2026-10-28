@@ -6,7 +6,7 @@
 
 **Deciders:** Project owner and engineering maintainer; approval not recorded
 
-**Scope:** MVP architecture across PRDs 01–09
+**Scope:** MVP architecture across PRDs 01–09; its orchestration detail is superseded by [ADR-0004](0004-bounded-five-role-orchestration.md)
 
 ## Context
 
@@ -31,13 +31,13 @@ Adopt a **local modular monolith**: one Python/Streamlit application with separa
 | Area | Selected approach and rationale |
 | --- | --- |
 | UI and deployment | Local Streamlit interface bound to loopback. This fits the single-user deployment boundary and makes each release directly usable. |
-| Workflow | Direct service calls for early releases; one typed LangGraph orchestrator from PRD 07. Form and conversation reuse the same services and validation. |
+| Workflow | Direct service calls for early releases; see ADR-0004 for the superseding fixed five-role controller design from PRD 07. Form and conversation reuse the same services and validation. |
 | Decision authority | Python/Pydantic own validation, ingredient findings, hard filters, scores, and evidence checks. Models interpret requests, extract review findings, and phrase supported evidence. |
 | Persistence | SQLite behind repositories, with transactions, migrations, and versioned field-level evidence. Store validated public-evidence artifacts and redacted events alongside the catalog. |
 | Research | Verified local catalog plus approved refresh and permitted manual imports. Preserve provenance, conflicts, and freshness; stale or unresolved critical evidence cannot qualify a recommendation. |
 | Inference | Ollama first, with bounded structured outputs, cache keys, usage capture, and factual fallback. Exact model and package versions remain implementation decisions requiring validation. |
 | Memory | In-memory sensitive session state; persist only reviewed, opted-in currency, country, and product finish. Disable durable raw conversation/graph checkpoints. |
-| Tools | Typed, allowlisted Python functions. Models receive no unrestricted HTTP, database, shell, or preference-write access. MCP serving and independent agents remain deferred. |
+| Tools | Typed, allowlisted Python functions. Models receive no unrestricted HTTP, database, shell, or preference-write access. MCP serving and autonomous/general-purpose agents remain deferred; ADR-0004 defines the bounded five-role exception. |
 
 Apply controls when each capability first appears. Every nested call, retry, and repair shares the run's limits; cancellation or a newer request prevents stale results from being published. Eligibility precedes scoring, and generated text cannot change selected IDs, scores, or screening outcomes.
 
@@ -45,7 +45,7 @@ Hosted inference remains disabled by default. Enabling it requires a configured 
 
 ## Options considered
 
-| Dimension | A — Local modular app + controlled graph (selected) | B — Local procedural workflow only | C — Multiple independent agents |
+| Dimension | A — Local modular app + controlled graph (historical selection) | B — Local procedural workflow only | C — Multiple independent agents |
 | --- | --- | --- | --- |
 | Complexity | Separate reusable services plus explicit graph/state contracts | Fewest initial orchestration abstractions; branching/recovery written directly | Additional coordination, handoffs, state ownership, and validation boundaries |
 | Cost | Local inference by default; bounded optional paid calls | Same inference choices; potentially less framework work initially | More potential model/tool calls; actual cost depends on execution policy |
@@ -60,7 +60,7 @@ Hosted inference remains disabled by default. Enabling it requires a configured 
 
 ## Trade-off analysis
 
-Choose A because the product needs inspectable conditional tool execution while retaining one owner of request state and final validation. Delaying LangGraph until PRD 07 preserves B's simpler early implementation. Separate agents do not remove the need for the same evidence, exclusion, privacy, and budget checks.
+The original choice of A preserved one owner of request state and final validation. ADR-0004 now replaces its single-graph detail with five fixed roles under that same trusted controller. Separate autonomous agents still do not remove the need for the same evidence, exclusion, privacy, and budget checks.
 
 The companion choices favor the documented MVP boundary: SQLite keeps structured persistence local; a curated catalog supports repeatable evaluation; permitted refresh addresses freshness; Ollama avoids making paid-provider availability a release dependency. These choices introduce local data-maintenance and hardware responsibilities. A hosted API/client deployment or server database may be appropriate for future shared access, but would also require identity, isolation, operations, and deployment decisions outside this MVP.
 
@@ -103,7 +103,7 @@ Acceptance criteria and proposed numeric defaults remain in the PRDs and TR-01�
 | Local inference cannot meet measured quality/resource requirements | Smaller/different local model or explicitly enabled hosted task routing |
 | Measured concurrency or semantic retrieval needs exceed the current approach | Storage/query changes; add vector retrieval only for an established semantic-search need |
 | Graph orchestration adds no useful control or cannot meet tested requirements | Retain procedural orchestration or choose another bounded workflow mechanism |
-| Independent parallel reasoning demonstrates measurable value | Separate agents with explicit authority, evidence, state, and budget contracts |
+| Independent parallel reasoning demonstrates measurable value beyond the bounded five roles | Reassess the role limit, authority, evidence, state, and budget contracts |
 
 Record the replacement rationale and migration impact in a new ADR; keep this record and mark it superseded when appropriate.
 

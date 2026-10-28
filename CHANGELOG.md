@@ -79,6 +79,12 @@ has been delivered by this work.
 
 ### Changed
 
+- Replanned the remaining PRD 02–09 work around a trusted LangGraph controller and
+  exactly five fixed, least-privilege roles for intake/clarification, catalog evidence,
+  review evidence, policy/ranking, and explanation/citation. The revision adds typed
+  role handoffs, central limits/redaction, and role-attributed verification while keeping
+  existing catalog behavior unchanged.
+
 - Replanned the remaining PRD 02–09 work around the implemented catalog and
   source contracts, with smaller per-release delivery paths, a single editable
   architecture view, and a proposed incremental architecture decision. No runtime

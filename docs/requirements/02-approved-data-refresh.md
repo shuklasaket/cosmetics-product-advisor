@@ -13,7 +13,8 @@ repository. Enable one reviewed Open Beauty Facts registration, map known extern
 to existing variants, and use one synchronous manual refresh path. Reuse the existing
 validated import for permitted brand/retailer facts. Keep the source disabled if access,
 reuse, mapping, or redirect behavior is unresolved. No scheduled collector or new
-database is needed.
+database is needed. This establishes the typed Catalog Evidence role boundary; PRD 07
+will compose the same direct path under the fixed controller, without autonomous retrieval.
 
 ## Goals and scope
 

@@ -35,7 +35,7 @@ The release boundaries and numerical defaults identified as **proposed** are pla
 - Inputs: category, skin type (oily, dry, combination, normal, sensitive), INR budget, ingredients to avoid, and optional texture/finish preferences.
 - Data: approximately 20–30 genuine products across both categories by the completed MVP; 2–3 approved source families, genuine review samples, and a limited, verified ingredient-rule dataset.
 - Output: up to three evidence-backed recommendations, comparable facts, limitations, and explanations. Fewer qualifying products produce fewer results.
-- Stack carried forward from the report: Python 3.11/3.12, Streamlit, SQLite, Pydantic, Ollama, and one LangGraph orchestrator using Python tools. HTTPX and permitted HTML parsing support retrieval where needed.
+- Stack carried forward from the report: Python 3.11/3.12, Streamlit, SQLite, Pydantic, Ollama, and one trusted LangGraph controller coordinating five fixed, typed specialist roles. HTTPX and permitted HTML parsing support retrieval where needed.
 - Deployment: a runnable local application on a supported MacBook. A cloud service, public hosting, accounts, and multi-user operation are outside this MVP.
 
 ## Release sequence
@@ -48,7 +48,7 @@ The release boundaries and numerical defaults identified as **proposed** are pla
 | [04 — Review analysis](04-review-analysis.md) | Read sourced benefits, complaints, and review-confidence findings | 01 | 2, 4–5, 13, 15–17 |
 | [05 — Ranking and comparison](05-ranking-and-comparison.md) | Receive a deterministic shortlist with score breakdowns | 01, 03, 04 | 1, 7–8, 15, 17 |
 | [06 — Grounded explanations](06-grounded-explanations.md) | Read AI explanations validated against the selected evidence | 04, 05 | 8, 15, 17–18 |
-| [07 — Conversational workflow](07-conversational-workflow.md) | Complete one controlled LangGraph recommendation conversation | 02, 03, 04, 05, 06 | 3–4, 10–11, 14–15, 17–18 |
+| [07 — Conversational workflow](07-conversational-workflow.md) | Complete one controlled five-role LangGraph recommendation conversation | 02, 03, 04, 05, 06 | 3–4, 10–11, 14–15, 17–18 |
 | [08 — Preference memory](08-preference-memory.md) | Reuse three opted-in preferences and clear stored information | 07 | 9–11, 14–15, 17 |
 | [09 — Usage and evaluation](09-usage-and-evaluation.md) | Inspect usage/cost reports and reproduce the final demonstration | 07, 08 | 1, 15–19, 21 |
 
@@ -60,9 +60,9 @@ Recommended order is 01 through 09. Releases 03 and 04 can be developed independ
 | --- | --- | --- |
 | PRD 01 | The genuine ten-product catalog, search/detail UI, SQLite evidence import, and offline release checks are implemented; see the [release report](../reports/prd-01-catalog-release-report.md). | Preserve the existing contracts and regression checks. |
 | PRD 02 | The approved-source registry, destination checks, schema-v2 migration, typed refresh outcome, and bounded Open Beauty Facts adapter are implemented; see the [source contract guide](../approved-source-registry.md). | Record exact reviewed catalog-to-barcode mappings, transactionally persist accepted evidence, expose the manual refresh UI, then demonstrate five live outcomes and last-valid fallback. |
-| PRDs 03–04 | No ingredient screen or review-model analysis is claimed here. | Add one small verified rule dataset and one permitted review sample path, each with an inspectable product-detail view. These can be planned independently after the shared evidence contract is agreed. |
-| PRDs 05–06 | No recommendation ranking or generated explanation is claimed here. | Add one deterministic shortlist service and comparison view, then constrained, evidence-checked local explanations with a factual fallback. |
-| PRDs 07–09 | No graph, persistent preferences, or final usage/evaluation view is claimed here. | Wrap the same services in one fixed conversation graph, add the three-field opt-in store, then expose usage and run the final replay pack. |
+| PRDs 03–04 | No ingredient screen or review-model analysis is claimed here. | Add typed screening and review-evidence roles behind the same small verified rule dataset and permitted review sample path, each with an inspectable product-detail view. |
+| PRDs 05–06 | No recommendation ranking or generated explanation is claimed here. | Add deterministic policy/ranking and constrained explanation roles, retaining a factual fallback and evidence checks. |
+| PRDs 07–09 | No graph, persistent preferences, or final usage/evaluation view is claimed here. | Compose exactly five fixed roles under one controller, add the three-field opt-in store outside those roles, then expose role-attributed usage and run the final replay pack. |
 
 Use the existing catalog repository, request schema, and source contracts as the starting
 point. Add a table, service, adapter, or dependency only when the next PRD needs it.
@@ -86,6 +86,7 @@ requirements before claiming new work; do not create a duplicate Markdown backlo
 4. **Apply controls when a capability first appears.** Validation starts in 01; source timeouts and retries in 02; rule limitations in 03; untrusted-text handling, structured model output, call/token bounds, and usage capture in 04. Later PRDs extend these controls rather than postponing them.
 5. **Keep sensitive information session-only.** Ingredient exclusions, allergy or medical information, and raw conversations do not enter persistent profiles, checkpoints, caches, logs, or evaluation exports. Use run IDs, product/evidence versions, aggregate outcomes, and redacted events for auditability. Clearing a session removes its sensitive in-memory state.
 6. **Separate eligibility from scoring.** Verified hard-rule failures cannot be overridden by a score or explanation. Missing or conflicting critical ingredient evidence is kept outside the recommended set. Screening makes no guarantee of safety, effectiveness, allergy suitability, or full legal compliance.
+7. **Use a fixed five-role workflow.** The controller invokes only intake/clarification, catalog evidence, review evidence, policy/ranking, and explanation/citation roles in an explicit order. Roles exchange typed, minimum-necessary artifacts through the controller; they cannot directly delegate, choose tools, persist data, or relax another role's result. Python retains final authority over retrieval, screening, ranking, citations, and publication.
 7. **State outcomes honestly.** Progress reflects real execution. Sources, unknowns, stale evidence, partial results, sponsorship disclosures, and model failures remain visible. No invented products, reviews, citations, or successful tool calls.
 
 ## Proposed defaults and unresolved inputs
@@ -106,4 +107,4 @@ Release 09 collects results from the existing product rather than deferring test
 
 Success targets from the report are: 100% of recommended products satisfy tested hard constraints; 100% of recommendations include traceable sources, screening status, and limitations; and at least five successful end-to-end test scenarios. These are release targets, not claims of clinical efficacy or measured consumer outcomes.
 
-MCP exposure, additional countries/categories, vector search, multiple independent agents, scheduled collectors, checkout, and a public deployment are deferred. Hosted inference is optional and must be deliberately configured and budgeted; the local MVP does not depend on it.
+MCP exposure, additional countries/categories, vector search, autonomous/general-purpose agents, scheduled collectors, checkout, and a public deployment are deferred. The fixed five-role workflow is not a swarm: it has no dynamic delegation, agent-to-agent communication, or independent persistence. Hosted inference is optional and must be deliberately configured and budgeted; the local MVP does not depend on it.
