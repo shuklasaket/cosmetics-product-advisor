@@ -1,10 +1,17 @@
 # AI Cosmetic Product Advisor — Technical Requirements
 
-Status: Draft · Version: 1.0 · Prepared: 17 October 2026
+Status: Implemented baseline plus planned contracts · Version: 1.1 · Updated: 28 October 2026
 
-Audience: engineers implementing and verifying the project. Product scope and release order are defined in the [PRD index](README.md). This document specifies the technical contracts shared by those releases; it is not an additional release or a user-story backlog. The repository includes a development scaffold; the PRD features remain implementation deliverables. See the [development guide](../development.md) for readiness and completion criteria.
+Audience: engineers implementing and verifying the project. Product scope, delivery
+baseline, and release order are defined in the [PRD index](README.md). This document
+specifies shared contracts, including contracts already implemented in PRD 01 and the
+first PRD 02 story. Remaining requirements are planned; this is not a story backlog.
+See the [development guide](../development.md) for readiness and completion criteria.
 
 [ADR-0001](../adr/0001-local-modular-architecture.md) explains the proposed architectural choices and alternatives. See the [ADR index](../adr/README.md) for decision status and history.
+
+[ADR-0003](../adr/0003-incremental-remaining-implementation.md) records the proposed
+minimal implementation path. It preserves the existing catalog and source contracts.
 
 **Conformance:** “must” identifies a release requirement. Numerical defaults inherited from the PRDs remain proposed until validated on the target machine. New implementation choices identified as proposed must be recorded before the affected release ships. Changes to product behavior require updating the corresponding PRD as well as this document.
 
@@ -33,7 +40,11 @@ Public hosting, authentication/accounts, multiple independent agents, vector dat
 
 ## 3. Architecture and component boundaries
 
-The [editable draw.io architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) contains system, recommendation-flow, and data/privacy pages. The [PlantUML sequence diagrams](../architecture/sequences.md) show key interactions and alternate outcomes. See the [architecture guide](../architecture/README.md) and sequence guide for source links, legends, and scope.
+The [editable draw.io architecture diagram](../architecture/cosmetic-advisor-architecture.drawio)
+shows the implemented foundation and planned additions in one view. The
+[PlantUML sequence diagrams](../architecture/sequences.md) show detailed target
+interactions and alternate outcomes. See the [architecture guide](../architecture/README.md)
+for the implementation boundary.
 
 ```mermaid
 flowchart TD
@@ -53,6 +64,11 @@ flowchart TD
 ```
 
 **TR-04 — Separation of concerns.** Keep UI code, graph nodes, application services, source/model adapters, and repositories separate. Graph nodes call the same services as the structured path. Scoring and ingredient evaluation must be testable without Streamlit, a model, or network access. Models receive no database connection, shell capability, arbitrary HTTP client, or preference-write authority.
+
+Introduce each boundary when its first consumer ships: the existing catalog services
+and SQLite repository remain the baseline; ingredient and ranking policy can start as
+pure functions; the model adapter first appears with PRD 04; graph nodes first appear
+with PRD 07. Do not create parallel implementations for form and conversation.
 
 **TR-05 — Run lifecycle.** Assign each run a unique `run_id` and monotonically increasing session `request_version`. Use typed states: `awaiting_input`, `running`, `completed`, `partial`, `failed`, and `cancelled`; an empty valid shortlist is a completed result. Track the current stage and validated intermediate results. Sensitive graph state remains in memory; durable raw checkpoints are disabled.
 
@@ -104,7 +120,12 @@ PRD 01's implemented in-memory request/evidence boundaries and initial
 future adapters; live retrieval and the remaining tool/model/graph contracts are still
 pending.
 
-**TR-10 — Tool surface.** Provide typed Python functions for `search_products`, `fetch_product_details`, `fetch_reviews`, `analyze_reviews`, `check_ingredients`, `calculate_ranking`, `save_preferences`, and `get_preferences`. All accept validated arguments and the required run context. Preference writes additionally require a controller-issued confirmation tied to an actual reviewed user-save action. This MVP does not require a REST API or an MCP server.
+**TR-10 — Tool surface.** Expose the existing search/detail services and later review,
+screening, ranking, and preference operations as typed Python calls when their PRDs
+need them. The PRD 07 graph uses these same calls through thin nodes, with validated
+arguments, results, and run context. Keep preference saving tied to a controller-issued
+confirmation of an actual reviewed user action. A REST API, MCP server, generic tool
+registry, and dynamic model-selected dispatch are unnecessary.
 
 **TR-11 — Retrieval contract.** The first live adapter is Open Beauty Facts; official brand evidence and a permitted retailer/review dataset may be imported manually. Resolve approved external IDs to catalog variants before accepting facts. Validate payloads, source references, and allowed reuse; missing fields remain missing. Enforce approved destinations on initial requests and redirects. Do not follow URLs suggested by retrieved text or a model.
 
@@ -167,16 +188,17 @@ Every model call also needs an explicit timeout and output allowance within the 
 
 **TR-28 — Configuration.** Use validated configuration for database/data paths, local model endpoint/name, approved sources, freshness, policy versions, inference bounds, and optional provider budgets/rates. Suggested environment prefix: `ADVISOR_`. Reject invalid or contradictory limits at startup. Provide an example configuration without credentials; export only an explicit non-secret subset. Display capability health separately so missing Ollama does not disable the catalog.
 
-Proposed implementation layout; paths below are deliverables, not existing code:
+Extend the existing layout only as each PRD needs a new boundary. The paths below
+are responsibilities, not a requirement to create empty packages:
 
 ```text
 app.py                         Streamlit entry point
-agents/                        Typed state, graph, and node adapters
+agents/                        Typed state and graph nodes from PRD 07
 schemas/                       Request, evidence, tool, model, and configuration contracts
 services/                      Validation, analysis, screening, ranking, usage, explanation
 tools/                         Allowlisted source and preference tool adapters
 repositories/                  SQLite queries and transaction boundaries
-database/migrations/           Versioned database changes
+repositories/migrations.py     Versioned database changes
 data/                          Permitted seed/import examples and versioned rule data
 prompts/                       Versioned extraction and explanation templates
 tests/                         Unit, integration, and labeled evaluation fixtures

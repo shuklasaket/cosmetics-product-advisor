@@ -3,8 +3,8 @@
 These five editable PlantUML sources show the planned interaction order from the
 [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md)
 and [PRDs 01–09](../requirements/README.md). They complement the
-[system, recommendation, and data/privacy overviews](README.md). The current runnable
-app remains a development preview; these pages do not claim implemented behavior.
+[system, recommendation, and data/privacy overviews](README.md). PRD 01 and the first PRD 02 source contracts are implemented. The sequences describe
+the remaining target interactions and do not claim those flows already run.
 
 Time runs downward. A solid arrow is a request or dispatch; a dashed open arrow is a
 result or status. Pale `opt` frames mark optional work. `alt` frames split mutually

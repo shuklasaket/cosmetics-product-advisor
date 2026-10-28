@@ -8,6 +8,12 @@ Shoppers need a comparable shortlist that respects their hard constraints before
 
 **Minimum deployable increment:** a “Find products” action that returns up to three eligible products, score breakdowns, exclusion/verification reasons, and a side-by-side comparison in Streamlit.
 
+**Smallest delivery path:** implement one pure Python eligibility-and-score service
+over the existing catalog, PRD 03 screening outcome, and PRD 04 validated findings.
+The current structured form calls it directly. Freeze and version the proposed weights
+and component definitions before release; do not add a second recommendation engine
+for the later conversation.
+
 ## Goals and scope
 
 - Satisfy every tested hard requirement before scoring.

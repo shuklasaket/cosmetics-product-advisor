@@ -8,6 +8,11 @@ Returning shoppers repeat stable preferences, while personal exclusions and medi
 
 **Minimum deployable increment:** a local preferences panel that saves and reuses three allowed preferences across app restarts, while conversation and sensitive inputs remain session-only.
 
+**Smallest delivery path:** add one validated local-profile record in the existing
+SQLite database and a direct, reviewed save action in Streamlit. Reuse these values as
+visible defaults in the form and conversation. No general memory agent, embedding
+store, conversation archive, or identity service is required.
+
 ## Goals and scope
 
 - Demonstrate cross-session reuse of currency, purchase country, and preferred product finish.

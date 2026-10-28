@@ -1,6 +1,8 @@
 # Development readiness and completion
 
-This guide governs implementation of the [nine PRDs](requirements/README.md). The repository foundation supplies tooling and a development preview; it does not mark a PRD as delivered.
+This guide governs implementation of the [nine PRDs](requirements/README.md).
+PRD 01 has a verified catalog release, and the first PRD 02 source contracts are
+implemented. See the PRD index for the current baseline and remaining plan.
 
 ## Before a PRD starts
 

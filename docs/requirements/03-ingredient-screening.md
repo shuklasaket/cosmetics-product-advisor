@@ -8,6 +8,12 @@ Shoppers cannot reliably distinguish a personal ingredient preference from a ver
 
 **Minimum deployable increment:** an ingredient-screening panel on catalog product details, with session-only user exclusions, structured findings, and source-linked rule references.
 
+**Smallest delivery path:** store one reviewed, versioned India rule file and evaluate
+it with a pure Python function against the existing ingredient declaration. Add only
+the persistence needed for rule provenance and reusable public results. Recompute
+personal matches from the current session; do not store per-user screening results or
+introduce a general regulatory-rule engine.
+
 ## Goals and scope
 
 - Detect every confirmed excluded/prohibited ingredient in the curated acceptance fixtures.
