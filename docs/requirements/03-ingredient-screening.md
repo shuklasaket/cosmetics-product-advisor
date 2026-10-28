@@ -12,7 +12,8 @@ Shoppers cannot reliably distinguish a personal ingredient preference from a ver
 it with a pure Python function against the existing ingredient declaration. Add only
 the persistence needed for rule provenance and reusable public results. Recompute
 personal matches from the current session; do not store per-user screening results or
-introduce a general regulatory-rule engine.
+introduce a general regulatory-rule engine. This establishes the deterministic Policy
+and Ranking role boundary; the release invokes it directly, without a graph or model decision.
 
 ## Goals and scope
 

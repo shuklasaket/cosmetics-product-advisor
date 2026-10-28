@@ -59,5 +59,7 @@ Controller --> UI: Show memory status
 note over Controller, Store
   Clearing the current session separately removes
   conversation, budget, exclusions, and active result.
+  No workflow role can claim consent or call
+  this preference tool.
 end note
 @enduml

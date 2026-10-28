@@ -19,18 +19,18 @@ skinparam sequence {
 actor Shopper
 boundary "Streamlit UI" as UI
 control "Run controller" as Controller
-control "Single LangGraph" as Graph
+control "Trusted controller\n(fixed five-role graph)" as Graph
 control "Source / model adapter" as Adapter
 database "SQLite repository" as Store
 
 Shopper -> UI: Submit request v1
 UI -> Controller: Create run ID and request_version 1
 Controller -> Graph: Start v1 with limits
-Graph -> Adapter: Start permitted bounded call
+Graph -> Adapter: Start permitted role-bound call
 
 Shopper -> UI: Cancel or correct v1
 UI -> Controller: Cancel v1; increment version if corrected
-Controller -> Graph: Set cancellation flag for v1
+Controller -> Graph: Set cancellation flag for every role in v1
 opt Corrected request starts v2
   Controller -> Graph: Dispatch v2 with fresh run context
 end

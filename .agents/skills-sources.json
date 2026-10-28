@@ -51,7 +51,7 @@
       },
       "sha256": {
         "LICENSE": "4ec67e4ca6e6721dba849b2ca82261597c86a61ee214bbf21416006b7b2d0478",
-        "SKILL.md": "a01d8588baf68e5ac9cda4612410de94823ae23460b1c8c31349ddd88b26a7aa",
+        "SKILL.md": "29689a564e13b174e73bc675ddaf48faea29b4f9b019e6941b856c8d41569f5e",
         "references/python.md": "3d30871a6463f955452fdebe607248c39b6806cf07c0fe655e3783b48acc6d91",
         "references/typescript.md": "8cf8577265a75a1e46a5e1dfc7599c63efb60059591593dbb92dbd51acd5d22a"
       }

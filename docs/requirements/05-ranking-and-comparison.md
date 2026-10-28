@@ -8,11 +8,11 @@ Shoppers need a comparable shortlist that respects their hard constraints before
 
 **Minimum deployable increment:** a “Find products” action that returns up to three eligible products, score breakdowns, exclusion/verification reasons, and a side-by-side comparison in Streamlit.
 
-**Smallest delivery path:** implement one pure Python eligibility-and-score service
-over the existing catalog, PRD 03 screening outcome, and PRD 04 validated findings.
-The current structured form calls it directly. Freeze and version the proposed weights
-and component definitions before release; do not add a second recommendation engine
-for the later conversation.
+**Smallest delivery path:** implement one pure-Python Policy and Ranking role over the
+existing catalog, PRD 03 screening outcome, and PRD 04 validated findings. The current
+structured form calls the same typed service directly. Freeze and version the proposed
+weights and component definitions before release; do not add a second recommendation
+engine or model call for the later conversation.
 
 ## Goals and scope
 
@@ -26,13 +26,13 @@ Include deterministic selection and factual evidence labels. AI-written explanat
 
 | ID | Requirement and acceptance condition |
 | --- | --- |
-| RNK-01 | Filter category, India availability, inclusive INR budget, confirmed user-exclusion matches, applicable prohibition/failed restriction, and unresolved critical ingredient checks before scoring. Unknown/conflicting price or availability prevents eligibility; once PRD 02 exists, stale critical facts do too. Return reason codes for every withheld candidate. |
-| RNK-02 | Calculate `0.35S + 0.30R + 0.20I + 0.15P`, each component on 0–100, using Python and a versioned policy. Show component values, weights, total, and evidence references. Unknown evidence contributes zero to its component rather than receiving an invented positive value. |
+| RNK-01 | The Policy and Ranking role alone filters category, India availability, inclusive INR budget, confirmed user-exclusion matches, applicable prohibition/failed restriction, and unresolved critical ingredient checks before scoring. It consumes immutable validated snapshots. Unknown/conflicting price or availability prevents eligibility; once PRD 02 exists, stale critical facts do too. Return reason codes for every withheld candidate. |
+| RNK-02 | Calculate `0.35S + 0.30R + 0.20I + 0.15P`, each component on 0–100, using Python and a versioned policy. This role makes no model call. Show component values, weights, total, and evidence references. Unknown evidence contributes zero to its component rather than receiving an invented positive value. |
 | RNK-03 | Use the proposed initial component definitions below and record policy parameters with each run. Do not merge ratings/counts from incompatible variants or sources. A score means comparative fit within the catalog, not effectiveness or safety probability. |
 | RNK-04 | Keep sponsorship outside eligibility and scoring. Display verified yes/no or unknown sponsorship metadata. Changing only sponsorship must leave scores and order identical. Resolve equal scores using stable product ID. |
 | RNK-05 | Return at most three eligible candidates in score order; show one or two when that is all that qualifies. For zero results, explain the actual limiting checks and offer editable inputs without automatically relaxing them. Verification-required products appear separately, without recommendation numbering. |
 | RNK-06 | Cards and comparison table show product/pack, sourced INR price and date, relevant claims, rating/scale, total versus analyzed review counts, benefits/drawbacks, ingredient status, sponsorship, and score breakdown. Unknown facts remain visible as unknown. |
-| RNK-07 | Recompute when requirements or evidence versions change. Keep a non-sensitive audit record of product/evidence/rule/policy versions and component scores; sensitive request fields and detailed personal exclusion reasons stay session-only. Preserve a factual results view if review analysis is unavailable. |
+| RNK-07 | Recompute when requirements or evidence versions change. Keep a non-sensitive audit record of role, product/evidence/rule/policy versions and component scores; sensitive request fields and detailed personal exclusion reasons stay session-only. Preserve a factual results view if review analysis is unavailable. |
 
 ## Proposed initial scoring policy
 

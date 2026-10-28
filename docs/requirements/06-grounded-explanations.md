@@ -8,11 +8,12 @@ A shortlist alone leaves shoppers unsure why a product was chosen or what its ev
 
 **Minimum deployable increment:** an AI explanation on each existing recommendation card, including reasons, drawbacks, ingredient limitations, and source links; factual cards remain usable if generation fails.
 
-**Smallest delivery path:** let the local model choose from a small, typed vocabulary of
-reason and drawback claims tied to selected evidence IDs. Render approved wording and
-immutable product facts in Python. If the model cannot return verifiable choices,
-display the factual explanation from the same evidence. This keeps an AI explanation
-without requiring a general free-form claim verifier.
+**Smallest delivery path:** let the Explanation and Citation role choose from a small,
+typed vocabulary of reason and drawback claims tied to selected evidence IDs. It has a
+read-only immutable manifest and cannot invoke a source, review, screening, ranking,
+or another role. Render approved wording and immutable product facts in Python. If the
+model cannot return verifiable choices, display the factual explanation from the same
+evidence. This keeps an AI explanation without a general free-form claim verifier.
 
 ## Goals and scope
 
@@ -26,13 +27,13 @@ Use the local model and validated evidence already available. Exclude fresh web 
 
 | ID | Requirement and acceptance condition |
 | --- | --- |
-| EXP-01 | Give the model only the selected IDs/order, immutable score facts, validated review findings, ingredient statuses, relevant preference attributes, and an evidence manifest. Raw reviews, arbitrary pages, and unrelated conversation history are unnecessary for this step. |
+| EXP-01 | Give the Explanation and Citation role only selected IDs/order, immutable score facts, validated review findings, ingredient statuses, relevant preference attributes, and a read-only evidence manifest. Raw reviews, arbitrary pages, unrelated conversation history, tool handles, and another role's state are unnecessary for this step. |
 | EXP-02 | Require structured output per selected product: reasons for fit, supported benefits, drawbacks, ingredient considerations, missing information, and evidence IDs for each factual claim. Missing drawback evidence is disclosed as unavailable; the model cannot invent balance. |
 | EXP-03 | Render product IDs, rank, price, dates, score, and screening status directly from validated application data. Reject responses referring to unselected products, altered facts, unknown evidence IDs, or contradictory conclusions. No explanation can override a hard filter. |
 | EXP-04 | Use bounded claim types: product claim, review observation, screening finding, or comparative score fact. Validate a generated claim's referenced evidence type and content; omit claims that cannot be checked, rather than trusting a citation ID alone. Approved facts may use constrained templates when free-form wording is not reliably verifiable. |
 | EXP-05 | Resolve claim citations through the evidence manifest to original sources and dates. Ingredient restrictions link to exact rule references; review findings link to their sample and count. Label manufacturer claims and customer observations as such. Every card includes screening-coverage and uncertainty limitations. |
-| EXP-06 | Keep sourced content untrusted and restrict explanation generation from tool execution. Instructions embedded in names, product descriptions, or review summaries cannot change the output contract. Reject diagnosis, treatment recommendations, and guaranteed safety/efficacy/compliance language. |
-| EXP-07 | Allow a proposed maximum of two generation calls including one validation repair, with a 1,500-output-token limit per call for the full shortlist. On timeout, invalid output, or exhausted limits, show a deterministic explanation from validated facts and label the AI explanation unavailable. Log model, usage status, duration, and validation outcome without raw sensitive prompts. |
+| EXP-06 | Keep sourced content untrusted and restrict explanation generation from tool execution or delegation. Instructions embedded in names, product descriptions, or review summaries cannot change the output contract, permissions, or role routing. Reject diagnosis, treatment recommendations, and guaranteed safety/efficacy/compliance language. |
+| EXP-07 | Allow a proposed maximum of two generation calls including one controller-governed validation repair, with a 1,500-output-token limit per call for the full shortlist. On timeout, invalid output, or exhausted limits, show a deterministic explanation from validated facts and label the AI explanation unavailable. Log role/protocol version, model, usage status, duration, and validation outcome without raw sensitive prompts. |
 
 ## Release verification
 
