@@ -8,6 +8,13 @@ An average rating hides recurring complaints, limited coverage, and feedback rel
 
 **Minimum deployable increment:** a review-analysis tab on product details that runs a compatible local Ollama model over permitted review samples and displays validated findings and coverage.
 
+**Smallest delivery path:** import a small, permitted review sample for known variants,
+deduplicate and batch it in Python, then use one configured local Ollama model for
+structured extraction. Validate review IDs and aggregate in Python. Cache only
+validated public-evidence extraction keyed by its inputs. One model adapter and the
+existing SQLite database are sufficient; a scraper, reviewer profile store, and
+general model-routing framework are outside this increment.
+
 ## Goals and scope
 
 - Link every displayed benefit/complaint to the review evidence supporting it.

@@ -8,6 +8,13 @@ The operator needs to understand resource use, demonstrate optimization, and rep
 
 **Minimum deployable increment:** an execution/usage view and redacted report export in the running app, plus a repeatable evaluation dataset and demonstration guide. This release builds on usage capture and limits already required by earlier PRDs.
 
+**Smallest delivery path:** aggregate the redacted model-attempt events already emitted
+from PRD 04 onward, then add one local report/export view and a frozen, permitted
+replay pack. The baseline demonstration uses local inference. Hosted routing and its
+paid-call ledger are an explicitly configured extension, not a dependency for the
+local release; if enabled later, the budget and preflight controls below apply before
+the first paid call.
+
 ## Goals and scope
 
 - Reconcile per-call measurements to per-run totals and distinguish measured, estimated, and unknown values.
@@ -22,7 +29,7 @@ Include local usage reporting, configurable budget enforcement, benchmark eviden
 | --- | --- |
 | USE-01 | Aggregate existing call events by run, activity, model, and cache status. Display input/output tokens, duration, model/prompt versions, attempts, validation status, and terminal outcome. Unknown token counts remain unknown and make totals explicitly partial; cache hits are not invented model calls. |
 | USE-02 | Report local Ollama API expenditure as $0 while identifying device/electricity costs as unmeasured. For deliberately configured hosted inference, compute estimated USD cost as `(input_tokens*input_rate + output_tokens*output_rate)/1,000,000`, with dated rate configuration and token provenance. Missing rates yield unknown cost, not zero. |
-| USE-03 | Enforce existing call/output-token limits and configurable per-run/project API budgets. Proposed defaults: $0.25 per hosted run and $25 project API ceiling; hosted inference remains off by default. Reserve worst-case next-call cost before dispatch, including bounded output; deny/defer paid calls when rates/token bounds are unknown or projected totals exceed either ceiling. Reconcile reservations after completion. |
+| USE-03 | Enforce existing call/output-token limits for local runs. If hosted inference is deliberately enabled, also enforce configurable per-run/project API budgets. Proposed defaults: $0.25 per hosted run and $25 project API ceiling. Reserve worst-case next-call cost before dispatch, including bounded output; deny/defer paid calls when rates/token bounds are unknown or projected totals exceed either ceiling. Reconcile reservations after completion. |
 | USE-04 | Make the model policy visible: local inference first, deterministic work stays in Python, and optional stronger local/hosted routing requires an explicit configuration. Record actual model selection and fallback reasons. If only one model is available, label tiering as unbenchmarked; never imply a hosted comparison occurred. No silent upload of user data. |
 | USE-05 | Provide a repeatable A/B evaluation over the same fixed review IDs: A uses bounded raw-review input without summary-cache reuse; B uses validated batched summaries/reuse. Record a cold/warm-cache distinction, model/settings, token totals, elapsed time, estimated API cost, and `100*(A-B)/A` input-token reduction when A is known and nonzero. Check that critical supported benefits/complaints and eligibility are preserved. |
 | USE-06 | Export a readable Markdown or JSON run report containing non-sensitive run identifiers, evidence/rule/policy versions, selected product IDs, aggregate usage, validation outcomes, and limitations. Exclude raw prompts, exclusions, medical details, credentials, and sensitive profile data. Consumer runs use redacted constraint outcomes; reproducible evaluation uses separately labeled synthetic profiles and frozen public evidence. |

@@ -74,6 +74,11 @@ has been delivered by this work.
 
 ### Changed
 
+- Replanned the remaining PRD 02–09 work around the implemented catalog and
+  source contracts, with smaller per-release delivery paths, a single editable
+  architecture view, and a proposed incremental architecture decision. No runtime
+  behavior or completed PRD 01 requirement changed.
+
 - Defined the developer agent story lifecycle and linked the shared Kanban project,
   with required issue-label/Project Status updates and read-back verification,
   readiness and ownership gates, rework/blocker handling, and completion only after

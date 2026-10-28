@@ -8,6 +8,13 @@ Shoppers should be able to describe a need in natural language and receive the s
 
 **Minimum deployable increment:** a Streamlit conversation that coordinates the existing search, review, screening, ranking, and explanation tools through one LangGraph workflow, with live execution status.
 
+**Smallest delivery path:** add one fixed LangGraph state machine that validates a
+natural-language request, asks for missing fields, then calls the same services used
+by the form in a known order. Conditional edges cover empty, partial, failed, and
+cancelled outcomes. The model extracts request fields; it does not select arbitrary
+tools or control the graph. Keep state in the Streamlit session and use the existing
+SQLite store only for allowlisted public evidence and redacted events.
+
 ## Goals and scope
 
 - Complete a request end to end through real, inspectable tool calls.

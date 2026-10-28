@@ -1,12 +1,19 @@
 # PRD 02 — Approved Product Data Refresh
 
-Status: Draft · Dependencies: [PRD 01](01-catalog-and-search.md) · Source: report §§4, 11, 14, 17, 20
+Status: Partly implemented (source contracts merged; remaining stories in backlog) · Dependencies: [PRD 01](01-catalog-and-search.md) · Source: report §§4, 11, 14, 17, 20
 
 ## Problem and outcome
 
 Catalog facts change, and individual sources may be incomplete or unavailable. The operator needs to refresh evidence while shoppers can identify its age and inspect disagreements.
 
 **Minimum deployable increment:** an operator refresh action in the existing app, with a real Open Beauty Facts lookup, validated updates, and visible refresh/freshness states on product details.
+
+**Smallest delivery path:** extend the implemented source registry and catalog evidence
+repository. Enable one reviewed Open Beauty Facts registration, map known external IDs
+to existing variants, and use one synchronous manual refresh path. Reuse the existing
+validated import for permitted brand/retailer facts. Keep the source disabled if access,
+reuse, mapping, or redirect behavior is unresolved. No scheduled collector or new
+database is needed.
 
 ## Goals and scope
 

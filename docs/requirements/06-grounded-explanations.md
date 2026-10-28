@@ -8,6 +8,12 @@ A shortlist alone leaves shoppers unsure why a product was chosen or what its ev
 
 **Minimum deployable increment:** an AI explanation on each existing recommendation card, including reasons, drawbacks, ingredient limitations, and source links; factual cards remain usable if generation fails.
 
+**Smallest delivery path:** let the local model choose from a small, typed vocabulary of
+reason and drawback claims tied to selected evidence IDs. Render approved wording and
+immutable product facts in Python. If the model cannot return verifiable choices,
+display the factual explanation from the same evidence. This keeps an AI explanation
+without requiring a general free-form claim verifier.
+
 ## Goals and scope
 
 - Validate every displayed generated factual claim against supplied evidence references.

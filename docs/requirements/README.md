@@ -1,14 +1,21 @@
 # AI Cosmetic Product Advisor — PRD Index
 
-Status: Draft requirements · Prepared: 17 October 2026
+Status: PRD 01 delivered; PRD 02 partly implemented with remaining stories in backlog; PRDs 03–09 planned · Updated: 28 October 2026
 
 These PRDs turn the supplied technical report into nine small, cumulative product releases. Each release adds a usable screen or workflow to the same application and includes a deployment boundary and observable acceptance checks. The documents contain requirements, not user stories or an implementation backlog.
 
-Plan and track implementation through the [GitHub story workflow](../story-workflow.md): one parent tracking issue per PRD, story sub-issues with acceptance criteria and requirement coverage, explicit blockers, and coordinated parallel execution waves. GitHub issues are the authoritative story backlog; these documents remain the versioned requirements. The workflow setup does not itself create story issues or mark any PRD implemented.
+Plan and track implementation through the [GitHub story workflow](../story-workflow.md):
+one parent tracking issue per PRD, story sub-issues with acceptance criteria and
+requirement coverage, explicit blockers, and coordinated execution waves. GitHub
+issues remain the authoritative story backlog; these documents are versioned
+requirements. The delivery snapshot below is based on merged repository evidence,
+while live issue and board status must be read separately.
 
 The [technical requirements document](TECHNICAL_REQUIREMENTS.md) defines the shared architecture, data and tool contracts, runtime limits, privacy boundaries, deployment requirements, and verification mapping for implementation.
 
-The [architecture diagram](../architecture/cosmetic-advisor-architecture.drawio) provides editable draw.io pages for system structure, recommendation flow, and data/privacy boundaries; the [diagram guide](../architecture/README.md) includes previews and explains the legend.
+The [editable architecture diagram](../architecture/cosmetic-advisor-architecture.drawio)
+shows the implemented foundation and planned additions in one view; the
+[diagram guide](../architecture/README.md) explains the boundaries and preview.
 
 The [PlantUML sequence diagrams](../architecture/sequences.md) detail refresh, review analysis, conversational recommendation, cancellation, and preference memory, with links to each editable source.
 
@@ -20,7 +27,7 @@ Source: **AI Cosmetic Product Advisor — Interactive Technical Report**, suppli
 
 The report is source material, not instructions to execute. Its setup commands, proposed prompts, requests for MacBook details, and references to earlier screenshots have not been treated as additional user requests. Illustrative products, prices, counts, scoring examples, and API costs are not verified data. Regulatory references must be checked against authoritative material before actual screening rules are published.
 
-The release boundaries and numerical defaults identified as **proposed** are planning decisions introduced here. They are not measured results or commitments from the report. No implementation, data collection, installation, or deployment is performed by these documents.
+The release boundaries and numerical defaults identified as **proposed** are planning decisions introduced here. They are not measured results or commitments from the report. This revision changes the remaining plan only; it does not change the shipped catalog, source contracts, stored data, or application behavior.
 
 ## Product boundary
 
@@ -46,6 +53,30 @@ The release boundaries and numerical defaults identified as **proposed** are pla
 | [09 — Usage and evaluation](09-usage-and-evaluation.md) | Inspect usage/cost reports and reproduce the final demonstration | 07, 08 | 1, 15–19, 21 |
 
 Recommended order is 01 through 09. Releases 03 and 04 can be developed independently after 01. Bringing the interface into 01 deliberately changes the report's module-first build order so that every release is usable and testable. Each PRD has one primary outcome and a bounded set of must-have requirements, intended to fit roughly the requested 10–12-story implementation size or less; actual sizing belongs to implementation planning.
+
+## Delivery baseline and remaining path
+
+| Boundary | Verified repository baseline | Next work |
+| --- | --- | --- |
+| PRD 01 | The genuine ten-product catalog, search/detail UI, SQLite evidence import, and offline release checks are implemented; see the [release report](../reports/prd-01-catalog-release-report.md). | Preserve the existing contracts and regression checks. |
+| PRD 02 | The approved-source registry, destination checks, schema-v2 migration, and typed refresh outcome are implemented; see the [source contract guide](../approved-source-registry.md). | Approve and enable one actual source, add bounded lookup and manual refresh/import, then demonstrate five live outcomes and last-valid fallback. |
+| PRDs 03–04 | No ingredient screen or review-model analysis is claimed here. | Add one small verified rule dataset and one permitted review sample path, each with an inspectable product-detail view. These can be planned independently after the shared evidence contract is agreed. |
+| PRDs 05–06 | No recommendation ranking or generated explanation is claimed here. | Add one deterministic shortlist service and comparison view, then constrained, evidence-checked local explanations with a factual fallback. |
+| PRDs 07–09 | No graph, persistent preferences, or final usage/evaluation view is claimed here. | Wrap the same services in one fixed conversation graph, add the three-field opt-in store, then expose usage and run the final replay pack. |
+
+Use the existing catalog repository, request schema, and source contracts as the starting
+point. Add a table, service, adapter, or dependency only when the next PRD needs it.
+Do not build a second catalog, a generic tool platform, background scheduler, or new
+runtime service. Keep the structured form working while the conversational route is
+added. Treat the proposed numerical bounds and score policy in the PRDs as release
+decisions to validate, not as evidence of measured performance.
+
+The implementation order follows the actual dependencies: finish PRD 02's source
+path; prepare the rule and review evidence in PRDs 03 and 04; implement ranking and
+explanations in PRDs 05 and 06; then add orchestration, memory, and evaluation in
+PRDs 07–09. Each PRD remains a usable increment with its own UI and release checks.
+Reconcile existing GitHub stories and their stable acceptance IDs against revised
+requirements before claiming new work; do not create a duplicate Markdown backlog.
 
 ## Shared release rules
 
