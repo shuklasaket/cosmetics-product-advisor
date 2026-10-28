@@ -54,3 +54,35 @@ time. Cached and stale outcomes must declare matching cache states.
 The contract cannot contain a raw response body. Adapters validate source payloads and
 write accepted observations through the evidence boundary; callers receive evidence IDs
 and status, not untrusted source content disguised as a trusted tool instruction.
+
+## Open Beauty Facts product lookup
+
+[US-036](https://github.com/shuklasaket/cosmetics-product-advisor/issues/36) adds the
+bounded, read-only `OpenBeautyFactsClient` adapter. It accepts only an enabled
+`open-beauty-facts` dataset registration with the
+`open-beauty-facts-barcode` namespace and exactly one approved
+`https://world.openbeautyfacts.org/api/v3/product/` endpoint. Redirects are disabled;
+images and any URL supplied by returned content are never fetched. The client identifies
+itself with a User-Agent and calls only `{barcode}.json` after
+`authorize_destination` succeeds.
+
+The caller supplies a previously reviewed exact `product_id`/barcode match. This story
+does not persist or infer a mapping: [US-039](https://github.com/shuklasaket/cosmetics-product-advisor/issues/39)
+owns transactional mapping and evidence commits. A valid response yields unverified,
+allowlisted candidates for brand, name, pack size, and ingredient declaration, each with
+the source ID, exact original URL, retrieval time, content hash, and deterministic
+candidate ID. Missing and rejected fields remain explicit. The raw response body is
+neither returned nor cached.
+
+Each request is limited to 10 seconds. Timeouts, transport failures, HTTP 408, 429 and
+5xx responses receive at most two retries (three attempts total); a longer `Retry-After`
+ends/defer the refresh instead of sleeping through it. Not-found and invalid responses
+do not retry. Valid returned or partial candidates use an in-memory 30-day cache; a
+fresh hit reports `cached`, while a failed refresh can return only a clearly `stale`
+cached candidate set. The cache is public evidence only and is not persisted.
+
+The registration must record the source's ODbL/reuse conditions and attribution to Open
+Beauty Facts contributors. This adapter excludes product images, which have separate
+licensing conditions. The later PRD-02 release evidence still needs reviewed exact
+catalog mappings and permitted live outcomes; its recorded/synthetic adapter tests do
+not establish those genuine-data checks.

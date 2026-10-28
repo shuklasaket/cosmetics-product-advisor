@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- A bounded, read-only Open Beauty Facts adapter with allowlisted v3 barcode lookups,
+  10-second per-attempt limits, retry/backoff limits, payload-free validated candidates,
+  explicit missing/partial/invalid outcomes, and a public-evidence-only fresh/stale
+  in-memory cache. Exact catalog mapping and transactional commits remain separate work.
+  ([#36](https://github.com/shuklasaket/cosmetics-product-advisor/issues/36))
 - Approved-source registry persistence and strict HTTPS destination/redirect authorization,
   with disabled-by-default registrations, schema-v2 backup migration, external-ID mapping,
   and typed payload-free refresh outcomes with bounded attempts and sanitized error codes.

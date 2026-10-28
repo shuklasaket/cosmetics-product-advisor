@@ -20,7 +20,7 @@ def approved_source(**changes: object) -> ApprovedSource:
     data: dict[str, object] = {
         "source_id": "open-beauty-facts",
         "source_type": "dataset",
-        "endpoints": ("https://world.openbeautyfacts.org/api/v2/product/",),
+        "endpoints": ("https://world.openbeautyfacts.org/api/v3/product/",),
         "redirect_origins": ("https://world.openbeautyfacts.org",),
         "access_conditions": "Public product API; identify the client and obey rate limits.",
         "reuse_conditions": "ODbL database terms; verify field-level reuse before enablement.",
@@ -60,19 +60,19 @@ def test_incomplete_or_unsafe_source_metadata_is_rejected(change: dict[str, obje
 def test_only_configured_destinations_and_redirects_are_authorized() -> None:
     enabled = approved_source(enabled=True)
     assert authorize_destination(
-        enabled, "https://world.openbeautyfacts.org/api/v2/product/8901234567890?fields=code"
+        enabled, "https://world.openbeautyfacts.org/api/v3/product/8901234567890?fields=code"
     )
     assert authorize_destination(
         enabled,
-        "https://world.openbeautyfacts.org/api/v2/product/8901234567890",
+        "https://world.openbeautyfacts.org/api/v3/product/8901234567890",
         redirect=True,
     )
     for candidate in (
-        "https://evil.example/api/v2/product/8901234567890",
-        "https://world.openbeautyfacts.org.evil.example/api/v2/product/1",
+        "https://evil.example/api/v3/product/8901234567890",
+        "https://world.openbeautyfacts.org.evil.example/api/v3/product/1",
         "https://world.openbeautyfacts.org/api/v1/product/1",
-        "https://world.openbeautyfacts.org/api/v2/product/../cgi/search.pl",
-        "https://world.openbeautyfacts.org/api/v2/product/1#instructions",
+        "https://world.openbeautyfacts.org/api/v3/product/../cgi/search.pl",
+        "https://world.openbeautyfacts.org/api/v3/product/1#instructions",
     ):
         with pytest.raises(DestinationNotApproved, match="not approved"):
             authorize_destination(enabled, candidate)
@@ -121,7 +121,7 @@ def test_refresh_outcomes_are_typed_and_inspectable(
         {"status": "unavailable", "evidence_ids": (), "error_code": None},
         {"status": "fetched", "evidence_ids": ("evidence-1",), "error_code": "secret"},
         {"status": "cached", "evidence_ids": ("evidence-1",), "cache_state": "miss"},
-        {"attempts": 3},
+        {"attempts": 4},
         {"completed_at": datetime(2026, 10, 19, tzinfo=UTC)},
         {"raw_payload": {"private": "data"}},
     ],
