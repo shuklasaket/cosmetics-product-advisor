@@ -12,6 +12,9 @@ has been delivered by this work.
 
 ### Added
 
+- Deterministic source-precedence, conflict-retention, freshness, and critical-evidence
+  qualification policy for future recommendation inputs; catalog browsing remains unchanged.
+  ([#38](https://github.com/shuklasaket/cosmetics-product-advisor/issues/38))
 - A bounded, read-only Open Beauty Facts adapter with allowlisted v3 barcode lookups,
   10-second per-attempt limits, retry/backoff limits, payload-free validated candidates,
   explicit missing/partial/invalid outcomes, and a public-evidence-only fresh/stale
