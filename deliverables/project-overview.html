@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10182c">
+  <meta name="description" content="A six-screen interactive overview of the AI Cosmetic Product Advisor project.">
+  <title>AI Cosmetic Product Advisor — Project Overview</title>
+  <style>
+    :root { color-scheme: dark; --ink:#f6f3ee; --muted:#aeb9c9; --line:#334158; --navy:#10182c; --panel:#1a2940; --coral:#ff907a; --mint:#a9e7d0; --gold:#f4d69e; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:100%; }
+    body { font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--navy); color:var(--ink); }
+    button { font:inherit; }
+    button:focus-visible, a:focus-visible { outline:3px solid var(--mint); outline-offset:4px; }
+    .deck { min-height:100svh; display:flex; flex-direction:column; overflow:hidden; background:radial-gradient(circle at 85% 10%,#243b51 0,transparent 38%),radial-gradient(circle at 5% 95%,#2d293c 0,transparent 35%),var(--navy); }
+    .topbar { width:min(1360px,100%); margin:auto auto 0; padding:20px clamp(20px,4vw,56px) 0; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:11px; font-size:.8rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .brand-mark { width:29px; height:29px; border:2px solid var(--coral); border-radius:9px 9px 13px 13px; position:relative; transform:rotate(-12deg); }
+    .brand-mark::after { content:""; position:absolute; width:10px; height:6px; border:2px solid var(--coral); border-bottom:0; border-radius:4px 4px 0 0; top:-8px; left:7px; }
+    .top-note { color:var(--muted); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+    main { width:min(1360px,100%); flex:1; margin:0 auto; padding:clamp(24px,4vh,42px) clamp(20px,4vw,56px) 94px; display:grid; align-items:center; }
+    .slide { width:100%; animation:enter .35s ease both; }
+    .slide[hidden] { display:none; }
+    @keyframes enter { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+    .eyebrow { color:var(--coral); font-size:.77rem; text-transform:uppercase; letter-spacing:.2em; font-weight:800; margin:0 0 16px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(3.2rem,7.8vw,7.4rem); line-height:.98; letter-spacing:-.075em; max-width:1040px; margin-bottom:24px; }
+    h2 { font-size:clamp(2.3rem,4.7vw,4.8rem); line-height:1.02; letter-spacing:-.055em; margin-bottom:15px; }
+    h3 { font-size:1rem; letter-spacing:-.01em; margin-bottom:8px; }
+    .lead { color:#d6dee7; font-size:clamp(1.05rem,1.65vw,1.38rem); line-height:1.5; max-width:770px; }
+    .muted { color:var(--muted); }
+    .accent { color:var(--coral); }
+    .mint { color:var(--mint); }
+    .gold { color:var(--gold); }
+    .pill { display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line); border-radius:100px; padding:8px 12px; font-size:.75rem; font-weight:750; text-transform:uppercase; letter-spacing:.08em; color:var(--mint); background:#15273b; }
+    .pill::before { content:""; width:6px; height:6px; border-radius:50%; background:currentColor; }
+    .hero-bottom { margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+    .hero-line { height:1px; background:var(--line); width:min(240px,28vw); }
+    .hero-bottom span:last-child { color:var(--muted); font-size:.92rem; }
+    .section-head { margin-bottom:28px; }
+    .section-head .lead { margin-bottom:0; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .card { background:linear-gradient(150deg,#1c2b42,#17243a); border:1px solid var(--line); border-radius:21px; padding:26px; min-height:185px; }
+    .card-num { color:var(--coral); font-size:.78rem; font-weight:800; letter-spacing:.16em; margin-bottom:25px; }
+    .card p { color:var(--muted); line-height:1.5; font-size:.96rem; margin-bottom:0; }
+    .statement { margin-top:22px; display:flex; gap:12px; align-items:flex-start; padding:19px 24px; border-left:3px solid var(--mint); background:#17293c; border-radius:0 13px 13px 0; font-size:1rem; line-height:1.45; }
+    .statement strong { color:var(--mint); white-space:nowrap; }
+    .architecture { display:grid; grid-template-columns:minmax(210px,1fr) minmax(370px,2.2fr) minmax(210px,1fr); gap:18px; align-items:stretch; }
+    .arch-box { background:#17263b; border:1px solid var(--line); border-radius:20px; padding:22px; }
+    .arch-box small { color:var(--coral); display:block; font-weight:800; letter-spacing:.13em; text-transform:uppercase; margin-bottom:13px; }
+    .arch-box p { color:var(--muted); font-size:.92rem; line-height:1.45; margin-bottom:0; }
+    .arch-box .big { font-size:1.25rem; font-weight:780; color:var(--ink); margin-bottom:10px; }
+    .role-list { display:grid; grid-template-columns:repeat(5,1fr); gap:7px; margin:15px 0; }
+    .role { border:1px solid #4b5d70; background:#20334b; color:#dce9ed; border-radius:12px; padding:12px 7px; text-align:left; min-height:83px; cursor:pointer; font-size:.78rem; line-height:1.23; }
+    .role b { display:block; font-size:.7rem; color:var(--coral); margin-bottom:8px; }
+    .role.active { background:#2e4c5a; border-color:var(--mint); color:white; }
+    .role-detail { border-top:1px solid var(--line); padding-top:14px; min-height:76px; color:#d9e8e7; line-height:1.35; font-size:.9rem; }
+    .rail { display:flex; gap:7px; align-items:center; justify-content:center; color:var(--mint); font-size:.82rem; font-weight:750; padding:10px 0 0; }
+    .rail span { width:26px; height:1px; background:var(--mint); }
+    .stack-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:13px; }
+    .stack-row { display:grid; grid-template-columns:120px 1fr; gap:18px; padding:19px 22px; background:#192940; border:1px solid var(--line); border-radius:15px; align-items:start; }
+    .stack-row strong { font-size:.88rem; text-transform:uppercase; letter-spacing:.08em; color:var(--coral); }
+    .stack-row span { color:#dce3e9; line-height:1.4; font-size:.94rem; }
+    .stack-row em { display:block; font-size:.75rem; color:var(--mint); margin-top:5px; font-style:normal; text-transform:uppercase; letter-spacing:.08em; }
+    .stack-note { margin-top:19px; color:var(--muted); font-size:.9rem; }
+    .demo-layout { display:grid; grid-template-columns:minmax(290px,1fr) minmax(400px,1.4fr); gap:18px; }
+    .demo-copy { padding:14px 12px 0 0; }
+    .demo-copy ul { list-style:none; padding:0; margin:22px 0 0; }
+    .demo-copy li { display:flex; gap:10px; margin:0 0 15px; color:#d6e0e7; line-height:1.35; }
+    .demo-copy li::before { content:"↗"; color:var(--coral); font-weight:800; }
+    .mock-window { background:#eef3f2; color:#23323d; border-radius:20px; overflow:hidden; box-shadow:0 22px 50px #050a1838; }
+    .mock-chrome { height:35px; background:#dce5e5; display:flex; align-items:center; gap:6px; padding:0 16px; }
+    .mock-chrome i { width:8px; height:8px; border-radius:50%; background:#a6b8bd; }
+    .mock-body { padding:21px 23px 24px; }
+    .mock-head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:19px; }
+    .mock-head strong { font-size:1rem; }
+    .mock-head span { color:#567c76; font-size:.74rem; font-weight:800; }
+    .tabs { display:flex; gap:5px; margin-bottom:16px; }
+    .tab { border:0; background:#dce7e5; color:#395059; padding:8px 11px; border-radius:8px; cursor:pointer; font-size:.78rem; font-weight:700; }
+    .tab[aria-selected="true"] { background:#1c5c5e; color:#fff; }
+    .mock-panel { min-height:205px; }
+    .field-row { display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-bottom:12px; }
+    .field { border:1px solid #c6d3d2; border-radius:9px; background:white; padding:10px 11px; }
+    .field small { display:block; color:#678086; font-size:.68rem; margin-bottom:5px; }
+    .field b { font-size:.84rem; }
+    .mock-cta { background:#1c5c5e; color:white; padding:9px 12px; border-radius:8px; font-size:.78rem; font-weight:800; display:inline-block; }
+    .result-row { background:white; border:1px solid #d5dfdf; border-radius:12px; padding:15px; margin-bottom:10px; display:flex; justify-content:space-between; gap:12px; }
+    .result-row b { font-size:.88rem; }
+    .result-row small { display:block; color:#637b7c; margin-top:5px; }
+    .result-row span { color:#1c5c5e; font-size:.78rem; font-weight:800; white-space:nowrap; }
+    .mock-tip { font-size:.74rem; color:#617878; margin-top:10px; }
+    .example-tabs { display:flex; gap:8px; margin:23px 0 16px; flex-wrap:wrap; }
+    .example-tab { color:#d5dfe5; border:1px solid #52637a; background:#192940; padding:10px 14px; border-radius:10px; cursor:pointer; font-size:.85rem; }
+    .example-tab[aria-selected="true"] { background:var(--mint); color:#122738; border-color:var(--mint); font-weight:750; }
+    .example-panel { background:linear-gradient(135deg,#1b3146,#1c283e); border:1px solid var(--line); border-radius:20px; padding:26px; min-height:252px; }
+    .example-panel h3 { font-size:1.42rem; margin-bottom:11px; }
+    .example-panel p { line-height:1.5; color:#d4e0e7; max-width:700px; }
+    .example-tag { display:inline-block; color:var(--gold); font-size:.74rem; letter-spacing:.1em; font-weight:800; text-transform:uppercase; margin-bottom:17px; }
+    .example-facts { display:flex; flex-wrap:wrap; gap:9px; margin-top:22px; }
+    .example-facts span { color:#d7efec; border:1px solid #527076; padding:8px 11px; border-radius:100px; font-size:.78rem; }
+    .source-links { margin-top:16px; color:var(--muted); font-size:.78rem; }
+    .source-links a { color:var(--mint); text-underline-offset:3px; }
+    .footer { position:fixed; z-index:5; bottom:0; left:50%; transform:translateX(-50%); width:min(1360px,100%); margin:auto auto 0; padding:20px clamp(20px,4vw,56px) 22px; display:flex; align-items:center; justify-content:space-between; gap:15px; background:linear-gradient(transparent,#10182cf2 42%); }
+    .progress { display:flex; align-items:center; gap:7px; }
+    .dot { width:9px; height:9px; border:0; border-radius:20px; background:#68788c; cursor:pointer; padding:0; transition:width .2s,background .2s; }
+    .dot[aria-current="step"] { width:30px; background:var(--coral); }
+    .footer-center { color:var(--muted); font-size:.78rem; }
+    .nav { display:flex; gap:8px; align-items:center; }
+    .nav button { color:var(--ink); background:#213249; border:1px solid #4a5e75; width:38px; height:38px; border-radius:10px; cursor:pointer; font-size:1.1rem; }
+    .nav button:hover:not(:disabled) { background:#35516a; }
+    .nav button:disabled { opacity:.35; cursor:default; }
+    .counter { color:var(--muted); font-size:.8rem; min-width:43px; text-align:center; }
+    @media (max-width:1050px) { .architecture { grid-template-columns:1fr 1.6fr; } .architecture>.arch-box:last-child { grid-column:1 / -1; } .role-list { grid-template-columns:repeat(5,1fr); } .stack-row { grid-template-columns:95px 1fr; } }
+    @media (max-width:700px) { main { display:block; padding-top:35px; } .top-note,.footer-center { display:none; } .grid-3,.stack-grid,.demo-layout,.architecture { grid-template-columns:1fr; } .architecture>.arch-box:last-child { grid-column:auto; } .card { min-height:0; padding:19px; } .card-num { margin-bottom:12px; } .role-list { grid-template-columns:repeat(5, minmax(0,1fr)); } .role { font-size:.65rem; min-height:78px; } .role b { margin-bottom:5px; } .stack-row { grid-template-columns:100px 1fr; } .statement { flex-direction:column; } .footer { padding-top:16px; } .hero-bottom { margin-top:32px; } .mock-panel { min-height:185px; } }
+    @media (max-width:420px) { .role-list { grid-template-columns:repeat(3,1fr); } .field-row { grid-template-columns:1fr; } .topbar { padding-top:15px; } .card p { font-size:.9rem; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true"></span> Cosmetic Product Advisor</div><div class="top-note">Project overview · 6 screens</div></header>
+    <main id="presentation">
+      <section class="slide" aria-labelledby="s1-title">
+        <p class="eyebrow">Local-first decision support</p>
+        <h1 id="s1-title">Skincare choices,<br><span class="accent">with evidence.</span></h1>
+        <p class="lead">A private advisor for comparing sunscreen and moisturiser in India. It connects sourced product facts to clear rules, then explains what the evidence can—and cannot—support.</p>
+        <div class="hero-bottom"><span class="pill">Current: searchable 10-product catalog</span><span class="hero-line" aria-hidden="true"></span><span>Recommendations and agentic workflow are planned.</span></div>
+      </section>
+      <section class="slide" aria-labelledby="s2-title" hidden>
+        <div class="section-head"><p class="eyebrow">01 / Problem</p><h2 id="s2-title">Choosing a product is harder than finding one</h2><p class="lead">Shoppers must reconcile claims, ingredients, prices and reviews across scattered sources.</p></div>
+        <div class="grid-3">
+          <article class="card"><div class="card-num">01 / FRAGMENTED</div><h3>Facts live everywhere</h3><p>Price, pack, ingredient declaration and source dates are rarely compared in one place.</p></article>
+          <article class="card"><div class="card-num">02 / PERSONAL</div><h3>Fit needs context</h3><p>A budget, skin type and ingredients to avoid can change which products qualify.</p></article>
+          <article class="card"><div class="card-num">03 / UNCERTAIN</div><h3>Reviews need limits</h3><p>Small or mixed samples should not become confident product promises.</p></article>
+        </div>
+        <div class="statement"><strong>Project response</strong><span>Show provenance, apply deterministic eligibility rules, and surface uncertainty alongside every shortlist.</span></div>
+      </section>
+      <section class="slide" aria-labelledby="s3-title" hidden>
+        <div class="section-head"><p class="eyebrow">02 / Agentic AI architecture · planned</p><h2 id="s3-title">Five roles. One trusted controller.</h2><p class="lead">Click a role to see its responsibility. The controller validates each handoff and publishes only checked results.</p></div>
+        <div class="architecture">
+          <div class="arch-box"><small>Input</small><div class="big">Streamlit UI</div><p>Form or conversation becomes the same validated request. Personal exclusions stay in the session.</p><div class="rail">request <span></span> controller</div></div>
+          <div class="arch-box"><small>Controller · LangGraph</small><div class="big">Fixed sequence and bounds</div><div class="role-list" role="group" aria-label="Specialist roles"><button class="role active" data-role="0" type="button"><b>01</b>Intake &amp; clarify</button><button class="role" data-role="1" type="button"><b>02</b>Catalog evidence</button><button class="role" data-role="2" type="button"><b>03</b>Review evidence</button><button class="role" data-role="3" type="button"><b>04</b>Policy &amp; ranking</button><button class="role" data-role="4" type="button"><b>05</b>Explanation &amp; citation</button></div><div class="role-detail" id="role-detail" aria-live="polite">Intake extracts required fields and asks for missing details; Python validates the request.</div></div>
+          <div class="arch-box"><small>Shared services</small><div class="big">Python has final authority</div><p>SQLite stores sourced evidence. Approved adapters retrieve facts. Local Ollama handles bounded review and explanation work. Python owns rules, scores and citations.</p></div>
+        </div>
+      </section>
+      <section class="slide" aria-labelledby="s4-title" hidden>
+        <div class="section-head"><p class="eyebrow">03 / Technology</p><h2 id="s4-title">Small local stack, explicit boundaries</h2><p class="lead">The shipped foundation is useful without a model. AI is added only to bounded text tasks.</p></div>
+        <div class="stack-grid">
+          <div class="stack-row"><strong>Interface</strong><span>Streamlit for private search, sourced detail and later comparison.<em>Live foundation</em></span></div>
+          <div class="stack-row"><strong>Core</strong><span>Python 3.12 + Pydantic for validated requests and deterministic services.<em>Live foundation</em></span></div>
+          <div class="stack-row"><strong>Evidence</strong><span>SQLite repository, fact provenance and approved source adapters.<em>Live foundation / refresh in progress</em></span></div>
+          <div class="stack-row"><strong>Agentic AI</strong><span>LangGraph fixed workflow + local Ollama for review extraction and grounded wording.<em>Planned</em></span></div>
+        </div>
+        <p class="stack-note">Development quality: uv lockfile, Pytest, Ruff and mypy. No hosted inference is required for the MVP.</p>
+      </section>
+      <section class="slide" aria-labelledby="s5-title" hidden>
+        <div class="demo-layout">
+          <div class="demo-copy"><p class="eyebrow">04 / UI direction · concept</p><h2 id="s5-title">A calm, inspectable decision flow</h2><p class="lead">Keep the question simple; make the evidence one tap away.</p><ul><li>Start with category, skin type and INR budget.</li><li>Show clear results and an honest empty state.</li><li>Open each fact to inspect source and verification date.</li></ul><span class="pill">Illustrative UI · not a live app</span></div>
+          <div class="mock-window" aria-label="Interactive UI concept"><div class="mock-chrome"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-head"><strong>Find your match</strong><span>LOCAL · INDIA</span></div><div class="tabs" role="tablist" aria-label="UI concept views"><button class="tab" id="tab-search" type="button" role="tab" aria-controls="panel-search" aria-selected="true" data-demo="search">Search</button><button class="tab" id="tab-results" type="button" role="tab" aria-controls="panel-results" aria-selected="false" data-demo="results">Results</button><button class="tab" id="tab-evidence" type="button" role="tab" aria-controls="panel-evidence" aria-selected="false" data-demo="evidence">Evidence</button></div><div class="mock-panel" id="panel-search" role="tabpanel" aria-labelledby="tab-search"><div class="field-row"><div class="field"><small>Category</small><b>Sunscreen</b></div><div class="field"><small>Skin type</small><b>Oily</b></div></div><div class="field-row"><div class="field"><small>Max budget</small><b>₹800</b></div><div class="field"><small>Market</small><b>India · INR</b></div></div><span class="mock-cta">Search catalog →</span><div class="mock-tip">Exclusions and finish preference stay in this session.</div></div><div class="mock-panel" id="panel-results" role="tabpanel" aria-labelledby="tab-results" hidden><div class="result-row"><div><b>Light Fluid SPF 50 Sunscreen</b><small>Minimalist · catalog item</small></div><span>View facts →</span></div><div class="result-row"><div><b>Ultra Matte Dry Touch Sunscreen Gel</b><small>Re'equil · catalog item</small></div><span>View facts →</span></div><div class="mock-tip">Catalog results are discovery items, not suitability recommendations.</div></div><div class="mock-panel" id="panel-evidence" role="tabpanel" aria-labelledby="tab-evidence" hidden><div class="result-row"><div><b>Ingredient declaration</b><small>Original source reference · verified date · completeness</small></div><span>Inspect →</span></div><div class="result-row"><div><b>Price and availability</b><small>India-specific observation · source attribution</small></div><span>Inspect →</span></div><div class="mock-tip">Unknown or conflicting facts stay visible as limitations.</div></div></div></div>
+        </div>
+      </section>
+      <section class="slide" aria-labelledby="s6-title" hidden>
+        <p class="eyebrow">05 / Result examples · illustrative target behavior</p><h2 id="s6-title">Useful answers include limits</h2><p class="lead">The planned recommendation layer should answer with an evidence-backed shortlist or a clear reason it cannot.</p>
+        <div class="example-tabs" role="tablist" aria-label="Example outcomes"><button class="example-tab" id="tab-match" type="button" role="tab" aria-controls="panel-match" aria-selected="true" data-example="match">Qualified match</button><button class="example-tab" id="tab-no-match" type="button" role="tab" aria-controls="panel-no-match" aria-selected="false" data-example="no-match">No match</button><button class="example-tab" id="tab-partial" type="button" role="tab" aria-controls="panel-partial" aria-selected="false" data-example="partial">Partial evidence</button></div>
+        <div class="example-panel" id="panel-match" role="tabpanel" aria-labelledby="tab-match"><span class="example-tag">Illustrative · future recommendation</span><h3>Candidate A qualifies within checked rules</h3><p>It fits the stated budget and exclusions. The result shows its source-backed price, ingredient check, score breakdown and cited review themes. Missing review coverage remains visible.</p><div class="example-facts"><span>Up to 3 results</span><span>Hard filters before score</span><span>Sources per claim</span></div></div>
+        <div class="example-panel" id="panel-no-match" role="tabpanel" aria-labelledby="tab-no-match" hidden><span class="example-tag">Illustrative · future recommendation</span><h3>No products meet every required filter</h3><p>The advisor shows an empty shortlist and names the constraint that prevented a match. It invites the shopper to change a filter; it does not silently relax the budget or ingredient exclusions.</p><div class="example-facts"><span>0 recommendations</span><span>Filters preserved</span><span>Clear next step</span></div></div>
+        <div class="example-panel" id="panel-partial" role="tabpanel" aria-labelledby="tab-partial" hidden><span class="example-tag">Illustrative · future recommendation</span><h3>Evidence is incomplete</h3><p>When an ingredient condition, source or review sample cannot be verified, the result states the gap. Unsupported suitability claims are withheld; validated facts remain available for inspection.</p><div class="example-facts"><span>Unknown stays unknown</span><span>Dated last-valid facts</span><span>Factual fallback</span></div></div>
+        <p class="source-links">Project basis: <a href="../docs/requirements/README.md">PRD index</a> · <a href="../docs/requirements/TECHNICAL_REQUIREMENTS.md">technical requirements</a> · <a href="../docs/architecture/README.md">architecture guide</a></p>
+      </section>
+    </main>
+    <footer class="footer"><div class="progress" aria-label="Slide navigation"><button class="dot" type="button" aria-label="Go to slide 1" aria-current="step" data-slide="0"></button><button class="dot" type="button" aria-label="Go to slide 2" data-slide="1"></button><button class="dot" type="button" aria-label="Go to slide 3" data-slide="2"></button><button class="dot" type="button" aria-label="Go to slide 4" data-slide="3"></button><button class="dot" type="button" aria-label="Go to slide 5" data-slide="4"></button><button class="dot" type="button" aria-label="Go to slide 6" data-slide="5"></button></div><span class="footer-center">Use ← → keys or buttons</span><div class="nav"><button type="button" id="previous" aria-label="Previous slide" disabled>←</button><span class="counter" id="counter" aria-live="polite">1 / 6</span><button type="button" id="next" aria-label="Next slide">→</button></div></footer>
+  </div>
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const dots = [...document.querySelectorAll('.dot')];
+      const previous = document.querySelector('#previous');
+      const next = document.querySelector('#next');
+      const counter = document.querySelector('#counter');
+      let current = 0;
+      function showSlide(index) {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        slides.forEach((slide, i) => { slide.hidden = i !== current; });
+        dots.forEach((dot, i) => { if (i === current) dot.setAttribute('aria-current', 'step'); else dot.removeAttribute('aria-current'); });
+        previous.disabled = current === 0;
+        next.disabled = current === slides.length - 1;
+        counter.textContent = `${current + 1} / ${slides.length}`;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+      previous.addEventListener('click', () => showSlide(current - 1));
+      next.addEventListener('click', () => showSlide(current + 1));
+      dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+      document.addEventListener('keydown', event => {
+        if (['ArrowRight', 'PageDown'].includes(event.key)) { event.preventDefault(); showSlide(current + 1); }
+        if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); showSlide(current - 1); }
+        if (event.key === 'Home') { event.preventDefault(); showSlide(0); }
+        if (event.key === 'End') { event.preventDefault(); showSlide(slides.length - 1); }
+      });
+      const roleDetails = [
+        'Intake extracts required fields and asks for missing details; Python validates the request.',
+        'Catalog Evidence reads the verified local catalog and approved source adapters.',
+        'Review Evidence uses bounded local model calls to extract supported themes from permitted reviews.',
+        'Policy and Ranking applies deterministic ingredient gates, eligibility and score arithmetic.',
+        'Explanation and Citation phrases only validated claims; Python checks citation support before display.'
+      ];
+      document.querySelectorAll('.role').forEach(button => button.addEventListener('click', () => {
+        document.querySelectorAll('.role').forEach(item => item.classList.toggle('active', item === button));
+        document.querySelector('#role-detail').textContent = roleDetails[Number(button.dataset.role)];
+      }));
+      function setupTabs(name) {
+        const tabs = [...document.querySelectorAll(`[data-${name}]`)];
+        tabs.forEach(tab => tab.addEventListener('click', () => {
+          tabs.forEach(item => {
+            const selected = item === tab;
+            item.setAttribute('aria-selected', String(selected));
+            document.querySelector(`#panel-${item.dataset[name]}`).hidden = !selected;
+          });
+        }));
+      }
+      setupTabs('demo');
+      setupTabs('example');
+      let touchStart = null;
+      document.addEventListener('touchstart', event => { touchStart = event.touches[0]?.clientX ?? null; }, { passive: true });
+      document.addEventListener('touchend', event => {
+        if (touchStart === null) return;
+        const difference = event.changedTouches[0].clientX - touchStart;
+        if (Math.abs(difference) > 85 && !event.target.closest('button')) showSlide(current + (difference < 0 ? 1 : -1));
+        touchStart = null;
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
