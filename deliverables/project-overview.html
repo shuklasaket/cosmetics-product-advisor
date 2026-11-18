@@ -68,6 +68,12 @@
     .stack-row span { color:#dce3e9; line-height:1.4; font-size:.94rem; }
     .stack-row em { display:block; font-size:.75rem; color:var(--mint); margin-top:5px; font-style:normal; text-transform:uppercase; letter-spacing:.08em; }
     .stack-note { margin-top:19px; color:var(--muted); font-size:.9rem; }
+    .tools-section { margin-top:18px; }
+    .tools-heading { color:var(--coral); font-size:.78rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; margin:0 0 10px; }
+    .tools-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+    .tool-card { min-height:104px; padding:14px; border:1px solid var(--line); border-radius:13px; background:#192940; }
+    .tool-card strong { display:block; color:var(--mint); font-size:.84rem; margin-bottom:7px; }
+    .tool-card p { color:#dce3e9; font-size:.77rem; line-height:1.35; margin-bottom:0; }
     .demo-layout { display:grid; grid-template-columns:minmax(290px,1fr) minmax(400px,1.4fr); gap:18px; }
     .demo-copy { padding:14px 12px 0 0; }
     .demo-copy ul { list-style:none; padding:0; margin:22px 0 0; }
@@ -117,9 +123,9 @@
     .nav button:hover:not(:disabled) { background:#35516a; }
     .nav button:disabled { opacity:.35; cursor:default; }
     .counter { color:var(--muted); font-size:.8rem; min-width:43px; text-align:center; }
-    @media (max-width:1050px) { .architecture { grid-template-columns:1fr 1.6fr; } .architecture>.arch-box:last-child { grid-column:1 / -1; } .role-list { grid-template-columns:repeat(5,1fr); } .stack-row { grid-template-columns:95px 1fr; } }
-    @media (max-width:700px) { main { display:block; padding-top:35px; } .top-note,.footer-center { display:none; } .grid-3,.stack-grid,.demo-layout,.architecture { grid-template-columns:1fr; } .architecture>.arch-box:last-child { grid-column:auto; } .card { min-height:0; padding:19px; } .card-num { margin-bottom:12px; } .role-list { grid-template-columns:repeat(5, minmax(0,1fr)); } .role { font-size:.65rem; min-height:78px; } .role b { margin-bottom:5px; } .stack-row { grid-template-columns:100px 1fr; } .statement { flex-direction:column; } .footer { padding-top:16px; } .hero-bottom { margin-top:32px; } .mock-panel { min-height:185px; } }
-    @media (max-width:420px) { .role-list { grid-template-columns:repeat(3,1fr); } .field-row { grid-template-columns:1fr; } .topbar { padding-top:15px; } .card p { font-size:.9rem; } }
+    @media (max-width:1050px) { .architecture { grid-template-columns:1fr 1.6fr; } .architecture>.arch-box:last-child { grid-column:1 / -1; } .role-list { grid-template-columns:repeat(5,1fr); } .stack-row { grid-template-columns:95px 1fr; } .tools-grid { grid-template-columns:repeat(3,1fr); } }
+    @media (max-width:700px) { main { display:block; padding-top:35px; } .top-note,.footer-center { display:none; } .grid-3,.stack-grid,.demo-layout,.architecture { grid-template-columns:1fr; } .architecture>.arch-box:last-child { grid-column:auto; } .card { min-height:0; padding:19px; } .card-num { margin-bottom:12px; } .role-list { grid-template-columns:repeat(5, minmax(0,1fr)); } .role { font-size:.65rem; min-height:78px; } .role b { margin-bottom:5px; } .stack-row { grid-template-columns:100px 1fr; } .tools-grid { grid-template-columns:repeat(2,1fr); } .statement { flex-direction:column; } .footer { padding-top:16px; } .hero-bottom { margin-top:32px; } .mock-panel { min-height:185px; } }
+    @media (max-width:420px) { .role-list { grid-template-columns:repeat(3,1fr); } .field-row,.tools-grid { grid-template-columns:1fr; } .topbar { padding-top:15px; } .card p { font-size:.9rem; } }
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -150,10 +156,8 @@
           <div class="stack-row"><strong>Core</strong><span>Python 3.12 + Pydantic to check requests and run deterministic services.<em>Live foundation</em></span></div>
           <div class="stack-row"><strong>Evidence</strong><span>SQLite stores facts, sources and approved source adapters.<em>Live foundation / refresh in progress</em></span></div>
           <div class="stack-row"><strong>Agentic AI</strong><span>LangGraph runs a fixed workflow. Local Ollama handles review and explanation text.<em>Planned</em></span></div>
-          <div class="stack-row"><strong>Quality</strong><span>uv lockfile fixes software versions. Pytest tests code. Ruff checks code style. mypy checks types.<em>Development quality</em></span></div>
-          <div class="stack-row"><strong>AI setup</strong><span>No hosted inference or API key is needed for the MVP. The planned model runs locally with Ollama.<em>Local first</em></span></div>
         </div>
-        <p class="stack-note">The product keeps personal inputs on the device and does not need a cloud AI service for the MVP.</p>
+        <div class="tools-section" aria-label="Development tools"><p class="tools-heading">Tools</p><div class="tools-grid"><article class="tool-card"><strong>uv lockfile</strong><p>Locks exact versions so every setup builds the same way.</p></article><article class="tool-card"><strong>Pytest</strong><p>Runs automated tests to catch bugs.</p></article><article class="tool-card"><strong>Ruff</strong><p>Checks code style and common mistakes.</p></article><article class="tool-card"><strong>mypy</strong><p>Checks Python types to catch errors early.</p></article><article class="tool-card"><strong>Local inference</strong><p>No cloud AI service or API key. It runs locally.</p></article></div></div>
       </section>
       <section class="slide" aria-labelledby="s4-title" hidden>
         <div class="section-head"><p class="eyebrow">03 / Agentic AI architecture · planned</p><h2 id="s4-title">Five agents. One controller.</h2><p class="lead">Choose an agent to see its job. The controller checks every step before it shows a result.</p></div>
