@@ -234,3 +234,35 @@ class RefreshLookup(Contract):
         if any(item.validation_status != "unverified" for item in self.observations):
             raise ValueError("Retrieved candidates require later review before selection.")
         return self
+
+
+class ReviewedVariantMapping(Contract):
+    """Operator-reviewed exact source record to existing catalog formulation/pack."""
+
+    source_id: Identifier
+    external_id: Identifier
+    product_id: Identifier
+    catalog_brand: Text
+    catalog_name: Text
+    catalog_variant: Text
+    catalog_pack_size: Text
+    source_brand: Text
+    source_name: Text
+    source_pack_size: Text
+    source_ingredient_declaration: Text
+    review_reference: Reference
+    reviewed_at: UtcTimestamp
+
+
+class StoredVariantMapping(Contract):
+    mapping_id: Identifier
+    mapping: ReviewedVariantMapping
+
+
+class StoredRefresh(Contract):
+    """Payload-free durable outcome linked to one reviewed mapping when accepted."""
+
+    outcome_id: Identifier
+    refresh: RefreshResult
+    mapping_id: Identifier | None = None
+    decision: Literal["accepted", "failed"]
