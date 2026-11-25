@@ -1,0 +1,36 @@
+# Ingredient screening evaluator
+
+The PRD 03 evaluator is a pure Python service in
+[`services/ingredient_screening.py`](../services/ingredient_screening.py). It does not
+ship a genuine India rule file, load regulatory data, or display screening in the app.
+The reviewed rule manifest and session-only personal avoid list belong to
+[US-057](https://github.com/shuklasaket/cosmetics-product-advisor/issues/57).
+
+`IngredientRuleSet` requires versioned rules with a canonical ingredient, curated
+aliases, an applicable product category, an exact source reference and section,
+and a checked date. Rules cover India only. A prohibited match excludes the
+product in the rule's category. A restricted match evaluates explicit use-condition
+evidence and an optional maximum concentration in percent. A satisfied condition
+is distinct from an explicitly failed one; missing conditions require verification.
+The evaluator never derives concentration from declaration order.
+
+`ScreeningInput` carries a public product/evidence ID and version, product category,
+the original declaration and its completeness, explicit satisfied/failed use
+conditions, and any sourced concentration values. The caller must pass only
+validated public evidence, not a shopper's avoid list or allergy information.
+Findings retain the matched declaration, rule citation/section/version/date,
+applicable categories, checked/failed/missing conditions, and concentration
+comparison. A confirmed prohibition or failed restriction yields `excluded`;
+missing or conflicting ingredient evidence or a missing restriction condition yields
+`requires_verification`; otherwise the result is `eligible_within_checks` **within
+the limited supplied rule set only**. No result certifies safety or compliance.
+
+`result_is_current` checks both declared versions and content fingerprints for the
+public evidence and rule set. Recompute when either changes, even if an upstream
+caller accidentally repeats a version string. Results are not persisted by this
+service. Validation errors must be converted to fixed, sanitized messages at a
+future import or UI boundary; never display raw source text as instructions.
+
+The synthetic acceptance cases are in `tests/test_ingredient_screening.py` and
+`tests/test_ingredient_screening_completion.py`. Their `example.com` citations are
+test fixtures and must never be published as genuine regulatory findings.
