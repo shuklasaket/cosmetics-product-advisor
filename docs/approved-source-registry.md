@@ -41,7 +41,9 @@ required, then retry the forward migration after correcting the cause.
 
 The migrated registry starts empty; no approved source registration is shipped by this
 story. A later connector story supplies a reviewed registration and live adapter after
-source approval is recorded.
+source approval is recorded. US-035's separate, payload-free release-evidence fixture
+can register its manually reviewed Open Beauty Facts source only after its catalog seed
+has been imported; it does not make arbitrary network retrieval approved.
 
 ## Refresh-result boundary
 
@@ -116,5 +118,7 @@ The [manual catalog importer](catalog-import.md) remains the permitted brand/ret
 handoff. It validates its complete batch and requires `--update-resolutions` for
 explicit resolution changes. Do not automatically promote refresh candidates through
 that importer. The [manual refresh UI](manual-refresh.md) exposes refresh, evidence,
-and operator status using previously persisted reviewed mappings. The PRD 02 release
-story must still supply genuine, permitted mappings and live evidence.
+and operator status using previously persisted reviewed mappings. US-035 provides five
+genuine, permitted reviewed mappings and accepted outcomes through its separate evidence
+import; it still needs fresh revalidation of legacy selected facts and final release
+evidence.

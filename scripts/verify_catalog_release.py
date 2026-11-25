@@ -17,6 +17,18 @@ from schemas.requirements import UserRequirements
 from services.catalog_search import CatalogSearchService, CatalogUnavailableError
 
 PROVENANCE_PRODUCT_ID = "minimalist-light-fluid-spf50-50ml"
+PRD01_PRODUCT_IDS = {
+    "minimalist-light-fluid-spf50-50ml",
+    "mamaearth-vitamin-c-daily-glow-spf50-50g",
+    "aqualogica-glow-dewy-spf50-50g",
+    "foxtale-glow-spf50-50ml",
+    "reequil-ultra-matte-spf50-50g",
+    "minimalist-vitamin-b5-moisturizer-50g",
+    "reequil-ceramide-ha-moisturiser-100g",
+    "foxtale-hydrating-ceramide-moisturizer-50ml",
+    "mamaearth-beetroot-hydraful-moisturizer-50g",
+    "mamaearth-cocoa-rich-moisturizing-cream-50g",
+}
 
 
 class ReleaseVerificationError(Exception):
@@ -99,9 +111,10 @@ def verify_catalog_release(database: Path) -> ReleaseReport:
             "or restore a valid backup."
         ) from None
 
-    if len(catalog.products) != 10 or len(sunscreen_ids) != 5 or len(moisturiser_ids) != 5:
+    catalog_ids = {product.product_id for product in catalog.products}
+    if not catalog_ids >= PRD01_PRODUCT_IDS or len(sunscreen_ids) < 5 or len(moisturiser_ids) < 5:
         raise ReleaseVerificationError(
-            "Catalog does not match the reviewed ten-product release seed."
+            "Catalog does not retain the reviewed PRD 01 release products."
         )
 
     price = _selected_observation(catalog, PROVENANCE_PRODUCT_ID, "price_paise")

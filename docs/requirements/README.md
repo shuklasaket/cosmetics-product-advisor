@@ -1,6 +1,6 @@
 # AI Cosmetic Product Advisor — PRD Index
 
-Status: PRD 01 delivered; PRD 02 partly implemented with remaining stories in backlog; PRDs 03–09 planned · Updated: 28 October 2026
+Status: PRD 01 delivered; PRD 02 partly implemented with remaining release evidence; PRDs 03–09 planned · Updated: 25 November 2026
 
 These PRDs turn the supplied technical report into nine small, cumulative product releases. Each release adds a usable screen or workflow to the same application and includes a deployment boundary and observable acceptance checks. The documents contain requirements, not user stories or an implementation backlog.
 
@@ -59,7 +59,7 @@ Recommended order is 01 through 09. Releases 03 and 04 can be developed independ
 | Boundary | Verified repository baseline | Next work |
 | --- | --- | --- |
 | PRD 01 | The genuine ten-product catalog, search/detail UI, SQLite evidence import, and offline release checks are implemented; see the [release report](../reports/prd-01-catalog-release-report.md). | Preserve the existing contracts and regression checks. |
-| PRD 02 | The approved-source registry, destination checks, schema-v3 migration, typed refresh outcomes, bounded Open Beauty Facts adapter, and review-gated transactional evidence path are implemented; see the [source contract guide](../approved-source-registry.md). | Record genuine reviewed catalog-to-barcode mappings, expose the manual refresh UI, then demonstrate five live outcomes and last-valid fallback. |
+| PRD 02 | The approved-source registry, bounded Open Beauty Facts adapter, transactional evidence merge, manual refresh UI, conflict/freshness policy, 25-product reviewed India catalog, and five payload-free reviewed mapping/outcome records are implemented; see the [source contract guide](../approved-source-registry.md). | Reverify and explicitly resolve the legacy selected facts within the required freshness windows, then complete target-Mac release and last-valid-fallback evidence. |
 | PRDs 03–04 | No ingredient screen or review-model analysis is claimed here. | Add typed screening and review-evidence roles behind the same small verified rule dataset and permitted review sample path, each with an inspectable product-detail view. |
 | PRDs 05–06 | No recommendation ranking or generated explanation is claimed here. | Add deterministic policy/ranking and constrained explanation roles, retaining a factual fallback and evidence checks. |
 | PRDs 07–09 | No graph, persistent preferences, or final usage/evaluation view is claimed here. | Compose exactly five fixed roles under one controller, add the three-field opt-in store outside those roles, then expose role-attributed usage and run the final replay pack. |

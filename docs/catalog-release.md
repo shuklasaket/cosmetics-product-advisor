@@ -32,10 +32,11 @@ uv run --frozen python -m scripts.verify_catalog_release database/advisor.db
 ```
 
 The importer must report `committed` on a new database or `unchanged` on an identical
-replay. The verifier is read-only. It reports `passed` only when the database contains
-the reviewed ten-product release, both required searches return five products, and the
-Minimalist sunscreen retains separate retailer-price and manufacturer-ingredient
-evidence with verification dates. Its output contains catalog identifiers and software
+replay. The verifier is read-only. It reports `passed` when the database retains the
+original reviewed PRD 01 products, both required searches return at least five products,
+and the Minimalist sunscreen retains separate retailer-price and manufacturer-ingredient
+evidence with verification dates. The current seed contains 25 products after the
+reviewed PRD 02 expansion. Verifier output contains catalog identifiers and software
 versions, never shopper input or arbitrary source text.
 
 If `ADVISOR_DATABASE_PATH` selects another location, use that same path as the verifier
@@ -59,9 +60,11 @@ read-only verifier again after the restart for a deterministic persistence check
 ## Boundaries and recovery
 
 PRD 02 has a separate fail-closed release gate. Run it after importing the reviewed
-catalog and committing refresh evidence:
+catalog and its payload-free reviewed evidence:
 
 ```sh
+uv run --frozen python -m scripts.import_prd02_release_evidence \
+  data/seed/prd02-release-evidence-v1.json database/advisor.db
 uv run --frozen python -m scripts.verify_prd02_release database/advisor.db
 ```
 
@@ -69,8 +72,12 @@ The gate requires 20–30 exact variants (at least 10 per category), five review
 variant mappings with accepted refresh outcomes, approved source permission and
 attribution, and freshness no older than 7 days for India/INR price or availability
 and 30 days for other facts. It emits only counts, fixed limits and sanitized failure
-reasons; it never prints source payloads. The existing ten-product PRD 01 seed is
-expected to fail this gate until the genuine PRD 02 catalog is assembled.
+reasons; it never prints source payloads. The expanded seed and release-evidence import
+satisfy the product-count, five exact-mapping, and five accepted-outcome checks. The gate
+is still expected to fail because selected legacy facts were last verified outside the
+7-day price/availability and 30-day other-fact windows. Reverify and explicitly resolve
+those facts, then record the final target-Mac release evidence before calling PRD 02
+released.
 
 The automated acceptance suite covers exact-ceiling inclusion, over-budget exclusion,
 unknown India availability, zero and invalid budgets, unsupported countries, duplicate

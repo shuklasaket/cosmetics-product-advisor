@@ -21,9 +21,9 @@ def test_prd02_gate_fails_closed_until_genuine_catalog_and_refresh_history_exist
     report = verify_prd02_release(database, today=date(2026, 11, 25))
 
     assert report.status == "failed"
-    assert report.product_count == 10
+    assert report.product_count == 25
     assert report.freshness_limits_days == {"price_availability": 7, "other_facts": 30}
-    assert "catalog must contain between 20 and 30 exact product variants" in report.failures
+    assert "catalog must contain between 20 and 30 exact product variants" not in report.failures
     assert "at least five exact reviewed variant mappings are required" in report.failures
 
 
