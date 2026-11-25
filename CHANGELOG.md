@@ -103,6 +103,13 @@ has been delivered by this work.
 
 ### Changed
 
+- Story PR issue validation now falls back to the repository's fixed public GitHub
+  issue endpoint if the local `gh` credential is unavailable or expired. The fallback
+  is read-only, bounded, and fails closed, while authenticated `gh` remains preferred.
+  PRD 02 freshness checks now evaluate explicitly selected facts so immutable,
+  superseded provenance remains auditable without being mistaken for current evidence.
+  (Refs #35)
+
 - Replanned the remaining PRD 02–09 work around a trusted LangGraph controller and
   exactly five fixed, least-privilege roles for intake/clarification, catalog evidence,
   review evidence, policy/ranking, and explanation/citation. The revision adds typed

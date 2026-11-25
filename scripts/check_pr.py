@@ -6,6 +6,7 @@ import re
 import subprocess
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+from urllib.request import Request, urlopen
 
 from scripts.check_docs import strip_html_comments
 
@@ -105,14 +106,25 @@ def check_story_issue(payload: object, prd: str, number: int, root: Path) -> lis
     return errors
 
 
+def public_story_issue(number: int) -> object:
+    """Read the fixed public issue endpoint when local gh credentials are unavailable."""
+    request = Request(
+        f"https://api.github.com/repos/{REPOSITORY}/issues/{number}",
+        headers={"Accept": "application/vnd.github+json", "User-Agent": "check-pr"},
+    )
+    with urlopen(request, timeout=30) as response:  # noqa: S310 - fixed repository endpoint
+        return json.loads(response.read().decode("utf-8"))
+
+
 def verify_story_issue(branch: str, root: Path) -> list[str]:
-    """Read only the fixed repository endpoint, with bounded execution and sanitized errors."""
+    """Read only the fixed repository endpoint, with bounded sanitized fallback."""
     match = BRANCH.fullmatch(branch)
     if match is None:
         return ["Cannot verify an issue for an invalid branch."]
     prd, story = match.group("prd"), match.group("story")
     if not prd or not story:
         return []
+    payload: object | None = None
     try:
         result = subprocess.run(
             ["gh", "api", f"repos/{REPOSITORY}/issues/{int(story)}"],
@@ -121,14 +133,17 @@ def verify_story_issue(branch: str, root: Path) -> list[str]:
             check=False,
             timeout=30,
         )
-    except (OSError, subprocess.TimeoutExpired):
-        return ["Could not verify the story issue; check gh authentication/network and retry."]
-    if result.returncode:
-        return ["Could not read the story issue from GitHub; check its existence and access."]
-    try:
-        payload = json.loads(result.stdout)
-    except ValueError:
-        return ["GitHub returned invalid story issue metadata."]
+        if not result.returncode:
+            payload = json.loads(result.stdout)
+    except (OSError, subprocess.TimeoutExpired, ValueError):
+        # A stale local token must not prevent validation of this repository's public
+        # issue metadata. The fallback is intentionally fixed, bounded and read-only.
+        pass
+    if payload is None:
+        try:
+            payload = public_story_issue(int(story))
+        except (OSError, TimeoutError, UnicodeDecodeError, ValueError):
+            return ["Could not read the story issue from GitHub; check its existence and access."]
     return check_story_issue(payload, prd, int(story), root)
 
 

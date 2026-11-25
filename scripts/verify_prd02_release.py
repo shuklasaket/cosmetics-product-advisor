@@ -92,7 +92,18 @@ def verify_prd02_release(database: Path, *, today: date | None = None) -> Prd02R
     if accepted_count < MIN_REVIEWED_MAPPINGS:
         failures.append("at least five accepted refresh outcomes are required")
 
+    # Evidence is immutable: an older superseded observation must remain available for
+    # provenance and conflict review.  The freshness release gate applies to the
+    # explicit current selection, rather than treating retained history as current.
+    selected_evidence_ids = {
+        evidence_id
+        for resolution in catalog.resolutions
+        if resolution.status == "selected"
+        for evidence_id in resolution.evidence_ids
+    }
     for observation in catalog.observations:
+        if observation.evidence_id not in selected_evidence_ids:
+            continue
         limit = (
             PRICE_AVAILABILITY_MAX_AGE
             if observation.field_name in {"price_paise", "availability"}
