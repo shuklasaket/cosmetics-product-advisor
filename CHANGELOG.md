@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- Deterministic, synthetic-first PRD 03 ingredient-rule contracts and evaluator with
+  provenance-required rules, curated alias matching, conservative incomplete-evidence
+  handling, and versioned eligibility outcomes. No genuine regulatory rules or personal
+  exclusions are persisted. (Refs #56)
+
 - Five exact, reviewed Open Beauty Facts mappings and accepted payload-free refresh
   outcomes for a bounded set of complete-formulation, exact-pack India variants. The
   release-evidence importer registers only the reviewed source metadata and allowlisted
