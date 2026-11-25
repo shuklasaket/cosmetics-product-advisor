@@ -12,6 +12,13 @@ has been delivered by this work.
 
 ### Added
 
+- Five exact, reviewed Open Beauty Facts mappings and accepted payload-free refresh
+  outcomes for a bounded set of complete-formulation, exact-pack India variants. The
+  release-evidence importer registers only the reviewed source metadata and allowlisted
+  factual fields; records with missing, corrupted, or mismatched formulation data remain
+  excluded. The PRD 02 release gate deliberately remains incomplete until legacy selected
+  facts are refreshed and final release evidence is recorded. (Refs #35)
+
 - Ten reviewed official-storefront variants expand the permitted India catalog to
   20 products, split evenly across sunscreen and moisturiser. Fact-level identity,
   pack, regular INR price, India availability, attribution and verification metadata

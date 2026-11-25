@@ -21,7 +21,7 @@ def test_release_verifier_checks_required_searches_and_mixed_provenance(tmp_path
     report = verify_catalog_release(database)
 
     assert report.status == "passed"
-    assert report.product_count == 20
+    assert report.product_count == 25
     assert {
         "aqualogica-glow-dewy-spf50-50g",
         "foxtale-glow-spf50-50ml",
@@ -29,7 +29,7 @@ def test_release_verifier_checks_required_searches_and_mixed_provenance(tmp_path
         "minimalist-light-fluid-spf50-50ml",
         "reequil-ultra-matte-spf50-50g",
     } <= set(report.sunscreen_ids)
-    assert len(report.sunscreen_ids) == 10
+    assert len(report.sunscreen_ids) == 11
     assert len(report.moisturiser_ids) == 10
     assert report.provenance_product_id == "minimalist-light-fluid-spf50-50ml"
     assert report.price_source_id.startswith("retailer:")
@@ -68,7 +68,7 @@ def test_genuine_catalog_is_discoverable_with_separate_price_and_ingredient_evid
 
     assert not page.exception
     detail_buttons = [button for button in page.button if button.key.startswith("detail_")]
-    assert len(detail_buttons) == 10
+    assert len(detail_buttons) == 11
     page.button(key=f"detail_{product_id}").click().run()
 
     visible_text = [item.value for item in page.text]

@@ -1,11 +1,12 @@
 # India genuine starter catalog
 
 `catalog-v1.json` is the reviewed catalog for the non-commercial agentic-development
-demo. The original US-019 starter records remain intact, and US-035 adds ten exact
-products reviewed on 25 November 2026. The current seed contains 20 products available
-for online purchase in India: ten sunscreens and ten moisturisers. Prices are regular/MRP
-values in INR paise, not temporary promotional prices. Optional ratings, review counts,
-claims and sponsorship values are absent and therefore remain unknown.
+demo. The original US-019 starter records remain intact. US-035 adds ten exact
+storefront-reviewed products and five formulation-reviewed products on 25 November
+2026. The current seed contains 25 products available for online purchase in India:
+twelve sunscreens and thirteen moisturisers. Prices are regular/MRP values in INR paise,
+not temporary promotional prices. Optional ratings, review counts, claims and
+sponsorship values are absent and therefore remain unknown.
 
 ## Source policy (`us-019-source-policy-v1`)
 
@@ -17,12 +18,11 @@ temporary promotions and personal data are excluded. No scraping or live adapter
 used, and no physical product purchase or back-of-pack inspection is required.
 
 On 25 November 2026 the maintainer confirmed that this factual-only policy also covers
-newly reviewed official brand storefront pages. The US-035 expansion uses only official
-Minimalist, Foxtale, Re'equil and Aqualogica India pages. It does not use Bigbasket,
-images, reviews, promotions or copied marketing claims. Identity, exact pack, regular
-price and India-online availability are selected; ingredient declarations remain unknown
-for these ten additions because this increment does not claim a complete formulation
-review or an Open Beauty Facts match.
+newly reviewed official brand storefront pages. The first US-035 expansion uses only
+official Minimalist, Foxtale, Re'equil and Aqualogica India pages. It does not use
+Bigbasket, images, reviews, promotions or copied marketing claims. Identity, exact pack,
+regular price and India-online availability are selected; ingredient declarations remain
+unknown for those ten additions because that increment did not claim a formulation review.
 
 Each source record preserves the original HTTPS page, the access and reuse boundary,
 attribution and check date. Manufacturer and retailer evidence have distinct source and
@@ -34,6 +34,24 @@ repository's non-commercial demo. Underlying product names and page content rema
 property of their respective owners. Recheck the source policy and linked pages before
 using the data for another purpose or redistributing it outside this repository.
 
+## US-035 expanded source policy (`us-035-expanded-source-policy-v1`)
+
+The maintainer's 25 November 2026 factual-only approval also covers a bounded manual
+review of five exact-pack Open Beauty Facts records and the corresponding India retailer
+or manufacturer identity, price and availability pages. The reviewed mapping is recorded
+in `prd02-release-evidence-v1.json`; it retains only the allowlisted exact identity,
+pack and ingredient declaration required by the refresh contract, never a raw source
+payload. Open Beauty Facts contributors receive the attribution and ODbL terms recorded
+in the source registration. Product images, reviews, marketing content, personal data,
+and unreviewed candidate records are excluded.
+
+The five reviewed mappings are La Shield Fisico Matte Sunscreen Gel 50 g, CeraVe Oil
+Control Moisturising Gel-Cream 52 ml, CeraVe Moisturising Lotion 236 ml, Bioderma
+Atoderm Cream Ultra 200 ml, and CeraVe Facial Moisturising Lotion AM SPF 30 52 ml.
+Candidate records with a missing, corrupted, or formulation-mismatched declaration were
+deliberately excluded. These records establish mapping and accepted-outcome evidence;
+they do not refresh the pre-existing selected catalog facts.
+
 ## Verification and loading
 
 The timestamps record manual page review, not continuous availability. Validate and load
@@ -42,9 +60,13 @@ into a newly initialized local database from the repository root:
 ```sh
 uv run --frozen python -m scripts.import_catalog data/seed/catalog-v1.json \
   --database database/advisor.db
+uv run --frozen python -m scripts.import_prd02_release_evidence \
+  data/seed/prd02-release-evidence-v1.json database/advisor.db
 ```
 
-The first load reports `committed`; replaying the unchanged seed reports `unchanged` and
-does not duplicate records. See [the importer guide](../../docs/catalog-import.md) for
-database initialization, reports, recovery and resolution-change rules.
+The first load reports `committed`; replaying either unchanged input reports `unchanged`
+for its stored evidence and does not duplicate records. The evidence importer reports
+five committed (or replayed) mappings and accepted outcomes. See [the importer guide]
+(../../docs/catalog-import.md) for database initialization, reports, recovery and
+resolution-change rules.
 

@@ -160,6 +160,46 @@
       "category": "moisturiser",
       "variant": "50 g",
       "pack_size": "50 g"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "brand": "La Shield",
+      "name": "Fisico Matte Sunscreen Gel",
+      "category": "sunscreen",
+      "variant": "SPF 50+ PA+++, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "brand": "CeraVe",
+      "name": "Oil Control Moisturising Gel-Cream",
+      "category": "moisturiser",
+      "variant": "52 ml",
+      "pack_size": "52 ml"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "brand": "CeraVe",
+      "name": "Moisturising Lotion",
+      "category": "moisturiser",
+      "variant": "236 ml",
+      "pack_size": "236 ml"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "brand": "Bioderma",
+      "name": "Atoderm Cream Ultra",
+      "category": "moisturiser",
+      "variant": "200 ml",
+      "pack_size": "200 ml"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "brand": "CeraVe",
+      "name": "Facial Moisturising Lotion AM",
+      "category": "sunscreen",
+      "variant": "SPF 30, 52 ml",
+      "pack_size": "52 ml"
     }
   ],
   "sources": [
@@ -601,6 +641,72 @@
       "permission_reference": "document:us-019-source-policy-v1",
       "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
       "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "open-beauty-facts",
+      "source_type": "dataset",
+      "source_reference": "https://world.openbeautyfacts.org",
+      "access_conditions": "Public product API; identify the client and obey rate limits.",
+      "reuse_conditions": "ODbL database terms; only reviewed factual fields are used with required attribution. Product images and unreviewed free text are excluded.",
+      "permission_reference": "https://world.openbeautyfacts.org/terms-of-use",
+      "attribution": "Open Beauty Facts contributors",
+      "last_checked": "2026-11-25T12:00:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:la-shield-fisico-matte-spf50-50g",
+      "source_type": "retailer",
+      "source_reference": "https://www.kunchals.in/products/la-shield-fisico-matte-sunscreen-gel-spf-50-50g",
+      "access_conditions": "Public HTTPS India retail page manually reviewed for the exact named pack and price.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for the non-commercial demonstration; images, reviews, promotions and personal data are excluded.",
+      "permission_reference": "document:us-035-expanded-source-policy-v1",
+      "attribution": "India availability, exact retail-pack identity and regular INR price attributed to the linked retailer page.",
+      "last_checked": "2026-11-25T12:00:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:cerave-oil-control-gel-cream-52ml",
+      "source_type": "retailer",
+      "source_reference": "https://www.1mg.com/otc/cerave-oil-control-moisturising-gel-cream-otc1090621",
+      "access_conditions": "Public HTTPS India retail page manually reviewed for the exact named pack and price.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for the non-commercial demonstration; images, reviews, promotions and personal data are excluded.",
+      "permission_reference": "document:us-035-expanded-source-policy-v1",
+      "attribution": "India availability, exact retail-pack identity and regular INR price attributed to the linked retailer page.",
+      "last_checked": "2026-11-25T12:00:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:cerave-moisturising-lotion-236ml",
+      "source_type": "retailer",
+      "source_reference": "https://www.1mg.com/otc/cerave-moisturising-lotion-for-normal-to-dry-skin-otc910895",
+      "access_conditions": "Public HTTPS India retail page manually reviewed for the exact named pack and price.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for the non-commercial demonstration; images, reviews, promotions and personal data are excluded.",
+      "permission_reference": "document:us-035-expanded-source-policy-v1",
+      "attribution": "India availability, exact retail-pack identity and regular INR price attributed to the linked retailer page.",
+      "last_checked": "2026-11-25T12:00:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:bioderma-atoderm-cream-ultra-200ml",
+      "source_type": "retailer",
+      "source_reference": "https://mediskin.care/products/atoderm-cream-ultra",
+      "access_conditions": "Public HTTPS India retail page manually reviewed for the exact named pack and price.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for the non-commercial demonstration; images, reviews, promotions and personal data are excluded.",
+      "permission_reference": "document:us-035-expanded-source-policy-v1",
+      "attribution": "India availability, exact retail-pack identity and regular INR price attributed to the linked retailer page.",
+      "last_checked": "2026-11-25T12:00:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:cerave-facial-moisturising-am-spf30-52ml",
+      "source_type": "retailer",
+      "source_reference": "https://www.cureka.com/shop/skin-care/moisturizer/moisturizing-lotion/cerave-facial-moisturising-lotion-am-52-ml",
+      "access_conditions": "Public HTTPS India retail page manually reviewed for the exact named pack and price.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for the non-commercial demonstration; images, reviews, promotions and personal data are excluded.",
+      "permission_reference": "document:us-035-expanded-source-policy-v1",
+      "attribution": "India availability, exact retail-pack identity and regular INR price attributed to the linked retailer page.",
+      "last_checked": "2026-11-25T12:00:00Z",
       "enabled": true
     }
   ],
@@ -2774,6 +2880,611 @@
       "content_version": "manual-page-review:2026-11-25:aqualogica-glow-jello-moisturizer-50g",
       "snapshot_id": "snapshot:aqualogica-glow-jello-moisturizer-50g:retailer:2026-11-25",
       "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-brand",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "retailer:la-shield-fisico-matte-spf50-50g",
+      "field_name": "brand",
+      "value": "La Shield",
+      "source_reference": "https://www.kunchals.in/products/la-shield-fisico-matte-sunscreen-gel-spf-50-50g",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:e3f0b5393fd0fd6e820190fe05f94f0fa4510137271d1f6c04d34a45c0ecbe00",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-name",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "retailer:la-shield-fisico-matte-spf50-50g",
+      "field_name": "name",
+      "value": "Fisico Matte Sunscreen Gel",
+      "source_reference": "https://www.kunchals.in/products/la-shield-fisico-matte-sunscreen-gel-spf-50-50g",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:f537cc1f3807753c739dd9ca281e9b3c86d14b0c305b570afac7227f6d23def6",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-category",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "retailer:la-shield-fisico-matte-spf50-50g",
+      "field_name": "category",
+      "value": "sunscreen",
+      "source_reference": "https://www.kunchals.in/products/la-shield-fisico-matte-sunscreen-gel-spf-50-50g",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:5423e0447971fb0521b08e9031b11cdf35da56b067ff88d909f6687730e7d2b2",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-variant",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "retailer:la-shield-fisico-matte-spf50-50g",
+      "field_name": "variant",
+      "value": "SPF 50+ PA+++, 50 g",
+      "source_reference": "https://www.kunchals.in/products/la-shield-fisico-matte-sunscreen-gel-spf-50-50g",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:e24156cfa6e0ea1815d0352a137b3a45690abd8ad0754473f7e55ce1e6dedaa6",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-pack_size",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "retailer:la-shield-fisico-matte-spf50-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "source_reference": "https://www.kunchals.in/products/la-shield-fisico-matte-sunscreen-gel-spf-50-50g",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:b1cc4a67e1ff6fb02c533267e306c7e40bf665efbb1f98f7a20b762cc1778d35",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-availability",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "retailer:la-shield-fisico-matte-spf50-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "source_reference": "https://www.kunchals.in/products/la-shield-fisico-matte-sunscreen-gel-spf-50-50g",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:43def6a4c3f3e6cd481fac4d790bf2c100e7a21a6aaa048e66ee126921223d32",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-price_paise",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "retailer:la-shield-fisico-matte-spf50-50g",
+      "field_name": "price_paise",
+      "value": 75000,
+      "source_reference": "https://www.kunchals.in/products/la-shield-fisico-matte-sunscreen-gel-spf-50-50g",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:19993dc8f0a4531641fdc7f7cf33785479e3dd3b5384303971e247eb07404b98",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified",
+      "country": "India",
+      "currency": "INR"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-ingredient_declaration",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_declaration",
+      "value": "Zinc Oxide, C12-15 Alkyl Benzoate, Isostearic Acid, Polyhydroxystearic acid, Cyclopentasiloxane, Dimethicone Crosspolymer, Caprylyl Methicone, PEG-12 Dimethicone/PPG-20 Crosspolymer and DL-a-Tocopheryl Acetate.",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/8904091145669.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:844c88789141099c027e7a7f2a9971b1b25605cbc6fc88db51643b808b71240e",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-la-shield-fisico-matte-spf50-50g-ingredient_completeness",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_completeness",
+      "value": "complete",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/8904091145669.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:575951db5c63b1e721c1f8f9aefb547ca834245433e7561dc8204a3a18427aae",
+      "snapshot_id": "us035-review-la-shield-fisico-matte-spf50-50g",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-brand",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "retailer:cerave-oil-control-gel-cream-52ml",
+      "field_name": "brand",
+      "value": "CeraVe",
+      "source_reference": "https://www.1mg.com/otc/cerave-oil-control-moisturising-gel-cream-otc1090621",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:d3f787f930ebb54e92407361cb610b865982fe1de2f8e24a93757f5a45acbaaf",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-name",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "retailer:cerave-oil-control-gel-cream-52ml",
+      "field_name": "name",
+      "value": "Oil Control Moisturising Gel-Cream",
+      "source_reference": "https://www.1mg.com/otc/cerave-oil-control-moisturising-gel-cream-otc1090621",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:54540acc2cbbc7088b42c93a8ad1fc0a32a43e64098fc63666ea7241a66daac3",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-category",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "retailer:cerave-oil-control-gel-cream-52ml",
+      "field_name": "category",
+      "value": "moisturiser",
+      "source_reference": "https://www.1mg.com/otc/cerave-oil-control-moisturising-gel-cream-otc1090621",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:d97ea47e9f751080959b4132617f5bb1928facfdf7133bed3c7150264745e6cb",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-variant",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "retailer:cerave-oil-control-gel-cream-52ml",
+      "field_name": "variant",
+      "value": "52 ml",
+      "source_reference": "https://www.1mg.com/otc/cerave-oil-control-moisturising-gel-cream-otc1090621",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:a630a6e37e2d16d285100215e10fb735f44b301c1a9cd052d05e10d2ef664f92",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-pack_size",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "retailer:cerave-oil-control-gel-cream-52ml",
+      "field_name": "pack_size",
+      "value": "52 ml",
+      "source_reference": "https://www.1mg.com/otc/cerave-oil-control-moisturising-gel-cream-otc1090621",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:a630a6e37e2d16d285100215e10fb735f44b301c1a9cd052d05e10d2ef664f92",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-availability",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "retailer:cerave-oil-control-gel-cream-52ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "source_reference": "https://www.1mg.com/otc/cerave-oil-control-moisturising-gel-cream-otc1090621",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:43def6a4c3f3e6cd481fac4d790bf2c100e7a21a6aaa048e66ee126921223d32",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-price_paise",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "retailer:cerave-oil-control-gel-cream-52ml",
+      "field_name": "price_paise",
+      "value": 120000,
+      "source_reference": "https://www.1mg.com/otc/cerave-oil-control-moisturising-gel-cream-otc1090621",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:4f9f73b34c5b89879aad65a48025f3187dd9ce6dc3d4e88eecb2fc79227350f1",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified",
+      "country": "India",
+      "currency": "INR"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-ingredient_declaration",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_declaration",
+      "value": "AQUA/WATER, NIACINAMIDE, GLYCERIN, CETEARYL ISONONANOATE, C14-22 ALCOHOLS, ISOPROPYL MYRISTATE, ZEA MAYS STARCH/CORN STARCH, CERAMIDE NP, CERAMIDE AP, CERAMIDE EOP, CARBOMER, CETEARYL ALCOHOL, BEHENTRIMONIUM METHOSULFATE, TRIETHYL CITRATE, SILICA, SODIUM HYDROXIDE, SODIUM HYALURONATE, SODIUM LAUROYL LACTYLATE, CHOLESTEROL, PHENOXYETHANOL, CITRIC ACID, CAPRYLYL GLYCOL, TRISODIUM ETHYLENEDIAMINE DISUCCINATE, XANTHAN GUM, PHYTOSPHINGOSINE, POLYACRYLATE CROSSPOLYMER-6, BENZOIC ACID, C12-20 ALKYL GLUCOSIDE",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/3337875909525.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:b58db18a38987f57edcf5325bac57313cf22e3e9050fed8bc603a1e24287fcd5",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-oil-control-gel-cream-52ml-ingredient_completeness",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_completeness",
+      "value": "complete",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/3337875909525.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:575951db5c63b1e721c1f8f9aefb547ca834245433e7561dc8204a3a18427aae",
+      "snapshot_id": "us035-review-cerave-oil-control-gel-cream-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-brand",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "retailer:cerave-moisturising-lotion-236ml",
+      "field_name": "brand",
+      "value": "CeraVe",
+      "source_reference": "https://www.1mg.com/otc/cerave-moisturising-lotion-for-normal-to-dry-skin-otc910895",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:d3f787f930ebb54e92407361cb610b865982fe1de2f8e24a93757f5a45acbaaf",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-name",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "retailer:cerave-moisturising-lotion-236ml",
+      "field_name": "name",
+      "value": "Moisturising Lotion",
+      "source_reference": "https://www.1mg.com/otc/cerave-moisturising-lotion-for-normal-to-dry-skin-otc910895",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:fcf1f8b673f17f06c113ec3852222ab6d09e2500bced83fd5f1cfdf1b086639f",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-category",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "retailer:cerave-moisturising-lotion-236ml",
+      "field_name": "category",
+      "value": "moisturiser",
+      "source_reference": "https://www.1mg.com/otc/cerave-moisturising-lotion-for-normal-to-dry-skin-otc910895",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:d97ea47e9f751080959b4132617f5bb1928facfdf7133bed3c7150264745e6cb",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-variant",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "retailer:cerave-moisturising-lotion-236ml",
+      "field_name": "variant",
+      "value": "236 ml",
+      "source_reference": "https://www.1mg.com/otc/cerave-moisturising-lotion-for-normal-to-dry-skin-otc910895",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:64d0c917c292d0ec9a66061b006a1dbd6ac79b761ebfa9b882a7426917304289",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-pack_size",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "retailer:cerave-moisturising-lotion-236ml",
+      "field_name": "pack_size",
+      "value": "236 ml",
+      "source_reference": "https://www.1mg.com/otc/cerave-moisturising-lotion-for-normal-to-dry-skin-otc910895",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:64d0c917c292d0ec9a66061b006a1dbd6ac79b761ebfa9b882a7426917304289",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-availability",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "retailer:cerave-moisturising-lotion-236ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "source_reference": "https://www.1mg.com/otc/cerave-moisturising-lotion-for-normal-to-dry-skin-otc910895",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:43def6a4c3f3e6cd481fac4d790bf2c100e7a21a6aaa048e66ee126921223d32",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-price_paise",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "retailer:cerave-moisturising-lotion-236ml",
+      "field_name": "price_paise",
+      "value": 130000,
+      "source_reference": "https://www.1mg.com/otc/cerave-moisturising-lotion-for-normal-to-dry-skin-otc910895",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:a0337a650ec85c558f728d843cef13f65a2b105e03af0bba4fd40a76628f2f76",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified",
+      "country": "India",
+      "currency": "INR"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-ingredient_declaration",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_declaration",
+      "value": "AQUA/WATER, GLYCERIN, CAPRYLIC/CAPRIC TRIGLYCERIDE, CETEARYL ALCOHOL, CETYL ALCOHOL, DIMETHICONE, PHENOXYETHANOL, POLYSORBATE 20, CETEARETH-20, BEHENTRIMONIUM METHOSULFATE, POLYGLYCERYL-3 DIISOSTEARATE, SODIUM LAUROYL LACTYLATE, ETHYLHEXYLGLYCERIN, POTASSIUM PHOSPHATE, DISODIUM EDTA, DIPOTASSIUM PHOSPHATE, CERAMIDE NP, CERAMIDE AP, PHYTO SPHINGOSINE, CHOLESTEROL, XANTHAN GUM, CARBOMER, SODIUM HYALURONATE, TOCOPHEROL, CERAMIDE EOP.",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/3337875597210.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:7e439a1b3c05b654049b0a43ad2f1eb0f3286b5145f58e8b9c8da2e820a2bd66",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-moisturising-lotion-236ml-ingredient_completeness",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_completeness",
+      "value": "complete",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/3337875597210.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:575951db5c63b1e721c1f8f9aefb547ca834245433e7561dc8204a3a18427aae",
+      "snapshot_id": "us035-review-cerave-moisturising-lotion-236ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-brand",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "retailer:bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "brand",
+      "value": "Bioderma",
+      "source_reference": "https://mediskin.care/products/atoderm-cream-ultra",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:fe1408a5e3834518d0dcbe53422ce7c3232ca25a336d16a7bf2b4f2cf86f9092",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-name",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "retailer:bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "name",
+      "value": "Atoderm Cream Ultra",
+      "source_reference": "https://mediskin.care/products/atoderm-cream-ultra",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:ef6fa4c62c0125a46f462facb1791e65feb48151029c55916d36585fbc1523c2",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-category",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "retailer:bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "category",
+      "value": "moisturiser",
+      "source_reference": "https://mediskin.care/products/atoderm-cream-ultra",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:d97ea47e9f751080959b4132617f5bb1928facfdf7133bed3c7150264745e6cb",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-variant",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "retailer:bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "variant",
+      "value": "200 ml",
+      "source_reference": "https://mediskin.care/products/atoderm-cream-ultra",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:40169700bec5a93a83e269d805bec3bd344f8e910e7808018a1859e739992fa0",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-pack_size",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "retailer:bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "pack_size",
+      "value": "200 ml",
+      "source_reference": "https://mediskin.care/products/atoderm-cream-ultra",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:40169700bec5a93a83e269d805bec3bd344f8e910e7808018a1859e739992fa0",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-availability",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "retailer:bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "source_reference": "https://mediskin.care/products/atoderm-cream-ultra",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:43def6a4c3f3e6cd481fac4d790bf2c100e7a21a6aaa048e66ee126921223d32",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-price_paise",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "retailer:bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "price_paise",
+      "value": 69900,
+      "source_reference": "https://mediskin.care/products/atoderm-cream-ultra",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:4f80a1095f3e1a5a52f52c1a38d01f4b71274508b6fcf3fca49b0f1dc6a45c84",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified",
+      "country": "India",
+      "currency": "INR"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-ingredient_declaration",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_declaration",
+      "value": "Aqua/Water/Eau, Paraffinum Liquidum/Mineral Oil/Huile Minerale, Glycerin, Brassica Campestris (Rapeseed) Seed Oil, Sodium Polyacrylate, Pentylene Glycol, Cetearyl Alcohol, 1,2-Hexanediol, Caprylyl Glycol, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Sodium Citrate, Xylitol, Cetearyl Glucoside, Mannitol, Tocopherol, Rhamnose, Xylitylglucoside, Helianthus Annuus (Sunflower) Seed Oil, Anhydroxylitol, Niacinamide, Glucose, Fructooligosaccharides, Caprylic/Capric Triglyceride, Laminaria Ochroleuca Extract",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/8699956514185.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:bd664573a795e90578b850d4ae564bd142f74fb0b329ef1e2709c46131b31fed",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-bioderma-atoderm-cream-ultra-200ml-ingredient_completeness",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_completeness",
+      "value": "complete",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/8699956514185.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:575951db5c63b1e721c1f8f9aefb547ca834245433e7561dc8204a3a18427aae",
+      "snapshot_id": "us035-review-bioderma-atoderm-cream-ultra-200ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-brand",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "retailer:cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "brand",
+      "value": "CeraVe",
+      "source_reference": "https://www.cureka.com/shop/skin-care/moisturizer/moisturizing-lotion/cerave-facial-moisturising-lotion-am-52-ml",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:d3f787f930ebb54e92407361cb610b865982fe1de2f8e24a93757f5a45acbaaf",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-name",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "retailer:cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "name",
+      "value": "Facial Moisturising Lotion AM",
+      "source_reference": "https://www.cureka.com/shop/skin-care/moisturizer/moisturizing-lotion/cerave-facial-moisturising-lotion-am-52-ml",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:93b4ca89a25ce5731e584b734d14ddc47701de8625b3e69e611aa47ed64d9b95",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-category",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "retailer:cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "category",
+      "value": "sunscreen",
+      "source_reference": "https://www.cureka.com/shop/skin-care/moisturizer/moisturizing-lotion/cerave-facial-moisturising-lotion-am-52-ml",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:5423e0447971fb0521b08e9031b11cdf35da56b067ff88d909f6687730e7d2b2",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-variant",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "retailer:cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "variant",
+      "value": "SPF 30, 52 ml",
+      "source_reference": "https://www.cureka.com/shop/skin-care/moisturizer/moisturizing-lotion/cerave-facial-moisturising-lotion-am-52-ml",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:ef4f4116d09df9125285027d6500c16a90e967c35617b0ea588185d8d2352354",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-pack_size",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "retailer:cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "pack_size",
+      "value": "52 ml",
+      "source_reference": "https://www.cureka.com/shop/skin-care/moisturizer/moisturizing-lotion/cerave-facial-moisturising-lotion-am-52-ml",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:a630a6e37e2d16d285100215e10fb735f44b301c1a9cd052d05e10d2ef664f92",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-availability",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "retailer:cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "source_reference": "https://www.cureka.com/shop/skin-care/moisturizer/moisturizing-lotion/cerave-facial-moisturising-lotion-am-52-ml",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:43def6a4c3f3e6cd481fac4d790bf2c100e7a21a6aaa048e66ee126921223d32",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-price_paise",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "retailer:cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "price_paise",
+      "value": 135000,
+      "source_reference": "https://www.cureka.com/shop/skin-care/moisturizer/moisturizing-lotion/cerave-facial-moisturising-lotion-am-52-ml",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:11595e2219bebc535f27ca90c86ab969534c4e640bd67c717ef94b8aac02f00a",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified",
+      "country": "India",
+      "currency": "INR"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-ingredient_declaration",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_declaration",
+      "value": "AQUA/WATER, GLYCERIN, ISOPROPYL PALMITATE, ETHYLHEXYL SALICYLATE, NIACINAMIDE, PENTYLENE GLYCOL, BIS-ETHYLHEXYLOXYPHENOL METHOXYPHENYL TRIAZINE, BUTYL METHOXYDIBENZOYLMETHANE, ZEA MAYS STARCH/CORN STARCH, ETHYLHEXYL TRIAZONE, POTASSIUM CETYL PHOSPHATE, DIISOPROPYL SEBACATE, ORYZA SATIVA CERA/RICE BRAN WAX, STEARIC ACID, CERAMIDE NP, CERAMIDE AP, CERAMIDE EOP, CARBOMER, GLYCERYL STEARATE, CETEARYL ALCOHOL, TRIETHANOLAMINE, BEHENTRIMONIUM METHOSULFATE, TRIETHYL CITRATE, SODIUM HYALURONATE, SODIUM LAUROYL LACTYLATE, MYRISTIC ACID, CHOLESTEROL, PALMITIC ACID, TOCOPHEROL, CAPRYLYL GLYCOL, TRISODIUM ETHYLENEDIAMINE DISUCCINATE, XANTHAN GUM, PHYTOSPHINGOSINE, ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER, BENZOIC ACID, PEG-100 STEARATE",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/3337875840620.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:8c8f53c6bab516a55a21e217f2d533cbabcead8d89e1290bddddb40d5ed3759a",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "us035-cerave-facial-moisturising-am-spf30-52ml-ingredient_completeness",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "source_id": "open-beauty-facts",
+      "field_name": "ingredient_completeness",
+      "value": "complete",
+      "source_reference": "https://world.openbeautyfacts.org/api/v3/product/3337875840620.json",
+      "retrieved_at": "2026-11-25T12:00:00Z",
+      "verified_at": "2026-11-25T12:00:00Z",
+      "content_version": "sha256:575951db5c63b1e721c1f8f9aefb547ca834245433e7561dc8204a3a18427aae",
+      "snapshot_id": "us035-review-cerave-facial-moisturising-am-spf30-52ml",
+      "validation_status": "verified"
     }
   ],
   "resolutions": [
@@ -4052,6 +4763,411 @@
       "status": "selected",
       "evidence_ids": [
         "e:aqualogica-glow-jello-moisturizer-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "ingredient_declaration",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-ingredient_declaration"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "field_name": "ingredient_completeness",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-la-shield-fisico-matte-spf50-50g-ingredient_completeness"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "ingredient_declaration",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-ingredient_declaration"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "field_name": "ingredient_completeness",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-oil-control-gel-cream-52ml-ingredient_completeness"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "ingredient_declaration",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-ingredient_declaration"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "field_name": "ingredient_completeness",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-moisturising-lotion-236ml-ingredient_completeness"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "ingredient_declaration",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-ingredient_declaration"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "field_name": "ingredient_completeness",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-bioderma-atoderm-cream-ultra-200ml-ingredient_completeness"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "ingredient_declaration",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-ingredient_declaration"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "field_name": "ingredient_completeness",
+      "status": "selected",
+      "evidence_ids": [
+        "us035-cerave-facial-moisturising-am-spf30-52ml-ingredient_completeness"
       ],
       "policy_version": "explicit-selection-v1"
     }

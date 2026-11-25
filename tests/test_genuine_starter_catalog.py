@@ -20,13 +20,19 @@ def load_seed() -> CatalogEnvelope:
 def test_genuine_seed_has_required_india_coverage_and_provenance() -> None:
     seed = load_seed()
     assert Counter(product.category for product in seed.products) == {
-        "sunscreen": 10,
-        "moisturiser": 10,
+        "sunscreen": 12,
+        "moisturiser": 13,
     }
-    assert len({product.product_id for product in seed.products}) == 20
+    assert len({product.product_id for product in seed.products}) == 25
     assert all(source.enabled for source in seed.sources)
     assert all(
-        source.permission_reference == "document:us-019-source-policy-v1" for source in seed.sources
+        source.permission_reference
+        in {
+            "document:us-019-source-policy-v1",
+            "document:us-035-expanded-source-policy-v1",
+            "https://world.openbeautyfacts.org/terms-of-use",
+        }
+        for source in seed.sources
     )
     assert all(observation.validation_status == "verified" for observation in seed.observations)
     assert len(seed.resolutions) == len(
@@ -58,7 +64,7 @@ def test_genuine_seed_import_is_repeatable_and_searchable(tmp_path: Path) -> Non
     second = import_catalog(SEED, database)
     assert second.status == "unchanged"
     assert database.read_bytes() == before
-    assert len(CatalogRepository(database).read().products) == 20
+    assert len(CatalogRepository(database).read().products) == 25
 
     service = CatalogSearchService(CatalogRepository(database))
     sunscreen = service.search(
@@ -67,5 +73,5 @@ def test_genuine_seed_import_is_repeatable_and_searchable(tmp_path: Path) -> Non
     moisturiser = service.search(
         UserRequirements(category="moisturiser", skin_type="normal", budget_inr="600")
     )
-    assert len(sunscreen.catalog.products) == 10
+    assert len(sunscreen.catalog.products) == 11
     assert len(moisturiser.catalog.products) == 10

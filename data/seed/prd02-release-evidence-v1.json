@@ -1,0 +1,95 @@
+{
+  "version": "prd02-release-evidence-v1",
+  "approved_source": {
+    "source_id": "open-beauty-facts",
+    "source_type": "dataset",
+    "endpoints": [
+      "https://world.openbeautyfacts.org/api/v3/product/"
+    ],
+    "redirect_origins": [],
+    "access_conditions": "Public product API; identify the client and obey rate limits.",
+    "reuse_conditions": "ODbL database terms; only reviewed factual fields are used with required attribution. Product images and unreviewed free text are excluded.",
+    "permission_reference": "https://world.openbeautyfacts.org/terms-of-use",
+    "attribution": "Open Beauty Facts contributors",
+    "checked_on": "2026-11-25",
+    "enabled": true,
+    "external_id_namespace": "open-beauty-facts-barcode"
+  },
+  "mappings": [
+    {
+      "source_id": "open-beauty-facts",
+      "external_id": "8904091145669",
+      "product_id": "la-shield-fisico-matte-spf50-50g",
+      "catalog_brand": "La Shield",
+      "catalog_name": "Fisico Matte Sunscreen Gel",
+      "catalog_variant": "SPF 50+ PA+++, 50 g",
+      "catalog_pack_size": "50 g",
+      "source_brand": "La Shield Glenmark",
+      "source_name": "La Shield Fisico Matte Sunscreen Gel",
+      "source_pack_size": "50g",
+      "source_ingredient_declaration": "Zinc Oxide, C12-15 Alkyl Benzoate, Isostearic Acid, Polyhydroxystearic acid, Cyclopentasiloxane, Dimethicone Crosspolymer, Caprylyl Methicone, PEG-12 Dimethicone/PPG-20 Crosspolymer and DL-a-Tocopheryl Acetate.",
+      "review_reference": "document:us-035-expanded-source-policy-v1",
+      "reviewed_at": "2026-11-25T12:00:00Z"
+    },
+    {
+      "source_id": "open-beauty-facts",
+      "external_id": "3337875909525",
+      "product_id": "cerave-oil-control-gel-cream-52ml",
+      "catalog_brand": "CeraVe",
+      "catalog_name": "Oil Control Moisturising Gel-Cream",
+      "catalog_variant": "52 ml",
+      "catalog_pack_size": "52 ml",
+      "source_brand": "CeraVe",
+      "source_name": "Oil Control Moisturising Gel-Cream",
+      "source_pack_size": "52ml",
+      "source_ingredient_declaration": "AQUA/WATER, NIACINAMIDE, GLYCERIN, CETEARYL ISONONANOATE, C14-22 ALCOHOLS, ISOPROPYL MYRISTATE, ZEA MAYS STARCH/CORN STARCH, CERAMIDE NP, CERAMIDE AP, CERAMIDE EOP, CARBOMER, CETEARYL ALCOHOL, BEHENTRIMONIUM METHOSULFATE, TRIETHYL CITRATE, SILICA, SODIUM HYDROXIDE, SODIUM HYALURONATE, SODIUM LAUROYL LACTYLATE, CHOLESTEROL, PHENOXYETHANOL, CITRIC ACID, CAPRYLYL GLYCOL, TRISODIUM ETHYLENEDIAMINE DISUCCINATE, XANTHAN GUM, PHYTOSPHINGOSINE, POLYACRYLATE CROSSPOLYMER-6, BENZOIC ACID, C12-20 ALKYL GLUCOSIDE",
+      "review_reference": "document:us-035-expanded-source-policy-v1",
+      "reviewed_at": "2026-11-25T12:00:00Z"
+    },
+    {
+      "source_id": "open-beauty-facts",
+      "external_id": "3337875597210",
+      "product_id": "cerave-moisturising-lotion-236ml",
+      "catalog_brand": "CeraVe",
+      "catalog_name": "Moisturising Lotion",
+      "catalog_variant": "236 ml",
+      "catalog_pack_size": "236 ml",
+      "source_brand": "CeraVe",
+      "source_name": "Moisturising Lotion / Loci\u00f3n Hidratante",
+      "source_pack_size": "236ml",
+      "source_ingredient_declaration": "AQUA/WATER, GLYCERIN, CAPRYLIC/CAPRIC TRIGLYCERIDE, CETEARYL ALCOHOL, CETYL ALCOHOL, DIMETHICONE, PHENOXYETHANOL, POLYSORBATE 20, CETEARETH-20, BEHENTRIMONIUM METHOSULFATE, POLYGLYCERYL-3 DIISOSTEARATE, SODIUM LAUROYL LACTYLATE, ETHYLHEXYLGLYCERIN, POTASSIUM PHOSPHATE, DISODIUM EDTA, DIPOTASSIUM PHOSPHATE, CERAMIDE NP, CERAMIDE AP, PHYTO SPHINGOSINE, CHOLESTEROL, XANTHAN GUM, CARBOMER, SODIUM HYALURONATE, TOCOPHEROL, CERAMIDE EOP.",
+      "review_reference": "document:us-035-expanded-source-policy-v1",
+      "reviewed_at": "2026-11-25T12:00:00Z"
+    },
+    {
+      "source_id": "open-beauty-facts",
+      "external_id": "8699956514185",
+      "product_id": "bioderma-atoderm-cream-ultra-200ml",
+      "catalog_brand": "Bioderma",
+      "catalog_name": "Atoderm Cream Ultra",
+      "catalog_variant": "200 ml",
+      "catalog_pack_size": "200 ml",
+      "source_brand": "Bioderma",
+      "source_name": "Bioderma Atoderm Cream Ultra",
+      "source_pack_size": "200 ml",
+      "source_ingredient_declaration": "Aqua/Water/Eau, Paraffinum Liquidum/Mineral Oil/Huile Minerale, Glycerin, Brassica Campestris (Rapeseed) Seed Oil, Sodium Polyacrylate, Pentylene Glycol, Cetearyl Alcohol, 1,2-Hexanediol, Caprylyl Glycol, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Sodium Citrate, Xylitol, Cetearyl Glucoside, Mannitol, Tocopherol, Rhamnose, Xylitylglucoside, Helianthus Annuus (Sunflower) Seed Oil, Anhydroxylitol, Niacinamide, Glucose, Fructooligosaccharides, Caprylic/Capric Triglyceride, Laminaria Ochroleuca Extract",
+      "review_reference": "document:us-035-expanded-source-policy-v1",
+      "reviewed_at": "2026-11-25T12:00:00Z"
+    },
+    {
+      "source_id": "open-beauty-facts",
+      "external_id": "3337875840620",
+      "product_id": "cerave-facial-moisturising-am-spf30-52ml",
+      "catalog_brand": "CeraVe",
+      "catalog_name": "Facial Moisturising Lotion AM",
+      "catalog_variant": "SPF 30, 52 ml",
+      "catalog_pack_size": "52 ml",
+      "source_brand": "CeraVe",
+      "source_name": "Facial Moisturising Lotion AM SPF 30 / Loci\u00f3n Hidratante de Rostro",
+      "source_pack_size": "52ml",
+      "source_ingredient_declaration": "AQUA/WATER, GLYCERIN, ISOPROPYL PALMITATE, ETHYLHEXYL SALICYLATE, NIACINAMIDE, PENTYLENE GLYCOL, BIS-ETHYLHEXYLOXYPHENOL METHOXYPHENYL TRIAZINE, BUTYL METHOXYDIBENZOYLMETHANE, ZEA MAYS STARCH/CORN STARCH, ETHYLHEXYL TRIAZONE, POTASSIUM CETYL PHOSPHATE, DIISOPROPYL SEBACATE, ORYZA SATIVA CERA/RICE BRAN WAX, STEARIC ACID, CERAMIDE NP, CERAMIDE AP, CERAMIDE EOP, CARBOMER, GLYCERYL STEARATE, CETEARYL ALCOHOL, TRIETHANOLAMINE, BEHENTRIMONIUM METHOSULFATE, TRIETHYL CITRATE, SODIUM HYALURONATE, SODIUM LAUROYL LACTYLATE, MYRISTIC ACID, CHOLESTEROL, PALMITIC ACID, TOCOPHEROL, CAPRYLYL GLYCOL, TRISODIUM ETHYLENEDIAMINE DISUCCINATE, XANTHAN GUM, PHYTOSPHINGOSINE, ACRYLATES/C10-30 ALKYL ACRYLATE CROSSPOLYMER, BENZOIC ACID, PEG-100 STEARATE",
+      "review_reference": "document:us-035-expanded-source-policy-v1",
+      "reviewed_at": "2026-11-25T12:00:00Z"
+    }
+  ]
+}
