@@ -7,7 +7,7 @@ from re import fullmatch
 from repositories.catalog import CatalogRepository, CatalogStorageError
 from repositories.refresh import RefreshCommitReport, RefreshRepository
 from repositories.source_registry import SourceRegistryRepository, SourceRegistryStorageError
-from schemas.refresh import ApprovedSource, RefreshResult, ReviewedVariantMapping
+from schemas.refresh import ApprovedSource, RefreshResult, RetrievedField, ReviewedVariantMapping
 from services.open_beauty_facts import OpenBeautyFactsClient
 
 
@@ -25,6 +25,7 @@ class RefreshTarget:
 class ManualRefreshResult:
     refresh: RefreshResult
     commit: RefreshCommitReport
+    fields: tuple[RetrievedField, ...]
 
 
 class ManualRefreshService:
@@ -96,4 +97,4 @@ class ManualRefreshService:
             lookup,
             target.mapping if lookup.refresh.status in {"fetched", "cached", "partial"} else None,
         )
-        return ManualRefreshResult(lookup.refresh, report)
+        return ManualRefreshResult(lookup.refresh, report, lookup.fields)

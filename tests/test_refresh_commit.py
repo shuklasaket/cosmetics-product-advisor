@@ -135,13 +135,20 @@ def test_reviewed_mapping_commits_history_and_outcome_atomically(tmp_path: Path)
     assert RefreshRepository(path).mappings("synthetic-50ml")[0].mapping == mapping()
 
 
-def test_uncertain_mapping_requires_review_without_catalog_mutation(tmp_path: Path) -> None:
+def test_uncertain_mapping_retains_rejected_outcome_without_catalog_mutation(
+    tmp_path: Path,
+) -> None:
     path, catalog_repo = seeded(tmp_path)
     before = catalog_repo.read()
     result = RefreshRepository(path).commit(lookup(), mapping(source_pack_size="100 ml"))
     assert result.status == "review_required"
+    assert result.outcome_id is not None
     assert catalog_repo.read() == before
-    assert RefreshRepository(path).outcomes("synthetic-50ml") == ()
+    outcomes = RefreshRepository(path).outcomes("synthetic-50ml")
+    assert len(outcomes) == 1
+    assert outcomes[0].decision == "failed"
+    assert outcomes[0].mapping_id is None
+    assert outcomes[0].fields == lookup().fields
 
 
 def test_identical_replay_adds_no_duplicate_evidence_or_outcome(tmp_path: Path) -> None:

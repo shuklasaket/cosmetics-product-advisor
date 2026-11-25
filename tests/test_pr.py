@@ -186,6 +186,28 @@ def test_live_lookup_uses_the_fixed_repository_and_issue_number(
     assert pr_checks.verify_story_issue("feat/prd-01-us-042-search", tmp_path) == []
 
 
+def test_live_lookup_uses_public_fixed_endpoint_when_gh_auth_is_unavailable(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    story_description: str,
+    story_issue: dict[str, object],
+) -> None:
+    monkeypatch.setattr(
+        subprocess,
+        "run",
+        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], 1, "", "auth required"),
+    )
+    received: list[int] = []
+
+    def public_issue(number: int) -> object:
+        received.append(number)
+        return story_issue
+
+    monkeypatch.setattr(pr_checks, "public_story_issue", public_issue)
+    assert pr_checks.verify_story_issue("feat/prd-01-us-042-search", tmp_path) == []
+    assert received == [42]
+
+
 @pytest.mark.parametrize("output,returncode", [("secret remote error", 1), ("not json", 0)])
 def test_live_lookup_fails_closed_without_exposing_remote_payloads(
     monkeypatch: pytest.MonkeyPatch, output: str, returncode: int, tmp_path: Path
@@ -194,6 +216,9 @@ def test_live_lookup_fails_closed_without_exposing_remote_payloads(
         subprocess,
         "run",
         lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, output, output),
+    )
+    monkeypatch.setattr(
+        pr_checks, "public_story_issue", lambda number: (_ for _ in ()).throw(OSError())
     )
     errors = pr_checks.verify_story_issue("feat/prd-01-us-042-search", tmp_path)
     assert errors
@@ -207,6 +232,9 @@ def test_live_lookup_timeout_is_a_sanitized_failure(
         raise subprocess.TimeoutExpired(command, 30, output="private remote response")
 
     monkeypatch.setattr(subprocess, "run", timeout)
+    monkeypatch.setattr(
+        pr_checks, "public_story_issue", lambda number: (_ for _ in ()).throw(OSError())
+    )
     errors = pr_checks.verify_story_issue("feat/prd-01-us-042-search", tmp_path)
     assert errors
     assert "private remote response" not in " ".join(errors)
@@ -237,6 +265,9 @@ def test_cli_runs_live_verification_only_when_requested(
         return subprocess.CompletedProcess(command, 1, "", "not found")
 
     monkeypatch.setattr(subprocess, "run", inaccessible_issue)
+    monkeypatch.setattr(
+        pr_checks, "public_story_issue", lambda number: (_ for _ in ()).throw(OSError())
+    )
     monkeypatch.setattr(sys, "argv", arguments)
     assert main() == 0
     assert "Offline metadata only" in capsys.readouterr().out

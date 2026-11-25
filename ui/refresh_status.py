@@ -9,7 +9,7 @@ import streamlit as st
 from repositories.catalog import CatalogRepository, CatalogStorageError
 from repositories.refresh import RefreshRepository
 from schemas.catalog import FactName
-from schemas.refresh import RefreshResult
+from schemas.refresh import RefreshResult, RetrievedField
 from services.catalog_policy import evaluate_catalog
 from services.manual_refresh import (
     ManualRefreshResult,
@@ -27,7 +27,7 @@ def session_refresh_service(path: Path) -> ManualRefreshService:
     return service
 
 
-def render_outcome(result: RefreshResult) -> None:
+def render_outcome(result: RefreshResult, fields: tuple[RetrievedField, ...] = ()) -> None:
     st.text(f"Last refresh: {result.status}")
     st.text(
         f"Source: {result.source_id} | Cache: {result.cache_state} | Attempts: {result.attempts}"
@@ -42,6 +42,10 @@ def render_outcome(result: RefreshResult) -> None:
             f"{result.error_code}: local evidence remains available with its original dates. "
             "Check the approved source and mapping; retry later for temporary source failures."
         )
+    if fields:
+        st.caption("Retrieved field status")
+        for field in fields:
+            st.text(f"{field.field_name}: {field.status}")
 
 
 def render_refresh_controls(service: ManualRefreshService, product_id: str) -> None:
@@ -76,19 +80,24 @@ def render_refresh_history(service: ManualRefreshService, product_id: str) -> No
     if isinstance(recent, ManualRefreshResult) and (
         latest is None or recent.refresh.completed_at >= latest.refresh.completed_at
     ):
-        render_outcome(recent.refresh)
+        render_outcome(recent.refresh, recent.fields)
         if recent.commit.status in {"committed", "unchanged"}:
             st.text(
                 f"Storage: {recent.commit.status}; "
                 f"new evidence records: {recent.commit.evidence_added}"
             )
         else:
+            outcome_note = (
+                "Candidate facts and mapping were not saved; the payload-free outcome is recorded. "
+                if recent.commit.status == "review_required"
+                else "This attempt was not saved. "
+            )
             st.warning(
                 f"Storage: {recent.commit.status} ({recent.commit.reason_code}). "
-                "This attempt was not saved. Review the mapping or repair storage before retrying."
+                f"{outcome_note}Review the mapping or repair storage before retrying."
             )
     elif latest:
-        render_outcome(latest.refresh)
+        render_outcome(latest.refresh, latest.fields)
     else:
         st.caption("No recorded refresh outcome.")
     st.caption(

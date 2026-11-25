@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- Payload-free persistence of returned, missing, and rejected field statuses when a
+  PRD 02 exact-variant review requires further work. Candidate facts and mappings remain
+  uncommitted, so last-valid catalog evidence is preserved while operators retain the
+  genuine retrieval outcome for review. (Refs #35)
+
 - A strict, read-only PRD 02 release verifier for the approved 20–30-variant catalog,
   reviewed refresh mappings, source permission/attribution, and the accepted 7-day
   price/availability and 30-day other-fact freshness limits. It fails closed and
@@ -97,6 +102,13 @@ has been delivered by this work.
   ([862bef8](https://github.com/shuklasaket/cosmetics-product-advisor/commit/862bef8013150930b343b84418adaac9a6dc989b))
 
 ### Changed
+
+- Story PR issue validation now falls back to the repository's fixed public GitHub
+  issue endpoint if the local `gh` credential is unavailable or expired. The fallback
+  is read-only, bounded, and fails closed, while authenticated `gh` remains preferred.
+  PRD 02 freshness checks now evaluate explicitly selected facts so immutable,
+  superseded provenance remains auditable without being mistaken for current evidence.
+  (Refs #35)
 
 - Replanned the remaining PRD 02–09 work around a trusted LangGraph controller and
   exactly five fixed, least-privilege roles for intake/clarification, catalog evidence,
