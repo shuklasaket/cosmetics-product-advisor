@@ -58,6 +58,20 @@ read-only verifier again after the restart for a deterministic persistence check
 
 ## Boundaries and recovery
 
+PRD 02 has a separate fail-closed release gate. Run it after importing the reviewed
+catalog and committing refresh evidence:
+
+```sh
+uv run --frozen python -m scripts.verify_prd02_release database/advisor.db
+```
+
+The gate requires 20–30 exact variants (at least 10 per category), five reviewed
+variant mappings with accepted refresh outcomes, approved source permission and
+attribution, and freshness no older than 7 days for India/INR price or availability
+and 30 days for other facts. It emits only counts, fixed limits and sanitized failure
+reasons; it never prints source payloads. The existing ten-product PRD 01 seed is
+expected to fail this gate until the genuine PRD 02 catalog is assembled.
+
 The automated acceptance suite covers exact-ceiling inclusion, over-budget exclusion,
 unknown India availability, zero and invalid budgets, unsupported countries, duplicate
 input, empty results, missing/invalid databases, atomic import failure, migration
