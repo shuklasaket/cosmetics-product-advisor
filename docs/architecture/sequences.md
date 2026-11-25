@@ -3,8 +3,9 @@
 These five editable PlantUML sources show the planned interaction order from the
 [technical requirements](../requirements/TECHNICAL_REQUIREMENTS.md)
 and [PRDs 01–09](../requirements/README.md). They complement the
-[system, recommendation, and data/privacy overviews](README.md). PRD 01 and the first PRD 02 source contracts are implemented. The sequences describe
-the remaining target interactions and do not claim those flows already run.
+[system, recommendation, and data/privacy overviews](README.md). PRD 01 and PRD 02 manual refresh integration are implemented; PRD 02 genuine release
+evidence remains pending. Other sequences describe target interactions and do not
+claim those flows already run.
 
 Time runs downward. A solid arrow is a request or dispatch; a dashed open arrow is a
 result or status. Pale `opt` frames mark optional work. `alt` frames split mutually
@@ -14,9 +15,11 @@ responsibilities within the same local SQLite boundary, not additional databases
 ## 01 — Catalog refresh
 
 The operator starts a known-variant refresh. The service reads the approved source
-registry and dated local facts, then uses the allowlisted source adapter. Valid mapped
-observations commit transactionally with provenance. On source failure or critical
-conflict, the prior facts remain available with their actual dates and a warning.
+registry, persisted reviewed mapping, and dated local facts, then uses the allowlisted
+source adapter. Valid mapped observations append transactionally as unverified evidence.
+Existing selections remain unchanged. Source failures store safe outcomes; changed
+variants or storage failures reject writes. The UI separates execution and storage
+status and shows dates, validation, freshness, conflicts, and recovery guidance.
 The diagram covers the live Open Beauty Facts path; permitted manual imports use the
 same validation and repository rules.
 

@@ -7,6 +7,7 @@ from repositories.catalog import CatalogRepository
 from schemas.settings import Settings
 from services.catalog_search import CatalogSearchService
 from ui.catalog_results import execute_search, render_catalog_results
+from ui.refresh_status import render_operator_status, session_refresh_service
 from ui.search_form import render_search_form
 
 
@@ -28,10 +29,12 @@ def main() -> None:
     request = render_search_form()
     if request is not None:
         execute_search(service, request)
-    render_catalog_results(service)
+    refresh_service = session_refresh_service(settings.database_path)
+    render_operator_status(refresh_service)
+    render_catalog_results(service, refresh_service)
 
     with st.expander("Development status"):
-        st.write("Configuration validated. No source or model connections are started.")
+        st.write("Configuration validated. Source requests run only on explicit manual refresh.")
         st.write(f"Catalog directory: {settings.data_dir}")
         st.write("Hosted inference: disabled")
         st.write(

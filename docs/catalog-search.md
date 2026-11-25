@@ -49,6 +49,16 @@ results and show fixed restoration guidance without paths, SQL, source payloads,
 invented fallback products. Restoring a valid catalog and resubmitting retries the
 query. The UI never creates, migrates, repairs, or imports the database.
 
+## Manual refresh and evidence status
+
+[US-037](https://github.com/shuklasaket/cosmetics-product-advisor/issues/37) adds
+freshness/conflict labels, validation state, retrieval dates, and additional evidence
+to product details. The [manual refresh runbook](manual-refresh.md) describes explicit
+per-product controls and the catalog-wide operator status view. Only approved public
+product IDs reach the refresh service; private search inputs remain in session memory.
+Search/detail reads still never write storage. The separate manual refresh action can
+append unverified public evidence and sanitized outcomes after mapping validation.
+
 ## Consumer handoff
 
 After [initializing storage](catalog-storage.md) and

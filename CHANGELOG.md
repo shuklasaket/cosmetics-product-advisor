@@ -12,6 +12,12 @@ has been delivered by this work.
 
 ### Added
 
+- Explicit per-product Open Beauty Facts refresh controls, evidence freshness/conflict
+  and validation details, and a read-only operator status view. Approved sources and
+  reviewed mappings are required; failures retain dated local facts, and retrieved
+  candidates remain unverified. Owned HTTP clients now close after each request.
+  ([#37](https://github.com/shuklasaket/cosmetics-product-advisor/issues/37))
+
 - Review-gated, transactional PRD 02 refresh commits with exact variant mappings,
   append-only unverified observations, durable payload-free outcomes, schema-v3 backup
   migration, unchanged last-valid catalog facts on rejected or failed input, and
