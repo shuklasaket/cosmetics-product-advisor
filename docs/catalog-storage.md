@@ -31,10 +31,12 @@ existing database (`mode=rw`). Missing, inaccessible, corrupt, unsupported, or
 inconsistent storage raises a fixed `CatalogStorageError`. Display its message
 without logging exception context, SQL, or record payloads.
 
-Schema v2 uses `PRAGMA application_id = 0x43504131` and `PRAGMA user_version = 2`.
+Schema v3 uses `PRAGMA application_id = 0x43504131` and `PRAGMA user_version = 3`.
 Version 1 contains the PRD 01 catalog tables; version 2 adds the PRD 02
 [`approved_sources` registry](approved-source-registry.md) without rewriting catalog
-records.
+records. Version 3 adds reviewed variant mappings and append-only refresh outcomes;
+it preserves the v2 catalog and source registry. A valid v2 database receives a
+validated v2 backup before the v3 transaction.
 Only an empty, unversioned database can be initialized. Nonempty unversioned,
 foreign, or newer databases are refused without schema/data changes. There is no
 implicit downgrade or overwrite. Repeated migration of a valid current schema is
@@ -70,6 +72,15 @@ cross-import idempotency reporting and operator-facing rejected-row diagnostics.
 It passes `expected=current_snapshot` to `save` so the repository refuses a stale
 writer inside its transaction; callers building snapshots from reads should do the
 same. Omitting `expected` preserves the direct complete-snapshot API.
+
+`RefreshRepository.commit` is the separate PRD 02 candidate-evidence boundary. It
+requires an enabled approved-source registration, an exact operator-reviewed
+source-to-catalog variant mapping, and matching validated candidate fields.
+Accepted candidates remain **unverified** and cannot silently replace selected
+facts. The mapping, new observations, unresolved links for previously unseen
+fields, and a payload-free refresh outcome commit in one transaction. Exact replay
+adds no rows; failure/review-required results do not change catalog facts. See the
+[refresh handoff](approved-source-registry.md#reviewed-variant-and-refresh-commit-handoff).
 
 Tables retain canonical JSON payloads to preserve exact decimal strings, UTC
 provenance and explicit nulls. Generated keys, unique variant identities, composite
@@ -133,8 +144,8 @@ live database or deleting its WAL/journal files.
 
 Databases, journals, and `*.backups/` directories are ignored. Do not commit or
 redistribute generated files; genuine evidence and source permission remain separate
-release requirements under the [data policy](../data/README.md). The US-014 tests use
-only synthetic evidence and temporary SQLite files; injected v2 migrations test the
-upgrade mechanism without shipping an invented production v2 schema.
+release requirements under the [data policy](../data/README.md). Storage and refresh
+tests use synthetic evidence and temporary SQLite files, including a v2-to-v3 backup
+and upgrade check.
 
 Implementation references: [Python 3.12 SQLite transaction control and backup API](https://docs.python.org/3.12/library/sqlite3.html).

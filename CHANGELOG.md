@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- Review-gated, transactional PRD 02 refresh commits with exact variant mappings,
+  append-only unverified observations, durable payload-free outcomes, schema-v3 backup
+  migration, unchanged last-valid catalog facts on rejected or failed input, and
+  qualification withheld for unresolved critical conflicts.
+  ([#39](https://github.com/shuklasaket/cosmetics-product-advisor/issues/39))
 - Deterministic source-precedence, conflict-retention, freshness, and critical-evidence
   qualification policy for future recommendation inputs; catalog browsing remains unchanged.
   ([#38](https://github.com/shuklasaket/cosmetics-product-advisor/issues/38))

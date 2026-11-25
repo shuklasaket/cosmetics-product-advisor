@@ -128,4 +128,39 @@ SCHEMA_V2 = (
     )""",
 )
 
-MIGRATIONS: tuple[tuple[str, ...], ...] = (SCHEMA_V1, SCHEMA_V2)
+SCHEMA_V3 = (
+    """CREATE TABLE variant_mappings (
+        payload TEXT NOT NULL CHECK(json_valid(payload)),
+        mapping_id TEXT GENERATED ALWAYS AS (json_extract(payload, '$.mapping_id')) STORED NOT NULL,
+        source_id TEXT GENERATED ALWAYS AS (
+            json_extract(payload, '$.mapping.source_id')) STORED NOT NULL,
+        external_id TEXT GENERATED ALWAYS AS (
+            json_extract(payload, '$.mapping.external_id')) STORED NOT NULL,
+        product_id TEXT GENERATED ALWAYS AS (
+            json_extract(payload, '$.mapping.product_id')) STORED NOT NULL,
+        UNIQUE(mapping_id),
+        FOREIGN KEY(product_id) REFERENCES products(product_id),
+        FOREIGN KEY(source_id) REFERENCES sources(source_id)
+    )""",
+    """CREATE TABLE refresh_outcomes (
+        payload TEXT NOT NULL CHECK(json_valid(payload)),
+        outcome_id TEXT GENERATED ALWAYS AS (json_extract(payload, '$.outcome_id')) STORED NOT NULL,
+        product_id TEXT GENERATED ALWAYS AS (
+            json_extract(payload, '$.refresh.product_id')) STORED NOT NULL,
+        source_id TEXT GENERATED ALWAYS AS (
+            json_extract(payload, '$.refresh.source_id')) STORED NOT NULL,
+        mapping_id TEXT GENERATED ALWAYS AS (json_extract(payload, '$.mapping_id')) STORED,
+        UNIQUE(outcome_id),
+        FOREIGN KEY(product_id) REFERENCES products(product_id),
+        FOREIGN KEY(source_id) REFERENCES sources(source_id),
+        FOREIGN KEY(mapping_id) REFERENCES variant_mappings(mapping_id)
+    )""",
+    *(
+        f"""CREATE TRIGGER immutable_{table}_{action.lower()} BEFORE {action} ON {table}
+        BEGIN SELECT RAISE(ABORT, 'Refresh history is immutable'); END"""
+        for table in ("variant_mappings", "refresh_outcomes")
+        for action in ("UPDATE", "DELETE")
+    ),
+)
+
+MIGRATIONS: tuple[tuple[str, ...], ...] = (SCHEMA_V1, SCHEMA_V2, SCHEMA_V3)

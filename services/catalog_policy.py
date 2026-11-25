@@ -152,7 +152,11 @@ def evaluate_catalog(catalog: CatalogEnvelope, *, now: datetime) -> CatalogPolic
         reasons: list[QualificationReason] = []
         for field in _CRITICAL_FIELDS:
             critical_policy = policies.get(field)
-            unresolved = critical_policy is None or critical_policy.selected_evidence_id is None
+            unresolved = (
+                critical_policy is None
+                or critical_policy.selected_evidence_id is None
+                or bool(critical_policy.conflicting_evidence_ids)
+            )
             if unresolved:
                 reason = _UNRESOLVED_REASONS[field]
                 if reason not in reasons:

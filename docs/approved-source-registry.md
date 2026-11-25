@@ -86,3 +86,34 @@ Beauty Facts contributors. This adapter excludes product images, which have sepa
 licensing conditions. The later PRD-02 release evidence still needs reviewed exact
 catalog mappings and permitted live outcomes; its recorded/synthetic adapter tests do
 not establish those genuine-data checks.
+
+## Reviewed variant and refresh commit handoff
+
+[US-039](https://github.com/shuklasaket/cosmetics-product-advisor/issues/39)
+adds schema v3 and `RefreshRepository.commit`. Run the normal `migrate` path with the
+app/importer stopped before using it; a validated v2 backup is created. The caller
+must register the same enabled source in both the catalog and approved-source
+registry, then review the exact external ID against an existing catalog product.
+`ReviewedVariantMapping` records the catalog brand, name, formulation variant,
+pack, exact source brand/name/pack/ingredient declaration, a review reference, and
+review date. A missing or changed identity, pack, or formulation returns
+`review_required` without catalog mutation. No mapping or source permission is
+bundled with this change.
+
+Pass the adapter's `RefreshLookup` and reviewed mapping to
+`RefreshRepository(database_path).commit(lookup, mapping)`. Only allowlisted source
+references matching the requested Open Beauty Facts barcode are accepted. The
+repository writes the mapping, new candidate observations, unresolved links for
+previously unseen fields, and a payload-free outcome atomically. Existing selected
+facts and verification dates remain unchanged; candidates stay unverified until a
+separate explicit evidence review. A critical conflicting observation withholds
+future recommendation qualification while the last selected fact remains visible.
+A failed lookup can store its sanitized outcome without a mapping or fact changes.
+Exact replay reports `unchanged`; inspect
+`outcomes(product_id)` and `mappings(product_id)` for durable history.
+
+The [manual catalog importer](catalog-import.md) remains the permitted brand/retailer
+handoff. It validates its complete batch and requires `--update-resolutions` for
+explicit resolution changes. Do not automatically promote refresh candidates through
+that importer. The next operator UI story will expose review and refresh status;
+the PRD 02 release story must supply genuine, permitted mappings and live evidence.
