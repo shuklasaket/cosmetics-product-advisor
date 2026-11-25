@@ -32,9 +32,10 @@ operator/data review is required before a later adapter can be enabled.
 4. Collect only permitted review text and necessary metadata; remove unnecessary reviewer identifiers.
 5. Regulatory data needs exact authoritative references and domain review before PRD 03 uses it.
 
-The versioned [India genuine starter catalog](seed/README.md) contains 10 reviewed
-products, five per category. The completed MVP still targets approximately 20–30.
-The header-only templates do not add to these counts.
+The versioned [India genuine catalog](seed/README.md) contains 20 reviewed products,
+ten per category. The header-only templates do not add to these counts. PRD 02 still
+requires five exact reviewed Open Beauty Facts mappings and accepted outcomes before
+the expanded catalog satisfies its release gate.
 
 ## Storage and fixtures
 

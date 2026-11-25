@@ -1,10 +1,11 @@
 # India genuine starter catalog
 
-`catalog-v1.json` is the reviewed US-019 starter catalog for the non-commercial
-agentic-development demo. It contains ten exact products available for online purchase
-in India: five sunscreens and five moisturisers. Prices are regular/MRP values in INR
-paise, not temporary promotional prices. Optional ratings, review counts, claims and
-sponsorship values are absent and therefore remain unknown.
+`catalog-v1.json` is the reviewed catalog for the non-commercial agentic-development
+demo. The original US-019 starter records remain intact, and US-035 adds ten exact
+products reviewed on 25 November 2026. The current seed contains 20 products available
+for online purchase in India: ten sunscreens and ten moisturisers. Prices are regular/MRP
+values in INR paise, not temporary promotional prices. Optional ratings, review counts,
+claims and sponsorship values are absent and therefore remain unknown.
 
 ## Source policy (`us-019-source-policy-v1`)
 
@@ -14,6 +15,14 @@ ingredient declaration, regular INR price, India-online availability, source URL
 verification metadata. Images, review content/counts, marketing prose, certificates,
 temporary promotions and personal data are excluded. No scraping or live adapter is
 used, and no physical product purchase or back-of-pack inspection is required.
+
+On 25 November 2026 the maintainer confirmed that this factual-only policy also covers
+newly reviewed official brand storefront pages. The US-035 expansion uses only official
+Minimalist, Foxtale, Re'equil and Aqualogica India pages. It does not use Bigbasket,
+images, reviews, promotions or copied marketing claims. Identity, exact pack, regular
+price and India-online availability are selected; ingredient declarations remain unknown
+for these ten additions because this increment does not claim a complete formulation
+review or an Open Beauty Facts match.
 
 Each source record preserves the original HTTPS page, the access and reuse boundary,
 attribution and check date. Manufacturer and retailer evidence have distinct source and

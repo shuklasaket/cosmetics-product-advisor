@@ -80,6 +80,86 @@
       "category": "moisturiser",
       "variant": "50 g",
       "pack_size": "50 g"
+    },
+    {
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "brand": "Minimalist",
+      "name": "SPF 50 Sunscreen",
+      "category": "sunscreen",
+      "variant": "Broad Spectrum SPF 50 PA++++, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "brand": "Foxtale",
+      "name": "Dewy Finish Sunscreen",
+      "category": "sunscreen",
+      "variant": "SPF 50 PA++++, 50 ml",
+      "pack_size": "50 ml"
+    },
+    {
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "brand": "Re'equil",
+      "name": "Oxybenzone & OMC Free Sunscreen",
+      "category": "sunscreen",
+      "variant": "SPF 50, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "brand": "Aqualogica",
+      "name": "Hydrate+ Dewy Sunscreen",
+      "category": "sunscreen",
+      "variant": "SPF 50 PA++++, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "brand": "Aqualogica",
+      "name": "Illuminate+ Dewy Gel Sunscreen",
+      "category": "sunscreen",
+      "variant": "SPF 50+ PA++++, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "brand": "Minimalist",
+      "name": "Marula Oil 5% Face Moisturizer",
+      "category": "moisturiser",
+      "variant": "5% Marula Oil, 50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "brand": "Re'equil",
+      "name": "Oil Free Moisturiser",
+      "category": "moisturiser",
+      "variant": "50 g",
+      "pack_size": "50 g"
+    },
+    {
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "brand": "Foxtale",
+      "name": "Oil Balancing Moisturizer with Niacinamide & Cica",
+      "category": "moisturiser",
+      "variant": "50 ml",
+      "pack_size": "50 ml"
+    },
+    {
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "brand": "Foxtale",
+      "name": "Vitamin C & Papaya Enzyme Daily Brightening Moisturizer",
+      "category": "moisturiser",
+      "variant": "50 ml",
+      "pack_size": "50 ml"
+    },
+    {
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "brand": "Aqualogica",
+      "name": "Glow+ JellO Moisturizer",
+      "category": "moisturiser",
+      "variant": "50 g",
+      "pack_size": "50 g"
     }
   ],
   "sources": [
@@ -301,6 +381,226 @@
       "permission_reference": "document:us-019-source-policy-v1",
       "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
       "last_checked": "2026-10-19T14:39:00Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:minimalist-multi-vitamin-spf50-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Minimalist at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:minimalist-multi-vitamin-spf50-50g",
+      "source_type": "retailer",
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:foxtale-dewy-finish-spf50-50ml",
+      "source_type": "manufacturer",
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Foxtale at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:foxtale-dewy-finish-spf50-50ml",
+      "source_type": "retailer",
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:reequil-oxybenzone-free-spf50-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Re'equil at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:reequil-oxybenzone-free-spf50-50g",
+      "source_type": "retailer",
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:aqualogica-hydrate-dewy-spf50-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Aqualogica at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:aqualogica-hydrate-dewy-spf50-50g",
+      "source_type": "retailer",
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:aqualogica-illuminate-dewy-spf50-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Aqualogica at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:aqualogica-illuminate-dewy-spf50-50g",
+      "source_type": "retailer",
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:minimalist-marula-oil-moisturizer-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Minimalist at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:minimalist-marula-oil-moisturizer-50g",
+      "source_type": "retailer",
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:reequil-oil-free-moisturiser-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Re'equil at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:reequil-oil-free-moisturiser-50g",
+      "source_type": "retailer",
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:foxtale-oil-balancing-moisturizer-50ml",
+      "source_type": "manufacturer",
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Foxtale at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:foxtale-oil-balancing-moisturizer-50ml",
+      "source_type": "retailer",
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:foxtale-brightening-moisturizer-50ml",
+      "source_type": "manufacturer",
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Foxtale at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:foxtale-brightening-moisturizer-50ml",
+      "source_type": "retailer",
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "maker:aqualogica-glow-jello-moisturizer-50g",
+      "source_type": "manufacturer",
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "access_conditions": "Public HTTPS India product page manually reviewed without automated collection.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Product identity and formulation facts attributed to Aqualogica at the linked official India page.",
+      "last_checked": "2026-11-25T10:37:18Z",
+      "enabled": true
+    },
+    {
+      "source_id": "retailer:aqualogica-glow-jello-moisturizer-50g",
+      "source_type": "retailer",
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "access_conditions": "Public HTTPS India online-purchase page manually reviewed; exact pack was offered for purchase.",
+      "reuse_conditions": "Maintainer-approved limited factual extraction for a non-commercial demonstration; images, reviews, marketing prose, certificates, temporary promotions and personal data are excluded.",
+      "permission_reference": "document:us-019-source-policy-v1",
+      "attribution": "Regular INR price and India-online availability attributed to the linked official brand storefront.",
+      "last_checked": "2026-11-25T10:37:18Z",
       "enabled": true
     }
   ],
@@ -1404,6 +1704,1076 @@
       "content_version": "manual-page-review:2026-10-19:mamaearth-cocoa-rich-moisturizing-cream-50g",
       "snapshot_id": "snapshot:mamaearth-cocoa-rich-moisturizing-cream-50g:retailer:2026-10-19",
       "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-multi-vitamin-spf50-50g:brand",
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "source_id": "maker:minimalist-multi-vitamin-spf50-50g",
+      "field_name": "brand",
+      "value": "Minimalist",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-multi-vitamin-spf50-50g",
+      "snapshot_id": "snapshot:minimalist-multi-vitamin-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-multi-vitamin-spf50-50g:name",
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "source_id": "maker:minimalist-multi-vitamin-spf50-50g",
+      "field_name": "name",
+      "value": "SPF 50 Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-multi-vitamin-spf50-50g",
+      "snapshot_id": "snapshot:minimalist-multi-vitamin-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-multi-vitamin-spf50-50g:category",
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "source_id": "maker:minimalist-multi-vitamin-spf50-50g",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-multi-vitamin-spf50-50g",
+      "snapshot_id": "snapshot:minimalist-multi-vitamin-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-multi-vitamin-spf50-50g:variant",
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "source_id": "maker:minimalist-multi-vitamin-spf50-50g",
+      "field_name": "variant",
+      "value": "Broad Spectrum SPF 50 PA++++, 50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-multi-vitamin-spf50-50g",
+      "snapshot_id": "snapshot:minimalist-multi-vitamin-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-multi-vitamin-spf50-50g:pack_size",
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "source_id": "maker:minimalist-multi-vitamin-spf50-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-multi-vitamin-spf50-50g",
+      "snapshot_id": "snapshot:minimalist-multi-vitamin-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-multi-vitamin-spf50-50g:availability",
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "source_id": "retailer:minimalist-multi-vitamin-spf50-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-multi-vitamin-spf50-50g",
+      "snapshot_id": "snapshot:minimalist-multi-vitamin-spf50-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-multi-vitamin-spf50-50g:price_paise",
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "source_id": "retailer:minimalist-multi-vitamin-spf50-50g",
+      "field_name": "price_paise",
+      "value": 39900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://beminimalist.co/products/multi-vitamin-spf-50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-multi-vitamin-spf50-50g",
+      "snapshot_id": "snapshot:minimalist-multi-vitamin-spf50-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-dewy-finish-spf50-50ml:brand",
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "source_id": "maker:foxtale-dewy-finish-spf50-50ml",
+      "field_name": "brand",
+      "value": "Foxtale",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-dewy-finish-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-dewy-finish-spf50-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-dewy-finish-spf50-50ml:name",
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "source_id": "maker:foxtale-dewy-finish-spf50-50ml",
+      "field_name": "name",
+      "value": "Dewy Finish Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-dewy-finish-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-dewy-finish-spf50-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-dewy-finish-spf50-50ml:category",
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "source_id": "maker:foxtale-dewy-finish-spf50-50ml",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-dewy-finish-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-dewy-finish-spf50-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-dewy-finish-spf50-50ml:variant",
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "source_id": "maker:foxtale-dewy-finish-spf50-50ml",
+      "field_name": "variant",
+      "value": "SPF 50 PA++++, 50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-dewy-finish-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-dewy-finish-spf50-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-dewy-finish-spf50-50ml:pack_size",
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "source_id": "maker:foxtale-dewy-finish-spf50-50ml",
+      "field_name": "pack_size",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-dewy-finish-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-dewy-finish-spf50-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-dewy-finish-spf50-50ml:availability",
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "source_id": "retailer:foxtale-dewy-finish-spf50-50ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-dewy-finish-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-dewy-finish-spf50-50ml:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-dewy-finish-spf50-50ml:price_paise",
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "source_id": "retailer:foxtale-dewy-finish-spf50-50ml",
+      "field_name": "price_paise",
+      "value": 49500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://foxtale.in/products/spf-50-dewy-finish-sunscreen",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-dewy-finish-spf50-50ml",
+      "snapshot_id": "snapshot:foxtale-dewy-finish-spf50-50ml:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oxybenzone-free-spf50-50g:brand",
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "source_id": "maker:reequil-oxybenzone-free-spf50-50g",
+      "field_name": "brand",
+      "value": "Re'equil",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oxybenzone-free-spf50-50g",
+      "snapshot_id": "snapshot:reequil-oxybenzone-free-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oxybenzone-free-spf50-50g:name",
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "source_id": "maker:reequil-oxybenzone-free-spf50-50g",
+      "field_name": "name",
+      "value": "Oxybenzone & OMC Free Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oxybenzone-free-spf50-50g",
+      "snapshot_id": "snapshot:reequil-oxybenzone-free-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oxybenzone-free-spf50-50g:category",
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "source_id": "maker:reequil-oxybenzone-free-spf50-50g",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oxybenzone-free-spf50-50g",
+      "snapshot_id": "snapshot:reequil-oxybenzone-free-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oxybenzone-free-spf50-50g:variant",
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "source_id": "maker:reequil-oxybenzone-free-spf50-50g",
+      "field_name": "variant",
+      "value": "SPF 50, 50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oxybenzone-free-spf50-50g",
+      "snapshot_id": "snapshot:reequil-oxybenzone-free-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oxybenzone-free-spf50-50g:pack_size",
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "source_id": "maker:reequil-oxybenzone-free-spf50-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oxybenzone-free-spf50-50g",
+      "snapshot_id": "snapshot:reequil-oxybenzone-free-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oxybenzone-free-spf50-50g:availability",
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "source_id": "retailer:reequil-oxybenzone-free-spf50-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oxybenzone-free-spf50-50g",
+      "snapshot_id": "snapshot:reequil-oxybenzone-free-spf50-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oxybenzone-free-spf50-50g:price_paise",
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "source_id": "retailer:reequil-oxybenzone-free-spf50-50g",
+      "field_name": "price_paise",
+      "value": 39500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://www.reequil.com/collections/all/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oxybenzone-free-spf50-50g",
+      "snapshot_id": "snapshot:reequil-oxybenzone-free-spf50-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-hydrate-dewy-spf50-50g:brand",
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "brand",
+      "value": "Aqualogica",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-hydrate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-hydrate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-hydrate-dewy-spf50-50g:name",
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "name",
+      "value": "Hydrate+ Dewy Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-hydrate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-hydrate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-hydrate-dewy-spf50-50g:category",
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-hydrate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-hydrate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-hydrate-dewy-spf50-50g:variant",
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "variant",
+      "value": "SPF 50 PA++++, 50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-hydrate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-hydrate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-hydrate-dewy-spf50-50g:pack_size",
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-hydrate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-hydrate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-hydrate-dewy-spf50-50g:availability",
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "source_id": "retailer:aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-hydrate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-hydrate-dewy-spf50-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-hydrate-dewy-spf50-50g:price_paise",
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "source_id": "retailer:aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "price_paise",
+      "value": 44900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://aqualogica.in/products/hydrate-sunscreen-with-coconut-water-and-hyaluronic-acid-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-hydrate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-hydrate-dewy-spf50-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-illuminate-dewy-spf50-50g:brand",
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "brand",
+      "value": "Aqualogica",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-illuminate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-illuminate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-illuminate-dewy-spf50-50g:name",
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "name",
+      "value": "Illuminate+ Dewy Gel Sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-illuminate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-illuminate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-illuminate-dewy-spf50-50g:category",
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "category",
+      "value": "sunscreen",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-illuminate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-illuminate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-illuminate-dewy-spf50-50g:variant",
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "variant",
+      "value": "SPF 50+ PA++++, 50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-illuminate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-illuminate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-illuminate-dewy-spf50-50g:pack_size",
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "source_id": "maker:aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-illuminate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-illuminate-dewy-spf50-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-illuminate-dewy-spf50-50g:availability",
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "source_id": "retailer:aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-illuminate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-illuminate-dewy-spf50-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-illuminate-dewy-spf50-50g:price_paise",
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "source_id": "retailer:aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "price_paise",
+      "value": 44900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://aqualogica.in/products/illuminate-dewy-sunscreen-spf-50-pa-with-wild-berries-alpha-arbutin-50-g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-illuminate-dewy-spf50-50g",
+      "snapshot_id": "snapshot:aqualogica-illuminate-dewy-spf50-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-marula-oil-moisturizer-50g:brand",
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "source_id": "maker:minimalist-marula-oil-moisturizer-50g",
+      "field_name": "brand",
+      "value": "Minimalist",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-marula-oil-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-marula-oil-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-marula-oil-moisturizer-50g:name",
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "source_id": "maker:minimalist-marula-oil-moisturizer-50g",
+      "field_name": "name",
+      "value": "Marula Oil 5% Face Moisturizer",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-marula-oil-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-marula-oil-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-marula-oil-moisturizer-50g:category",
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "source_id": "maker:minimalist-marula-oil-moisturizer-50g",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-marula-oil-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-marula-oil-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-marula-oil-moisturizer-50g:variant",
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "source_id": "maker:minimalist-marula-oil-moisturizer-50g",
+      "field_name": "variant",
+      "value": "5% Marula Oil, 50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-marula-oil-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-marula-oil-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-marula-oil-moisturizer-50g:pack_size",
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "source_id": "maker:minimalist-marula-oil-moisturizer-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-marula-oil-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-marula-oil-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-marula-oil-moisturizer-50g:availability",
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "source_id": "retailer:minimalist-marula-oil-moisturizer-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-marula-oil-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-marula-oil-moisturizer-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:minimalist-marula-oil-moisturizer-50g:price_paise",
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "source_id": "retailer:minimalist-marula-oil-moisturizer-50g",
+      "field_name": "price_paise",
+      "value": 29900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://beminimalist.co/products/marula-05-moisturizer",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:minimalist-marula-oil-moisturizer-50g",
+      "snapshot_id": "snapshot:minimalist-marula-oil-moisturizer-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oil-free-moisturiser-50g:brand",
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "source_id": "maker:reequil-oil-free-moisturiser-50g",
+      "field_name": "brand",
+      "value": "Re'equil",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oil-free-moisturiser-50g",
+      "snapshot_id": "snapshot:reequil-oil-free-moisturiser-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oil-free-moisturiser-50g:name",
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "source_id": "maker:reequil-oil-free-moisturiser-50g",
+      "field_name": "name",
+      "value": "Oil Free Moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oil-free-moisturiser-50g",
+      "snapshot_id": "snapshot:reequil-oil-free-moisturiser-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oil-free-moisturiser-50g:category",
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "source_id": "maker:reequil-oil-free-moisturiser-50g",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oil-free-moisturiser-50g",
+      "snapshot_id": "snapshot:reequil-oil-free-moisturiser-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oil-free-moisturiser-50g:variant",
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "source_id": "maker:reequil-oil-free-moisturiser-50g",
+      "field_name": "variant",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oil-free-moisturiser-50g",
+      "snapshot_id": "snapshot:reequil-oil-free-moisturiser-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oil-free-moisturiser-50g:pack_size",
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "source_id": "maker:reequil-oil-free-moisturiser-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oil-free-moisturiser-50g",
+      "snapshot_id": "snapshot:reequil-oil-free-moisturiser-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oil-free-moisturiser-50g:availability",
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "source_id": "retailer:reequil-oil-free-moisturiser-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oil-free-moisturiser-50g",
+      "snapshot_id": "snapshot:reequil-oil-free-moisturiser-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:reequil-oil-free-moisturiser-50g:price_paise",
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "source_id": "retailer:reequil-oil-free-moisturiser-50g",
+      "field_name": "price_paise",
+      "value": 24500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://www.reequil.com/products/oil-free-moisturiser-50g",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:reequil-oil-free-moisturiser-50g",
+      "snapshot_id": "snapshot:reequil-oil-free-moisturiser-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-oil-balancing-moisturizer-50ml:brand",
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "source_id": "maker:foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "brand",
+      "value": "Foxtale",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-oil-balancing-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-oil-balancing-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-oil-balancing-moisturizer-50ml:name",
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "source_id": "maker:foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "name",
+      "value": "Oil Balancing Moisturizer with Niacinamide & Cica",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-oil-balancing-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-oil-balancing-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-oil-balancing-moisturizer-50ml:category",
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "source_id": "maker:foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-oil-balancing-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-oil-balancing-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-oil-balancing-moisturizer-50ml:variant",
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "source_id": "maker:foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "variant",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-oil-balancing-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-oil-balancing-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-oil-balancing-moisturizer-50ml:pack_size",
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "source_id": "maker:foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "pack_size",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-oil-balancing-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-oil-balancing-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-oil-balancing-moisturizer-50ml:availability",
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "source_id": "retailer:foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-oil-balancing-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-oil-balancing-moisturizer-50ml:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-oil-balancing-moisturizer-50ml:price_paise",
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "source_id": "retailer:foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "price_paise",
+      "value": 44500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://foxtale.in/products/oil-balancing-moisturizer?variant=FXN-POBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-oil-balancing-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-oil-balancing-moisturizer-50ml:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-brightening-moisturizer-50ml:brand",
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "source_id": "maker:foxtale-brightening-moisturizer-50ml",
+      "field_name": "brand",
+      "value": "Foxtale",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-brightening-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-brightening-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-brightening-moisturizer-50ml:name",
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "source_id": "maker:foxtale-brightening-moisturizer-50ml",
+      "field_name": "name",
+      "value": "Vitamin C & Papaya Enzyme Daily Brightening Moisturizer",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-brightening-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-brightening-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-brightening-moisturizer-50ml:category",
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "source_id": "maker:foxtale-brightening-moisturizer-50ml",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-brightening-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-brightening-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-brightening-moisturizer-50ml:variant",
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "source_id": "maker:foxtale-brightening-moisturizer-50ml",
+      "field_name": "variant",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-brightening-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-brightening-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-brightening-moisturizer-50ml:pack_size",
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "source_id": "maker:foxtale-brightening-moisturizer-50ml",
+      "field_name": "pack_size",
+      "value": "50 ml",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-brightening-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-brightening-moisturizer-50ml:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-brightening-moisturizer-50ml:availability",
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "source_id": "retailer:foxtale-brightening-moisturizer-50ml",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-brightening-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-brightening-moisturizer-50ml:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:foxtale-brightening-moisturizer-50ml:price_paise",
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "source_id": "retailer:foxtale-brightening-moisturizer-50ml",
+      "field_name": "price_paise",
+      "value": 34500,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://foxtale.in/products/brightening-moisturizer?variant=FXN-BDBM50",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:foxtale-brightening-moisturizer-50ml",
+      "snapshot_id": "snapshot:foxtale-brightening-moisturizer-50ml:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-jello-moisturizer-50g:brand",
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "source_id": "maker:aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "brand",
+      "value": "Aqualogica",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-glow-jello-moisturizer-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-jello-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-jello-moisturizer-50g:name",
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "source_id": "maker:aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "name",
+      "value": "Glow+ JellO Moisturizer",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-glow-jello-moisturizer-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-jello-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-jello-moisturizer-50g:category",
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "source_id": "maker:aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "category",
+      "value": "moisturiser",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-glow-jello-moisturizer-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-jello-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-jello-moisturizer-50g:variant",
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "source_id": "maker:aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "variant",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-glow-jello-moisturizer-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-jello-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-jello-moisturizer-50g:pack_size",
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "source_id": "maker:aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "pack_size",
+      "value": "50 g",
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-glow-jello-moisturizer-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-jello-moisturizer-50g:maker:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-jello-moisturizer-50g:availability",
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "source_id": "retailer:aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "availability",
+      "value": [
+        "India"
+      ],
+      "country": null,
+      "currency": null,
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-glow-jello-moisturizer-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-jello-moisturizer-50g:retailer:2026-11-25",
+      "validation_status": "verified"
+    },
+    {
+      "evidence_id": "e:aqualogica-glow-jello-moisturizer-50g:price_paise",
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "source_id": "retailer:aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "price_paise",
+      "value": 49900,
+      "country": "India",
+      "currency": "INR",
+      "source_reference": "https://aqualogica.in/products/glow-jell-o-moisturiser-with-vitamin-c-and-papaya-for-illuminating-moisturization-and-skin-hydration-non-sticky-50-gm",
+      "retrieved_at": "2026-11-25T10:37:18Z",
+      "verified_at": "2026-11-25T10:37:18Z",
+      "content_version": "manual-page-review:2026-11-25:aqualogica-glow-jello-moisturizer-50g",
+      "snapshot_id": "snapshot:aqualogica-glow-jello-moisturizer-50g:retailer:2026-11-25",
+      "validation_status": "verified"
     }
   ],
   "resolutions": [
@@ -2054,7 +3424,636 @@
         "e:mamaearth-cocoa-rich-moisturizing-cream-50g:price_paise"
       ],
       "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-multi-vitamin-spf50-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-multi-vitamin-spf50-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-multi-vitamin-spf50-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-multi-vitamin-spf50-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-multi-vitamin-spf50-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-multi-vitamin-spf50-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-multi-vitamin-spf50-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-multi-vitamin-spf50-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-dewy-finish-spf50-50ml:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-dewy-finish-spf50-50ml:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-dewy-finish-spf50-50ml:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-dewy-finish-spf50-50ml:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-dewy-finish-spf50-50ml:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-dewy-finish-spf50-50ml:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-dewy-finish-spf50-50ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-dewy-finish-spf50-50ml:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oxybenzone-free-spf50-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oxybenzone-free-spf50-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oxybenzone-free-spf50-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oxybenzone-free-spf50-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oxybenzone-free-spf50-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oxybenzone-free-spf50-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oxybenzone-free-spf50-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oxybenzone-free-spf50-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-hydrate-dewy-spf50-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-hydrate-dewy-spf50-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-hydrate-dewy-spf50-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-hydrate-dewy-spf50-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-hydrate-dewy-spf50-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-hydrate-dewy-spf50-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-hydrate-dewy-spf50-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-hydrate-dewy-spf50-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-illuminate-dewy-spf50-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-illuminate-dewy-spf50-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-illuminate-dewy-spf50-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-illuminate-dewy-spf50-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-illuminate-dewy-spf50-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-illuminate-dewy-spf50-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-illuminate-dewy-spf50-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-illuminate-dewy-spf50-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-marula-oil-moisturizer-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-marula-oil-moisturizer-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-marula-oil-moisturizer-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-marula-oil-moisturizer-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-marula-oil-moisturizer-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-marula-oil-moisturizer-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "minimalist-marula-oil-moisturizer-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:minimalist-marula-oil-moisturizer-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oil-free-moisturiser-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oil-free-moisturiser-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oil-free-moisturiser-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oil-free-moisturiser-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oil-free-moisturiser-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oil-free-moisturiser-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "reequil-oil-free-moisturiser-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:reequil-oil-free-moisturiser-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-oil-balancing-moisturizer-50ml:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-oil-balancing-moisturizer-50ml:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-oil-balancing-moisturizer-50ml:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-oil-balancing-moisturizer-50ml:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-oil-balancing-moisturizer-50ml:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-oil-balancing-moisturizer-50ml:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-oil-balancing-moisturizer-50ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-oil-balancing-moisturizer-50ml:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-brightening-moisturizer-50ml:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-brightening-moisturizer-50ml:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-brightening-moisturizer-50ml:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-brightening-moisturizer-50ml:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-brightening-moisturizer-50ml:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-brightening-moisturizer-50ml:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "foxtale-brightening-moisturizer-50ml",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:foxtale-brightening-moisturizer-50ml:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "brand",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-jello-moisturizer-50g:brand"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "name",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-jello-moisturizer-50g:name"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "category",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-jello-moisturizer-50g:category"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "variant",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-jello-moisturizer-50g:variant"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "pack_size",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-jello-moisturizer-50g:pack_size"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "availability",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-jello-moisturizer-50g:availability"
+      ],
+      "policy_version": "explicit-selection-v1"
+    },
+    {
+      "product_id": "aqualogica-glow-jello-moisturizer-50g",
+      "field_name": "price_paise",
+      "status": "selected",
+      "evidence_ids": [
+        "e:aqualogica-glow-jello-moisturizer-50g:price_paise"
+      ],
+      "policy_version": "explicit-selection-v1"
     }
   ]
 }
-

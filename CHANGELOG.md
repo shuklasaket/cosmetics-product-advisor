@@ -12,6 +12,12 @@ has been delivered by this work.
 
 ### Added
 
+- Ten reviewed official-storefront variants expand the permitted India catalog to
+  20 products, split evenly across sunscreen and moisturiser. Fact-level identity,
+  pack, regular INR price, India availability, attribution and verification metadata
+  remain explicit; unreviewed ingredients and Open Beauty Facts mappings stay unknown.
+  (Refs #35)
+
 - Payload-free persistence of returned, missing, and rejected field statuses when a
   PRD 02 exact-variant review requires further work. Candidate facts and mappings remain
   uncommitted, so last-valid catalog evidence is preserved while operators retain the
