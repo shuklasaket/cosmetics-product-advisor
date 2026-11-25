@@ -10,7 +10,10 @@ import streamlit as st
 from schemas.catalog import CatalogEnvelope, FactName, FactObservation, Rating
 from schemas.requirements import UserRequirements
 from schemas.search import CatalogSearchResult
+from services.catalog_policy import CatalogPolicyResult, evaluate_catalog
 from services.catalog_search import CatalogSearchService, CatalogUnavailableError
+from services.manual_refresh import ManualRefreshService
+from ui.refresh_status import render_refresh_controls
 
 DETAIL_FIELDS: Final[tuple[FactName, ...]] = (
     "brand",
@@ -114,8 +117,16 @@ def _render_evidence(catalog: CatalogEnvelope, observations: tuple[FactObservati
         source = sources[observation.source_id]
         st.caption("Evidence source")
         st.text(source.attribution)
-        st.caption("Verified at")
+        st.text(f"Validation: {observation.validation_status}")
+        st.caption(
+            "Verified at"
+            if observation.validation_status == "verified"
+            else "Evidence date (unverified)"
+        )
         st.text(_timestamp(observation.verified_at))
+        if observation.retrieved_at is not None:
+            st.caption("Retrieved at")
+            st.text(_timestamp(observation.retrieved_at))
         reference = safe_https_reference(observation.source_reference)
         if reference is not None:
             st.link_button(
@@ -129,16 +140,44 @@ def _render_evidence(catalog: CatalogEnvelope, observations: tuple[FactObservati
             st.text(observation.source_reference)
 
 
-def _render_fact(catalog: CatalogEnvelope, product_id: str, field: FactName) -> None:
+def _render_fact(
+    catalog: CatalogEnvelope, product_id: str, field: FactName, policy: CatalogPolicyResult
+) -> None:
     value = catalog.resolved_value(product_id, field)
     st.caption(FIELD_LABELS[field])
     st.text(_fact_text(field, value))
+    fact = next(
+        (f for f in policy.facts if f.product_id == product_id and f.field_name == field), None
+    )
+    st.text(f"Freshness: {fact.freshness if fact else 'unknown'}")
+    st.text(f"Conflicting evidence: {len(fact.conflicting_evidence_ids) if fact else 0}")
+    if fact and fact.conflicting_evidence_ids:
+        st.warning(
+            "Conflicting source values need review. "
+            "The displayed fact remains the explicit selection."
+        )
+    if fact is None or fact.selected_evidence_id is None:
+        st.caption("No resolved policy evidence; review missing or ambiguous facts.")
     evidence = _selected_evidence(catalog, product_id, field)
     if value is not None:
         _render_evidence(catalog, evidence)
     elif evidence:
         st.caption("Evidence records this fact as unknown")
         _render_evidence(catalog, evidence)
+
+    selected_ids = {item.evidence_id for item in evidence}
+    additional = tuple(
+        item
+        for item in catalog.observations
+        if item.product_id == product_id
+        and item.field_name == field
+        and item.evidence_id not in selected_ids
+    )
+    if additional:
+        with st.expander("Additional evidence and conflicts"):
+            for observation in additional:
+                st.text(_fact_text(field, observation.value))
+                _render_evidence(catalog, (observation,))
 
 
 def execute_search(service: CatalogSearchService, request: UserRequirements) -> None:
@@ -192,7 +231,9 @@ def _render_cards(result: CatalogSearchResult) -> None:
             )
 
 
-def _render_detail(service: CatalogSearchService, product_id: str) -> None:
+def _render_detail(
+    service: CatalogSearchService, product_id: str, refresh_service: ManualRefreshService
+) -> None:
     try:
         catalog = service.detail(product_id)
     except CatalogUnavailableError as error:
@@ -208,16 +249,20 @@ def _render_detail(service: CatalogSearchService, product_id: str) -> None:
 
     product = catalog.products[0]
     st.subheader("Product details")
+    render_refresh_controls(refresh_service, product_id)
     st.info(
         "Declared skin-type claims are source statements, not a safety or suitability finding. "
         "This discovery view does not calculate a suitability score or recommendation."
     )
+    policy = evaluate_catalog(catalog, now=datetime.now(UTC))
     for field in DETAIL_FIELDS:
         with st.container(border=True, key=f"fact_{product.product_id}_{field}"):
-            _render_fact(catalog, product.product_id, field)
+            _render_fact(catalog, product.product_id, field, policy)
 
 
-def render_catalog_results(service: CatalogSearchService) -> None:
+def render_catalog_results(
+    service: CatalogSearchService, refresh_service: ManualRefreshService
+) -> None:
     """Render one transient search result and its optional evidence detail."""
     error = st.session_state.get("catalog_search_error")
     if isinstance(error, str):
@@ -232,4 +277,4 @@ def render_catalog_results(service: CatalogSearchService) -> None:
     _render_cards(result)
     selected = st.session_state.get("selected_product_id")
     if isinstance(selected, str):
-        _render_detail(service, selected)
+        _render_detail(service, selected, refresh_service)

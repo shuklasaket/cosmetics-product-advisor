@@ -217,3 +217,22 @@ def test_timeout_retries_are_bounded_and_sanitized() -> None:
     assert result.refresh.status == "unavailable"
     assert result.refresh.error_code == "timeout"
     assert result.refresh.attempts == 3
+
+
+def test_owned_http_client_is_closed_after_request(monkeypatch) -> None:
+    """Session-lived public caches must not leave owned network clients open."""
+    clients = []
+    real_client = httpx.Client
+
+    def factory(**kwargs):
+        value = real_client(
+            transport=httpx.MockTransport(lambda _: httpx.Response(200, json={"status": 0})),
+            **kwargs,
+        )
+        clients.append(value)
+        return value
+
+    monkeypatch.setattr(httpx, "Client", factory)
+    adapter = OpenBeautyFactsClient(source())
+    adapter.lookup(product_id="synthetic-50ml", external_id="8901234567890")
+    assert clients and all(client.is_closed for client in clients)

@@ -23,33 +23,34 @@ control "Catalog service" as Catalog
 entity "Approved source adapter" as Source
 database "SQLite repository" as Store
 
-Operator -> UI: Request known-variant refresh
-UI -> Controller: Validate operator action
-Controller -> Catalog: Refresh variant with run context
-Catalog -> Store: Read approved source registry\nand dated local facts
-Store --> Catalog: Source identity and prior evidence
-Catalog -> Source: Fetch approved external ID
-note right of Source
-  HTTPS and allowlisted destination;
-  validate redirects, bounds, and reuse.
-end note
-Source --> Catalog: Actual payload or source error
-
-alt Valid mapped observations, no critical conflict
-  Catalog -> Store: Validate and commit facts transactionally\nwith field provenance and version
-  Store --> Catalog: Committed facts and refresh status
-  Catalog --> Controller: Fresh facts with actual dates
-else Source failure or unresolved critical conflict
-  Catalog -> Store: Load last-valid local facts
-  Store --> Catalog: Dated prior evidence
-  Catalog --> Controller: Warning and eligibility limits
+Operator -> UI: Click Refresh product for known variant
+UI -> Controller: Pass stable public product ID only
+Controller -> Store: Read enabled source, exact reviewed mapping,
+and current catalog
+Store --> Controller: Approved source and current mapped variant
+alt Source/mapping unavailable or ambiguous
+  Controller --> UI: Read-only catalog and recovery guidance
+else Authorized target
+  Controller -> Source: Lookup mapped barcode (bounded attempts/cache)
+  Source --> Controller: Validated candidates and payload-free outcome
+  Controller -> Store: Revalidate source and mapping; commit atomically
+  alt Valid mapped candidates
+    Store --> Controller: Append unverified evidence + outcome
+(or unchanged replay)
+  else Missing/failed source result
+    Store --> Controller: Store safe failure outcome; preserve facts
+  else Changed variant or storage failure
+    Store --> Controller: Reject write; prior catalog retained
+  end
+  Controller -> Catalog: Read current facts and evaluate evidence policy
+  Catalog --> Controller: Selected values, dates, freshness, conflicts
+  Controller --> UI: Source outcome + separate storage status
+  UI --> Operator: Show actual dates, validation, and recovery guidance
 end
 
-Controller --> UI: Actual outcome and source status
-UI --> Operator: Show facts, dates, and warning if needed
-
-note over Catalog, Store
-  Manual permitted imports follow the same
-  mapping, validation, and repository rules.
+note over UI, Store
+  No automatic fetch, arbitrary URL, or private search input.
+  Existing selections stay unchanged; refresh candidates remain unverified.
+  Unsaved attempts are session-only; stored outcomes survive restart.
 end note
 @enduml

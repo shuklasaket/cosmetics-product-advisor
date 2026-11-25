@@ -1,6 +1,7 @@
 """Bounded Open Beauty Facts retrieval with validated, unselected candidates."""
 
 from collections.abc import Callable, Mapping
+from contextlib import nullcontext
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from hashlib import sha256
@@ -64,7 +65,7 @@ class OpenBeautyFactsClient:
         if len(source.endpoints) != 1:
             raise ValueError("Open Beauty Facts requires one reviewed product endpoint.")
         self.source = source
-        self.http_client = http_client or httpx.Client(follow_redirects=False)
+        self.http_client = http_client
         self.now = now or (lambda: datetime.now(UTC))
         self.sleep = sleep
         self._cache: dict[tuple[str, str], _CachedLookup] = {}
@@ -177,12 +178,18 @@ class OpenBeautyFactsClient:
         self, destination: str
     ) -> tuple[httpx.Response | None, RefreshErrorCode, bool, float]:
         try:
-            response = self.http_client.get(
-                destination,
-                headers={"User-Agent": USER_AGENT},
-                timeout=ATTEMPT_TIMEOUT_SECONDS,
-                follow_redirects=False,
+            client_context = (
+                nullcontext(self.http_client)
+                if self.http_client is not None
+                else httpx.Client(follow_redirects=False)
             )
+            with client_context as client:
+                response = client.get(
+                    destination,
+                    headers={"User-Agent": USER_AGENT},
+                    timeout=ATTEMPT_TIMEOUT_SECONDS,
+                    follow_redirects=False,
+                )
         except httpx.TimeoutException:
             return None, "timeout", True, 0.0
         except httpx.TransportError:

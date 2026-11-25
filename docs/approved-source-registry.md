@@ -115,5 +115,6 @@ Exact replay reports `unchanged`; inspect
 The [manual catalog importer](catalog-import.md) remains the permitted brand/retailer
 handoff. It validates its complete batch and requires `--update-resolutions` for
 explicit resolution changes. Do not automatically promote refresh candidates through
-that importer. The next operator UI story will expose review and refresh status;
-the PRD 02 release story must supply genuine, permitted mappings and live evidence.
+that importer. The [manual refresh UI](manual-refresh.md) exposes refresh, evidence,
+and operator status using previously persisted reviewed mappings. The PRD 02 release
+story must still supply genuine, permitted mappings and live evidence.
