@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- A strict, read-only PRD 02 release verifier for the approved 20–30-variant catalog,
+  reviewed refresh mappings, source permission/attribution, and the accepted 7-day
+  price/availability and 30-day other-fact freshness limits. It fails closed and
+  remains payload-free until genuine evidence is complete. (Refs #35)
+
 - Explicit per-product Open Beauty Facts refresh controls, evidence freshness/conflict
   and validation details, and a read-only operator status view. Approved sources and
   reviewed mappings are required; failures retain dated local facts, and retrieved
