@@ -42,13 +42,14 @@ The result distinguishes source execution from storage:
 | `unavailable` | Check the safe error code (`timeout`, `rate_limited`, etc.); retry later or check approved configuration. |
 | `stale` | A failed request retained previously cached candidates with their original dates. Review dated local evidence before relying on it. |
 
-Storage reports `committed` or `unchanged` separately. `review_required`, `rejected`,
-or `failed` means the attempt was not saved; check mapping or storage before retrying.
-Uncommitted summaries remain only in the current browser session and are labeled as
-such. Durable outcomes survive restart. The UI compares completion times to show the
-latest session or stored outcome, including safe errors, cache state, attempts, and
-actual retrieval/completion dates. An error never becomes a successful refresh merely
-because its failure outcome was stored.
+Storage reports `committed` or `unchanged` separately. `review_required` never writes
+candidate facts or a reusable mapping, but it does retain the payload-free outcome and
+returned/missing/rejected field statuses so an operator can review the failed exact
+variant check after restart. `rejected` or `failed` means the attempt was not saved;
+check the source, mapping, or storage before retrying. The UI compares completion times
+to show the latest session or stored outcome, including safe errors, cache state,
+attempts, field statuses, and actual retrieval/completion dates. An error never becomes
+a successful refresh merely because its failure outcome was stored.
 
 The adapter's public candidate cache lasts for the session (30-day freshness window),
 resets when the source registration changes, and contains no raw HTTP payload or

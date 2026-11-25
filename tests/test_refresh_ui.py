@@ -182,6 +182,7 @@ def test_refresh_failures_preserve_dated_facts(
     if kind == "partial":
         assert "review_required" in warnings
         assert "not saved" in warnings
+        assert "ingredient_declaration: missing" in text
     assert "REMOTE-SECRET-SENTINEL" not in text + warnings + caplog.text + str(capsys.readouterr())
     assert b"REMOTE-SECRET-SENTINEL" not in path.read_bytes()
 
@@ -226,6 +227,48 @@ def test_stale_cache_failure_keeps_evidence_dates(tmp_path: Path, monkeypatch) -
     assert "Last refresh: stale" in [item.value for item in page.text]
     assert any("timeout" in item.value for item in page.warning)
     assert CatalogRepository(tmp_path / "synthetic.db").read() == before
+
+
+def test_stored_review_required_outcome_exposes_field_statuses_after_restart(
+    tmp_path: Path, monkeypatch
+) -> None:
+    path, _ = seeded(tmp_path)
+    candidate = lookup()
+    candidate = candidate.model_copy(
+        update={
+            "refresh": candidate.refresh.model_copy(
+                update={
+                    "status": "partial",
+                    "error_code": "incomplete_payload",
+                    "evidence_ids": tuple(
+                        item.evidence_id
+                        for item in candidate.observations
+                        if item.field_name != "ingredient_declaration"
+                    ),
+                }
+            ),
+            "fields": tuple(
+                item for item in candidate.fields if item.field_name != "ingredient_declaration"
+            )
+            + (candidate.fields[-1].model_copy(update={"status": "missing", "evidence_id": None}),),
+            "observations": tuple(
+                item
+                for item in candidate.observations
+                if item.field_name != "ingredient_declaration"
+            ),
+        }
+    )
+    assert RefreshRepository(path).commit(candidate, mapping()).status == "review_required"
+
+    monkeypatch.setenv("ADVISOR_DATABASE_PATH", str(path))
+    page = AppTest.from_file(str(APP)).run()
+    submit_default_search(page)
+    page.button(key="detail_synthetic-50ml").click().run()
+
+    assert not page.exception
+    text = "\n".join(item.value for item in page.text)
+    assert "Last refresh: partial" in text
+    assert "ingredient_declaration: missing" in text
 
 
 def test_storage_failure_is_not_presented_as_saved_success(tmp_path: Path, monkeypatch) -> None:

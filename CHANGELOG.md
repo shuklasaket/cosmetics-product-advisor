@@ -12,6 +12,11 @@ has been delivered by this work.
 
 ### Added
 
+- Payload-free persistence of returned, missing, and rejected field statuses when a
+  PRD 02 exact-variant review requires further work. Candidate facts and mappings remain
+  uncommitted, so last-valid catalog evidence is preserved while operators retain the
+  genuine retrieval outcome for review. (Refs #35)
+
 - A strict, read-only PRD 02 release verifier for the approved 20–30-variant catalog,
   reviewed refresh mappings, source permission/attribution, and the accepted 7-day
   price/availability and 30-day other-fact freshness limits. It fails closed and

@@ -264,5 +264,6 @@ class StoredRefresh(Contract):
 
     outcome_id: Identifier
     refresh: RefreshResult
+    fields: tuple[RetrievedField, ...] = ()
     mapping_id: Identifier | None = None
     decision: Literal["accepted", "failed"]

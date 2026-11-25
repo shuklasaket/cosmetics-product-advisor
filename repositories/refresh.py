@@ -114,6 +114,40 @@ class RefreshRepository:
     def __init__(self, path: Path) -> None:
         self.path = path
 
+    @staticmethod
+    def _record_review_required(
+        con: sqlite3.Connection, lookup: RefreshLookup
+    ) -> RefreshCommitReport:
+        """Retain field-level validation status without retaining candidate facts.
+
+        A failed exact-variant review must be inspectable, but it must neither create a
+        reusable mapping nor add unverified source values to the local catalog.
+        """
+        outcome_id = _identity(
+            "outcome",
+            {
+                "refresh": lookup.refresh.model_dump(mode="json"),
+                "fields": [field.model_dump(mode="json") for field in lookup.fields],
+                "mapping_id": None,
+            },
+        )
+        outcome = StoredRefresh(
+            outcome_id=outcome_id,
+            refresh=lookup.refresh,
+            fields=lookup.fields,
+            decision="failed",
+        )
+        inserted = con.execute(
+            "INSERT OR IGNORE INTO refresh_outcomes(payload) VALUES (?)",
+            (outcome.model_dump_json(),),
+        ).rowcount
+        con.execute("COMMIT")
+        return RefreshCommitReport(
+            "review_required" if inserted else "unchanged",
+            outcome_id=outcome_id,
+            reason_code="variant_review_required",
+        )
+
     def commit(
         self, lookup: RefreshLookup, mapping: ReviewedVariantMapping | None = None
     ) -> RefreshCommitReport:
@@ -182,9 +216,7 @@ class RefreshRepository:
                 if not has_candidates and result.status != "stale" and value.observations:
                     return RefreshCommitReport("rejected", reason_code="unexpected_candidates")
                 if has_candidates and (reviewed is None or not _reviewed(current, value, reviewed)):
-                    return RefreshCommitReport(
-                        "review_required", reason_code="variant_review_required"
-                    )
+                    return self._record_review_required(con, value)
                 if reviewed is not None and not has_candidates:
                     return RefreshCommitReport("rejected", reason_code="unexpected_mapping")
                 if (
@@ -249,11 +281,16 @@ class RefreshRepository:
                     )
                 outcome_id = _identity(
                     "outcome",
-                    {"refresh": result.model_dump(mode="json"), "mapping_id": mapping_id},
+                    {
+                        "refresh": result.model_dump(mode="json"),
+                        "fields": [field.model_dump(mode="json") for field in value.fields],
+                        "mapping_id": mapping_id,
+                    },
                 )
                 outcome = StoredRefresh(
                     outcome_id=outcome_id,
                     refresh=result,
+                    fields=value.fields,
                     mapping_id=mapping_id,
                     decision="accepted" if has_candidates else "failed",
                 )
