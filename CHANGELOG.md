@@ -12,6 +12,12 @@ has been delivered by this work.
 
 ### Added
 
+- Scoped category and use-condition checks, explicit failed restrictions and exact
+  concentration limits, conflicting-evidence withholding, and public evidence/rule
+  fingerprints complete the deterministic PRD 03 evaluator. Findings retain the
+  checked conditions, rule version and date; genuine India rules remain pending.
+  ([#56](https://github.com/shuklasaket/cosmetics-product-advisor/issues/56))
+
 - Deterministic, synthetic-first PRD 03 ingredient-rule contracts and evaluator with
   provenance-required rules, curated alias matching, conservative incomplete-evidence
   handling, and versioned eligibility outcomes. No genuine regulatory rules or personal

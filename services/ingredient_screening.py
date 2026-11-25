@@ -1,5 +1,7 @@
 """Deterministic, limited ingredient-rule evaluation without personal data."""
 
+from hashlib import sha256
+
 from schemas.ingredient_screening import (
     Eligibility,
     FindingStatus,
@@ -19,12 +21,40 @@ def _declarations(value: str | None) -> tuple[str, ...]:
     return tuple(item.strip() for item in value.split(",") if item.strip()) if value else ()
 
 
-def _finding(rule: IngredientRule, matched: str, conditions: set[str]) -> IngredientFinding:
-    missing = tuple(
-        condition for condition in rule.required_conditions if condition not in conditions
+def _fingerprint(value: ScreeningInput | IngredientRuleSet) -> str:
+    return sha256(value.model_dump_json().encode("utf-8")).hexdigest()
+
+
+def _finding(rule: IngredientRule, matched: str, screening: ScreeningInput) -> IngredientFinding:
+    checked = tuple(
+        condition for condition in rule.required_conditions if condition in screening.conditions
     )
+    failed = tuple(
+        condition
+        for condition in rule.required_conditions
+        if condition in screening.failed_conditions
+    )
+    missing = tuple(
+        condition
+        for condition in rule.required_conditions
+        if condition not in screening.conditions and condition not in screening.failed_conditions
+    )
+    names = {_normalized(name) for name in (rule.canonical_ingredient, *rule.aliases)}
+    concentrations = tuple(
+        item.percent for item in screening.concentrations if _normalized(item.name) in names
+    )
+    concentration = concentrations[0] if len(concentrations) == 1 else None
+    if rule.max_concentration_percent is not None:
+        if concentration is None:
+            missing += ("concentration_percent",)
+        elif concentration > rule.max_concentration_percent:
+            failed += ("concentration_percent",)
+        else:
+            checked += ("concentration_percent",)
     if rule.rule_type == "prohibited":
         status: FindingStatus = "prohibited"
+    elif failed:
+        status = "restricted_failed"
     elif missing:
         status = "requires_verification"
     else:
@@ -36,7 +66,14 @@ def _finding(rule: IngredientRule, matched: str, conditions: set[str]) -> Ingred
         status=status,
         source_reference=rule.source_reference,
         source_section=rule.source_section,
+        rule_version=rule.version,
+        checked_on=rule.checked_on,
+        categories=rule.categories,
+        checked_conditions=checked,
+        failed_conditions=failed,
         missing_conditions=missing,
+        observed_concentration_percent=concentration,
+        max_concentration_percent=rule.max_concentration_percent,
     )
 
 
@@ -49,14 +86,14 @@ def evaluate_ingredients(
         for rule in rules.rules
         for name in (rule.canonical_ingredient, *rule.aliases)
     }
-    conditions = set(screening.conditions)
     findings = tuple(
-        _finding(normalized_rules[_normalized(item)], item, conditions)
+        _finding(normalized_rules[_normalized(item)], item, screening)
         for item in _declarations(screening.declaration)
         if _normalized(item) in normalized_rules
+        and screening.category in normalized_rules[_normalized(item)].categories
     )
-    incomplete = screening.completeness != "complete"
-    excluded = any(finding.status == "prohibited" for finding in findings)
+    incomplete = screening.completeness != "complete" or screening.declaration is None
+    excluded = any(finding.status in ("prohibited", "restricted_failed") for finding in findings)
     requires_verification = incomplete or any(
         finding.status == "requires_verification" for finding in findings
     )
@@ -71,9 +108,32 @@ def evaluate_ingredients(
         product_id=screening.product_id,
         evidence_id=screening.evidence_id,
         evidence_version=screening.evidence_version,
+        evidence_fingerprint=_fingerprint(screening),
         rule_set_id=rules.rule_set_id,
         rule_set_version=rules.version,
+        rule_set_fingerprint=_fingerprint(rules),
         findings=findings,
         eligibility=eligibility,
-        unresolved_reason_codes=("incomplete_ingredient_evidence",) if incomplete else (),
+        unresolved_reason_codes=(
+            ("conflicting_ingredient_evidence",)
+            if screening.completeness == "conflicting"
+            else ("incomplete_ingredient_evidence",)
+            if incomplete
+            else ()
+        ),
+    )
+
+
+def result_is_current(
+    result: IngredientScreeningResult, screening: ScreeningInput, rules: IngredientRuleSet
+) -> bool:
+    """A caller may reuse only public results tied to current evidence and rule versions."""
+    return (
+        result.product_id == screening.product_id
+        and result.evidence_id == screening.evidence_id
+        and result.evidence_version == screening.evidence_version
+        and result.evidence_fingerprint == _fingerprint(screening)
+        and result.rule_set_id == rules.rule_set_id
+        and result.rule_set_version == rules.version
+        and result.rule_set_fingerprint == _fingerprint(rules)
     )
