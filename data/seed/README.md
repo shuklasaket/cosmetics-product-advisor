@@ -52,6 +52,36 @@ Candidate records with a missing, corrupted, or formulation-mismatched declarati
 deliberately excluded. These records establish mapping and accepted-outcome evidence;
 they do not refresh the pre-existing selected catalog facts.
 
+## Legacy fact recheck — 26 November 2026
+
+All ten original products were manually checked against their linked official
+India storefronts and the reviewed Nykaa exact-pack offer. The seed appends 72 new
+observations and 20 dated source records, then explicitly selects the new evidence;
+the October observations remain available for provenance and comparison. The current
+regular/MRP prices changed for Aqualogica Glow+ Dewy 50 g from ₹499 to ₹449 and
+Re'equil Ceramide & Hyaluronic Acid 100 g from ₹295 to ₹395. Discounted sale prices
+were not selected. The current [Foxtale Glow page](https://foxtale.in/products/glow-sunscreen)
+and [Nykaa Minimalist 50 ml offer](https://www.nykaa.com/minimalist-light-fluid-spf-50-face-sunscreen/p/20540004?redirectpath=slug)
+are recorded as new source snapshots rather than rewriting earlier source records.
+
+| Rechecked exact pack | Reviewed source | Selected regular/MRP |
+| --- | --- | ---: |
+| Aqualogica Glow+ Dewy 50 g | [Official storefront](https://aqualogica.in/products/glow-dewy-sunscreen-50g) | ₹449 |
+| Foxtale Glow 50 ml | [Official storefront](https://foxtale.in/products/glow-sunscreen) | ₹375 |
+| Foxtale Hydrating Ceramide 50 ml | [Official storefront](https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1) | ₹335 |
+| Mamaearth Beetroot Hydraful 50 g | [Official storefront](https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml) | ₹349 |
+| Mamaearth Cocoa Rich 50 g | [Official storefront](https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g) | ₹149 |
+| Mamaearth Vitamin C Daily Glow SPF 50 PA++++ 50 g | [Official storefront](https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g) | ₹399 |
+| Minimalist Light Fluid SPF 50 50 ml | [Official formulation](https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681), [Nykaa offer](https://www.nykaa.com/minimalist-light-fluid-spf-50-face-sunscreen/p/20540004?redirectpath=slug) | ₹499 |
+| Minimalist Vitamin B5 50 g | [Official storefront](https://beminimalist.co/products/vitamin-b5-10-moisturizer) | ₹349 |
+| Re'equil Ceramide & Hyaluronic Acid 100 g | [Official storefront](https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin) | ₹395 |
+| Re'equil Ultra Matte SPF 50 50 g | [Official storefront](https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa) | ₹645 |
+
+The 50 g Mamaearth Vitamin C Daily Glow sunscreen has a new dated source snapshot. The
+maintainer confirmed the current official page's SPF 50 **PA++++** label corrects the
+same exact catalog variant. Its 2026-10 PA+++ observation remains immutable history;
+the current PA++++ identity, price, and India availability evidence is selected.
+
 ## Verification and loading
 
 The timestamps record manual page review, not continuous availability. Validate and load
@@ -69,4 +99,17 @@ for its stored evidence and does not duplicate records. The evidence importer re
 five committed (or replayed) mappings and accepted outcomes. See [the importer guide]
 (../../docs/catalog-import.md) for database initialization, reports, recovery and
 resolution-change rules.
+
+For an existing database loaded from the older seed, stop the app, make a validated
+backup, and review the new source observations before importing with
+`--update-resolutions`. Without that explicit flag the importer rejects changed
+selections and leaves the prior catalog intact. The PA-rating correction changes the
+immutable product identity, so an existing database retains its prior catalog and
+rejects this seed; initialize a fresh database from the corrected seed instead.
+Re-run both release verifiers after loading it.
+
+```sh
+uv run --frozen python -m scripts.import_catalog data/seed/catalog-v1.json \
+  --database database/advisor.db --update-resolutions
+```
 

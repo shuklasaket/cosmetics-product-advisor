@@ -22,9 +22,10 @@ def test_reviewed_evidence_persists_five_exact_mappings_and_outcomes(tmp_path: P
 
     assert report.status == "committed"
     assert (report.mappings, report.accepted_outcomes) == (5, 5)
-    gate = verify_prd02_release(database, today=date(2026, 11, 25))
+    gate = verify_prd02_release(database, today=date(2026, 11, 26))
     assert (gate.reviewed_mapping_count, gate.accepted_refresh_count) == (5, 5)
-    assert gate.failures == ("catalog facts exceed the approved freshness window",)
+    assert gate.status == "passed"
+    assert gate.failures == ()
 
 
 def test_reviewed_evidence_replay_is_idempotent(tmp_path: Path) -> None:

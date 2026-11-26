@@ -36,8 +36,8 @@ The versioned [India genuine catalog](seed/README.md) contains 25 reviewed produ
 twelve sunscreens and thirteen moisturisers. The header-only templates do not add to
 these counts. Its separate payload-free release-evidence fixture records five exact
 reviewed Open Beauty Facts mappings and accepted outcomes. The PRD 02 gate remains
-incomplete until the older selected catalog facts are reverified within its freshness
-window and final release evidence is recorded.
+complete after the selected catalog facts were reverified within its freshness window;
+see the [PRD 02 release report](../docs/reports/prd-02-catalog-release-report.md).
 
 ## Storage and fixtures
 
