@@ -32,6 +32,10 @@ operator/data review is required before a later adapter can be enabled.
 4. Collect only permitted review text and necessary metadata; remove unnecessary reviewer identifiers.
 5. Regulatory data needs exact authoritative references and domain review before PRD 03 uses it.
 
+The bounded, source-reviewed India rule manifest used by PRD 03 is kept separately in
+[`rules/`](rules/README.md). It contains only typed, applicable rules with exact source
+sections and review dates; it never contains personal exclusions or screening results.
+
 The versioned [India genuine catalog](seed/README.md) contains 25 reviewed products:
 twelve sunscreens and thirteen moisturisers. The header-only templates do not add to
 these counts. Its separate payload-free release-evidence fixture records five exact

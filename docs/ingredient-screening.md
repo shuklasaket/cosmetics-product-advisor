@@ -1,10 +1,11 @@
 # Ingredient screening evaluator
 
 The PRD 03 evaluator is a pure Python service in
-[`services/ingredient_screening.py`](../services/ingredient_screening.py). It does not
-ship a genuine India rule file, load regulatory data, or display screening in the app.
-The reviewed rule manifest and session-only personal avoid list belong to
-[US-057](https://github.com/shuklasaket/cosmetics-product-advisor/issues/57).
+[`services/ingredient_screening.py`](../services/ingredient_screening.py). Its bounded
+India manifest is in [`data/rules/india-limited-v1.json`](../data/rules/india-limited-v1.json)
+with the official source review, scope, and recovery behavior in
+[`data/rules/README.md`](../data/rules/README.md). It is deliberately a small rule set,
+not a comprehensive regulatory database.
 
 `IngredientRuleSet` requires versioned rules with a canonical ingredient, curated
 aliases, an applicable product category, an exact source reference and section,
@@ -25,11 +26,20 @@ missing or conflicting ingredient evidence or a missing restriction condition yi
 `requires_verification`; otherwise the result is `eligible_within_checks` **within
 the limited supplied rule set only**. No result certifies safety or compliance.
 
-`result_is_current` checks both declared versions and content fingerprints for the
+`screening_input_from_catalog` only accepts explicitly selected catalog ingredient facts.
+An unresolved declaration becomes a `requires_verification` input rather than an
+implicit match. `result_is_current` checks both declared versions and content fingerprints for the
 public evidence and rule set. Recompute when either changes, even if an upstream
 caller accidentally repeats a version string. Results are not persisted by this
 service. Validation errors must be converted to fixed, sanitized messages at a
 future import or UI boundary; never display raw source text as instructions.
+
+The product-detail panel displays regulatory findings separately from the editable
+session-only avoid list. Exact declaration matches and curated rule aliases exclude a
+product for that session. An unmatched term is shown as needing clarification and does
+not become a regulatory or personal finding. Clear removes the avoid list and its
+in-memory rule cache. Neither personal terms nor personal results are stored in the
+catalog, a log, or an export.
 
 The synthetic acceptance cases are in `tests/test_ingredient_screening.py` and
 `tests/test_ingredient_screening_completion.py`. Their `example.com` citations are

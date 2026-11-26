@@ -1,0 +1,19 @@
+{
+  "rule_set_id": "india-limited-v1",
+  "version": "2026-11-26",
+  "rules": [
+    {
+      "rule_id": "india-hexachlorophene-rule-39-4",
+      "canonical_ingredient": "Hexachlorophene",
+      "aliases": [],
+      "rule_type": "prohibited",
+      "categories": ["sunscreen", "moisturiser"],
+      "required_conditions": [],
+      "max_concentration_percent": null,
+      "source_reference": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2022/cos_rules/Cosmetics%20Rules%202020.pdf",
+      "source_section": "Cosmetics Rules, 2020, rule 39(4)",
+      "version": "G.S.R. 763(E), 15 December 2020",
+      "checked_on": "2026-11-26"
+    }
+  ]
+}

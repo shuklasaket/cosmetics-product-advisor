@@ -41,6 +41,8 @@ def clear_search_state(state: MutableMapping[str, object]) -> None:
     state.update(SEARCH_WIDGET_DEFAULTS)
     for key in SEARCH_TRANSIENT_KEYS:
         state.pop(key, None)
+    for key in ("screening_avoid_list", "ingredient_rule_manifest_store"):
+        state.pop(key, None)
 
 
 def _optional_text(value: str) -> str | None:

@@ -12,6 +12,12 @@ has been delivered by this work.
 
 ### Added
 
+- A bounded, source-reviewed India ingredient rule manifest and product-detail
+  screening panel. It shows exact regulatory citations and limitations, recomputes
+  session-only personal exclusions, keeps malformed rule updates from replacing the
+  last valid set, and never presents screening as a safety or compliance assurance.
+  ([#57](https://github.com/shuklasaket/cosmetics-product-advisor/issues/57))
+
 - Scoped category and use-condition checks, explicit failed restrictions and exact
   concentration limits, conflicting-evidence withholding, and public evidence/rule
   fingerprints complete the deterministic PRD 03 evaluator. Findings retain the

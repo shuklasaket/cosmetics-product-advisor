@@ -1,7 +1,9 @@
 """Deterministic, limited ingredient-rule evaluation without personal data."""
 
 from hashlib import sha256
+from typing import Literal, cast
 
+from schemas.catalog import CatalogEnvelope, FactObservation, FactResolution
 from schemas.ingredient_screening import (
     Eligibility,
     FindingStatus,
@@ -136,4 +138,56 @@ def result_is_current(
         and result.rule_set_id == rules.rule_set_id
         and result.rule_set_version == rules.version
         and result.rule_set_fingerprint == _fingerprint(rules)
+    )
+
+
+def screening_input_from_catalog(catalog: CatalogEnvelope, product_id: str) -> ScreeningInput:
+    """Build a conservative public screening input from explicitly resolved catalog facts."""
+    product = next(item for item in catalog.products if item.product_id == product_id)
+    resolutions = {
+        item.field_name: item for item in catalog.resolutions if item.product_id == product_id
+    }
+    observations = {item.evidence_id: item for item in catalog.observations}
+    declaration_resolution = resolutions.get("ingredient_declaration")
+    completeness_resolution = resolutions.get("ingredient_completeness")
+
+    def selected(resolution: FactResolution | None) -> FactObservation | None:
+        if resolution is None or resolution.status != "selected":
+            return None
+        return observations[resolution.evidence_ids[0]]
+
+    declaration_observation = selected(declaration_resolution)
+    completeness_observation = selected(completeness_resolution)
+    declaration = (
+        declaration_observation.value
+        if declaration_observation and isinstance(declaration_observation.value, str)
+        else None
+    )
+    completeness: Literal["complete", "partial", "unknown", "conflicting"] = "unknown"
+    if declaration_resolution is not None and declaration_resolution.status == "unresolved":
+        completeness = "conflicting"
+    if (
+        completeness_observation is not None
+        and isinstance(completeness_observation.value, str)
+        and completeness_observation.value in {"complete", "partial", "unknown"}
+    ):
+        completeness = cast(
+            Literal["complete", "partial", "unknown"], completeness_observation.value
+        )
+    if declaration_observation is None:
+        return ScreeningInput(
+            product_id=product_id,
+            evidence_id=f"unresolved-ingredients:{product_id}",
+            evidence_version="unresolved",
+            category=product.category,
+            declaration=None,
+            completeness=completeness,
+        )
+    return ScreeningInput(
+        product_id=product_id,
+        evidence_id=declaration_observation.evidence_id,
+        evidence_version=declaration_observation.content_version,
+        category=product.category,
+        declaration=declaration,
+        completeness=completeness,
     )
