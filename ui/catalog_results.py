@@ -13,6 +13,7 @@ from schemas.search import CatalogSearchResult
 from services.catalog_policy import CatalogPolicyResult, evaluate_catalog
 from services.catalog_search import CatalogSearchService, CatalogUnavailableError
 from services.manual_refresh import ManualRefreshService
+from ui.ingredient_screening import render_ingredient_screening
 from ui.refresh_status import render_refresh_controls
 
 DETAIL_FIELDS: Final[tuple[FactName, ...]] = (
@@ -258,6 +259,7 @@ def _render_detail(
     for field in DETAIL_FIELDS:
         with st.container(border=True, key=f"fact_{product.product_id}_{field}"):
             _render_fact(catalog, product.product_id, field, policy)
+    render_ingredient_screening(catalog, product.product_id)
 
 
 def render_catalog_results(
