@@ -127,6 +127,12 @@ has been delivered by this work.
 
 ### Changed
 
+- Rechecked nine original India catalog products with append-only source and fact
+  history. Selected regular prices now reflect ₹449 for Aqualogica Glow+ Dewy 50 g
+  and ₹395 for Re'equil Ceramide & Hyaluronic Acid 100 g. The Mamaearth Vitamin C
+  Daily Glow variant remains stale pending exact PA-rating review, so the PRD 02
+  release gate remains closed. (Refs #35)
+
 - Story PR issue validation now falls back to the repository's fixed public GitHub
   issue endpoint if the local `gh` credential is unavailable or expired. The fallback
   is read-only, bounded, and fails closed, while authenticated `gh` remains preferred.

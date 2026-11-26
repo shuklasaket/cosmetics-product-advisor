@@ -1,14 +1,99 @@
 """US-035 strict PRD 02 release-gate checks."""
 
 import json
-from datetime import date
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from repositories.catalog import migrate
+from repositories.catalog import CatalogRepository, migrate
 from scripts.verify_prd02_release import verify_prd02_release
 from services.catalog_import import import_catalog
 
 SEED = Path(__file__).resolve().parents[1] / "data/seed/catalog-v1.json"
+
+RECHECKED_PRODUCTS = {
+    "aqualogica-glow-dewy-spf50-50g",
+    "foxtale-glow-spf50-50ml",
+    "foxtale-hydrating-ceramide-moisturizer-50ml",
+    "mamaearth-beetroot-hydraful-moisturizer-50g",
+    "mamaearth-cocoa-rich-moisturizing-cream-50g",
+    "minimalist-light-fluid-spf50-50ml",
+    "minimalist-vitamin-b5-moisturizer-50g",
+    "reequil-ceramide-ha-moisturiser-100g",
+    "reequil-ultra-matte-spf50-50g",
+}
+
+
+def test_rechecked_legacy_facts_keep_history_and_current_selected_evidence(tmp_path: Path) -> None:
+    database = tmp_path / "catalog.db"
+    migrate(database)
+    assert import_catalog(SEED, database).status == "committed"
+    catalog = CatalogRepository(database).read()
+    selected_ids = {
+        evidence_id
+        for resolution in catalog.resolutions
+        if resolution.status == "selected" and resolution.product_id in RECHECKED_PRODUCTS
+        for evidence_id in resolution.evidence_ids
+    }
+    selected = [item for item in catalog.observations if item.evidence_id in selected_ids]
+    cutoff = datetime.fromisoformat("2026-11-26T00:00:00+00:00")
+
+    assert {item.product_id for item in selected} == RECHECKED_PRODUCTS
+    assert all(cutoff - item.verified_at <= timedelta(days=7) for item in selected)
+    assert all(item.source_reference.startswith("https://") for item in selected)
+    assert any(
+        item.product_id == "aqualogica-glow-dewy-spf50-50g"
+        and item.field_name == "price_paise"
+        and item.value == 44900
+        for item in selected
+    )
+    assert any(
+        item.product_id == "reequil-ceramide-ha-moisturiser-100g"
+        and item.field_name == "price_paise"
+        and item.value == 39500
+        for item in selected
+    )
+    assert any(
+        item.product_id == "minimalist-light-fluid-spf50-50ml"
+        and item.field_name == "ingredient_declaration"
+        and item.value.startswith("Water/Aqua, Ethylhexyl Methoxycinnamate")
+        for item in selected
+    )
+    assert len(
+        [item for item in catalog.observations if item.product_id in RECHECKED_PRODUCTS]
+    ) > len(selected)
+
+
+def test_recheck_import_requires_explicit_resolution_update_on_existing_catalog(
+    tmp_path: Path,
+) -> None:
+    current = json.loads(SEED.read_text(encoding="utf-8"))
+    previous = json.loads(SEED.read_text(encoding="utf-8"))
+    suffix = ":recheck-20261126"
+    previous["sources"] = [
+        item for item in previous["sources"] if not item["source_id"].endswith(suffix)
+    ]
+    previous["observations"] = [
+        item for item in previous["observations"] if not item["evidence_id"].endswith(suffix)
+    ]
+    for resolution in previous["resolutions"]:
+        resolution["evidence_ids"] = [
+            item.removesuffix(suffix) for item in resolution["evidence_ids"]
+        ]
+    assert len(current["observations"]) - len(previous["observations"]) == 65
+
+    old_batch = tmp_path / "previous-catalog.json"
+    old_batch.write_text(json.dumps(previous), encoding="utf-8")
+    database = tmp_path / "catalog.db"
+    migrate(database)
+    assert import_catalog(old_batch, database).status == "committed"
+
+    assert import_catalog(SEED, database).status == "rejected"
+    report = import_catalog(SEED, database, update_resolutions=True)
+
+    assert report.status == "committed"
+    assert report.updated_resolutions == 65
+    assert len(CatalogRepository(database).read().observations) == len(current["observations"])
+    assert import_catalog(SEED, database, update_resolutions=True).status == "unchanged"
 
 
 def test_prd02_gate_fails_closed_until_genuine_catalog_and_refresh_history_exist(

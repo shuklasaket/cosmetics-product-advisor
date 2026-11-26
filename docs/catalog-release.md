@@ -74,10 +74,12 @@ attribution, and freshness no older than 7 days for India/INR price or availabil
 and 30 days for other facts. It emits only counts, fixed limits and sanitized failure
 reasons; it never prints source payloads. The expanded seed and release-evidence import
 satisfy the product-count, five exact-mapping, and five accepted-outcome checks. The gate
-is still expected to fail because selected legacy facts were last verified outside the
-7-day price/availability and 30-day other-fact windows. Reverify and explicitly resolve
-those facts, then record the final target-Mac release evidence before calling PRD 02
-released.
+is still expected to fail: nine original products have new selected source snapshots,
+but the old Mamaearth Vitamin C Daily Glow 50 g variant remains stale because the
+current official page labels it PA++++ and the selected variant says PA+++.
+Resolve its exact formulation/variant identity, then record the final target-Mac
+release and fallback evidence before calling PRD 02 released. See the
+[seed recheck notes](../data/seed/README.md#legacy-fact-recheck--26-november-2026).
 
 The automated acceptance suite covers exact-ceiling inclusion, over-budget exclusion,
 unknown India availability, zero and invalid budgets, unsupported countries, duplicate
