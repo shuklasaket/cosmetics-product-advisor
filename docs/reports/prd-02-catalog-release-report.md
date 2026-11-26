@@ -1,7 +1,8 @@
 # PRD 02 catalog release evidence
 
 Observed on 26 November 2026 in the target Apple-silicon Mac workspace. This report
-records release evidence for [US-035](https://github.com/shuklasaket/cosmetics-product-advisor/issues/35).
+records release evidence for [US-035](https://github.com/shuklasaket/cosmetics-product-advisor/issues/35)
+in PR #60; user review and merge remain pending.
 It does not make product-safety, regulatory-compliance, or source-permission claims
 beyond the recorded source policy and fact-level provenance.
 
