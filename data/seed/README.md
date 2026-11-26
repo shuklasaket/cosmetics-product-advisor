@@ -54,9 +54,9 @@ they do not refresh the pre-existing selected catalog facts.
 
 ## Legacy fact recheck — 26 November 2026
 
-Nine of the original ten products were manually checked against their linked official
-India storefronts and the reviewed Nykaa exact-pack offer. The seed appends 65 new
-observations and 18 dated source records, then explicitly selects the new evidence;
+All ten original products were manually checked against their linked official
+India storefronts and the reviewed Nykaa exact-pack offer. The seed appends 72 new
+observations and 20 dated source records, then explicitly selects the new evidence;
 the October observations remain available for provenance and comparison. The current
 regular/MRP prices changed for Aqualogica Glow+ Dewy 50 g from ₹499 to ₹449 and
 Re'equil Ceramide & Hyaluronic Acid 100 g from ₹295 to ₹395. Discounted sale prices
@@ -71,17 +71,16 @@ are recorded as new source snapshots rather than rewriting earlier source record
 | Foxtale Hydrating Ceramide 50 ml | [Official storefront](https://foxtale.in/products/hydrating-moisturizer-with-ceramide-copy-1) | ₹335 |
 | Mamaearth Beetroot Hydraful 50 g | [Official storefront](https://mamaearth.in/products/beetroot-hydraful-hyaluronic-acid-face-moisturizer-50ml) | ₹349 |
 | Mamaearth Cocoa Rich 50 g | [Official storefront](https://mamaearth.in/products/cocoa-rich-moisturizing-cream-with-cocoa-butter-vitamin-e-for-deep-nourishment-50-g) | ₹149 |
+| Mamaearth Vitamin C Daily Glow SPF 50 PA++++ 50 g | [Official storefront](https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g) | ₹399 |
 | Minimalist Light Fluid SPF 50 50 ml | [Official formulation](https://beminimalist.co/products/light-fluid-spf-50-sunscreen?variant=45875483115681), [Nykaa offer](https://www.nykaa.com/minimalist-light-fluid-spf-50-face-sunscreen/p/20540004?redirectpath=slug) | ₹499 |
 | Minimalist Vitamin B5 50 g | [Official storefront](https://beminimalist.co/products/vitamin-b5-10-moisturizer) | ₹349 |
 | Re'equil Ceramide & Hyaluronic Acid 100 g | [Official storefront](https://www.reequil.com/collections/all/products/ceramide-hyaluronic-acid-moisturiser-for-normal-to-dry-skin) | ₹395 |
 | Re'equil Ultra Matte SPF 50 50 g | [Official storefront](https://www.reequil.com/products/ultra-matte-dry-touch-sunscreen-gel-spf-50-pa) | ₹645 |
 
-The remaining original Mamaearth Vitamin C Daily Glow 50 g product is **not** reverified:
-the [current official page](https://mamaearth.in/products/vitamin-c-daily-glow-sunscreen-with-vitamin-c-turmeric-for-sun-protection-glow-50-g)
-labels it SPF 50 **PA++++**, while the selected October variant says **PA+++**.
-Until exact formulation/variant continuity is reviewed, its selected facts retain their
-original dates, and the PRD 02 release gate correctly remains failed. This recheck does
-not claim final release acceptance.
+The 50 g Mamaearth Vitamin C Daily Glow sunscreen has a new dated source snapshot. The
+maintainer confirmed the current official page's SPF 50 **PA++++** label corrects the
+same exact catalog variant. Its 2026-10 PA+++ observation remains immutable history;
+the current PA++++ identity, price, and India availability evidence is selected.
 
 ## Verification and loading
 
@@ -104,9 +103,10 @@ resolution-change rules.
 For an existing database loaded from the older seed, stop the app, make a validated
 backup, and review the new source observations before importing with
 `--update-resolutions`. Without that explicit flag the importer rejects changed
-selections and leaves the prior catalog intact. Re-run both release verifiers after
-the import; a fresh install still fails the PRD 02 gate until the remaining variant
-and final target-Mac checks are resolved.
+selections and leaves the prior catalog intact. The PA-rating correction changes the
+immutable product identity, so an existing database retains its prior catalog and
+rejects this seed; initialize a fresh database from the corrected seed instead.
+Re-run both release verifiers after loading it.
 
 ```sh
 uv run --frozen python -m scripts.import_catalog data/seed/catalog-v1.json \

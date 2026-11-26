@@ -74,12 +74,13 @@ attribution, and freshness no older than 7 days for India/INR price or availabil
 and 30 days for other facts. It emits only counts, fixed limits and sanitized failure
 reasons; it never prints source payloads. The expanded seed and release-evidence import
 satisfy the product-count, five exact-mapping, and five accepted-outcome checks. The gate
-is still expected to fail: nine original products have new selected source snapshots,
-but the old Mamaearth Vitamin C Daily Glow 50 g variant remains stale because the
-current official page labels it PA++++ and the selected variant says PA+++.
-Resolve its exact formulation/variant identity, then record the final target-Mac
-release and fallback evidence before calling PRD 02 released. See the
-[seed recheck notes](../data/seed/README.md#legacy-fact-recheck--26-november-2026).
+passes after the reviewed evidence import: all ten original products have current
+selected source snapshots, including the maintainer-approved correction of Mamaearth
+Vitamin C Daily Glow 50 g from PA+++ to PA++++. The immutable October evidence remains
+inspectable. An existing database loaded with the old identity rejects the correction
+without changing its last-valid catalog; create a fresh database from the corrected
+seed. Record final target-Mac and fallback evidence before calling PRD 02 released.
+See the [seed recheck notes](../data/seed/README.md#legacy-fact-recheck--26-november-2026).
 
 The automated acceptance suite covers exact-ceiling inclusion, over-budget exclusion,
 unknown India availability, zero and invalid budgets, unsupported countries, duplicate
@@ -97,3 +98,7 @@ into a new path, point `ADVISOR_DATABASE_PATH` to it, run the verifier, and rest
 
 See the [release evidence report](reports/prd-01-catalog-release-report.md) for the
 observed target-Mac run and the exact acceptance mapping.
+
+The [PRD 02 release evidence report](reports/prd-02-catalog-release-report.md) records
+the refreshed 25-product catalog, reviewed mappings/outcomes, corrected identity
+evidence, startup/restart checks, and fail-closed identity-correction recovery check.

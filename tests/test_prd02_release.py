@@ -16,6 +16,7 @@ RECHECKED_PRODUCTS = {
     "foxtale-hydrating-ceramide-moisturizer-50ml",
     "mamaearth-beetroot-hydraful-moisturizer-50g",
     "mamaearth-cocoa-rich-moisturizing-cream-50g",
+    "mamaearth-vitamin-c-daily-glow-spf50-50g",
     "minimalist-light-fluid-spf50-50ml",
     "minimalist-vitamin-b5-moisturizer-50g",
     "reequil-ceramide-ha-moisturiser-100g",
@@ -58,12 +59,18 @@ def test_rechecked_legacy_facts_keep_history_and_current_selected_evidence(tmp_p
         and item.value.startswith("Water/Aqua, Ethylhexyl Methoxycinnamate")
         for item in selected
     )
+    assert any(
+        item.product_id == "mamaearth-vitamin-c-daily-glow-spf50-50g"
+        and item.field_name == "variant"
+        and item.value == "SPF 50 PA++++, 50 g"
+        for item in selected
+    )
     assert len(
         [item for item in catalog.observations if item.product_id in RECHECKED_PRODUCTS]
     ) > len(selected)
 
 
-def test_recheck_import_requires_explicit_resolution_update_on_existing_catalog(
+def test_identity_correction_rejects_an_existing_catalog_without_losing_prior_evidence(
     tmp_path: Path,
 ) -> None:
     current = json.loads(SEED.read_text(encoding="utf-8"))
@@ -79,7 +86,13 @@ def test_recheck_import_requires_explicit_resolution_update_on_existing_catalog(
         resolution["evidence_ids"] = [
             item.removesuffix(suffix) for item in resolution["evidence_ids"]
         ]
-    assert len(current["observations"]) - len(previous["observations"]) == 65
+    previous_product = next(
+        item
+        for item in previous["products"]
+        if item["product_id"] == "mamaearth-vitamin-c-daily-glow-spf50-50g"
+    )
+    previous_product["variant"] = "SPF 50 PA+++, 50 g"
+    assert len(current["observations"]) - len(previous["observations"]) == 72
 
     old_batch = tmp_path / "previous-catalog.json"
     old_batch.write_text(json.dumps(previous), encoding="utf-8")
@@ -88,28 +101,29 @@ def test_recheck_import_requires_explicit_resolution_update_on_existing_catalog(
     assert import_catalog(old_batch, database).status == "committed"
 
     assert import_catalog(SEED, database).status == "rejected"
-    report = import_catalog(SEED, database, update_resolutions=True)
+    assert import_catalog(SEED, database, update_resolutions=True).status == "rejected"
+    retained = CatalogRepository(database).read()
+    assert len(retained.observations) == len(previous["observations"])
+    assert (
+        retained.resolved_value(previous_product["product_id"], "variant") == "SPF 50 PA+++, 50 g"
+    )
 
-    assert report.status == "committed"
-    assert report.updated_resolutions == 65
-    assert len(CatalogRepository(database).read().observations) == len(current["observations"])
-    assert import_catalog(SEED, database, update_resolutions=True).status == "unchanged"
 
-
-def test_prd02_gate_fails_closed_until_genuine_catalog_and_refresh_history_exist(
+def test_prd02_gate_fails_closed_until_refresh_history_exists(
     tmp_path: Path,
 ) -> None:
     database = tmp_path / "catalog.db"
     migrate(database)
     assert import_catalog(SEED, database).status == "committed"
 
-    report = verify_prd02_release(database, today=date(2026, 11, 25))
+    report = verify_prd02_release(database, today=date(2026, 11, 26))
 
     assert report.status == "failed"
     assert report.product_count == 25
     assert report.freshness_limits_days == {"price_availability": 7, "other_facts": 30}
     assert "catalog must contain between 20 and 30 exact product variants" not in report.failures
     assert "at least five exact reviewed variant mappings are required" in report.failures
+    assert "catalog facts exceed the approved freshness window" not in report.failures
 
 
 def test_prd02_gate_checks_selected_facts_not_retained_superseded_history(tmp_path: Path) -> None:
